@@ -1,0 +1,159 @@
+body {
+    background: #191927;
+  }
+  
+  #formContainer {
+    max-width:32em;
+      width:100%;
+      margin:0 auto;
+      position:relative;
+  }
+  
+  #survey-form {
+    background:#222230;
+      padding: 3.1em;
+      margin:3em 0;
+    border-style: solid;
+    border-color: #383851;
+    border-width: 1px;
+    border-radius: 5px
+   /* Box Shadow */
+    -webkit-box-shadow: 0px 4px 13px -1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 4px 13px -1px rgba(0,0,0,0.3);
+    box-shadow: 0px 4px 13px -1px rgba(0,0,0,0.3);
+  }
+  
+  h1 {
+    color: #00D2D3;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2em;
+  }
+  
+  p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.1em;
+      color: #d8d8d8;
+      padding-bottom: 0.25em;
+  }
+  
+  #title {
+    padding-bottom: 0.2em;
+    margin: 0;
+  }
+  
+  #description {
+    padding-top: 0.25em;
+    margin-top: 0;
+    
+  }
+  
+  label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    color: #5d646e;  
+  }
+  
+  input, select, textarea {
+    width: 100%; 
+    border: 0;
+    height: 2.25em;
+    margin-top: 0.6em;
+    margin-bottom: 1.6em;
+    padding: 0 0.6em 0 0.6em; Esto me estira el input
+  }
+  
+  
+  .placeholder {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    color: #5d646e;
+  }
+  
+  textarea {
+    height: 6em;
+  }
+  
+  /* Style to offset for the extra padding */
+  
+  input, textarea {
+     width: calc(100% - 1.2em);
+    }
+  
+  hr {
+    border: 0;
+    height: 1px;
+    background-color: #383851;
+    margin: 1.1em 0 2em 0;
+  }
+  
+  /* Radio Buttons */
+  
+  #radio-container, #checkbox-container {
+    padding-top: 1em;
+    text-align: center;
+  }
+  
+  #labelgroup, #radiogroup {
+    width: 6.2em;
+    padding-bottom: 0.8em;
+    text-align: center;
+  }
+  
+    
+  #radio-input, #checkbox-input {
+    width: auto;
+    height: auto;
+    -ms-transform: scale(1.5); /* Radio button scale IE */
+    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+    transform: scale(1.5);
+  
+    }
+  
+  #radio-label, #checkbox-label {
+    display: block;
+  }
+  
+  /* select all span items inside container  */
+  #radio-container > span {
+    white-space: nowrap;
+    display: inline-block;
+  }
+  
+  #checkbox-container > span {
+    white-space: nowrap;
+    display: inline-block;
+  }
+  
+  #nowrap {
+    white-space: nowrap;
+    display: inline-block;
+  }
+  
+  .selector-group {
+    padding-bottom: 0.9em;
+  }
+  
+  textarea {
+    padding-top: 0.5em;
+  }
+  
+  /* Submit Button */
+  
+  #submit {
+   width: 100%;
+   height: 3.3em;
+    margin: 0.75em 0 0 0;
+    border-style: solid;
+    border-width: 0.03em;
+    border-color: #00D2D3;
+    border-radius: 0.1em;
+    background-color: rgba(0, 210, 211, 0.10);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    color: #00D2D3;
+  }
+  
+  #submit:hover {
+      background-color: rgba(0, 210, 211, 0.2);
+  
+  }
