@@ -13,6 +13,7 @@
   <link href='https://css.gg/arrow-left-o.css' rel='stylesheet'>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
 
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   <script src="script.js"></script>
@@ -75,7 +76,7 @@
                 <option value="Governante">Governante</option>
                 <option value="Pesquisador">Pesquisador</option>
                 <option value="Tolo">Tolo</option><br></select>
-            </div>   
+            </div>
 
             <!--Clã-->
             <label for="cla" id="cla-label">Clã</label>
@@ -168,6 +169,81 @@
       </div>
 
     </form>
+
+    <div id="infos-importantes">
+      <div id="header">
+        <h1 class="titulo-akatsuki">
+          NARUTO RPG AKATSUKI
+        </h1>
+        <p>SENKO'S ULTIMATE FICHAMAKER2000: Criador de fichas intuitivo</p>
+        <hr>
+      </div>
+      <div id="primeiraDica" class="tipTabs">
+        <p>Os personagens, assim como na série, seguem normalmente um padrão de idade inicial na sua vida ninja, sendo assim, na criação da ficha o usuário estará limitado a uma idade de, no mínimo, oito (8) anos de idade, até, no máximo, vinte (20) anos de idade. </p>
+        <p>Quatro meses (120 dias) reais equivalem a um ano (365 dias) dentro do RPG. Desta maneira, todos podem continuar avançando seus personagens, indiferentemente dos acontecimentos da trama, o que também evita que, em tramas que levam menos tempo, os personagens evoluam demais. Neste sentido, também há influências nas estações, visto que um mês (30 dias) real é considerado uma estação do ano dentro do RPG, na sequência: Verão -> Outono -> Inverno -> Primavera -> Verão, e assim por diante.</p>
+      </div>
+
+      <div id="segundaDica" class="tipTabs">
+        <h2 class="subtitulo">Arquétipos</h2>
+        <p>Os Arquétipos são padrões universais que fazem parte da construção da personalidade de um personagem. Os arquétipos funcionam para determinar a base de formação de um personagem, mas não é imutável. A possibilidade de alterar durante os desenvolvimentos do personagem no jogo, ou seja, através de Plotting e outros sistemas, é enorme, porém ele sempre terá um alinhamento básico que determina o tipo de personagem que ele é. Desta maneira, um personagem cujo arquétipo seja pacífico não poderia iniciar uma guerra sem sentido, tornando  isso uma atitude de metagaming.</p>
+        <p>Todos os personagens começam com um dos Arquétipos que servem de base para suas ações e também sua personalidade. Portanto, desde o momento da criação da ficha, o usuário deve selecionar qual dos arquétipos melhor se encaixa com sua ideia de personagem.</p>
+          
+        <!--Neutro-->
+        <div id="Neutro" class="hidden-arquetipo">
+          <h2 class="subtitulo">Neutro</h2>
+          
+          <div id="descricao-Neutro">
+            <img src="images/neutro.png" alt="">
+            <p><b>Descrição:</b>O Arquétipo do Neutro é constituído pelos desejos simples de viver normalmente como um membro da sociedade. Os personagens com tal arquétipo não pensam em coisas grandiosas como paz mundial, se tornarem líderes ou coisas parecidas, eles simplesmente vivem a ordem das coisas naturalmente realizando missões, enfrentando o que for necessário e seguindo a vida sem muitas alterações bruscas. A maioria dos personagens da série apresentam esse aspecto, pois eles procuram o melhor como ninjas e não necessariamente pelos outros ou eles mesmos.</p>
+          </div>
+      
+        </div>
+        
+        <!--Herói-->
+        <div id="Herói" class="hidden-arquetipo">
+            <h2 class="subtitulo">Herói</h2>
+            
+            <div id="descricao-Herói">
+              <img src="images/heroi.png" alt="">
+              <p><b>Descrição:</b> O Arquétipo do Herói é constituído pela bondade, desejo de paz e procura constante de ajudar os outros. Os personagens com tal arquétipo sempre procuram maneiras de se tornarem mais fortes para ajudar os outros e se importam muito mais em resgatar os outros do que eles mesmos, sendo muito altruístas. Eles costumam evitar ao máximo a morte de outras pessoas, inclusive inimigos, pois acreditam que o ódio não se combate com mais sofrimento e ódio. O personagem que melhor representa tal arquétipo é Uzumaki Naruto que, apesar das dificuldades, sempre buscou se tornar um protetor.</p>
+            </div>
+        
+        </div>
+
+        <!--Anti-Herói-->
+        <div id="Anti-herói" class="hidden-arquetipo">
+          <h2 class="subtitulo">Herói</h2>
+          
+          <div id="descricao-Anti-herói">
+            <img src="images/antiheroi.png" alt="">
+            <p><b>Descrição:</b>O Arquétipo do Anti-Herói é constituído por um desejo forte de alterar o mundo que, em sua visão, está imerso nas trevas, mesmo que isso seja através de um mundo caótico. Os personagens com tal arquétipo não se preocupam em manter a paz e a segurança das pessoas por mais que queiram encontrar uma solução para a maldade no mundo, eles lutam, matam, manipulam e estão sempre buscando maneiras desordeiras de alcançar um plano maior (como a paz mundial, o plano do olho da lua) se jogando na escuridão para isso. O personagem que melhor representa tal arquétipo é Uchiha Obito após o incidente de Kakashi Gaiden, pois ele buscou tornar o mundo em um sonho de paz através de inúmeros incidentes caóticos, inclusive uma Guerra Mundial.</p>
+          </div>
+      
+        </div>
+        
+        <!--Vilão-->
+        <div id="Vilão" class="hidden-arquetipo">
+          <h2 class="subtitulo">Herói</h2>
+          
+          <div id="descricao-Vilão">
+            <img src="images/vilao.png" alt="">
+            <p><b>Descrição:</b>O Arquétipo do Vilão é constituído pela encarnação do mal, movido pelos desejos de prejudicar algo ou alguém, causar discórdia, sofrimento e caos independente de motivos concretos ou não. Os personagens com tal arquétipo são completamente opostos aos com arquétipo de Herói, pois não se preocupam em matar, manipular, provocar caos indevido e se divertirem com tais coisas. O personagem que melhor representa o arquétipo é Kaguya cujos planos e objetivos não eram mais do que exterminar o mundo independente dos prós e contras das pessoas.</p>
+          </div>
+      
+        </div>
+
+        
+      </div>
+
+      <div class="tipTabs">
+
+      </div>
+
+      <div class="tipTabs">
+
+      </div>
+    </div>
+
     </div>
 
     <script>
@@ -177,7 +253,9 @@
       function showTab(n) {
         // This function will display the specified tab of the form...
         var x = document.getElementsByClassName("tab");
+        var z = document.getElementsByClassName("tipTabs")
         x[n].style.display = "block";
+        z[n].style.display = "block";
         //... and fix the Previous/Next buttons:
         if (n == 0) {
           document.getElementById("prevBtn").style.display = "none";
@@ -185,9 +263,9 @@
           document.getElementById("prevBtn").style.display = "inline";
         }
         if (n == (x.length - 1)) {
-          document.getElementById("nextBtn").innerHTML = "Salvar";
+          document.getElementById("nextBtn").innerHTML = "SALVAR";
         } else {
-          document.getElementById("nextBtn").innerHTML = "Próximo";
+          document.getElementById("nextBtn").innerHTML = "PRÓXIMO";
         }
         //... and run a function that will display the correct step indicator:
         fixStepIndicator(n)
@@ -196,16 +274,18 @@
       function nextPrev(n) {
         // This function will figure out which tab to display
         var x = document.getElementsByClassName("tab");
+        var z = document.getElementsByClassName("tipTabs")
         // Exit the function if any field in the current tab is invalid:
         if (n == 1 && !validateForm()) return false;
         // Hide the current tab:
         x[currentTab].style.display = "none";
+        z[currentTab].style.display = "none";
         // Increase or decrease the current tab by 1:
         currentTab = currentTab + n;
         // if you have reached the end of the form...
         if (currentTab >= x.length) {
           // ... the form gets submitted:
-          document.getElementById("regForm").submit();
+          storeVariables();
           return false;
         }
         // Otherwise, display the correct tab:
@@ -217,6 +297,7 @@
         var x, y, i, valid = true;
         x = document.getElementsByClassName("tab");
         y = x[currentTab].getElementsByTagName("input");
+        z = document.getElementsByClassName("tipTabs");
         // A loop that checks every input field in the current tab:
         for (i = 0; i < y.length; i++) {
           // If a field is empty...
@@ -243,6 +324,33 @@
         //... and adds the "active" class on the current step:
         x[n].className += " active";
       }
+
+
+      //mostrar só o arquetipo selecionado
+        var x = document.getElementsByClassName("hidden-arquetipo");
+        x.display = "none";
+
+        var arquetipoAtual = document.getElementById("arquetipo-dropdown").value;
+        document.getElementById(arquetipoAtual).style.display = "flex"
+        document.getElementById(arquetipoAtual).style.flexDirection = "column"
+        document.getElementById("descricao-" + arquetipoAtual).style.display = "flex";
+        document.getElementById("descricao-" + arquetipoAtual).style.display = "row";
+
+
+        document.getElementById("arquetipo-dropdown").onchange = function() {arquetipoHelper()};
+
+        function arquetipoHelper() {
+          console.log(arquetipoAtual)
+          document.getElementById(arquetipoAtual).style.display = "none"
+          document.getElementById("descricao-" + arquetipoAtual).style.display = "none";
+
+
+          arquetipoAtual = document.getElementById("arquetipo-dropdown").value;
+          document.getElementById(arquetipoAtual).style.display = "flex"
+          document.getElementById(arquetipoAtual).style.flexDirection = "column"
+          document.getElementById("descricao-" + arquetipoAtual).style.display = "flex";
+          document.getElementById("descricao-" + arquetipoAtual).style.display = "row";
+        }
       </script>
 
 </body>
