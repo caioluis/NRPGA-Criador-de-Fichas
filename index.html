@@ -9,6 +9,8 @@
   <!-- Style sheet -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="prism.css">
+  <link href='https://css.gg/arrow-right-o.css' rel='stylesheet'>
+  <link href='https://css.gg/arrow-left-o.css' rel='stylesheet'>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 
@@ -20,202 +22,228 @@
 </head>
 
 <body>
-  <div id="formContainer">
-    <form id="survey-form">
 
-      <h1 id="title">Bem-vindo ao NRPGA!</h1>
-      <p id="description">Vou te ajudar a criar a sua ficha.</p>
+      <div id="formContainer">
+        <form id="form-ficha">
+            <div id="passo1" class="tab">
+              <h1>DADOS BÁSICOS</h1>
 
-      <div id="dados-basicos">
+              <!--Nome-->
+              <label for="nome" id="nome-label">Nome da personagem</label>
+              <input type="text" id="nome" class="placeholder" placeholder="Insira o nome da personagem" required>
+              <!--Sobrenome-->
+              <label for="sobrenome" id="sobrenome-label">Sobrenome</label>
+              <input type="text" id="sobrenome" class="placeholder" placeholder="Insira o sobrenome" required>
+              <!--Gênero-->
+              <label for="genero" id="genero-label">Gênero</label>
+              <input type="text" id="genero" class="placeholder" placeholder="Insira o gênero da sua personagem" required>
+              <!--Sexualidade-->
+              <label for="sexualidade" id="sexualidade-label">Sexualidade</label>
+              <input type="text" id="sexualidade" class="placeholder" placeholder="Insira a sexualidade da sua personagem" required>
+              <!--Idade-->
+              <label for="idade" id="idade-label">Idade</label>
+              <input type="number" id="idade" class="placeholder" placeholder="Entre 8 e 20 anos" maxlength="2" min="8" max="20" required>
+              <!--Aniversário-->
+              <div>
+                <label for="aniversario-dropdown">Aniversário</label>
+                <select id="aniversario-dropdown" class="placeholder">
+                  <option value="Verão">Verão</option>
+                  <option value="Outono">Outono</option>
+                  <option value="Inverno">Inverno</option>
+                  <option value="Primavera">Primavera</option><br></select>
+              </div>
+            </div>
+
+          <div id="passo2" class="tab">
+            <h1>DADOS BÁSICOS</h1>
+            <!--Vilarejo-->
+            <label for="vilarejo" id="vilarejo-label">Vilarejo atual</label>
+            <input type="text" id="vilarejo" class="placeholder" placeholder="Verifique se há vagas para o vilarejo!" required>
+
+            <!--Arquétipo-->
+            <div>
+              <label for="arquetipo-dropdown">Arquétipo</label>
+              <select id="arquetipo-dropdown" class="placeholder">
+                <option value="Neutro">Neutro</option>
+                <option value="Herói">Herói</option>
+                <option value="Anti-herói">Anti-herói</option>
+                <option value="Vilão">Vilão</option>
+                <option value="Individualista">Individualista</option>
+                <option value="Mártir">Mártir</option>
+                <option value="Devoto">Devoto</option>
+                <option value="Ajudante">Ajudante</option>
+                <option value="Governante">Governante</option>
+                <option value="Pesquisador">Pesquisador</option>
+                <option value="Tolo">Tolo</option><br></select>
+            </div>   
+
+            <!--Clã-->
+            <label for="cla" id="cla-label">Clã</label>
+            <input type="text" id="cla" class="placeholder" placeholder="Insira o clã da personagem">
+
+            <!--Kekkei Genkai-->
+            <label for="kg" id="kg-label">Kekkei Genkai</label>
+            <input type="text" id="kg" class="placeholder" placeholder="Insira a Kekkei Genkai da personagem">      
+          </div>
+
+          <div id="passo3" class="tab">
+            <h1>DESCRIÇÃO PSICOLÓGICA</h1>
+            <!--Gostos-->
+            <label for="gostos" id="gostos-label">Coisas que gosta</label>
+            <input type="text" id="gostos" class="placeholder" placeholder="Gosta de macarrão, picanha e coquinha gelada." required>
+
+            <!--Repulsas-->
+            <label for="repulsas" id="repulsas-label">Coisas que não gosta</label>
+            <input type="text" id="repulsas" class="placeholder" placeholder="Bife de figado" required>
+
+            <!--Motivações-->
+            <label for="motivacoes" id="motivacoes-label">Motivações</label>
+            <input type="text" id="motivacoes" class="placeholder" placeholder="Matar um certo alguém" required>
+
+            <!--Medos-->
+            <label for="medos" id="medos-label">Medos</label>
+            <input type="text" id="medos" class="placeholder" placeholder="Messi careca" required>
+
+            <!--Transtornos/Defeitos-->
+            <label for="defeitos" id="defeitos-label">Transtornos/Defeitos</label>
+            <input type="text" id="defeitos" class="placeholder" placeholder="Palmeirense" required>
+
+            <!--Descrição Geral-->
+            <label for="descpsicologica" id="descpsicologica-label">Descrição Geral</label>
+            <textarea id="descpsicologica" class="placeholder" placeholder="" required></textarea>
+          </div>
+
+          <div id="passo4" class="tab">
+            <h1>DESCRIÇÃO FÍSICA</h1>
+            <!--Altura-->
+            <label for="altura" id="altura-label">Altura</label>
+            <input type="text" id="altura" class="placeholder" placeholder="Insira a altura. Ex.: 178cm" required>
+
+            <!--Peso-->
+            <label for="peso" id="peso-label">Peso</label>
+            <input type="text" id="peso" class="placeholder" placeholder="Insira o peso. Ex.: 68kg" required>
+
+            <!--Cabelos-->
+            <label for="cabelos" id="cabelos-label">Motivações</label>
+            <input type="text" id="cabelos" class="placeholder" placeholder="Características dos cabelos. Ex.: Longos e castanhos" required>
+
+            <!--Olhos-->
+            <label for="olhos" id="olhos-label">Olhos</label>
+            <input type="text" id="olhos" class="placeholder" placeholder="Cor dos olhos" required>
+
+            <!--Braço Dominante-->
+            <label for="braco" id="braco-label">Braço Dominante</label>
+            <input type="text" id="braco" class="placeholder" placeholder="Direito ou esquerdo" required>
+
+            <!--Outros-->
+            <label for="outros" id="outros-label">Outros</label>
+            <input type="text" id="outros" class="placeholder" placeholder="Direito ou esquerdo" required>
+            
+            <!--Personagem Base-->
+            <label for="ppbase" id="ppbase-label">Personagem Base</label>
+            <input type="text" id="ppbase" class="placeholder" placeholder="Leia as regras de aparência" required>           
+
+            <!--Descrição Geral-->
+            <label for="descfisica" id="descfisica-label">Descrição Geral</label>
+            <textarea id="descfisica" class="placeholder" placeholder="" required></textarea>
+          </div>
+        
+
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+      
         <hr>
-        <p>DADOS BÁSICOS</p>
-        <label for="nome" id="nome-label">Nome da personagem</label>
-        <input type="text" id="nome" class="placeholder" placeholder="Insira o nome da personagem" required>
-
-        <label for="sobrenome" id="sobrenome-label">Sobrenome</label>
-        <input type="text" id="sobrenome" class="placeholder" placeholder="Insira o sobrenome" required>
-
-        <label for="vilarejo" id="vilarejo-label">Vilarejo atual</label>
-        <input type="text" id="vilarejo" class="placeholder" placeholder="Verifique se há vagas para o vilarejo!" required>
-
-        <label for="genero" id="genero-label">Gênero</label>
-        <input type="text" id="genero" class="placeholder" placeholder="Insira o gênero da sua personagem" required>
-
-        <label for="sexualidade" id="sexualidade-label">Sexualidade</label>
-        <input type="text" id="sexualidade" class="placeholder" placeholder="Insira a sexualidade da sua personagem" required>
-
-        <div>
-          <label for="arquetipo-dropdown">Arquétipo</label>
-          <select id="arquetipo-dropdown" class="placeholder">
-            <option value="Neutro">Neutro</option>
-            <option value="Herói">Herói</option>
-            <option value="Anti-herói">Anti-herói</option>
-            <option value="Vilão">Vilão</option>
-            <option value="Individualista">Individualista</option>
-            <option value="Mártir">Mártir</option>
-            <option value="Devoto">Devoto</option>
-            <option value="Ajudante">Ajudante</option>
-            <option value="Governante">Governante</option>
-            <option value="Pesquisador">Pesquisador</option>
-            <option value="Tolo">Tolo</option><br></select>
-        </div>      
-
-      <label for="cla" id="cla-label">Clã</label>
-      <input type="text" id="cla" class="placeholder" placeholder="Insira o clã da personagem">
-
-      <label for="kg" id="kg-label">Kekkei Genkai</label>
-      <input type="text" id="kg" class="placeholder" placeholder="Insira a Kekkei Genkai da personagem">
-
-      <label for="idade" id="idade-label">Idade</label>
-      <input type="number" id="idade" class="placeholder" placeholder="Entre 8 e 20 anos" maxlength="2" min="8" max="20" required>
-
-      <div>
-        <label for="aniversario-dropdown">Aniversário</label>
-        <select id="aniversario-dropdown" class="placeholder">
-          <option value="Verão">Verão</option>
-          <option value="Outono">Outono</option>
-          <option value="Inverno">Inverno</option>
-          <option value="Primavera">Primavera</option><br></select>
-      </div>
-      <hr>
-    </div>
 
       <!-- Salvar! -->
+      <div style="overflow:auto;">
+        <div style="float:right;">
+          <button type="button" class="button" id="prevBtn" onclick="nextPrev(-1)">Voltar</button>
+          <button type="button" class="button" id="nextBtn" onclick="nextPrev(1)">Próximo</button>
+        </div>
+      </div>
 
-      <button id="submit" type="button" onclick="storeVariables()"> Salvar </button>
-      
     </form>
-    <div id="snippet-ficha">
-    <pre>
-      <code class="language-markup no-keep-markup" id="codigo-ficha">
-        &ltcenter&gt&ltdiv class="fichadepersonagem"&gt&ltdiv class="imagemdaficha" style="background-image: url(http://placehold.it/630x300)"&gt&lt/div&gt
-
-        &ltdiv class="dadosdopersonagem"&gt&ltdiv class="iconedaficha" style="background-image: url(http://placehold.it/100x100)"&gt&lt/div&gt&ltdiv3&gt&lt/div3&gt
-        
-        &ltnome&gtNome&lt/nome&gt
-        &ltsobrenome&gtSobrenome&lt/sobrenome&gt
-        &lttipodetopico&gtVilarejo atual&lt/tipodetopico&gt
-        
-        &lttable&gt&lttr&gt&lttd&gt&ltdiv id="celC" class="c1" title="Dados Básicos"&gt&lti class="fas fa-id-card"&gt&lt/i&gt&lt/div&gt&lt/td&gt
-        &lttd&gt&ltdiv id="celC" class="c2" title="História"&gt&lti class="fas fa-book"&gt&lt/i&gt&lt/div&gt&lt/td&gt
-        &lttd&gt&ltdiv id="celC" class="c3" title="Databook"&gt&lti class="fas fa-list"&gt&lt/i&gt&lt/div&gt&lt/td&gt
-        &lttd&gt&ltdiv id="celC" class="c4" title="Outros dados"&gt&lti class="fas fa-user-clock"&gt&lt/i&gt&lt/div&gt&lt/td&gt&lt/tr&gt&lt/table&gt&lt/div&gt
-        
-        &ltdiv class="dadosdopersonagemheight"&gt&ltdiv class="dados1"&gt&ltdiv class="dadosdopersonagem2"&gt&ltdiv1&gtDados básicos&lt/div1&gt
-        &ltdiv title="Alcunha"&gt&lti class="fas fa-user-tag"&gt&lt/i&gt Alcunha&lt/div&gt
-        &ltdiv title="Fama Positiva & Negativa"&gt&lti class="fas fa-users"&gt&lt/i&gt 00 / 00&lt/div&gt
-        &ltdiv title="Gênero"&gt&lti class="fas fa-venus-mars"&gt&lt/i&gt Gênero&lt/div&gt
-        &ltdiv title="Sexualidade"&gt&lti class="fas fa-heart"&gt&lt/i&gt Sexualidade&lt/div&gt
-        &ltdiv title="Arquetipo"&gt&lti class="fas fa-child"&gt&lt/i&gt Arquetipo&lt/div&gt
-        &ltdiv title="Clã"&gt&lti class="fas fa-home"&gt&lt/i&gt Clã&lt/div&gt
-        &ltdiv title="Kekkei Genkai"&gt&lti class="fas fa-dna"&gt&lt/i&gt Kekkei Genkai&lt/div&gt
-        &ltdiv title="Graduação"&gt&lti class="fas fa-user-graduate"&gt&lt/i&gt Graduação&lt/div&gt
-        &ltdiv title="Idade"&gt&lti class="fas fa-baby"&gt&lt/i&gt Idade&lt/div&gt
-        &ltdiv title="Aniversário"&gt&lti class="fas fa-calendar-alt"&gt&lt/i&gt Aniversário&lt/div&gt
-        &ltdiv title="Estado"&gt&lti class="fas fa-smile"&gt&lt/i&gt Estado&lt/div&gt
-        &ltdiv title="Profissão"&gt&lti class="fas fa-user-md"&gt&lt/i&gt Profissão&lt/div&gt
-        &ltdiv title="Bijuu"&gt&lti class="fas fa-paw"&gt&lt/i&gt Bijuu&lt/div&gt&lt/div&gt
-        
-        &ltdiv class="dadosdopersonagem3"&gt&ltb&gtDescrição psicológica&lt/b&gt
-        [b]Coisas que gosta:[/b]
-        [b]Coisas que não gosta:[/b]
-        [b]Motivações:[/b]
-        [b]Medos:[/b]
-        [b]Transtornos/Defeitos:[/b]
-        [b]Descrição Geral:[/b]
-        
-        &ltb&gtDescrição física&lt/b&gt
-        [b]Altura:[/b]
-        [b]Peso:[/b]
-        [b]Cabelos:[/b]
-        [b]Olhos:[/b]
-        [b]Braço dominante:[/b]
-        [b]Outros:[/b]
-        [b]Personagem Base:[/b]
-        [b]Descrição Geral:[/b]&lt/div&gt&lt/div&gt
-        
-        &ltdiv class="dados2"&gt&ltdiv class="titdaficha"&gtCARVED MY CURE WITH A BLADE THAT LEFT ME IN SCARS
-        NOW, EVERY TIME I'M WEAK, WORDS SCREAM FROM MY ARMS&lt/div&gt
-        &ltdiv class="histdopersonagem" style="margin: 0px -15px;"&gt&ltb&gt50 DG - Início&lt/b&gt
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt tincidunt turpis, in consectetur nulla ultricies ac. Mauris neque orci, fermentum quis sapien a, porta volutpat mauris. Morbi eu finibus nibh. Phasellus vel condimentum eros. Maecenas fermentum, leo non mattis convallis, nunc sem auctor nisl, non dictum nisi turpis a quam. Donec nec sapien ac nibh vestibulum elementum eu imperdiet tortor. Quisque condimentum placerat justo quis feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In ultrices, nibh non dignissim venenatis, libero enim pretium velit, fringilla gravida nibh orci id eros. Aenean mollis ipsum et mi elementum, in consequat tortor mollis. Donec nec felis viverra ante bibendum scelerisque sed nec magna. Nullam malesuada orci sem, eu sollicitudin leo sollicitudin vel. Nullam tempor venenatis consequat. Donec in consequat erat, ut maximus mauris. Etiam libero eros, sodales et posuere eget, tincidunt nec nibh. Nam feugiat turpis id augue vestibulum, sit amet euismod est molestie.&lt/div&gt&lt/div&gt
-        
-        &ltdiv class="dados3"&gt&ltdiv class="dadosdopersonagem2"&gt&ltdiv1&gtDatabook&lt/div1&gt
-        &ltdiv title="Ninjutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Ninjutsu&lt/div&gt
-        &ltdiv title="Genjutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Genjutsu&lt/div&gt
-        &ltdiv title="Taijutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Taijutsu&lt/div&gt
-        &ltdiv title="Inteligência"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt&ltc&gt[00]&lt/c&gt Inteligência&lt/div&gt
-        &ltdiv title="Força"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Força&lt/div&gt
-        &ltdiv title="Velocidade"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Velocidade&lt/div&gt
-        &ltdiv title="Stamina"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Stamina&lt/div&gt
-        &ltdiv title="Selos"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Selos&lt/div&gt
-        
-        &ltdiv title="Regeneração"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Regeneração&lt/div&gt
-        &ltdiv title="Recuperação"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Recuperação&lt/div&gt
-        &ltdiv title="Sensoriamento"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Sensoriamento&lt/div&gt
-        &ltdiv title="Shurikenjutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Shurikenjutsu&lt/div&gt
-        &ltdiv title="Cura"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Cura&lt/div&gt
-        &ltdiv title="Abosorção"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Absorção&lt/div&gt
-        &ltdiv title="Ninshu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Ninshu&lt/div&gt
-        &ltdiv title="Combate"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Combate&lt/div&gt
-        &ltdiv title="Ilusão"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gtIlusão&lt/div&gt
-        
-        &ltdiv title="Total"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gtTotal&lt/div&gt
-        &ltdiv title="Extras"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Extras&lt/div&gt
-        &ltdiv title="Adquiridos"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Adquiridos&lt/div&gt
-        &lt/div&gt
-        
-        &ltdiv class="dadosdopersonagem3-2"&gt&ltb&gtQualidades e Defeitos&lt/b&gt
-        
-        &lttable&gt&lttr&gt&lttd&gt&ltdiv class="qualidades"&gt&ltb&gt+&lt/b&gt Qualidade
-        &ltb&gt+&lt/b&gt Qualidade
-        &ltb&gt+&lt/b&gt Qualidade
-        &ltb&gt+&lt/b&gt Qualidade
-        &ltb&gt+&lt/b&gt Qualidade&lt/div&gt&lt/td&gt
-        &lttd&gt&ltdiv class="defeitos"&gt&ltb&gt—&lt/b&gt Defeitos
-        &ltb&gt—&lt/b&gt Defeitos
-        &ltb&gt—&lt/b&gt Defeitos
-        &ltb&gt—&lt/b&gt Defeitos
-        &ltb&gt—&lt/b&gt Defeitos
-        &ltb&gt—&lt/b&gt Defeitos&lt/div&gt&lt/td&gt&lt/tr&gt&lt/table&gt
-        
-        &ltb&gtNaturezas e Particularidades&lt/b&gt
-        [b]Primeira Natureza:[/b] --.
-        [b]Segunda Natureza:[/b] --.
-        [b]Terceira Natureza:[/b] --.
-        [b]Kekkei Genkai Elemental:[/b] --.
-        [b]Afinidade Elemental:[/b]
-        
-        [b]Primeira Habilidade:[/b] --.
-        [b]Segunda Habilidade:[/b] --.
-        [b]Primeira Especialidade:[/b] --.
-        [b]Segunda Especialidade:[/b] --.
-        [b]Transplantes:[/b] --.
-        [b]Habilidade Única:[/b] --.
-        [b]Pacto de Sangue:[/b] --.
-        [b]Limite de Jutsus:[/b] --.
-        
-        &ltb&gtBolsa de Armas (20)&lt/b&gt
-        + Vazia
-        &lt/div&gt&lt/div&gt
-        
-        &ltdiv class="dados4"&gt&ltdiv class="outrosdopersonagem"&gt&ltb&gtRelacionamentos&lt/b&gt
-        [spoiler=Relacionamentos]
-        [/spoiler]
-        
-        &ltb&gtMissões Realizadas&lt/b&gt
-        &ltmissoes&gt&ltb&gt+&lt/b&gt [00] Rank D
-        &ltb&gt+&lt/b&gt [00] Rank C
-        &ltb&gt+&lt/b&gt [00] Rank B
-        &ltb&gt+&lt/b&gt [00] Rank A
-        &ltb&gt+&lt/b&gt [00] Rank S&lt/missoes&gt
-        
-        &ltb&gtLinks comprovatórios&lt/b&gt
-        &ltquadro&gtTodos os acontecimentos do personagem.&lt/quadro&gt&lt/div&gt&lt/div&gt&lt/div&gt
-        
-        &ltdiv class="finaldaficha"&gtEste personagem tem a aparência de &ltb&gt???&lt/b&gt da série &ltb&gt???&lt/b&gt
-         &ltb&gtPlayer Off:&lt/b&gt  / &ltb&gtContatos:&lt/b&gt &lt/div&gt&lt/div&gt&lt/center&gt
-      </code>
-      </pre>
-
     </div>
+
+    <script>
+      var currentTab = 0; // Current tab is set to be the first tab (0)
+      showTab(currentTab); // Display the current tab
+      
+      function showTab(n) {
+        // This function will display the specified tab of the form...
+        var x = document.getElementsByClassName("tab");
+        x[n].style.display = "block";
+        //... and fix the Previous/Next buttons:
+        if (n == 0) {
+          document.getElementById("prevBtn").style.display = "none";
+        } else {
+          document.getElementById("prevBtn").style.display = "inline";
+        }
+        if (n == (x.length - 1)) {
+          document.getElementById("nextBtn").innerHTML = "Salvar";
+        } else {
+          document.getElementById("nextBtn").innerHTML = "Próximo";
+        }
+        //... and run a function that will display the correct step indicator:
+        fixStepIndicator(n)
+      }
+      
+      function nextPrev(n) {
+        // This function will figure out which tab to display
+        var x = document.getElementsByClassName("tab");
+        // Exit the function if any field in the current tab is invalid:
+        if (n == 1 && !validateForm()) return false;
+        // Hide the current tab:
+        x[currentTab].style.display = "none";
+        // Increase or decrease the current tab by 1:
+        currentTab = currentTab + n;
+        // if you have reached the end of the form...
+        if (currentTab >= x.length) {
+          // ... the form gets submitted:
+          document.getElementById("regForm").submit();
+          return false;
+        }
+        // Otherwise, display the correct tab:
+        showTab(currentTab);
+      }
+      
+      function validateForm() {
+        // This function deals with validation of the form fields
+        var x, y, i, valid = true;
+        x = document.getElementsByClassName("tab");
+        y = x[currentTab].getElementsByTagName("input");
+        // A loop that checks every input field in the current tab:
+        for (i = 0; i < y.length; i++) {
+          // If a field is empty...
+          if (y[i].value == "") {
+            // add an "invalid" class to the field:
+            y[i].className += " invalid";
+            // and set the current valid status to false
+            valid = false;
+          }
+        }
+        // If the valid status is true, mark the step as finished and valid:
+        if (valid) {
+          document.getElementsByClassName("step")[currentTab].className += " finish";
+        }
+        return valid; // return the valid status
+      }
+      
+      function fixStepIndicator(n) {
+        // This function removes the "active" class of all steps...
+        var i, x = document.getElementsByClassName("step");
+        for (i = 0; i < x.length; i++) {
+          x[i].className = x[i].className.replace(" active", "");
+        }
+        //... and adds the "active" class on the current step:
+        x[n].className += " active";
+      }
+      </script>
+
 </body>
+</html>
