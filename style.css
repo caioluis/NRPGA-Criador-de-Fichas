@@ -3,13 +3,16 @@ body {
   }
   
   #formContainer {
-    max-width:32em;
+    max-width:100%;
+    display: flex;
       width:100%;
       margin:0 auto;
       position:relative;
+      float: left;
   }
   
-  #survey-form {
+  #form-ficha {
+    max-width: 32em;
     background:#222230;
       padding: 3.1em;
       margin:3em 0;
@@ -21,6 +24,11 @@ body {
     -webkit-box-shadow: 0px 4px 13px -1px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 4px 13px -1px rgba(0,0,0,0.3);
     box-shadow: 0px 4px 13px -1px rgba(0,0,0,0.3);
+  }
+
+  #snippet-ficha {
+    max-width: 32em;
+    font-size: 0.5em;
   }
   
   h1 {
@@ -59,7 +67,7 @@ body {
     height: 2.25em;
     margin-top: 0.6em;
     margin-bottom: 1.6em;
-    padding: 0 0.6em 0 0.6em; Esto me estira el input
+    padding: 0 0.6em 0 0.6em;
   }
   
   
@@ -137,23 +145,53 @@ body {
     padding-top: 0.5em;
   }
   
-  /* Submit Button */
   
-  #submit {
-   width: 100%;
-   height: 3.3em;
-    margin: 0.75em 0 0 0;
-    border-style: solid;
-    border-width: 0.03em;
-    border-color: #00D2D3;
-    border-radius: 0.1em;
-    background-color: rgba(0, 210, 211, 0.10);
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.1em;
-    color: #00D2D3;
-  }
+  /* Form steps */
+
+  /* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4c82af;
+}
+
+  /* Botão de enviar */
+.button {
+  border: 2px solid #3498db;
+  background-color: transparent;
+  outline:0;
+  transition: background-color 0.3s ease;
+  color: #fff;
+
+}
+
+.button:hover {
+  background-color:#3498db;
+}
+
   
-  #submit:hover {
-      background-color: rgba(0, 210, 211, 0.2);
-  
-  }
