@@ -13,6 +13,7 @@ body {
   }
   
   #form-ficha {
+    min-height: 825px;
     max-width: 32em;
     background:#252525;
     padding: 3.1em;
@@ -230,7 +231,7 @@ input.invalid {
 
   
 /*dicas*/
-#primeiraDica {
+#primeiraDica, #segundaDica, #terceiraDica, #quartaDica {
   margin: 0 2em;
   text-align: justify;
   justify-content: center;
@@ -246,11 +247,6 @@ input.invalid {
   text-transform: uppercase;
 }
 
-#segundaDica {
-  margin: 0 2em;
-  text-align: justify;
-  justify-content: center;
-}
 
 #segundaDica img {
   border: 7px solid #c1242f;
