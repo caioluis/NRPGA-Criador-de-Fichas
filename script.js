@@ -1,4 +1,3 @@
-debugger;
 var nomePersonagem, sobrenome ,vila, genero, sex, arquetipo, cla, kg, idade, aniversario;
 
 function storeVariables() {
@@ -123,7 +122,7 @@ function salvar() {
     [b]Peso:[/b] ${peso}
     [b]Cabelos:[/b] ${cabelos}
     [b]Olhos:[/b] ${olhos}
-    [b]Braço dominante:[/b] ${bracos}
+    [b]Braço dominante:[/b] ${braco}
     [b]Outros:[/b] ${outros}
     [b]Personagem Base:[/b] ${ppbase}
     [b]Descrição Geral:[/b] ${descfisica}&lt/div&gt&lt/div&gt
@@ -210,3 +209,4 @@ function salvar() {
     &ltb&gtPlayer Off:&lt/b&gt  / &ltb&gtContatos:&lt/b&gt &lt/div&gt&lt/div&gt&lt/center&gt`
 
 }
+
