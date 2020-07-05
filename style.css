@@ -1,21 +1,22 @@
 body {
-    background: #191927;
+    background: #E0E0E0;
   }
   
   #formContainer {
     max-width:100%;
     display: flex;
-      width:100%;
-      margin:0 auto;
-      position:relative;
-      float: left;
+    justify-content: space-between;
+    width:100%;
+    margin:0 auto;
+    position:relative;
+    background-image: url(https://i.imgur.com/KMVSJei.png);
   }
   
   #form-ficha {
     max-width: 32em;
-    background:#222230;
-      padding: 3.1em;
-      margin:3em 0;
+    background:#252525;
+    padding: 3.1em;
+    margin:1em;
     border-style: solid;
     border-color: #383851;
     border-width: 1px;
@@ -30,12 +31,41 @@ body {
     max-width: 32em;
     font-size: 0.5em;
   }
+
+  #infos-importantes {
+    width: 100%;
+  }
+
+  #header {
+    text-align: center;
+  }
+
+  #header p {
+    margin: 0;
+  }
+
+  #infos-importantes p {
+    color: #252525;
+  }
   
   h1 {
-    color: #00D2D3;
+    color: #c1242f;
     font-family: 'Open Sans', sans-serif;
     font-size: 2em;
   }
+
+  .titulo-akatsuki {
+    font-family: 'rubik';
+    font-size: 70px;
+    font-weight: 600;
+    text-align: center;
+    margin: .1em;
+    letter-spacing: -6px;
+    color: black;
+    text-transform: uppercase;
+  }
+
+
   
   p {
       font-family: 'Open Sans', sans-serif;
@@ -58,7 +88,7 @@ body {
   label {
     font-family: 'Open Sans', sans-serif;
     font-size: 1em;
-    color: #5d646e;  
+    color: #c4c4c5;  
   }
   
   input, select, textarea {
@@ -158,6 +188,10 @@ input.invalid {
   display: none;
 }
 
+.tipTabs {
+  display: none;
+}
+
 /* Make circles that indicate the steps of the form: */
 .step {
   height: 15px;
@@ -177,12 +211,12 @@ input.invalid {
 
 /* Mark the steps that are finished and valid: */
 .step.finish {
-  background-color: #4c82af;
+  background-color: #912323;
 }
 
   /* Botão de enviar */
 .button {
-  border: 2px solid #3498db;
+  border: 2px solid #c1242f;
   background-color: transparent;
   outline:0;
   transition: background-color 0.3s ease;
@@ -191,7 +225,56 @@ input.invalid {
 }
 
 .button:hover {
-  background-color:#3498db;
+  background-color:#c1242f;
 }
 
   
+/*dicas*/
+#primeiraDica {
+  margin: 0 2em;
+  text-align: justify;
+  justify-content: center;
+}
+
+.subtitulo {
+  font-family: 'rubik';
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+  margin: .1em;
+  color: black;
+  text-transform: uppercase;
+}
+
+#segundaDica {
+  margin: 0 2em;
+  text-align: justify;
+  justify-content: center;
+}
+
+#segundaDica img {
+  border: 7px solid #c1242f;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.hidden-arquetipo{
+  display: none;
+  font-size: 0.9em;
+}
+
+.hidden-arquetipo p{
+  margin-left: 10px;
+}
+
+#descricao-Neutro {
+  display:none;
+}
+
+#descricao-Herói {
+  display:none;
+}
+
+#descricao-Anti-herói {
+  display:none;
+}
