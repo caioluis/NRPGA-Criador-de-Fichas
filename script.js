@@ -1,4 +1,5 @@
-var nomePersonagem, sobrenome ,vila, genero, sex, arquetipo, cla, kg, idade, aniversario
+debugger;
+var nomePersonagem, sobrenome ,vila, genero, sex, arquetipo, cla, kg, idade, aniversario;
 
 function storeVariables() {
 //nome do personagem
@@ -31,6 +32,49 @@ localStorage.setItem('idade', idade);
 //aniversario
 aniversario = document.getElementById("aniversario-dropdown").value;
 localStorage.setItem('aniversario', aniversario);
+//gostos
+gostos = document.getElementById("gostos").value;
+localStorage.setItem('gostos', gostos);
+//repulsas
+repulsas = document.getElementById("repulsas").value;
+localStorage.setItem('repulsas', repulsas);
+//motivacoes
+motivacoes = document.getElementById("motivacoes").value;
+localStorage.setItem('motivacoes', motivacoes);
+//medos
+medos = document.getElementById("medos").value;
+localStorage.setItem('medos', medos);
+//defeitos
+defeitos = document.getElementById("defeitos").value;
+localStorage.setItem('defeitos', defeitos);
+//descpsicologica
+descpsicologica = document.getElementById("descpsicologica").value;
+localStorage.setItem('descpsicologica', descpsicologica);
+//altura
+altura = document.getElementById("altura").value;
+localStorage.setItem('altura', altura);
+//peso
+peso = document.getElementById("peso").value;
+localStorage.setItem('peso', peso);
+//cabelos
+cabelos = document.getElementById("cabelos").value;
+localStorage.setItem('cabelos', cabelos);
+//olhos
+olhos = document.getElementById("olhos").value;
+localStorage.setItem('olhos', olhos);
+//braco
+braco = document.getElementById("braco").value;
+localStorage.setItem('braco', braco);
+//outros
+outros = document.getElementById("outros").value;
+localStorage.setItem('outros', outros);
+//ppbase
+ppbase = document.getElementById("ppbase").value;
+localStorage.setItem('ppbase', ppbase);
+//descfisica
+descfisica = document.getElementById("descfisica").value;
+localStorage.setItem('descfisica', descfisica);
+
 
 salvar()
 
@@ -39,8 +83,7 @@ console.log("Dados guardados!")
 
 function salvar() {
     document.getElementById("codigo-ficha").innerHTML =
-`&ltcenter&gt&ltdiv class="fichadepersonagem"&gt&ltdiv class="imagemdaficha" style="background-image: url(http://placehold.it/630x300)"&gt&lt/div&gt
-
+    `&ltcenter&gt&ltdiv class="fichadepersonagem"&gt&ltdiv class="imagemdaficha" style="background-image: url(http://placehold.it/630x300)"&gt&lt/div&gt
     &ltdiv class="dadosdopersonagem"&gt&ltdiv class="iconedaficha" style="background-image: url(http://placehold.it/100x100)"&gt&lt/div&gt&ltdiv3&gt&lt/div3&gt
     
     &ltnome&gt${nomePersonagem}&lt/nome&gt
@@ -68,22 +111,22 @@ function salvar() {
     &ltdiv title="Bijuu"&gt&lti class="fas fa-paw"&gt&lt/i&gt Bijuu&lt/div&gt&lt/div&gt
     
     &ltdiv class="dadosdopersonagem3"&gt&ltb&gtDescrição psicológica&lt/b&gt
-    [b]Coisas que gosta:[/b]
-    [b]Coisas que não gosta:[/b]
-    [b]Motivações:[/b]
-    [b]Medos:[/b]
-    [b]Transtornos/Defeitos:[/b]
-    [b]Descrição Geral:[/b]
+    [b]Coisas que gosta:[/b] ${gostos}
+    [b]Coisas que não gosta:[/b] ${repulsas}
+    [b]Motivações:[/b] ${motivacoes}
+    [b]Medos:[/b] ${medos}
+    [b]Transtornos/Defeitos:[/b] ${defeitos}
+    [b]Descrição Geral:[/b] ${descpsicologica}
     
     &ltb&gtDescrição física&lt/b&gt
-    [b]Altura:[/b]
-    [b]Peso:[/b]
-    [b]Cabelos:[/b]
-    [b]Olhos:[/b]
-    [b]Braço dominante:[/b]
-    [b]Outros:[/b]
-    [b]Personagem Base:[/b]
-    [b]Descrição Geral:[/b]&lt/div&gt&lt/div&gt
+    [b]Altura:[/b] ${altura}
+    [b]Peso:[/b] ${peso}
+    [b]Cabelos:[/b] ${cabelos}
+    [b]Olhos:[/b] ${olhos}
+    [b]Braço dominante:[/b] ${bracos}
+    [b]Outros:[/b] ${outros}
+    [b]Personagem Base:[/b] ${ppbase}
+    [b]Descrição Geral:[/b] ${descfisica}&lt/div&gt&lt/div&gt
     
     &ltdiv class="dados2"&gt&ltdiv class="titdaficha"&gtCARVED MY CURE WITH A BLADE THAT LEFT ME IN SCARS
     NOW, EVERY TIME I'M WEAK, WORDS SCREAM FROM MY ARMS&lt/div&gt
@@ -164,6 +207,6 @@ function salvar() {
     &ltquadro&gtTodos os acontecimentos do personagem.&lt/quadro&gt&lt/div&gt&lt/div&gt&lt/div&gt
     
     &ltdiv class="finaldaficha"&gtEste personagem tem a aparência de &ltb&gt???&lt/b&gt da série &ltb&gt???&lt/b&gt
-     &ltb&gtPlayer Off:&lt/b&gt  / &ltb&gtContatos:&lt/b&gt &lt/div&gt&lt/div&gt&lt/center&gt`
+    &ltb&gtPlayer Off:&lt/b&gt  / &ltb&gtContatos:&lt/b&gt &lt/div&gt&lt/div&gt&lt/center&gt`
 
 }
