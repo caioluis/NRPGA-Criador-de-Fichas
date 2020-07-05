@@ -163,8 +163,8 @@
       <!-- Salvar! -->
       <div style="overflow:auto;">
         <div style="float:right;">
-          <button type="button" class="button" id="prevBtn" onclick="nextPrev(-1)">Voltar</button>
-          <button type="button" class="button" id="nextBtn" onclick="nextPrev(1)">Próximo</button>
+          <button type="button" class="button" id="prevBtn" onclick="nextPrev(-1)">VOLTAR</button>
+          <button type="button" class="button" id="nextBtn" onclick="nextPrev(1)">PRÓXIMO</button>
         </div>
       </div>
 
@@ -176,14 +176,17 @@
           NARUTO RPG AKATSUKI
         </h1>
         <p>SENKO'S ULTIMATE FICHAMAKER2000: Criador de fichas intuitivo</p>
-        <hr>
+        
       </div>
       <div id="primeiraDica" class="tipTabs">
+        <hr>
+        <h2 class="subtitulo">Idade e Aniversário</h2>
         <p>Os personagens, assim como na série, seguem normalmente um padrão de idade inicial na sua vida ninja, sendo assim, na criação da ficha o usuário estará limitado a uma idade de, no mínimo, oito (8) anos de idade, até, no máximo, vinte (20) anos de idade. </p>
         <p>Quatro meses (120 dias) reais equivalem a um ano (365 dias) dentro do RPG. Desta maneira, todos podem continuar avançando seus personagens, indiferentemente dos acontecimentos da trama, o que também evita que, em tramas que levam menos tempo, os personagens evoluam demais. Neste sentido, também há influências nas estações, visto que um mês (30 dias) real é considerado uma estação do ano dentro do RPG, na sequência: Verão -> Outono -> Inverno -> Primavera -> Verão, e assim por diante.</p>
       </div>
 
       <div id="segundaDica" class="tipTabs">
+        <hr>
         <h2 class="subtitulo">Arquétipos</h2>
         <p>Os Arquétipos são padrões universais que fazem parte da construção da personalidade de um personagem. Os arquétipos funcionam para determinar a base de formação de um personagem, mas não é imutável. A possibilidade de alterar durante os desenvolvimentos do personagem no jogo, ou seja, através de Plotting e outros sistemas, é enorme, porém ele sempre terá um alinhamento básico que determina o tipo de personagem que ele é. Desta maneira, um personagem cujo arquétipo seja pacífico não poderia iniciar uma guerra sem sentido, tornando  isso uma atitude de metagaming.</p>
         <p>Todos os personagens começam com um dos Arquétipos que servem de base para suas ações e também sua personalidade. Portanto, desde o momento da criação da ficha, o usuário deve selecionar qual dos arquétipos melhor se encaixa com sua ideia de personagem.</p>
@@ -212,7 +215,7 @@
 
         <!--Anti-Herói-->
         <div id="Anti-herói" class="hidden-arquetipo">
-          <h2 class="subtitulo">Herói</h2>
+          <h2 class="subtitulo">Anti-Herói</h2>
           
           <div id="descricao-Anti-herói">
             <img src="images/antiheroi.png" alt="">
@@ -223,7 +226,7 @@
         
         <!--Vilão-->
         <div id="Vilão" class="hidden-arquetipo">
-          <h2 class="subtitulo">Herói</h2>
+          <h2 class="subtitulo">Vilão</h2>
           
           <div id="descricao-Vilão">
             <img src="images/vilao.png" alt="">
@@ -232,16 +235,105 @@
       
         </div>
 
-        
+        <!--Individualista-->
+        <div id="Individualista" class="hidden-arquetipo">
+          <h2 class="subtitulo">Individualista</h2>
+          
+          <div id="descricao-Individualista">
+            <img src="images/individualista.png" alt="">
+            <p><b>Descrição:</b>O Arquétipo do Individualista é constituído pelo desejos pessoais acima dos valores éticos e morais. Os personagens com tal arquétipo sempre procuram maneiras de se tornarem mais fortes para cumprir seus objetivos, independente das necessidades para alcançá-los, inclusive aceitando se tornarem criminosos, matar pessoas próximas e causar o caos apenas para alcançar os seus objetivos pessoais. O personagem que melhor representa tal arquétipo é Uchiha Sasuke antes da redenção, pois ele sempre buscou forças para cumprir as vinganças assinaladas como objetivos próprios.</p>
+          </div>
+      
+        </div>        
+
+        <!--Mártir-->
+        <div id="Mártir" class="hidden-arquetipo">
+          <h2 class="subtitulo">Mártir</h2>
+          
+          <div id="descricao-Mártir">
+            <img src="images/martir.png" alt="">
+            <p><b>Descrição:</b>O Arquétipo do Mártir é constituído pelo desejo altruísta de se sacrificar, em todos os sentidos da palavra, por um bem maior. Os personagens com tal arquétipo costumam estarem dispostos a se sacrificarem para que se tornem símbolos, eles podem acabar matando entes queridos para impedirem algo e se tornarem um símbolo de maldade ou mesmo se matarem para criarem histórias, lendas, símbolos e assim alcançar um objetivo não individualista, em prol de um bem maior. O personagem que melhor representa tal arquétipo é Uchiha Itachi, pois ele sacrificou toda a família e sua moralidade para proteger Konoha de uma guerra civil.</p>
+          </div>
+      
+        </div>        
+
+        <!--Devoto-->
+        <div id="Devoto" class="hidden-arquetipo">
+          <h2 class="subtitulo">Devoto</h2>
+          
+          <div id="descricao-Devoto">
+            <img src="images/devoto.png" alt="">
+            <p><b>Descrição:</b>O Arquétipo do Devoto é constituído pelo desejo de ajudar algo ou alguém a obter êxito e conquistas. Os personagens com tal arquétipo estão dispostos a darem suas vidas pelo bem de sua devoção, pouco contestando os objetivos da pessoa ou entidade. Eles podem matar outras pessoas, se sacrificarem, entre outras coisas absurdas tudo para o bem-estar do que está acima deles. O personagem que melhor representa tal arquétipo é Haku, pois ele era extremamente devoto a ajudar a garantir os sonhos e objetivos de Zabuza, inclusive se sacrificando para protegê-lo.</p>
+          </div>
+
+        </div>
+
+        <!--Ajudante-->
+        <div id="Ajudante" class="hidden-arquetipo">
+          <h2 class="subtitulo">Ajudante</h2>
+          
+          <div id="descricao-Ajudante">
+            <img src="images/ajudante.png" alt="">
+            <p><b>Descrição:</b>O Arquétipo do Ajudante é constituído pelo desejo de ajudar pessoas ou coisas importantes para eles, afim de ajudá-los a manter seus sonhos. Os personagens com tal arquétipo se diferem dos devotos porque eles não estão dispostos a se entregarem totalmente em prol do bem-estar e objetivos de outros, eles apenas estão dispostos a auxiliarem com conselhos, dicas e ajudas em combate, mas não ultrapassando os próprios desejos ou perdendo a identidade para tal. O personagem que melhor representa tal arquétipo é Shikamaru, pois ele sempre foi um ajudante do time, e de Naruto ao se tornar Hokage, mas mantém suas próprias convicções.</p>
+          </div>
+
+        </div>
+
+        <!--Governante-->
+        <div id="Governante" class="hidden-arquetipo">
+          <h2 class="subtitulo">Governante</h2>
+          
+          <div id="descricao-Governante">
+            <img src="images/governante.png" alt="">
+            <p><b>Descrição:</b>O Arquétipo do Governante é constituído pelo desejo de conquistar os mais altos níveis e poderes a quase qualquer custo. Facilmente confundido com outros como Herói, Individualista e até Anti-Herói, esses personagens se diferem por estarem focados não num único obejtivo maior, mas sim neles mesmos. Eles desejam obter poder para si, não em prol de outros, mas também não estão dispostos a se isolarem como os individualistas, pois eles sabem que para obter um poder social é necessário também de pessoas para segui-los. Sendo assim, eles costumam tentar agir como líderes, tentam sempre mostrar a possibilidade de governar, mesmo quando não possuem um Espírito de Liderança (2).</p>
+          </div>
+
+        </div>
+
+        <!--Pesquisador-->
+        <div id="Pesquisador" class="hidden-arquetipo">
+          <h2 class="subtitulo">Pesquisador</h2>
+          
+          <div id="descricao-Pesquisador">
+            <img src="images/pesquisador.png" alt="">
+            <p><b>Descrição:</b>O Arquétipo do Pesquisador é constituído pelo desejo intenso de conhecer tudo. Os personagens com tal arquétipo sempre buscam maneiras de obter mais conhecimento sobre absolutamente tudo. Mesmo conhecendo todas as coisas mais diversas, eles continuam querendo saber mais, possuir mais, criar mais, ou seja, serem além de seus tempos. Isto, porém, não significa que eles serão necessariamente personagens negativos. O personagem que melhor representa tal arquétipo é Orochimaru que, em prol de sua personalidade exploradora, realizou coisas questionáveis e outras nem tanto.  </p>
+          </div>
+
+        </div>
+
+        <!--Tolo-->
+        <div id="Tolo" class="hidden-arquetipo">
+          <h2 class="subtitulo">Tolo</h2>
+          
+          <div id="descricao-Tolo">
+            <img src="images/tolo.png" alt="">
+            <p><b>Descrição:</b>O Arquétipo do Tolo é constituído pelo desejo de ter um momento de brilho, mas sem deixar de levar a vida de modo leve. Os personagens com tal arquétipo costumam ser considerados tolos, chatos, entre outros adjetivos, pois parecem não se importar com as regras específicas e protocolos sociais. Eles costumam passar uma imagem de rebeldes, evitando treinamentos, bebendo além da conta, e realizando coisas diferentes do esperado. Porém, mesmo com esse jeito leve de seguir a vida, eles possuem o desejo de grandeza. O personagem que melhor representa tal arquétipo é Jiraya que foi mostrado como um personagem diferente do habitual; escrevia livros, viajava, bebia, dormia com várias mulheres, porém ele sempre teve um bem-maior, um objetivo e um caminho para seguir até a glória. O mesmo para Boruto.</p>
+          </div>
+
+        </div>
+
+        <hr>
+
+        <div id="clas-kgs">
+          <h2 class="subtitulo">Clãs e Kekkei Genkais</h2>
+          <p>Os personagens podem iniciar pertencentes a Clãs ou possuidores de Kekkei Genkais desde a criação da ficha. Divididos entre Limitados, Ilimitados e Criados, o usuário poderá conferir a <a href="https://www.narutorpgakatsuki.net/t66695-lista-e-organizacao-de-clas">Lista de Organização de Clãs</a>, buscando conhecer as opções disponíveis e então solicitar a entrada no Clã/KG desejado antes mesmo de criar a ficha.</p>
+          <p>Entretanto, sendo um sistema de criação, o usuário poderá também optar por criar uma nova Kekkei Genkai ou Clã. Nestes casos, antes mesmo de criar uma ficha, o usuário deverá abrir um tópico na <a href="https://www.narutorpgakatsuki.net/f309-area-de-criacao-de-kg-clas">Área de Criação de Kekkei Genkais</a> e, seguindo as normas descritas no tópico fixo da área, colocar a criação para a avaliação da Staff.</p>
+          <p>Se ainda desejar, o usuário poderá iniciar sem nenhum Clã ou Kekkei Genkai, absolutamente nenhuma habilidade inicial.</p>
+        </div>
       </div>
 
-      <div class="tipTabs">
-
+      <div id="terceiraDica" class="tipTabs">
+        <hr>
+        <h2 class="subtitulo">As Descrições Psicológicas</h2>
+        <p>As Descrições Psicológicas ficam a critério total do jogador, mas também não podem destoar de outras informações contidas no decorrer da ficha (como, por exemplo, Defeitos dados ao personagem). O campo “Transtornos/Defeitos” não precisa necessariamente ser completado, bem como pode conter mais informações que apenas aquelas que constituem a lista de Defeitos do Naruto RPG Akatsuki; porém, ressalta-se aqui que toda informação contida na ficha poderá ser utilizada contra o personagem, seja pelas intenções do próprio jogador ou pelas dos narradores/Mestres de RPG, então todo cuidado é pouco para que a <a href="https://www.narutorpgakatsuki.net/t54332-regra-metagaming">regra de Metagaming</a> não seja quebrada!</p>
       </div>
 
-      <div class="tipTabs">
-
+      <div id="quartaDica" class="tipTabs">
+        <hr>
+        <h2 class="subtitulo">As Descrições Físicas</h2>
+        <p>As Descrições Físicas devem obrigatoriamente ser seguidas à risca com relação ao personagem base assinalado na Organização de Aparências, exceto em casos pontuais de explicações plausíveis desde a criação da ficha, de acontecimentos validados pelo ONgame e de personagens portadores de doujutsus como o Byakugan ou o Rinnegan, que não existem em personagens alheios à série Naruto.</p>
       </div>
+      
     </div>
 
     </div>
