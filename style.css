@@ -206,9 +206,7 @@ input.invalido {
 }
 
 /* Destacar todos os passos feitos: */
-.circulo
-
-.finalizado {
+.circulo.finalizado {
   background-color: #912323;
 }
 
