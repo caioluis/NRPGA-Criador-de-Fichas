@@ -1,4 +1,6 @@
-var nomePersonagem, sobrenome ,vila, genero, sex, arquetipo, cla, kg, idade, aniversario;
+var nomePersonagem, sobrenome, vila, genero, sex, arquetipo, cla, kg, idade, aniversario, gostos,
+repulsas, motivacoes, medos, defeitos, descpsicologica, altura, peso, cabelos, olhos,
+braco, outros, ppbase, descfisica, titulo;
 
 function storeVariables() {
 //nome do personagem
@@ -74,6 +76,15 @@ localStorage.setItem('ppbase', ppbase);
 descfisica = document.getElementById("descfisica").value;
 localStorage.setItem('descfisica', descfisica);
 
+//titulo
+titulo = document.getElementById("titulo").value;
+localStorage.setItem('titulo', titulo);
+//ano
+ano = document.getElementById("ano").value;
+localStorage.setItem('ano', ano);
+//historia
+historia = document.getElementById("historia").value;
+localStorage.setItem('historia', historia);
 
 salvar()
 
@@ -127,10 +138,9 @@ function salvar() {
     [b]Personagem Base:[/b] ${ppbase}
     [b]Descrição Geral:[/b] ${descfisica}&lt/div&gt&lt/div&gt
     
-    &ltdiv class="dados2"&gt&ltdiv class="titdaficha"&gtCARVED MY CURE WITH A BLADE THAT LEFT ME IN SCARS
-    NOW, EVERY TIME I'M WEAK, WORDS SCREAM FROM MY ARMS&lt/div&gt
-    &ltdiv class="histdopersonagem" style="margin: 0px -15px;"&gt&ltb&gt50 DG - Início&lt/b&gt
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt tincidunt turpis, in consectetur nulla ultricies ac. Mauris neque orci, fermentum quis sapien a, porta volutpat mauris. Morbi eu finibus nibh. Phasellus vel condimentum eros. Maecenas fermentum, leo non mattis convallis, nunc sem auctor nisl, non dictum nisi turpis a quam. Donec nec sapien ac nibh vestibulum elementum eu imperdiet tortor. Quisque condimentum placerat justo quis feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In ultrices, nibh non dignissim venenatis, libero enim pretium velit, fringilla gravida nibh orci id eros. Aenean mollis ipsum et mi elementum, in consequat tortor mollis. Donec nec felis viverra ante bibendum scelerisque sed nec magna. Nullam malesuada orci sem, eu sollicitudin leo sollicitudin vel. Nullam tempor venenatis consequat. Donec in consequat erat, ut maximus mauris. Etiam libero eros, sodales et posuere eget, tincidunt nec nibh. Nam feugiat turpis id augue vestibulum, sit amet euismod est molestie.&lt/div&gt&lt/div&gt
+    &ltdiv class="dados2"&gt&ltdiv class="titdaficha"&gt${titulo}&lt/div&gt
+    &ltdiv class="histdopersonagem" style="margin: 0px -15px;"&gt&ltb&gt${ano}&lt/b&gt
+    ${historia}&lt/div&gt&lt/div&gt
     
     &ltdiv class="dados3"&gt&ltdiv class="dadosdopersonagem2"&gt&ltdiv1&gtDatabook&lt/div1&gt
     &ltdiv title="Ninjutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Ninjutsu&lt/div&gt
