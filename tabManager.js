@@ -1,80 +1,80 @@
-var currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
 
-function showTab(n) {
-  // This function will display the specified tab of the form...
+/*Sistema de Passos para o formulário e para o campo de dicas*/
+
+var passoAtual = 0; // Passo atual vira o primeiro passo (0)
+mostrarPasso(passoAtual); // mostra o passo atual
+      
+ function mostrarPasso(n) {
+  // Mostrar um passo específico...
   var x = document.getElementsByClassName("tab");
-  var z = document.getElementsByClassName("tipTabs")
+  var z = document.getElementsByClassName("tipTabs");
   x[n].style.display = "block";
   z[n].style.display = "block";
-  //... and fix the Previous/Next buttons:
+  // Manipular os botões de navegação
   if (n == 0) {
-    document.getElementById("prevBtn").style.display = "none";
-  } else {
-    document.getElementById("prevBtn").style.display = "inline";
-  }
-  if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "SALVAR";
-  } else {
-    document.getElementById("nextBtn").innerHTML = "PRÓXIMO";
-  }
-  //... and run a function that will display the correct step indicator:
-  fixStepIndicator(n)
-}
-
-function nextPrev(n) {
-  // This function will figure out which tab to display
-  var x = document.getElementsByClassName("tab");
-  var z = document.getElementsByClassName("tipTabs")
-  // Exit the function if any field in the current tab is invalid:
-  // if (n == 1 && !validateForm()) return false;
-  // Hide the current tab:
-  x[currentTab].style.display = "none";
-  z[currentTab].style.display = "none";
-  // Increase or decrease the current tab by 1:
-  currentTab = currentTab + n;
-  // if you have reached the end of the form...
-  if (currentTab >= x.length) {
-    // ... the form gets submitted:
-    storeVariables();
-    return false;
-  }
-  // Otherwise, display the correct tab:
-  showTab(currentTab);
-}
-
-function validateForm() {
-  // This function deals with validation of the form fields
-  var x, y, i, valid = true;
-  x = document.getElementsByClassName("tab");
-  y = x[currentTab].getElementsByTagName("input");
-  z = document.getElementsByClassName("tipTabs");
-  // A loop that checks every input field in the current tab:
-  for (i = 0; i < y.length; i++) {
-    // If a field is empty...
-    if (y[i].value == "") {
-      // add an "invalid" class to the field:
-      y[i].className += " invalid";
-      // and set the current valid status to false
-      valid = false;
+    document.getElementById("btnVoltar").style.display = "none";
+    } else {
+     document.getElementById("btnVoltar").style.display = "inline";
     }
-  }
-  // If the valid status is true, mark the step as finished and valid:
-  if (valid) {
-    document.getElementsByClassName("step")[currentTab].className += " finish";
-  }
-  return valid; // return the valid status
+    if (n == (x.length - 1)) {
+    document.getElementById("btnProximo").innerHTML = "SALVAR";
+    } else {
+    document.getElementById("btnProximo").innerHTML = "PRÓXIMO";
+    }
+    // Exibir o círculo correto correspondente ao passo atual
+  indicadorDePassos(n);
 }
-
-function fixStepIndicator(n) {
-  // This function removes the "active" class of all steps...
-  var i, x = document.getElementsByClassName("step");
-  for (i = 0; i < x.length; i++) {
-    x[i].className = x[i].className.replace(" active", "");
-  }
-  //... and adds the "active" class on the current step:
-  x[n].className += " active";
-}
-
-
-//mostrar só o arquetipo selecionado
+      
+      function navegar(n) {
+        // Essa função é responsável pela navegação entre os passos
+        var x = document.getElementsByClassName("tab");
+        var z = document.getElementsByClassName("tipTabs")
+        // Retornar falso se não validar
+        if (n == 1 && !validarForm()) return false;
+        // Dar display no passo que foi finalizado
+        x[passoAtual].style.display = "none";
+        z[passoAtual].style.display = "none";
+        // Ir pro próximo passo ou voltar um passo:
+        passoAtual = passoAtual + n;
+        // Quando terminar todos, 
+        if (passoAtual >= x.length) {
+        // Rodar a função para receber os valores do form
+          guardarInfo();
+          return false;
+        }
+        // Caso contrário, mostrar o passo atual:
+        mostrarPasso(passoAtual);
+      }
+      
+      function validarForm() {
+        // Função responsável por validar os campos
+        var x, y, i, valido = true;
+        x = document.getElementsByClassName("tab");
+        y = x[passoAtual].getElementsByTagName("input");
+        z = document.getElementsByClassName("tipTabs");
+        // Loop pra checar todos os campos
+        for (i = 0; i < y.length; i++) {
+          // If a field is empty...
+          if (y[i].value == "") {
+            // adicionar classe que destaca o campo inválido
+            y[i].className += " invalido";
+            // e deixar o a propriedade "valido" como falso
+            valido = false;
+          }
+        }
+        // Se é valido, destacar o passo como finalizado:
+        if (valido) {
+          document.getElementsByClassName("circulo")[passoAtual].className += " finalizado";
+        }
+        return valido; // retornar como valido
+      }
+      
+      function indicadorDePassos(n) {
+        // Remove o indicador de passos de todos os círculos
+        var i, x = document.getElementsByClassName("circulo");
+        for (i = 0; i < x.length; i++) {
+          x[i].className = x[i].className.replace(" ativo", "");
+        }
+        // E adiciona a classe ativo apenas pro passo atual
+        x[n].className += " ativo";
+      }
