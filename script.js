@@ -1,106 +1,72 @@
-function storeVariables() {
+function guardarInfo() {
 //nome do personagem
 nomePersonagem = document.getElementById("nome").value;
-
 //sobrenome
 sobrenome = document.getElementById("sobrenome").value;
-
 // vilarejo
 vila = document.getElementById("vilarejo").value;
-
 //genero
 genero = document.getElementById("genero").value;
-
 //sexualidade
 sex = document.getElementById("sexualidade").value;
-
 //arquetipo
 arquetipo = document.getElementById("arquetipo-dropdown").value;
-
 //cla
 cla = document.getElementById("cla").value;
-
 //KG
 kg = document.getElementById("kg").value;
-
 //idade
 idade = document.getElementById("idade").value;
-
 //aniversario
 aniversario = document.getElementById("aniversario-dropdown").value;
-
 //gostos
 gostos = document.getElementById("gostos").value;
-
 //repulsas
 repulsas = document.getElementById("repulsas").value;
-
 //motivacoes
 motivacoes = document.getElementById("motivacoes").value;
-
 //medos
 medos = document.getElementById("medos").value;
-
 //defeitos
 defeitos = document.getElementById("defeitos").value;
-
 //descpsicologica
 descpsicologica = document.getElementById("descpsicologica").value;
-
 //altura
 altura = document.getElementById("altura").value;
-
 //peso
 peso = document.getElementById("peso").value;
-
 //cabelos
 cabelos = document.getElementById("cabelos").value;
-
 //olhos
 olhos = document.getElementById("olhos").value;
-
 //braco
 braco = document.getElementById("braco").value;
-
 //outros
 outros = document.getElementById("outros").value;
-
 //ppbase
 ppbase = document.getElementById("ppbase").value;
-;
 //descfisica
 descfisica = document.getElementById("descfisica").value;
-
 //titulo
 titulo = document.getElementById("titulo").value;
-
 //ano
 ano = document.getElementById("ano").value;
-
 //historia
 historia = document.getElementById("historia").value;
-
 //nin
 nin = document.getElementById("ninjutsu").value;
-
 //gen
 gen = document.getElementById("genjutsu").value;
-
 //tai
 tai = document.getElementById("taijutsu").value;
-
 //int
 int = document.getElementById("int").value;
-
 //forca
 forca = document.getElementById("forca").value;
-
 //vel
 vel = document.getElementById("vel").value;
-
 //sta
 sta = document.getElementById("sta").value;
-
 //selos
 selos = document.getElementById("selos").value;
 

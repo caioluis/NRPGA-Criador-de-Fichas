@@ -28,11 +28,6 @@ body {
     box-shadow: 0px 4px 13px -1px rgba(0,0,0,0.3);
   }
 
-  #snippet-ficha {
-    max-width: 32em;
-    font-size: 0.5em;
-  }
-
   #infos-importantes {
     width: 100%;
   }
@@ -65,7 +60,6 @@ body {
     color: black;
     text-transform: uppercase;
   }
-
 
   
   p {
@@ -142,8 +136,8 @@ body {
   #radio-input, #checkbox-input {
     width: auto;
     height: auto;
-    -ms-transform: scale(1.5); /* Radio button scale IE */
-    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+    -ms-transform: scale(1.5); 
+    -webkit-transform: scale(1.5); 
     transform: scale(1.5);
   
     }
@@ -152,7 +146,7 @@ body {
     display: block;
   }
   
-  /* select all span items inside container  */
+
   #radio-container > span {
     white-space: nowrap;
     display: inline-block;
@@ -177,14 +171,15 @@ body {
   }
   
   
-  /* Form steps */
+/*Passos do formulário*/
 
-  /* Mark input boxes that gets an error on validation: */
-input.invalid {
+
+/* Destacar os campos que não foram preenchidos/não foram preenchidos automaticamente: */
+input.invalido {
   background-color: #ffdddd;
 }
 
-/* Hide all steps by default: */
+/* Esconder tudo desde o princípio: */
 .tab {
   display: none;
 }
@@ -193,8 +188,8 @@ input.invalid {
   display: none;
 }
 
-/* Make circles that indicate the steps of the form: */
-.step {
+/* Cícrulos do indicador de passos: */
+.circulo {
   height: 15px;
   width: 15px;
   margin: 0 2px;
@@ -205,17 +200,19 @@ input.invalid {
   opacity: 0.5;
 }
 
-/* Mark the active step: */
-.step.active {
+/* Destacar o círculo do passo atual: */
+.circulo.ativo {
   opacity: 1;
 }
 
-/* Mark the steps that are finished and valid: */
-.step.finish {
+/* Destacar todos os passos feitos: */
+.circulo
+
+.finalizado {
   background-color: #912323;
 }
 
-  /* Botão de enviar */
+/* Botão de enviar */
 .button {
   border: 2px solid #c1242f;
   background-color: transparent;
