@@ -43,7 +43,7 @@
               <input type="text" id="sexualidade" class="placeholder" placeholder="Insira a sexualidade da sua personagem" required>
               <!--Idade-->
               <label for="idade" id="idade-label">Idade</label>
-              <input type="number" id="idade" class="placeholder" placeholder="Entre 8 e 20 anos" maxlength="2" min="8" max="20" required>
+              <input type="number" id="idade" class="placeholder" placeholder="Entre 8 e 20 anos" maxlength="1" min="8" max="20" required onkeydown="return false">
               <!--Aniversário-->
               <div>
                 <label for="aniversario-dropdown">Aniversário</label>
@@ -125,7 +125,7 @@
             <input type="text" id="peso" class="placeholder" placeholder="Insira o peso. Ex.: 68kg" required>
 
             <!--Cabelos-->
-            <label for="cabelos" id="cabelos-label">Motivações</label>
+            <label for="cabelos" id="cabelos-label">Cabelos</label>
             <input type="text" id="cabelos" class="placeholder" placeholder="Características dos cabelos. Ex.: Longos e castanhos" required>
 
             <!--Olhos-->
@@ -138,7 +138,7 @@
 
             <!--Outros-->
             <label for="outros" id="outros-label">Outros</label>
-            <input type="text" id="outros" class="placeholder" placeholder="Direito ou esquerdo" required>
+            <input type="text" id="outros" class="placeholder" placeholder="Outras características físicas" required>
             
             <!--Personagem Base-->
             <label for="ppbase" id="ppbase-label">Personagem Base</label>
@@ -163,11 +163,37 @@
           </div>
 
           <div id="passo6" class="tab">
-            
+            <label for="pontos" id="pontos-label">Pontos a distribuir: </label>
+            <br>
+            <!--Ninjutsu-->
+            <label for="ninjutsu" id="ninjutsu-label">Ninjutsu</label>
+            <input type="number" id="ninjutsu" class="placeholder atributo" placeholder="" size="2" value="0" min="0" max="4" onkeydown="return false" required>
+            <!--Taijutsu-->
+            <label for="genjutsu" id="genjutsu-label">Genjutsu</label>
+            <input type="number" id="genjutsu" class="placeholder atributo" placeholder="" size="2" value="0" min="0" max="4" onkeydown="return false" required>
+            <!--Taijutsu-->
+            <label for="taijutsu" id="taijutsu-label">Taijutsu</label>
+            <input type="number" id="taijutsu" class="placeholder atributo" placeholder="" size="2" value="0" min="0" max="4" onkeydown="return false" required>    
+            <!--Inteligência-->
+            <label for="int" id="int-label">Inteligência</label>
+            <input type="number" id="int" class="placeholder atributo" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>                
+            <!--Força-->
+            <label for="forca" id="forca-label">Força</label>
+            <input type="number" id="forca" class="placeholder atributo" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
+            <!--Velocidade-->
+            <label for="vel" id="vel-label">Velocidade</label>
+            <input type="number" id="vel" class="placeholder atributo" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>                    
+            <!--Stamina-->
+            <label for="sta" id="sta-label">Stamina</label>
+            <input type="number" id="sta" class="placeholder atributo" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>    
+            <!--Selos-->
+            <label for="selos" id="selos-label">Selos</label>
+            <input type="number" id="selos" class="placeholder atributo" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>    
           </div>
 
-        <!-- Circles which indicates the steps of the form: -->
+        <!--Círculos dos passos do formulário-->
         <div style="text-align:center;margin-top:40px;">
+          <span class="step"></span>
           <span class="step"></span>
           <span class="step"></span>
           <span class="step"></span>
@@ -177,13 +203,14 @@
       
         <hr>
 
-      <!-- Salvar! -->
+      <!-- Botões de navegação -->
       <div style="overflow:auto;">
         <div style="float:right;">
           <button type="button" class="button" id="prevBtn" onclick="nextPrev(-1)">VOLTAR</button>
           <button type="button" class="button" id="nextBtn" onclick="nextPrev(1)">PRÓXIMO</button>
         </div>
       </div>
+
 
     </form>
 
@@ -351,9 +378,32 @@
         <p>As Descrições Físicas devem obrigatoriamente ser seguidas à risca com relação ao personagem base assinalado na Organização de Aparências, exceto em casos pontuais de explicações plausíveis desde a criação da ficha, de acontecimentos validados pelo ONgame e de personagens portadores de doujutsus como o Byakugan ou o Rinnegan, que não existem em personagens alheios à série Naruto.</p>
       </div>
 
-      <div class="tipTabs"></div>
+      <div id="quintaDica" class="tipTabs">
+        <hr>
+        <h2 class="subtitulo">A História</h2>
+        <p>A História, diferentemente do que a maioria acredita ao criar uma ficha, não precisa (mas também pode) ser muito curta ou muito comprida; também fica a critério do próprio jogador. Porém, algumas especificações devem ser seguidas: <b>a)</b> os personagens até podem nascer, mas não podem <b>crescer</b> fora do vilarejo/país ao qual foram filiados na Organização de Vilarejos (sobretudo porque todo e qualquer conhecimento acerca do mundo ninja deve ser adquirido em ONgame pelos personagens);<b>b)</b>  demais conhecimentos (como, por exemplo, acerca de clãs/KGs/HIs, HU, HS, técnicas [especiais ou não], elementos, etc.), alheios àqueles iniciais dos personagens, igualmente não podem ser adquiridos através da história da ficha, visto que devem aparecer no ONgame dos personagens também; c) outros aspectos que fugirem do bom senso da série e/ou da Trama do fórum poderão (e deverão) ser ajustados de acordo com a avaliação do Helper/Avaliador de Ficha responsável.</p>
+        <p><b>Observação:</b> Para mais informações acerca da Trama do fórum, pode-se acessar <a href="https://www.narutorpgakatsuki.net/f167-enredo">esta área</a>, que contempla (mesmo que de um modo resumido para uma visualização mais rápida) os acontecimentos oficiais do ONgame do Naruto RPG Akatsuki entre os arcos 01 e 07. Até que a área seja devidamente atualizada, para maiores informações sobre os arcos 08, 09 e 10 (sendo este o atual), pode-se entrar em contato direto com os administradores @Ange e/ou @Shion.</p>
+        </div>
 
-    </div>
+      
+      <div id="sextaDica" class="tipTabs">
+        <hr>
+        <h2 class="subtitulo">Sistema de Databook</h2>
+        <p>Para completar o Databook do personagem, os jogadores devem se atentar tanto ao <a href="https://www.narutorpgakatsuki.net/t66723-03-sistema-de-databook">Sistema de Databook</a> quanto à regra de obtenção de uso de Jutsus. Isso porque a distribuição de pontos tem duas formas predefinidas (focada e balanceada), além de um limite por rank, ambos aspectos que devem ser respeitados durante todo o jogo, e também porque os maiores requerimentos para a obtenção e o uso de técnicas são pontos em determinados atributos do Databook. Ou seja, para que Jutsus de ranks mais altos sejam acessíveis ao personagem, certos atributos devem já ter um mínimo de pontos, sem que o total ultrapasse o limite do rank atual do personagem nem quebre a forma de distribuição escolhida pelo jogador.</p>
+      </div>
+
+      <div id="fim">
+        <hr>
+        <pre>
+          <code id="codigo-ficha" class="language-markup">
+            
+          </code>
+
+        </pre>
+
+        <h2 class="subtitulo">Copie o código e <a href="https://www.narutorpgakatsuki.net/post?f=142&mode=newtopic">clique aqui para se inscrever</a></h2>
+
+      </div>
 
     </div>
 
@@ -462,6 +512,33 @@
           document.getElementById("descricao-" + arquetipoAtual).style.display = "flex";
           document.getElementById("descricao-" + arquetipoAtual).style.display = "row";
         }
+
+
+        var nin, tai, gen, int, forca, vel, sta, selos, pontosDistribuidos, i
+        var maxPontos = 8;
+
+        let atributos = document.getElementsByClassName("atributo");
+        
+        for (i=0; i < atributos.length; i++) {
+          atributos[i].onchange = function() {
+            pontosDistribuidos = 0;
+            for (i=0; i < atributos.length; i++) {
+              pontosDistribuidos += parseInt(atributos[i].value);      
+            }
+            document.getElementById("pontos-label").innerHTML = "Pontos a distribuir: " + (maxPontos - pontosDistribuidos);
+          }
+        }
+
+        
+
+        /*
+        tai = document.getElementById("taijutsu").value;
+        gen = document.getElementById("genjutsu").value;
+        int = document.getElementById("int").value;
+        forca = document.getElementById("forca").value;
+        vel*/
+
+
       </script>
 
 </body>
