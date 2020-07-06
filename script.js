@@ -1,90 +1,112 @@
-var nomePersonagem, sobrenome, vila, genero, sex, arquetipo, cla, kg, idade, aniversario, gostos,
-repulsas, motivacoes, medos, defeitos, descpsicologica, altura, peso, cabelos, olhos,
-braco, outros, ppbase, descfisica, titulo;
-
 function storeVariables() {
 //nome do personagem
 nomePersonagem = document.getElementById("nome").value;
-localStorage.setItem('nome', nomePersonagem);
+
 //sobrenome
 sobrenome = document.getElementById("sobrenome").value;
-localStorage.setItem('sobrenome', sobrenome);
+
 // vilarejo
 vila = document.getElementById("vilarejo").value;
-localStorage.setItem('vila', vila);
+
 //genero
 genero = document.getElementById("genero").value;
-localStorage.setItem('genero', genero);
+
 //sexualidade
 sex = document.getElementById("sexualidade").value;
-localStorage.setItem('sex', sex);
+
 //arquetipo
 arquetipo = document.getElementById("arquetipo-dropdown").value;
-localStorage.setItem('arquetipo', arquetipo);
+
 //cla
 cla = document.getElementById("cla").value;
-localStorage.setItem('cla', cla);
+
 //KG
 kg = document.getElementById("kg").value;
-localStorage.setItem('kg', kg);
+
 //idade
 idade = document.getElementById("idade").value;
-localStorage.setItem('idade', idade);
+
 //aniversario
 aniversario = document.getElementById("aniversario-dropdown").value;
-localStorage.setItem('aniversario', aniversario);
+
 //gostos
 gostos = document.getElementById("gostos").value;
-localStorage.setItem('gostos', gostos);
+
 //repulsas
 repulsas = document.getElementById("repulsas").value;
-localStorage.setItem('repulsas', repulsas);
+
 //motivacoes
 motivacoes = document.getElementById("motivacoes").value;
-localStorage.setItem('motivacoes', motivacoes);
+
 //medos
 medos = document.getElementById("medos").value;
-localStorage.setItem('medos', medos);
+
 //defeitos
 defeitos = document.getElementById("defeitos").value;
-localStorage.setItem('defeitos', defeitos);
+
 //descpsicologica
 descpsicologica = document.getElementById("descpsicologica").value;
-localStorage.setItem('descpsicologica', descpsicologica);
+
 //altura
 altura = document.getElementById("altura").value;
-localStorage.setItem('altura', altura);
+
 //peso
 peso = document.getElementById("peso").value;
-localStorage.setItem('peso', peso);
+
 //cabelos
 cabelos = document.getElementById("cabelos").value;
-localStorage.setItem('cabelos', cabelos);
+
 //olhos
 olhos = document.getElementById("olhos").value;
-localStorage.setItem('olhos', olhos);
+
 //braco
 braco = document.getElementById("braco").value;
-localStorage.setItem('braco', braco);
+
 //outros
 outros = document.getElementById("outros").value;
-localStorage.setItem('outros', outros);
+
 //ppbase
 ppbase = document.getElementById("ppbase").value;
-localStorage.setItem('ppbase', ppbase);
+;
 //descfisica
 descfisica = document.getElementById("descfisica").value;
-localStorage.setItem('descfisica', descfisica);
 
 //titulo
 titulo = document.getElementById("titulo").value;
-localStorage.setItem('titulo', titulo);
+
 //ano
 ano = document.getElementById("ano").value;
-localStorage.setItem('ano', ano);
+
 //historia
 historia = document.getElementById("historia").value;
-localStorage.setItem('historia', historia);
+
+//nin
+nin = document.getElementById("ninjutsu").value;
+
+//gen
+gen = document.getElementById("genjutsu").value;
+
+//tai
+tai = document.getElementById("taijutsu").value;
+
+//int
+int = document.getElementById("int").value;
+
+//forca
+forca = document.getElementById("forca").value;
+
+//vel
+vel = document.getElementById("vel").value;
+
+//sta
+sta = document.getElementById("sta").value;
+
+//selos
+selos = document.getElementById("selos").value;
+
+totalPontos = nin + gen + tai + int + forca + vel + sta + selos;
+
+
 
 salvar()
 
@@ -92,6 +114,8 @@ console.log("Dados guardados!")
 }
 
 function salvar() {
+    document.getElementById("form-ficha").style.display = "none";
+    document.getElementById("fim").style.display = "block";
     document.getElementById("codigo-ficha").innerHTML =
     `&ltcenter&gt&ltdiv class="fichadepersonagem"&gt&ltdiv class="imagemdaficha" style="background-image: url(http://placehold.it/630x300)"&gt&lt/div&gt
     &ltdiv class="dadosdopersonagem"&gt&ltdiv class="iconedaficha" style="background-image: url(http://placehold.it/100x100)"&gt&lt/div&gt&ltdiv3&gt&lt/div3&gt
@@ -143,14 +167,14 @@ function salvar() {
     ${historia}&lt/div&gt&lt/div&gt
     
     &ltdiv class="dados3"&gt&ltdiv class="dadosdopersonagem2"&gt&ltdiv1&gtDatabook&lt/div1&gt
-    &ltdiv title="Ninjutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Ninjutsu&lt/div&gt
-    &ltdiv title="Genjutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Genjutsu&lt/div&gt
-    &ltdiv title="Taijutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Taijutsu&lt/div&gt
-    &ltdiv title="Inteligência"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt&ltc&gt[00]&lt/c&gt Inteligência&lt/div&gt
-    &ltdiv title="Força"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Força&lt/div&gt
-    &ltdiv title="Velocidade"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Velocidade&lt/div&gt
-    &ltdiv title="Stamina"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Stamina&lt/div&gt
-    &ltdiv title="Selos"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Selos&lt/div&gt
+    &ltdiv title="Ninjutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${nin}]&lt/c&gt Ninjutsu&lt/div&gt
+    &ltdiv title="Genjutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${gen}]&lt/c&gt Genjutsu&lt/div&gt
+    &ltdiv title="Taijutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${tai}]&lt/c&gt Taijutsu&lt/div&gt
+    &ltdiv title="Inteligência"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt&ltc&gt[0${int}]&lt/c&gt Inteligência&lt/div&gt
+    &ltdiv title="Força"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${forca}]&lt/c&gt Força&lt/div&gt
+    &ltdiv title="Velocidade"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${vel}]&lt/c&gt Velocidade&lt/div&gt
+    &ltdiv title="Stamina"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${sta}]&lt/c&gt Stamina&lt/div&gt
+    &ltdiv title="Selos"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${selos}]&lt/c&gt Selos&lt/div&gt
     
     &ltdiv title="Regeneração"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Regeneração&lt/div&gt
     &ltdiv title="Recuperação"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Recuperação&lt/div&gt
@@ -162,7 +186,7 @@ function salvar() {
     &ltdiv title="Combate"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Combate&lt/div&gt
     &ltdiv title="Ilusão"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gtIlusão&lt/div&gt
     
-    &ltdiv title="Total"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gtTotal&lt/div&gt
+    &ltdiv title="Total"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${totalPontos}]&lt/c&gtTotal&lt/div&gt
     &ltdiv title="Extras"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Extras&lt/div&gt
     &ltdiv title="Adquiridos"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Adquiridos&lt/div&gt
     &lt/div&gt
@@ -216,7 +240,9 @@ function salvar() {
     &ltquadro&gtTodos os acontecimentos do personagem.&lt/quadro&gt&lt/div&gt&lt/div&gt&lt/div&gt
     
     &ltdiv class="finaldaficha"&gtEste personagem tem a aparência de &ltb&gt???&lt/b&gt da série &ltb&gt???&lt/b&gt
-    &ltb&gtPlayer Off:&lt/b&gt  / &ltb&gtContatos:&lt/b&gt &lt/div&gt&lt/div&gt&lt/center&gt`
+    &ltb&gtPlayer Off:&lt/b&gt  / &ltb&gtContatos:&lt/b&gt &lt/div&gt&lt/div&gt&lt/center&gt
+    
+    &ltstyle&gt.dadosdopersonagem {background-color: #989898!important} .dadosdopersonagem2 i, #celC, .finaldaficha b, .dadosdopersonagem2 div1, .histdopersonagem b, .outrosdopersonagem b, .dadosdopersonagem3 b, .dadosdopersonagem3-2 b, .outrosdopersonagem missoes b  {color: #989898!important;} dl.codebox {border-left: 0px solid black; padding: 15px;}&lt/style>`
 
 }
 
