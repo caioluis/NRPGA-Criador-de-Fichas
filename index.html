@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <!-- Required meta tags -->
+  <!-- Meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
@@ -14,149 +14,151 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
-
+  <!-- Scripts -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   <script src="script.js"></script>
   <script src="prism.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  
+  
   <title>Senko's UltimateFichaMaker2000</title>
 </head>
 
 <body>
-
-      <div id="formContainer">
-        <form id="form-ficha">
-            <div id="passo1" class="tab">
-              <h1>DADOS BÁSICOS</h1>
-
-              <!--Nome-->
-              <label for="nome" id="nome-label">Nome da personagem</label>
-              <input type="text" id="nome" class="placeholder" placeholder="Insira o nome da personagem" required>
-              <!--Sobrenome-->
-              <label for="sobrenome" id="sobrenome-label">Sobrenome</label>
-              <input type="text" id="sobrenome" class="placeholder" placeholder="Insira o sobrenome" required>
-              <!--Gênero-->
-              <label for="genero" id="genero-label" class="placeholder">Gênero</label>
-              <select id="genero">
-                <option value="Masculino">Masculino</option>
-                <option value="Feminino">Feminino</option>
-                <option value="Não Definido">Não Definido</option>
-              </select>
-              <!--Sexualidade-->
-              <label for="sexualidade" id="sexualidade-label">Sexualidade</label>
-              <input type="text" id="sexualidade" class="placeholder" placeholder="Insira a sexualidade da sua personagem" required>
-              <!--Idade-->
-              <label for="idade" id="idade-label">Idade</label>
-              <input type="number" id="idade" class="placeholder" placeholder="Entre 8 e 20 anos" maxlength="1" min="8" max="20" required onkeydown="return false">
-              <!--Aniversário-->
-              <div>
-                <label for="aniversario-dropdown">Aniversário</label>
-                <select id="aniversario-dropdown" class="placeholder">
-                  <option value="Verão">Verão</option>
-                  <option value="Outono">Outono</option>
-                  <option value="Inverno">Inverno</option>
-                  <option value="Primavera">Primavera</option><br></select>
-              </div>
+  
+  <div id="formContainer">
+    <form id="form-ficha">
+      <div id="passo1" class="tab">
+        <h1>DADOS BÁSICOS</h1>
+        
+        <!--Nome-->
+        <label for="nome" id="nome-label">Nome da personagem</label>
+        <input type="text" id="nome" class="placeholder" placeholder="Insira o nome da personagem" required>
+        <!--Sobrenome-->
+        <label for="sobrenome" id="sobrenome-label">Sobrenome</label>
+        <input type="text" id="sobrenome" class="placeholder" placeholder="Insira o sobrenome" required>
+        <!--Gênero-->
+        <label for="genero" id="genero-label" class="placeholder">Gênero</label>
+        <select id="genero">
+          <option value="Masculino">Masculino</option>
+          <option value="Feminino">Feminino</option>
+          <option value="Não Definido">Não Definido</option>
+        </select>
+        <!--Sexualidade-->
+        <label for="sexualidade" id="sexualidade-label">Sexualidade</label>
+        <input type="text" id="sexualidade" class="placeholder" placeholder="Insira a sexualidade da sua personagem" required>
+        <!--Idade-->
+        <label for="idade" id="idade-label">Idade</label>
+        <input type="number" id="idade" class="placeholder" placeholder="Entre 8 e 20 anos" maxlength="1" min="8" max="20" required onkeydown="return false">
+        <!--Aniversário-->
+        <div>
+          <label for="aniversario-dropdown">Aniversário</label>
+          <select id="aniversario-dropdown" class="placeholder">
+            <option value="Verão">Verão</option>
+            <option value="Outono">Outono</option>
+            <option value="Inverno">Inverno</option>
+            <option value="Primavera">Primavera</option><br></select>
+          </div>
+        </div>
+        
+        <div id="passo2" class="tab">
+          <h1>DADOS BÁSICOS</h1>
+          <!--Vilarejo-->
+          <label for="vilarejo" id="vilarejo-label">Vilarejo atual</label>
+          <input type="text" id="vilarejo" class="placeholder" placeholder="Verifique se há vagas para o vilarejo!" required>
+          
+          <!--Arquétipo-->
+          <div>
+            <label for="arquetipo-dropdown">Arquétipo</label>
+            <select id="arquetipo-dropdown" class="placeholder">
+              <option value="Neutro">Neutro</option>
+              <option value="Herói">Herói</option>
+              <option value="Anti-herói">Anti-herói</option>
+              <option value="Vilão">Vilão</option>
+              <option value="Individualista">Individualista</option>
+              <option value="Mártir">Mártir</option>
+              <option value="Devoto">Devoto</option>
+              <option value="Ajudante">Ajudante</option>
+              <option value="Governante">Governante</option>
+              <option value="Pesquisador">Pesquisador</option>
+              <option value="Tolo">Tolo</option><br></select>
             </div>
-
-          <div id="passo2" class="tab">
-            <h1>DADOS BÁSICOS</h1>
-            <!--Vilarejo-->
-            <label for="vilarejo" id="vilarejo-label">Vilarejo atual</label>
-            <input type="text" id="vilarejo" class="placeholder" placeholder="Verifique se há vagas para o vilarejo!" required>
-
-            <!--Arquétipo-->
-            <div>
-              <label for="arquetipo-dropdown">Arquétipo</label>
-              <select id="arquetipo-dropdown" class="placeholder">
-                <option value="Neutro">Neutro</option>
-                <option value="Herói">Herói</option>
-                <option value="Anti-herói">Anti-herói</option>
-                <option value="Vilão">Vilão</option>
-                <option value="Individualista">Individualista</option>
-                <option value="Mártir">Mártir</option>
-                <option value="Devoto">Devoto</option>
-                <option value="Ajudante">Ajudante</option>
-                <option value="Governante">Governante</option>
-                <option value="Pesquisador">Pesquisador</option>
-                <option value="Tolo">Tolo</option><br></select>
-            </div>
-
+            
             <!--Clã-->
             <label for="cla" id="cla-label">Clã</label>
             <input type="text" id="cla" class="placeholder" placeholder="Insira o clã da personagem">
-
+            
             <!--Kekkei Genkai-->
             <label for="kg" id="kg-label">Kekkei Genkai</label>
             <input type="text" id="kg" class="placeholder" placeholder="Insira a Kekkei Genkai da personagem">
-
+            
             <!-- Sem Clã ou KG -->
             <label for="semCla">Sem Clã/Kekkei Genkai</label>
             <input type="checkbox" name="semCla" id="semCla" onchange="semClaHandler(this)">
           </div>
-
+          
           <div id="passo3" class="tab">
             <h1>DESCRIÇÃO PSICOLÓGICA</h1>
             <!--Gostos-->
             <label for="gostos" id="gostos-label">Coisas que gosta</label>
             <input type="text" id="gostos" class="placeholder" placeholder="Gosta de macarrão, picanha e coquinha gelada." required>
-
+            
             <!--Repulsas-->
             <label for="repulsas" id="repulsas-label">Coisas que não gosta</label>
             <input type="text" id="repulsas" class="placeholder" placeholder="Bife de figado" required>
-
+            
             <!--Motivações-->
             <label for="motivacoes" id="motivacoes-label">Motivações</label>
             <input type="text" id="motivacoes" class="placeholder" placeholder="Matar um certo alguém" required>
-
+            
             <!--Medos-->
             <label for="medos" id="medos-label">Medos</label>
             <input type="text" id="medos" class="placeholder" placeholder="Messi careca" required>
-
+            
             <!--Transtornos/Defeitos-->
             <label for="defeitos" id="defeitos-label">Transtornos/Defeitos</label>
             <input type="text" id="defeitos" class="placeholder" placeholder="Palmeirense" required>
-
+            
             <!--Descrição Geral-->
             <label for="descpsicologica" id="descpsicologica-label">Descrição Geral</label>
             <textarea id="descpsicologica" class="placeholder" placeholder="" required></textarea>
           </div>
-
+          
           <div id="passo4" class="tab">
             <h1>DESCRIÇÃO FÍSICA</h1>
             <!--Altura-->
             <label for="altura" id="altura-label">Altura</label>
             <input type="text" id="altura" class="placeholder" placeholder="Insira a altura. Ex.: 178cm" required>
-
+            
             <!--Peso-->
             <label for="peso" id="peso-label">Peso</label>
             <input type="text" id="peso" class="placeholder" placeholder="Insira o peso. Ex.: 68kg" required>
-
+            
             <!--Cabelos-->
             <label for="cabelos" id="cabelos-label">Cabelos</label>
             <input type="text" id="cabelos" class="placeholder" placeholder="Características dos cabelos. Ex.: Longos e castanhos" required>
-
+            
             <!--Olhos-->
             <label for="olhos" id="olhos-label">Olhos</label>
             <input type="text" id="olhos" class="placeholder" placeholder="Cor dos olhos" required>
-
+            
             <!--Braço Dominante-->
             <label for="braco" id="braco-label">Braço Dominante</label>
             <input type="text" id="braco" class="placeholder" placeholder="Direito ou esquerdo" required>
-
+            
             <!--Outros-->
             <label for="outros" id="outros-label">Outros</label>
             <input type="text" id="outros" class="placeholder" placeholder="Outras características físicas" required>
-
+            
             <!--Personagem Base-->
             <label for="ppbase" id="ppbase-label">Personagem Base</label>
             <input type="text" id="ppbase" class="placeholder" placeholder="Leia as regras de aparência" required>
-
+            
             <!--Descrição Geral-->
             <label for="descfisica" id="descfisica-label">Descrição Geral</label>
             <textarea id="descfisica" class="placeholder" placeholder="" required></textarea>
           </div>
-
+          
           <div id="passo5" class="tab">
             <!--Título História-->
             <label for="titulo" id="titulo-label">Título da História</label>
@@ -169,7 +171,7 @@
             <label for="historia" id="historia-label">História</label>
             <textarea id="historia" class="placeholder" placeholder="RECOMENDADO: Escreva a história no Word para não perdê-la acidentalmente" required></textarea>
           </div>
-
+          
           <div id="passo6" class="tab">
             <label for="pontos" id="pontos-label">Pontos a distribuir: </label>
             <br>
@@ -198,307 +200,313 @@
             <label for="selos" id="selos-label">Selos</label>
             <input type="number" id="selos" class="placeholder atributo" placeholder="" size="2" value="0" min="0" max="5"onchange="addPointsToDatabook(this)" onkeydown="return false" required>
           </div>
-
-        <!--Círculos dos passos do formulário-->
-        <div style="text-align:center;margin-top:40px;">
-          <span class="circulo"></span>
-          <span class="circulo"></span>
-          <span class="circulo"></span>
-          <span class="circulo"></span>
-          <span class="circulo"></span>
-          <span class="circulo"></span>
-        </div>
-
-        <hr>
-
-      <!-- Botões de navegação -->
-      <div style="overflow:auto;">
-        <div style="float:right;">
-          <button type="button" class="button" id="btnVoltar" onclick="navegar(-1)">VOLTAR</button>
-          <button type="button" class="button" id="btnProximo" onclick="navegar(1)">PRÓXIMO</button>
-        </div>
-      </div>
-
-
-    </form>
-
-    <div id="infos-importantes">
-      <div id="header">
-        <h1 class="titulo-akatsuki">
-          NARUTO RPG AKATSUKI
-        </h1>
-        <p>SENKO'S ULTIMATE FICHAMAKER2000: Criador de fichas intuitivo</p>
-
-      </div>
-      <div id="primeiraDica" class="tipTabs">
-        <hr>
-        <h2 class="subtitulo">Idade e Aniversário</h2>
-        <p>Os personagens, assim como na série, seguem normalmente um padrão de idade inicial na sua vida ninja, sendo assim, na criação da ficha o usuário estará limitado a uma idade de, no mínimo, oito (8) anos de idade, até, no máximo, vinte (20) anos de idade. </p>
-        <p>Quatro meses (120 dias) reais equivalem a um ano (365 dias) dentro do RPG. Desta maneira, todos podem continuar avançando seus personagens, indiferentemente dos acontecimentos da trama, o que também evita que, em tramas que levam menos tempo, os personagens evoluam demais. Neste sentido, também há influências nas estações, visto que um mês (30 dias) real é considerado uma estação do ano dentro do RPG, na sequência: Verão -> Outono -> Inverno -> Primavera -> Verão, e assim por diante.</p>
-      </div>
-
-      <div id="segundaDica" class="tipTabs">
-        <hr>
-        <h2 class="subtitulo">Arquétipos</h2>
-        <p>Os Arquétipos são padrões universais que fazem parte da construção da personalidade de um personagem. Os arquétipos funcionam para determinar a base de formação de um personagem, mas não é imutável. A possibilidade de alterar durante os desenvolvimentos do personagem no jogo, ou seja, através de Plotting e outros sistemas, é enorme, porém ele sempre terá um alinhamento básico que determina o tipo de personagem que ele é. Desta maneira, um personagem cujo arquétipo seja pacífico não poderia iniciar uma guerra sem sentido, tornando  isso uma atitude de metagaming.</p>
-        <p>Todos os personagens começam com um dos Arquétipos que servem de base para suas ações e também sua personalidade. Portanto, desde o momento da criação da ficha, o usuário deve selecionar qual dos arquétipos melhor se encaixa com sua ideia de personagem.</p>
-
-        <!--Neutro-->
-        <div id="Neutro" class="hidden-arquetipo">
-          <h2 class="subtitulo">Neutro</h2>
-
-          <div id="descricao-Neutro">
-            <img src="images/neutro.png" alt="">
-            <p><b>Descrição:</b>O Arquétipo do Neutro é constituído pelos desejos simples de viver normalmente como um membro da sociedade. Os personagens com tal arquétipo não pensam em coisas grandiosas como paz mundial, se tornarem líderes ou coisas parecidas, eles simplesmente vivem a ordem das coisas naturalmente realizando missões, enfrentando o que for necessário e seguindo a vida sem muitas alterações bruscas. A maioria dos personagens da série apresentam esse aspecto, pois eles procuram o melhor como ninjas e não necessariamente pelos outros ou eles mesmos.</p>
+          
+          <!--Círculos dos passos do formulário-->
+          <div style="text-align:center;margin-top:40px;">
+            <span class="circulo"></span>
+            <span class="circulo"></span>
+            <span class="circulo"></span>
+            <span class="circulo"></span>
+            <span class="circulo"></span>
+            <span class="circulo"></span>
           </div>
-
-        </div>
-
-        <!--Herói-->
-        <div id="Herói" class="hidden-arquetipo">
-            <h2 class="subtitulo">Herói</h2>
-
-            <div id="descricao-Herói">
-              <img src="images/heroi.png" alt="">
-              <p><b>Descrição:</b> O Arquétipo do Herói é constituído pela bondade, desejo de paz e procura constante de ajudar os outros. Os personagens com tal arquétipo sempre procuram maneiras de se tornarem mais fortes para ajudar os outros e se importam muito mais em resgatar os outros do que eles mesmos, sendo muito altruístas. Eles costumam evitar ao máximo a morte de outras pessoas, inclusive inimigos, pois acreditam que o ódio não se combate com mais sofrimento e ódio. O personagem que melhor representa tal arquétipo é Uzumaki Naruto que, apesar das dificuldades, sempre buscou se tornar um protetor.</p>
+          
+          <hr>
+          
+          <!-- Botões de navegação -->
+          <div style="overflow:auto;">
+            <div style="float:right;">
+              <button type="button" class="button" id="btnVoltar" onclick="navegar(-1)">VOLTAR</button>
+              <button type="button" class="button" id="btnProximo" onclick="navegar(1)">PRÓXIMO</button>
             </div>
-
-        </div>
-
-        <!--Anti-Herói-->
-        <div id="Anti-herói" class="hidden-arquetipo">
-          <h2 class="subtitulo">Anti-Herói</h2>
-
-          <div id="descricao-Anti-herói">
-            <img src="images/antiheroi.png" alt="">
-            <p><b>Descrição:</b>O Arquétipo do Anti-Herói é constituído por um desejo forte de alterar o mundo que, em sua visão, está imerso nas trevas, mesmo que isso seja através de um mundo caótico. Os personagens com tal arquétipo não se preocupam em manter a paz e a segurança das pessoas por mais que queiram encontrar uma solução para a maldade no mundo, eles lutam, matam, manipulam e estão sempre buscando maneiras desordeiras de alcançar um plano maior (como a paz mundial, o plano do olho da lua) se jogando na escuridão para isso. O personagem que melhor representa tal arquétipo é Uchiha Obito após o incidente de Kakashi Gaiden, pois ele buscou tornar o mundo em um sonho de paz através de inúmeros incidentes caóticos, inclusive uma Guerra Mundial.</p>
           </div>
-
-        </div>
-
-        <!--Vilão-->
-        <div id="Vilão" class="hidden-arquetipo">
-          <h2 class="subtitulo">Vilão</h2>
-
-          <div id="descricao-Vilão">
-            <img src="images/vilao.png" alt="">
-            <p><b>Descrição:</b>O Arquétipo do Vilão é constituído pela encarnação do mal, movido pelos desejos de prejudicar algo ou alguém, causar discórdia, sofrimento e caos independente de motivos concretos ou não. Os personagens com tal arquétipo são completamente opostos aos com arquétipo de Herói, pois não se preocupam em matar, manipular, provocar caos indevido e se divertirem com tais coisas. O personagem que melhor representa o arquétipo é Kaguya cujos planos e objetivos não eram mais do que exterminar o mundo independente dos prós e contras das pessoas.</p>
+          
+          
+        </form>
+        
+        <div id="infos-importantes">
+          <div id="header">
+            <h1 class="titulo-akatsuki">
+              NARUTO RPG AKATSUKI
+            </h1>
+            <p>SENKO'S ULTIMATE FICHAMAKER2000: Criador de fichas intuitivo</p>
+            
           </div>
-
-        </div>
-
-        <!--Individualista-->
-        <div id="Individualista" class="hidden-arquetipo">
-          <h2 class="subtitulo">Individualista</h2>
-
-          <div id="descricao-Individualista">
-            <img src="images/individualista.png" alt="">
-            <p><b>Descrição:</b>O Arquétipo do Individualista é constituído pelo desejos pessoais acima dos valores éticos e morais. Os personagens com tal arquétipo sempre procuram maneiras de se tornarem mais fortes para cumprir seus objetivos, independente das necessidades para alcançá-los, inclusive aceitando se tornarem criminosos, matar pessoas próximas e causar o caos apenas para alcançar os seus objetivos pessoais. O personagem que melhor representa tal arquétipo é Uchiha Sasuke antes da redenção, pois ele sempre buscou forças para cumprir as vinganças assinaladas como objetivos próprios.</p>
+          <div id="primeiraDica" class="tipTabs">
+            <hr>
+            <h2 class="subtitulo">Idade e Aniversário</h2>
+            <p>Os personagens, assim como na série, seguem normalmente um padrão de idade inicial na sua vida ninja, sendo assim, na criação da ficha o usuário estará limitado a uma idade de, no mínimo, oito (8) anos de idade, até, no máximo, vinte (20) anos de idade. </p>
+            <p>Quatro meses (120 dias) reais equivalem a um ano (365 dias) dentro do RPG. Desta maneira, todos podem continuar avançando seus personagens, indiferentemente dos acontecimentos da trama, o que também evita que, em tramas que levam menos tempo, os personagens evoluam demais. Neste sentido, também há influências nas estações, visto que um mês (30 dias) real é considerado uma estação do ano dentro do RPG, na sequência: Verão -> Outono -> Inverno -> Primavera -> Verão, e assim por diante.</p>
           </div>
-
-        </div>
-
-        <!--Mártir-->
-        <div id="Mártir" class="hidden-arquetipo">
-          <h2 class="subtitulo">Mártir</h2>
-
-          <div id="descricao-Mártir">
-            <img src="images/martir.png" alt="">
-            <p><b>Descrição:</b>O Arquétipo do Mártir é constituído pelo desejo altruísta de se sacrificar, em todos os sentidos da palavra, por um bem maior. Os personagens com tal arquétipo costumam estarem dispostos a se sacrificarem para que se tornem símbolos, eles podem acabar matando entes queridos para impedirem algo e se tornarem um símbolo de maldade ou mesmo se matarem para criarem histórias, lendas, símbolos e assim alcançar um objetivo não individualista, em prol de um bem maior. O personagem que melhor representa tal arquétipo é Uchiha Itachi, pois ele sacrificou toda a família e sua moralidade para proteger Konoha de uma guerra civil.</p>
+          
+          <div id="segundaDica" class="tipTabs">
+            <hr>
+            <h2 class="subtitulo">Arquétipos</h2>
+            <p>Os Arquétipos são padrões universais que fazem parte da construção da personalidade de um personagem. Os arquétipos funcionam para determinar a base de formação de um personagem, mas não é imutável. A possibilidade de alterar durante os desenvolvimentos do personagem no jogo, ou seja, através de Plotting e outros sistemas, é enorme, porém ele sempre terá um alinhamento básico que determina o tipo de personagem que ele é. Desta maneira, um personagem cujo arquétipo seja pacífico não poderia iniciar uma guerra sem sentido, tornando  isso uma atitude de metagaming.</p>
+            <p>Todos os personagens começam com um dos Arquétipos que servem de base para suas ações e também sua personalidade. Portanto, desde o momento da criação da ficha, o usuário deve selecionar qual dos arquétipos melhor se encaixa com sua ideia de personagem.</p>
+            
+            <!--Neutro-->
+            <div id="Neutro" class="hidden-arquetipo">
+              <h2 class="subtitulo">Neutro</h2>
+              
+              <div id="descricao-Neutro">
+                <img src="images/neutro.png" alt="">
+                <p><b>Descrição:</b>O Arquétipo do Neutro é constituído pelos desejos simples de viver normalmente como um membro da sociedade. Os personagens com tal arquétipo não pensam em coisas grandiosas como paz mundial, se tornarem líderes ou coisas parecidas, eles simplesmente vivem a ordem das coisas naturalmente realizando missões, enfrentando o que for necessário e seguindo a vida sem muitas alterações bruscas. A maioria dos personagens da série apresentam esse aspecto, pois eles procuram o melhor como ninjas e não necessariamente pelos outros ou eles mesmos.</p>
+              </div>
+              
+            </div>
+            
+            <!--Herói-->
+            <div id="Herói" class="hidden-arquetipo">
+              <h2 class="subtitulo">Herói</h2>
+              
+              <div id="descricao-Herói">
+                <img src="images/heroi.png" alt="">
+                <p><b>Descrição:</b> O Arquétipo do Herói é constituído pela bondade, desejo de paz e procura constante de ajudar os outros. Os personagens com tal arquétipo sempre procuram maneiras de se tornarem mais fortes para ajudar os outros e se importam muito mais em resgatar os outros do que eles mesmos, sendo muito altruístas. Eles costumam evitar ao máximo a morte de outras pessoas, inclusive inimigos, pois acreditam que o ódio não se combate com mais sofrimento e ódio. O personagem que melhor representa tal arquétipo é Uzumaki Naruto que, apesar das dificuldades, sempre buscou se tornar um protetor.</p>
+              </div>
+              
+            </div>
+            
+            <!--Anti-Herói-->
+            <div id="Anti-herói" class="hidden-arquetipo">
+              <h2 class="subtitulo">Anti-Herói</h2>
+              
+              <div id="descricao-Anti-herói">
+                <img src="images/antiheroi.png" alt="">
+                <p><b>Descrição:</b>O Arquétipo do Anti-Herói é constituído por um desejo forte de alterar o mundo que, em sua visão, está imerso nas trevas, mesmo que isso seja através de um mundo caótico. Os personagens com tal arquétipo não se preocupam em manter a paz e a segurança das pessoas por mais que queiram encontrar uma solução para a maldade no mundo, eles lutam, matam, manipulam e estão sempre buscando maneiras desordeiras de alcançar um plano maior (como a paz mundial, o plano do olho da lua) se jogando na escuridão para isso. O personagem que melhor representa tal arquétipo é Uchiha Obito após o incidente de Kakashi Gaiden, pois ele buscou tornar o mundo em um sonho de paz através de inúmeros incidentes caóticos, inclusive uma Guerra Mundial.</p>
+              </div>
+              
+            </div>
+            
+            <!--Vilão-->
+            <div id="Vilão" class="hidden-arquetipo">
+              <h2 class="subtitulo">Vilão</h2>
+              
+              <div id="descricao-Vilão">
+                <img src="images/vilao.png" alt="">
+                <p><b>Descrição:</b>O Arquétipo do Vilão é constituído pela encarnação do mal, movido pelos desejos de prejudicar algo ou alguém, causar discórdia, sofrimento e caos independente de motivos concretos ou não. Os personagens com tal arquétipo são completamente opostos aos com arquétipo de Herói, pois não se preocupam em matar, manipular, provocar caos indevido e se divertirem com tais coisas. O personagem que melhor representa o arquétipo é Kaguya cujos planos e objetivos não eram mais do que exterminar o mundo independente dos prós e contras das pessoas.</p>
+              </div>
+              
+            </div>
+            
+            <!--Individualista-->
+            <div id="Individualista" class="hidden-arquetipo">
+              <h2 class="subtitulo">Individualista</h2>
+              
+              <div id="descricao-Individualista">
+                <img src="images/individualista.png" alt="">
+                <p><b>Descrição:</b>O Arquétipo do Individualista é constituído pelo desejos pessoais acima dos valores éticos e morais. Os personagens com tal arquétipo sempre procuram maneiras de se tornarem mais fortes para cumprir seus objetivos, independente das necessidades para alcançá-los, inclusive aceitando se tornarem criminosos, matar pessoas próximas e causar o caos apenas para alcançar os seus objetivos pessoais. O personagem que melhor representa tal arquétipo é Uchiha Sasuke antes da redenção, pois ele sempre buscou forças para cumprir as vinganças assinaladas como objetivos próprios.</p>
+              </div>
+              
+            </div>
+            
+            <!--Mártir-->
+            <div id="Mártir" class="hidden-arquetipo">
+              <h2 class="subtitulo">Mártir</h2>
+              
+              <div id="descricao-Mártir">
+                <img src="images/martir.png" alt="">
+                <p><b>Descrição:</b>O Arquétipo do Mártir é constituído pelo desejo altruísta de se sacrificar, em todos os sentidos da palavra, por um bem maior. Os personagens com tal arquétipo costumam estarem dispostos a se sacrificarem para que se tornem símbolos, eles podem acabar matando entes queridos para impedirem algo e se tornarem um símbolo de maldade ou mesmo se matarem para criarem histórias, lendas, símbolos e assim alcançar um objetivo não individualista, em prol de um bem maior. O personagem que melhor representa tal arquétipo é Uchiha Itachi, pois ele sacrificou toda a família e sua moralidade para proteger Konoha de uma guerra civil.</p>
+              </div>
+              
+            </div>
+            
+            <!--Devoto-->
+            <div id="Devoto" class="hidden-arquetipo">
+              <h2 class="subtitulo">Devoto</h2>
+              
+              <div id="descricao-Devoto">
+                <img src="images/devoto.png" alt="">
+                <p><b>Descrição:</b>O Arquétipo do Devoto é constituído pelo desejo de ajudar algo ou alguém a obter êxito e conquistas. Os personagens com tal arquétipo estão dispostos a darem suas vidas pelo bem de sua devoção, pouco contestando os objetivos da pessoa ou entidade. Eles podem matar outras pessoas, se sacrificarem, entre outras coisas absurdas tudo para o bem-estar do que está acima deles. O personagem que melhor representa tal arquétipo é Haku, pois ele era extremamente devoto a ajudar a garantir os sonhos e objetivos de Zabuza, inclusive se sacrificando para protegê-lo.</p>
+              </div>
+              
+            </div>
+            
+            <!--Ajudante-->
+            <div id="Ajudante" class="hidden-arquetipo">
+              <h2 class="subtitulo">Ajudante</h2>
+              
+              <div id="descricao-Ajudante">
+                <img src="images/ajudante.png" alt="">
+                <p><b>Descrição:</b>O Arquétipo do Ajudante é constituído pelo desejo de ajudar pessoas ou coisas importantes para eles, afim de ajudá-los a manter seus sonhos. Os personagens com tal arquétipo se diferem dos devotos porque eles não estão dispostos a se entregarem totalmente em prol do bem-estar e objetivos de outros, eles apenas estão dispostos a auxiliarem com conselhos, dicas e ajudas em combate, mas não ultrapassando os próprios desejos ou perdendo a identidade para tal. O personagem que melhor representa tal arquétipo é Shikamaru, pois ele sempre foi um ajudante do time, e de Naruto ao se tornar Hokage, mas mantém suas próprias convicções.</p>
+              </div>
+              
+            </div>
+            
+            <!--Governante-->
+            <div id="Governante" class="hidden-arquetipo">
+              <h2 class="subtitulo">Governante</h2>
+              
+              <div id="descricao-Governante">
+                <img src="images/governante.png" alt="">
+                <p><b>Descrição:</b>O Arquétipo do Governante é constituído pelo desejo de conquistar os mais altos níveis e poderes a quase qualquer custo. Facilmente confundido com outros como Herói, Individualista e até Anti-Herói, esses personagens se diferem por estarem focados não num único obejtivo maior, mas sim neles mesmos. Eles desejam obter poder para si, não em prol de outros, mas também não estão dispostos a se isolarem como os individualistas, pois eles sabem que para obter um poder social é necessário também de pessoas para segui-los. Sendo assim, eles costumam tentar agir como líderes, tentam sempre mostrar a possibilidade de governar, mesmo quando não possuem um Espírito de Liderança (2).</p>
+              </div>
+              
+            </div>
+            
+            <!--Pesquisador-->
+            <div id="Pesquisador" class="hidden-arquetipo">
+              <h2 class="subtitulo">Pesquisador</h2>
+              
+              <div id="descricao-Pesquisador">
+                <img src="images/pesquisador.png" alt="">
+                <p><b>Descrição:</b>O Arquétipo do Pesquisador é constituído pelo desejo intenso de conhecer tudo. Os personagens com tal arquétipo sempre buscam maneiras de obter mais conhecimento sobre absolutamente tudo. Mesmo conhecendo todas as coisas mais diversas, eles continuam querendo saber mais, possuir mais, criar mais, ou seja, serem além de seus tempos. Isto, porém, não significa que eles serão necessariamente personagens negativos. O personagem que melhor representa tal arquétipo é Orochimaru que, em prol de sua personalidade exploradora, realizou coisas questionáveis e outras nem tanto.  </p>
+              </div>
+              
+            </div>
+            
+            <!--Tolo-->
+            <div id="Tolo" class="hidden-arquetipo">
+              <h2 class="subtitulo">Tolo</h2>
+              
+              <div id="descricao-Tolo">
+                <img src="images/tolo.png" alt="">
+                <p><b>Descrição:</b>O Arquétipo do Tolo é constituído pelo desejo de ter um momento de brilho, mas sem deixar de levar a vida de modo leve. Os personagens com tal arquétipo costumam ser considerados tolos, chatos, entre outros adjetivos, pois parecem não se importar com as regras específicas e protocolos sociais. Eles costumam passar uma imagem de rebeldes, evitando treinamentos, bebendo além da conta, e realizando coisas diferentes do esperado. Porém, mesmo com esse jeito leve de seguir a vida, eles possuem o desejo de grandeza. O personagem que melhor representa tal arquétipo é Jiraya que foi mostrado como um personagem diferente do habitual; escrevia livros, viajava, bebia, dormia com várias mulheres, porém ele sempre teve um bem-maior, um objetivo e um caminho para seguir até a glória. O mesmo para Boruto.</p>
+              </div>
+              
+            </div>
+            
+            <hr>
+            
+            <div id="clas-kgs">
+              <h2 class="subtitulo">Clãs e Kekkei Genkais</h2>
+              <p>Os personagens podem iniciar pertencentes a Clãs ou possuidores de Kekkei Genkais desde a criação da ficha. Divididos entre Limitados, Ilimitados e Criados, o usuário poderá conferir a <a href="https://www.narutorpgakatsuki.net/t66695-lista-e-organizacao-de-clas">Lista de Organização de Clãs</a>, buscando conhecer as opções disponíveis e então solicitar a entrada no Clã/KG desejado antes mesmo de criar a ficha.</p>
+              <p>Entretanto, sendo um sistema de criação, o usuário poderá também optar por criar uma nova Kekkei Genkai ou Clã. Nestes casos, antes mesmo de criar uma ficha, o usuário deverá abrir um tópico na <a href="https://www.narutorpgakatsuki.net/f309-area-de-criacao-de-kg-clas">Área de Criação de Kekkei Genkais</a> e, seguindo as normas descritas no tópico fixo da área, colocar a criação para a avaliação da Staff.</p>
+              <p>Se ainda desejar, o usuário poderá iniciar sem nenhum Clã ou Kekkei Genkai, absolutamente nenhuma habilidade inicial.</p>
+            </div>
           </div>
-
-        </div>
-
-        <!--Devoto-->
-        <div id="Devoto" class="hidden-arquetipo">
-          <h2 class="subtitulo">Devoto</h2>
-
-          <div id="descricao-Devoto">
-            <img src="images/devoto.png" alt="">
-            <p><b>Descrição:</b>O Arquétipo do Devoto é constituído pelo desejo de ajudar algo ou alguém a obter êxito e conquistas. Os personagens com tal arquétipo estão dispostos a darem suas vidas pelo bem de sua devoção, pouco contestando os objetivos da pessoa ou entidade. Eles podem matar outras pessoas, se sacrificarem, entre outras coisas absurdas tudo para o bem-estar do que está acima deles. O personagem que melhor representa tal arquétipo é Haku, pois ele era extremamente devoto a ajudar a garantir os sonhos e objetivos de Zabuza, inclusive se sacrificando para protegê-lo.</p>
+          
+          <div id="terceiraDica" class="tipTabs">
+            <hr>
+            <h2 class="subtitulo">As Descrições Psicológicas</h2>
+            <p>As Descrições Psicológicas ficam a critério total do jogador, mas também não podem destoar de outras informações contidas no decorrer da ficha (como, por exemplo, Defeitos dados ao personagem). O campo “Transtornos/Defeitos” não precisa necessariamente ser completado, bem como pode conter mais informações que apenas aquelas que constituem a lista de Defeitos do Naruto RPG Akatsuki; porém, ressalta-se aqui que toda informação contida na ficha poderá ser utilizada contra o personagem, seja pelas intenções do próprio jogador ou pelas dos narradores/Mestres de RPG, então todo cuidado é pouco para que a <a href="https://www.narutorpgakatsuki.net/t54332-regra-metagaming">regra de Metagaming</a> não seja quebrada!</p>
           </div>
-
-        </div>
-
-        <!--Ajudante-->
-        <div id="Ajudante" class="hidden-arquetipo">
-          <h2 class="subtitulo">Ajudante</h2>
-
-          <div id="descricao-Ajudante">
-            <img src="images/ajudante.png" alt="">
-            <p><b>Descrição:</b>O Arquétipo do Ajudante é constituído pelo desejo de ajudar pessoas ou coisas importantes para eles, afim de ajudá-los a manter seus sonhos. Os personagens com tal arquétipo se diferem dos devotos porque eles não estão dispostos a se entregarem totalmente em prol do bem-estar e objetivos de outros, eles apenas estão dispostos a auxiliarem com conselhos, dicas e ajudas em combate, mas não ultrapassando os próprios desejos ou perdendo a identidade para tal. O personagem que melhor representa tal arquétipo é Shikamaru, pois ele sempre foi um ajudante do time, e de Naruto ao se tornar Hokage, mas mantém suas próprias convicções.</p>
+          
+          <div id="quartaDica" class="tipTabs">
+            <hr>
+            <h2 class="subtitulo">As Descrições Físicas</h2>
+            <p>As Descrições Físicas devem obrigatoriamente ser seguidas à risca com relação ao personagem base assinalado na Organização de Aparências, exceto em casos pontuais de explicações plausíveis desde a criação da ficha, de acontecimentos validados pelo ONgame e de personagens portadores de doujutsus como o Byakugan ou o Rinnegan, que não existem em personagens alheios à série Naruto.</p>
           </div>
-
-        </div>
-
-        <!--Governante-->
-        <div id="Governante" class="hidden-arquetipo">
-          <h2 class="subtitulo">Governante</h2>
-
-          <div id="descricao-Governante">
-            <img src="images/governante.png" alt="">
-            <p><b>Descrição:</b>O Arquétipo do Governante é constituído pelo desejo de conquistar os mais altos níveis e poderes a quase qualquer custo. Facilmente confundido com outros como Herói, Individualista e até Anti-Herói, esses personagens se diferem por estarem focados não num único obejtivo maior, mas sim neles mesmos. Eles desejam obter poder para si, não em prol de outros, mas também não estão dispostos a se isolarem como os individualistas, pois eles sabem que para obter um poder social é necessário também de pessoas para segui-los. Sendo assim, eles costumam tentar agir como líderes, tentam sempre mostrar a possibilidade de governar, mesmo quando não possuem um Espírito de Liderança (2).</p>
+          
+          <div id="quintaDica" class="tipTabs">
+            <hr>
+            <h2 class="subtitulo">A História</h2>
+            <p>A História, diferentemente do que a maioria acredita ao criar uma ficha, não precisa (mas também pode) ser muito curta ou muito comprida; também fica a critério do próprio jogador. Porém, algumas especificações devem ser seguidas: <b>a)</b> os personagens até podem nascer, mas não podem <b>crescer</b> fora do vilarejo/país ao qual foram filiados na Organização de Vilarejos (sobretudo porque todo e qualquer conhecimento acerca do mundo ninja deve ser adquirido em ONgame pelos personagens);<b>b)</b>  demais conhecimentos (como, por exemplo, acerca de clãs/KGs/HIs, HU, HS, técnicas [especiais ou não], elementos, etc.), alheios àqueles iniciais dos personagens, igualmente não podem ser adquiridos através da história da ficha, visto que devem aparecer no ONgame dos personagens também; c) outros aspectos que fugirem do bom senso da série e/ou da Trama do fórum poderão (e deverão) ser ajustados de acordo com a avaliação do Helper/Avaliador de Ficha responsável.</p>
+            <p><b>Observação:</b> Para mais informações acerca da Trama do fórum, pode-se acessar <a href="https://www.narutorpgakatsuki.net/f167-enredo">esta área</a>, que contempla (mesmo que de um modo resumido para uma visualização mais rápida) os acontecimentos oficiais do ONgame do Naruto RPG Akatsuki entre os arcos 01 e 07. Até que a área seja devidamente atualizada, para maiores informações sobre os arcos 08, 09 e 10 (sendo este o atual), pode-se entrar em contato direto com os administradores @Ange e/ou @Shion.</p>
           </div>
-
-        </div>
-
-        <!--Pesquisador-->
-        <div id="Pesquisador" class="hidden-arquetipo">
-          <h2 class="subtitulo">Pesquisador</h2>
-
-          <div id="descricao-Pesquisador">
-            <img src="images/pesquisador.png" alt="">
-            <p><b>Descrição:</b>O Arquétipo do Pesquisador é constituído pelo desejo intenso de conhecer tudo. Os personagens com tal arquétipo sempre buscam maneiras de obter mais conhecimento sobre absolutamente tudo. Mesmo conhecendo todas as coisas mais diversas, eles continuam querendo saber mais, possuir mais, criar mais, ou seja, serem além de seus tempos. Isto, porém, não significa que eles serão necessariamente personagens negativos. O personagem que melhor representa tal arquétipo é Orochimaru que, em prol de sua personalidade exploradora, realizou coisas questionáveis e outras nem tanto.  </p>
+          
+          
+          <div id="sextaDica" class="tipTabs">
+            <hr>
+            <h2 class="subtitulo">Sistema de Databook</h2>
+            <p>Para completar o Databook do personagem, os jogadores devem se atentar tanto ao <a href="https://www.narutorpgakatsuki.net/t66723-03-sistema-de-databook">Sistema de Databook</a> quanto à regra de obtenção de uso de Jutsus. Isso porque a distribuição de pontos tem duas formas predefinidas (focada e balanceada), além de um limite por rank, ambos aspectos que devem ser respeitados durante todo o jogo, e também porque os maiores requerimentos para a obtenção e o uso de técnicas são pontos em determinados atributos do Databook. Ou seja, para que Jutsus de ranks mais altos sejam acessíveis ao personagem, certos atributos devem já ter um mínimo de pontos, sem que o total ultrapasse o limite do rank atual do personagem nem quebre a forma de distribuição escolhida pelo jogador.</p>
+            <canvas id="myChart" width="400" height="400"></canvas>
           </div>
-
-        </div>
-
-        <!--Tolo-->
-        <div id="Tolo" class="hidden-arquetipo">
-          <h2 class="subtitulo">Tolo</h2>
-
-          <div id="descricao-Tolo">
-            <img src="images/tolo.png" alt="">
-            <p><b>Descrição:</b>O Arquétipo do Tolo é constituído pelo desejo de ter um momento de brilho, mas sem deixar de levar a vida de modo leve. Os personagens com tal arquétipo costumam ser considerados tolos, chatos, entre outros adjetivos, pois parecem não se importar com as regras específicas e protocolos sociais. Eles costumam passar uma imagem de rebeldes, evitando treinamentos, bebendo além da conta, e realizando coisas diferentes do esperado. Porém, mesmo com esse jeito leve de seguir a vida, eles possuem o desejo de grandeza. O personagem que melhor representa tal arquétipo é Jiraya que foi mostrado como um personagem diferente do habitual; escrevia livros, viajava, bebia, dormia com várias mulheres, porém ele sempre teve um bem-maior, um objetivo e um caminho para seguir até a glória. O mesmo para Boruto.</p>
+          
+          <div id="fim">
+            <hr>
+            <pre>
+              <code id="codigo-ficha" class="language-markup">
+                
+              </code>
+              
+            </pre>
+            
+            <h2 class="subtitulo">Copie o código e <a href="https://www.narutorpgakatsuki.net/post?f=142&mode=newtopic">clique aqui para se inscrever</a></h2>
+            
           </div>
-
+          
         </div>
-
-        <hr>
-
-        <div id="clas-kgs">
-          <h2 class="subtitulo">Clãs e Kekkei Genkais</h2>
-          <p>Os personagens podem iniciar pertencentes a Clãs ou possuidores de Kekkei Genkais desde a criação da ficha. Divididos entre Limitados, Ilimitados e Criados, o usuário poderá conferir a <a href="https://www.narutorpgakatsuki.net/t66695-lista-e-organizacao-de-clas">Lista de Organização de Clãs</a>, buscando conhecer as opções disponíveis e então solicitar a entrada no Clã/KG desejado antes mesmo de criar a ficha.</p>
-          <p>Entretanto, sendo um sistema de criação, o usuário poderá também optar por criar uma nova Kekkei Genkai ou Clã. Nestes casos, antes mesmo de criar uma ficha, o usuário deverá abrir um tópico na <a href="https://www.narutorpgakatsuki.net/f309-area-de-criacao-de-kg-clas">Área de Criação de Kekkei Genkais</a> e, seguindo as normas descritas no tópico fixo da área, colocar a criação para a avaliação da Staff.</p>
-          <p>Se ainda desejar, o usuário poderá iniciar sem nenhum Clã ou Kekkei Genkai, absolutamente nenhuma habilidade inicial.</p>
-        </div>
-      </div>
-
-      <div id="terceiraDica" class="tipTabs">
-        <hr>
-        <h2 class="subtitulo">As Descrições Psicológicas</h2>
-        <p>As Descrições Psicológicas ficam a critério total do jogador, mas também não podem destoar de outras informações contidas no decorrer da ficha (como, por exemplo, Defeitos dados ao personagem). O campo “Transtornos/Defeitos” não precisa necessariamente ser completado, bem como pode conter mais informações que apenas aquelas que constituem a lista de Defeitos do Naruto RPG Akatsuki; porém, ressalta-se aqui que toda informação contida na ficha poderá ser utilizada contra o personagem, seja pelas intenções do próprio jogador ou pelas dos narradores/Mestres de RPG, então todo cuidado é pouco para que a <a href="https://www.narutorpgakatsuki.net/t54332-regra-metagaming">regra de Metagaming</a> não seja quebrada!</p>
-      </div>
-
-      <div id="quartaDica" class="tipTabs">
-        <hr>
-        <h2 class="subtitulo">As Descrições Físicas</h2>
-        <p>As Descrições Físicas devem obrigatoriamente ser seguidas à risca com relação ao personagem base assinalado na Organização de Aparências, exceto em casos pontuais de explicações plausíveis desde a criação da ficha, de acontecimentos validados pelo ONgame e de personagens portadores de doujutsus como o Byakugan ou o Rinnegan, que não existem em personagens alheios à série Naruto.</p>
-      </div>
-
-      <div id="quintaDica" class="tipTabs">
-        <hr>
-        <h2 class="subtitulo">A História</h2>
-        <p>A História, diferentemente do que a maioria acredita ao criar uma ficha, não precisa (mas também pode) ser muito curta ou muito comprida; também fica a critério do próprio jogador. Porém, algumas especificações devem ser seguidas: <b>a)</b> os personagens até podem nascer, mas não podem <b>crescer</b> fora do vilarejo/país ao qual foram filiados na Organização de Vilarejos (sobretudo porque todo e qualquer conhecimento acerca do mundo ninja deve ser adquirido em ONgame pelos personagens);<b>b)</b>  demais conhecimentos (como, por exemplo, acerca de clãs/KGs/HIs, HU, HS, técnicas [especiais ou não], elementos, etc.), alheios àqueles iniciais dos personagens, igualmente não podem ser adquiridos através da história da ficha, visto que devem aparecer no ONgame dos personagens também; c) outros aspectos que fugirem do bom senso da série e/ou da Trama do fórum poderão (e deverão) ser ajustados de acordo com a avaliação do Helper/Avaliador de Ficha responsável.</p>
-        <p><b>Observação:</b> Para mais informações acerca da Trama do fórum, pode-se acessar <a href="https://www.narutorpgakatsuki.net/f167-enredo">esta área</a>, que contempla (mesmo que de um modo resumido para uma visualização mais rápida) os acontecimentos oficiais do ONgame do Naruto RPG Akatsuki entre os arcos 01 e 07. Até que a área seja devidamente atualizada, para maiores informações sobre os arcos 08, 09 e 10 (sendo este o atual), pode-se entrar em contato direto com os administradores @Ange e/ou @Shion.</p>
-        </div>
-
-
-      <div id="sextaDica" class="tipTabs">
-        <hr>
-        <h2 class="subtitulo">Sistema de Databook</h2>
-        <p>Para completar o Databook do personagem, os jogadores devem se atentar tanto ao <a href="https://www.narutorpgakatsuki.net/t66723-03-sistema-de-databook">Sistema de Databook</a> quanto à regra de obtenção de uso de Jutsus. Isso porque a distribuição de pontos tem duas formas predefinidas (focada e balanceada), além de um limite por rank, ambos aspectos que devem ser respeitados durante todo o jogo, e também porque os maiores requerimentos para a obtenção e o uso de técnicas são pontos em determinados atributos do Databook. Ou seja, para que Jutsus de ranks mais altos sejam acessíveis ao personagem, certos atributos devem já ter um mínimo de pontos, sem que o total ultrapasse o limite do rank atual do personagem nem quebre a forma de distribuição escolhida pelo jogador.</p>
-      </div>
-
-      <div id="fim">
-        <hr>
-        <pre>
-          <code id="codigo-ficha" class="language-markup">
-
-          </code>
-
-        </pre>
-
-        <h2 class="subtitulo">Copie o código e <a href="https://www.narutorpgakatsuki.net/post?f=142&mode=newtopic">clique aqui para se inscrever</a></h2>
-
-      </div>
-
-    </div>
-
-    <script type="text/javascript" src="tabManager.js"></script>
-
-    <script>
-        // É um padrão manter sempre a inicialização de variável no começo, pra ser mais prático conseguir achar elas
-        var pontosDistribuidos = 0;
-
-        // Máximo de pontos Databook
-        var maxPontosDatabook = getDatabookMaxPoints();
-
-        document.getElementById("pontos-label").innerHTML = "Pontos a distribuir: " + (maxPontosDatabook);
-
-        // Helper
-        let atributos = document.getElementsByClassName("atributo");
-
-        var x = document.getElementsByClassName("hidden-arquetipo");
-
-        var arquetipoAtual = document.getElementById("arquetipo-dropdown").value;
-
-
-        x.display = "none";
-        document.getElementById(arquetipoAtual).style.display = "flex"
-        document.getElementById(arquetipoAtual).style.flexDirection = "column"
-        document.getElementById("descricao-" + arquetipoAtual).style.display = "flex";
-        document.getElementById("descricao-" + arquetipoAtual).style.display = "row";
-
-
-        document.getElementById("arquetipo-dropdown").onchange = function() {arquetipoHelper()};
-
-        function arquetipoHelper() {
-          console.log(arquetipoAtual)
-          document.getElementById(arquetipoAtual).style.display = "none"
-          document.getElementById("descricao-" + arquetipoAtual).style.display = "none";
-
-
-          arquetipoAtual = document.getElementById("arquetipo-dropdown").value;
+        
+        <script type="text/javascript" src="tabManager.js"></script>
+        
+        <script>
+          // É um padrão manter sempre a inicialização de variável no começo, pra ser mais prático conseguir achar elas
+          var pontosDistribuidos = 0;
+          
+          // Máximo de pontos Databook
+          var maxPontosDatabook = getDatabookMaxPoints();
+          
+          document.getElementById("pontos-label").innerHTML = "Pontos a distribuir: " + (maxPontosDatabook);
+          
+          // Helper
+          let atributos = document.getElementsByClassName("atributo");
+          
+          var x = document.getElementsByClassName("hidden-arquetipo");
+          
+          var arquetipoAtual = document.getElementById("arquetipo-dropdown").value;
+          
+          
+          x.display = "none";
           document.getElementById(arquetipoAtual).style.display = "flex"
           document.getElementById(arquetipoAtual).style.flexDirection = "column"
           document.getElementById("descricao-" + arquetipoAtual).style.display = "flex";
           document.getElementById("descricao-" + arquetipoAtual).style.display = "row";
-        }
-
-        // Manipulação Databook
-
-        function addPointsToDatabook(field){
-          this.maxPontosDatabook = getDatabookMaxPoints();
-
-          if(this.maxPontosDatabook < 0){
-            var reduction = (parseInt(this.maxPontosDatabook) == 0) ? -1 : 0
-            field.value = parseInt(field.value) + (parseInt(this.maxPontosDatabook) - reduction);
-            this.maxPontosDatabook = 0;
+          
+          
+          document.getElementById("arquetipo-dropdown").onchange = function() {arquetipoHelper()};
+          
+          function arquetipoHelper() {
+            console.log(arquetipoAtual)
+            document.getElementById(arquetipoAtual).style.display = "none"
+            document.getElementById("descricao-" + arquetipoAtual).style.display = "none";
+            
+            
+            arquetipoAtual = document.getElementById("arquetipo-dropdown").value;
+            document.getElementById(arquetipoAtual).style.display = "flex"
+            document.getElementById(arquetipoAtual).style.flexDirection = "column"
+            document.getElementById("descricao-" + arquetipoAtual).style.display = "flex";
+            document.getElementById("descricao-" + arquetipoAtual).style.display = "row";
           }
-
-          document.getElementById("pontos-label").innerHTML = "Pontos a distribuir: " + getDatabookMaxPoints();
-        }
-
-
-        function semClaHandler(field){
-          document.getElementById("pontos-label").innerHTML = "Pontos a distribuir: " + getDatabookMaxPoints();
-
-          if(field.checked){
-            document.getElementById('kg').disabled = true;
-            document.getElementById('cla').disabled = true;
-          }else {
-            document.getElementById('kg').disabled = false;
-            document.getElementById('cla').disabled = false;
+          
+          // Manipulação Databook
+          
+          function addPointsToDatabook(field){
+            this.maxPontosDatabook = getDatabookMaxPoints();
+            
+            if(this.maxPontosDatabook < 0){
+              var reduction = (parseInt(this.maxPontosDatabook) == 0) ? -1 : 0
+              field.value = parseInt(field.value) + (parseInt(this.maxPontosDatabook) - reduction);
+              this.maxPontosDatabook = 0;
+            }
+            
+            document.getElementById("pontos-label").innerHTML = "Pontos a distribuir: " + getDatabookMaxPoints();
           }
-        }
-
-        function getDatabookMaxPoints()
-        {
-          var nin = document.getElementById("ninjutsu").value;
-          var tai = document.getElementById("taijutsu").value;
-          var gen = document.getElementById("genjutsu").value;
-          var int = document.getElementById("int").value;
-          var forca = document.getElementById("forca").value;
-          var vel = document.getElementById('vel').value;
-          var sta = document.getElementById('sta').value;
-          var selos = document.getElementById('selos').value;
-
-          return (7 + Number(document.getElementById('semCla').checked)) - (parseInt(nin) + parseInt(tai) + parseInt(gen) + parseInt(int) + parseInt(forca) + parseInt(vel) + parseInt(sta) + parseInt(selos));
-
-        }
-
+          
+          
+          function semClaHandler(field){
+            document.getElementById("pontos-label").innerHTML = "Pontos a distribuir: " + getDatabookMaxPoints();
+            
+            if(field.checked){
+              document.getElementById('kg').value = "";
+              document.getElementById('cla').value = "";
+              document.getElementById('kg').disabled = true;
+              document.getElementById('cla').disabled = true;
+            }else {
+              document.getElementById('kg').disabled = false;
+              document.getElementById('cla').disabled = false;
+            }
+          }
+          
+          function getDatabookMaxPoints()
+          {
+            var nin = document.getElementById("ninjutsu").value;
+            var tai = document.getElementById("taijutsu").value;
+            var gen = document.getElementById("genjutsu").value;
+            var int = document.getElementById("int").value;
+            var forca = document.getElementById("forca").value;
+            var vel = document.getElementById('vel').value;
+            var sta = document.getElementById('sta').value;
+            var selos = document.getElementById('selos').value;
+            
+            return (7 + Number(document.getElementById('semCla').checked)) - (parseInt(nin) + parseInt(tai) + parseInt(gen) + parseInt(int) + parseInt(forca) + parseInt(vel) + parseInt(sta) + parseInt(selos));
+            
+          }
+        </script>
+        
+        
       </script>
-
-</body>
-</html>
+      
+    </body>
+    </html>
+    

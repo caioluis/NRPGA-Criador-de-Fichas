@@ -15,7 +15,7 @@ function mostrarPasso(n) {
   } else {
     document.getElementById("btnVoltar").style.display = "inline";
   }
-  if (n == x.length - 1) {
+  if (n == (x.length - 1)) {
     document.getElementById("btnProximo").innerHTML = "SALVAR";
   } else {
     document.getElementById("btnProximo").innerHTML = "PRÓXIMO";
