@@ -5,7 +5,8 @@ function showTab(n) {
   // This function will display the specified tab of the form...
   var x = document.getElementsByClassName("tab");
   var z = document.getElementsByClassName("tipTabs")
-  x[n].style.display = "block";
+  x[n].style.display = "flex";
+  x[n].style.flexDirection = "column"
   z[n].style.display = "block";
   //... and fix the Previous/Next buttons:
   if (n == 0) {
@@ -27,7 +28,7 @@ function nextPrev(n) {
   var x = document.getElementsByClassName("tab");
   var z = document.getElementsByClassName("tipTabs")
   // Exit the function if any field in the current tab is invalid:
-  // if (n == 1 && !validateForm()) return false;
+  //if (n == 1 && !validateForm()) return false;
   // Hide the current tab:
   x[currentTab].style.display = "none";
   z[currentTab].style.display = "none";
@@ -54,24 +55,53 @@ function validateForm() {
     // If a field is empty...
     if (y[i].value == "") {
       // add an "invalid" class to the field:
-      y[i].className += " invalid";
+      y[i].className += " invalido";
       // and set the current valid status to false
       valid = false;
     }
   }
   // If the valid status is true, mark the step as finished and valid:
   if (valid) {
-    document.getElementsByClassName("step")[currentTab].className += " finish";
+    document.getElementsByClassName("circulo")[currentTab].className += " finalizado";
   }
   return valid; // return the valid status
 }
 
 function fixStepIndicator(n) {
   // This function removes the "active" class of all steps...
-  var i, x = document.getElementsByClassName("step");
+  var i, x = document.getElementsByClassName("circulo");
   for (i = 0; i < x.length; i++) {
-    x[i].className = x[i].className.replace(" active", "");
+    x[i].className = x[i].className.replace(" ativo", "");
   }
   //... and adds the "active" class on the current step:
-  x[n].className += " active";
+  x[n].className += " ativo";
+}
+
+//Arquetipos
+
+var x = document.getElementsByClassName("hidden-arquetipo");
+
+var arquetipoAtual = document.getElementById("arquetipo-dropdown").value;
+
+
+x.display = "none";
+document.getElementById(arquetipoAtual).style.display = "flex"
+document.getElementById(arquetipoAtual).style.flexDirection = "column"
+document.getElementById("descricao-" + arquetipoAtual).style.display = "flex";
+document.getElementById("descricao-" + arquetipoAtual).style.display = "row";
+
+
+document.getElementById("arquetipo-dropdown").onchange = function() {arquetipoHelper()};
+
+function arquetipoHelper() {
+    console.log(arquetipoAtual)
+    document.getElementById(arquetipoAtual).style.display = "none"
+    document.getElementById("descricao-" + arquetipoAtual).style.display = "none";
+    
+    
+    arquetipoAtual = document.getElementById("arquetipo-dropdown").value;
+    document.getElementById(arquetipoAtual).style.display = "flex"
+    document.getElementById(arquetipoAtual).style.flexDirection = "column"
+    document.getElementById("descricao-" + arquetipoAtual).style.display = "flex";
+    document.getElementById("descricao-" + arquetipoAtual).style.display = "row";
 }
