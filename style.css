@@ -13,8 +13,11 @@ body {
   }
   
   #form-ficha {
+    position: relative;
     min-height: 825px;
+    min-width: 438px;
     max-width: 32em;
+    max-height: 825px;
     background:#252525;
     padding: 3.1em;
     margin:1em;
@@ -28,8 +31,15 @@ body {
     box-shadow: 0px 4px 13px -1px rgba(0,0,0,0.3);
   }
 
+  #passos {
+    max-height: 700px;
+    overflow-y: auto;
+  }
+
+
   #infos-importantes {
     width: 100%;
+    text-align: justify;
   }
 
   #header {
@@ -116,60 +126,41 @@ body {
     border: 0;
     height: 1px;
     background-color: #383851;
-    margin: 1.1em 0 2em 0;
-  }
-  
-  /* Radio Buttons */
-  
-  #radio-container, #checkbox-container {
-    padding-top: 1em;
-    text-align: center;
-  }
-  
-  #labelgroup, #radiogroup {
-    width: 6.2em;
-    padding-bottom: 0.8em;
-    text-align: center;
-  }
-  
-    
-  #radio-input, #checkbox-input {
-    width: auto;
-    height: auto;
-    -ms-transform: scale(1.5); 
-    -webkit-transform: scale(1.5); 
-    transform: scale(1.5);
-  
-    }
-  
-  #radio-label, #checkbox-label {
-    display: block;
+    margin: 1.1em 0 1em 0;
   }
   
 
-  #radio-container > span {
-    white-space: nowrap;
-    display: inline-block;
-  }
-  
-  #checkbox-container > span {
-    white-space: nowrap;
-    display: inline-block;
-  }
-  
-  #nowrap {
-    white-space: nowrap;
-    display: inline-block;
-  }
-  
-  .selector-group {
-    padding-bottom: 0.9em;
-  }
-  
-  textarea {
-    padding-top: 0.5em;
-  }
-  
+/*Qualidades e defeitos*/
+
+.qualidades-defeitos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+#qualidades-defeitos button {
+  margin: 3px;
+  background-color: grey;
+  font-size: 0.9em;
+  padding: 9px;
+  border-radius: 5px;
+  border-style: none;
+  color: #f8f8f8;
+  outline: none;
+}
+
+#qualidades-defeitos button:hover {
+    -webkit-filter: brightness(1.2);
+    -moz-filter: brightness(1.2);
+    -ms-filter: brightness(1.2);
+    filter: brightness(1.2);
+}
+
+.escolhido {
+  background-color:#c1242f!important;
+}
+
   
 /*Passos do formulário*/
 
@@ -182,10 +173,12 @@ input.invalido {
 /* Esconder tudo desde o princípio: */
 .tab {
   display: none;
+  margin-right: 15px;
 }
 
 .tipTabs {
   display: none;
+  margin-right: 10px;
 }
 
 /* Cícrulos do indicador de passos: */
@@ -210,7 +203,8 @@ input.invalido {
   background-color: #912323;
 }
 
-/* Botão de enviar */
+
+/* Navegação */
 .button {
   border: 2px solid #c1242f;
   background-color: transparent;
@@ -224,13 +218,27 @@ input.invalido {
   background-color:#c1242f;
 }
 
+
+#botoes-navegacao {
+  position: absolute;
+  bottom: 45px;
+  right: 50px;
+}
+
+#circulos-navegacao {
+  position: absolute;
+  bottom: 45px;
+}
+
   
 /*dicas*/
-#primeiraDica, #segundaDica, #terceiraDica, #quartaDica {
+#dicas {
+  max-height: 800px;
+  overflow-y: auto;
   margin: 0 2em;
-  text-align: justify;
   justify-content: center;
 }
+
 
 .subtitulo {
   font-family: 'rubik';
@@ -240,6 +248,10 @@ input.invalido {
   margin: .1em;
   color: black;
   text-transform: uppercase;
+}
+
+.branco {
+  color: #f8f8f8;
 }
 
 
@@ -262,3 +274,21 @@ input.invalido {
   display: none;
 
 }
+
+
+/* Barra de Scroll */
+::-webkit-scrollbar {
+  background-color:  #d6d6d6;
+  height: 15px;
+  border: px solid #555;
+  width: 9px;
+  opacity: 0.5;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+  background-color: #c1242f;
+  width: 7px;
+  border: px solid #555;
+  opacity: 1;
+  transition: 0.5s;
+  }
