@@ -132,14 +132,22 @@ body {
 
 /*Qualidades e defeitos*/
 
+.secao {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow: hidden;
+  transition: height 0.2s ease-out;
+  max-height: 0;
+}
+
 .qualidades-defeitos {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-
-#qualidades-defeitos button {
+.qualidades-defeitos button {
   margin: 3px;
   background-color: grey;
   font-size: 0.9em;
@@ -150,7 +158,7 @@ body {
   outline: none;
 }
 
-#qualidades-defeitos button:hover {
+.qualidades-defeitos button:hover {
     -webkit-filter: brightness(1.2);
     -moz-filter: brightness(1.2);
     -ms-filter: brightness(1.2);
@@ -159,6 +167,36 @@ body {
 
 .escolhido {
   background-color:#c1242f!important;
+}
+
+.sanfona {
+  margin: 3px 0;
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.sanfona-ativa, .sanfona:hover {
+  background-color: #ccc;
+}
+
+.sanfona:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.sanfona-ativa:after {
+  content: "\2212";
 }
 
   
