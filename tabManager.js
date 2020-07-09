@@ -77,7 +77,7 @@ function fixStepIndicator(n) {
   x[n].className += " ativo";
 }
 
-//Arquetipos
+//Controle dos Arquétipos
 
 var x = document.getElementsByClassName("hidden-arquetipo");
 
@@ -104,4 +104,22 @@ function arquetipoHelper() {
     document.getElementById(arquetipoAtual).style.flexDirection = "column"
     document.getElementById("descricao-" + arquetipoAtual).style.display = "flex";
     document.getElementById("descricao-" + arquetipoAtual).style.display = "row";
+}
+
+
+//Controle das qualidades
+var sanfona = document.getElementsByClassName("sanfona");
+var i;
+
+for (i = 0; i < sanfona.length; i++) {
+  sanfona[i].addEventListener("click", function() {
+    this.classList.toggle("sanfona-ativa");
+    var aba = this.nextElementSibling;
+    if (aba.style.maxHeight) {
+      aba.style.maxHeight = null;
+    } else {
+      aba.style.maxHeight = "none";
+      aba.style.marginLeft = "10px";
+    } 
+  });
 }
