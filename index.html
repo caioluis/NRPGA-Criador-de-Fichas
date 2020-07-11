@@ -84,12 +84,56 @@
             </div>
 
             <!--Clã-->
-            <label for="cla" id="cla-label">Clã</label>
-            <input type="text" id="cla" class="placeholder" placeholder="Insira o clã da personagem">
+            <label id="clakg-label">Clã</label>
+            <select id="cla-dropdown" class="placeholder">
+              <option value="--" selected>--</option>
+              <option value="Aburame">Aburame</option>
+              <option value="Akimichi">Akimichi</option>
+              <option value="Chinoike">Chinoike</option>
+              <option value="Fuuma">Fuuma</option>
+              <option value="Hatake">Hatake</option>
+              <option value="Hoki">Hoki</option>
+              <option value="Hoshigaki">Hoshigaki</option>
+              <option value="Hozuki">Hozuki</option>
+              <option value="Hyuuga">Hyuuga</option>
+              <option value="Inuzuka">Inuzuka</option>
+              <option value="Juugo">Juugo</option>
+              <option value="Kaguya ">Kaguya</option>
+              <option value="Kamizuru">Kamizuru</option>
+              <option value="Kurama">Kurama</option>
+              <option value="Lee">Lee</option>
+              <option value="Nara">Nara</option>
+              <option value="Sarutobi">Sarutobi</option>
+              <option value="Senju">Senju</option>
+              <option value="Shiin">Shiin</option>
+              <option value="Shimura">Shimura</option>
+              <option value="Uchiha">Uchiha</option>
+              <option value="Uzumaki">Uzumaki</option>
+              <option value="Yamanaka">Yamanaka</option>
+              <option value="Yuki">Yuki</option>
+              <option value="Yotsuki">Yotsuki</option>
+              <br>
+            </select>
+            <select id="kg-dropdown" class="placeholder">
+              <option value="--" selected>--</option>
+              <option value="Kugutsu">Kugutsu</option>
+              <option value="Kumo Nenkin">Kumo Nenkin</option>
+              <option value="Soma no Ko">Soma no Ko</option>
+              <option value="Akagan">Akagan</option>
+              <option value="Bakuton">Bakuton</option>
+              <option value="Futton">Futton</option>
+              <option value="Jinton">Jinton</option>
+              <option value="Jinton(Velocidade)">Jinton(Velocidade)</option>
+              <option value="Jiton">Jiton</option>
+              <option value="Kōton">Kōton</option>
+              <option value="Meiton">Meiton</option>
+              <option value="Ranton">Ranton</option>
+              <option value="Kamizuru">Shakuton</option>
+              <option value="Shōton">Shōton</option>
+              <option value="Yōton">Yōton</option>
+              <br>
+            </select>
 
-            <!--Kekkei Genkai-->
-            <label for="kg" id="kg-label">Kekkei Genkai</label>
-            <input type="text" id="kg" class="placeholder" placeholder="Insira a Kekkei Genkai da personagem">
 
             <!-- Sem Clã ou KG -->
             <label for="semCla">Sem Clã/Kekkei Genkai</label>
@@ -641,20 +685,6 @@
                        
           </div>
 
-          <div id="passo8" class="tab">
-            <h1>NATUREZA ELEMENTAL</h1>
-            <!--Título História-->
-            <label for="titulo" id="titulo-label">Título da História</label>
-            <input type="text" id="titulo" class="placeholder" placeholder="CARVED MY CURE WITH A BLADE THAT LEFT ME IN SCARS
-            NOW, EVERY TIME I'M WEAK, WORDS SCREAM FROM MY ARMS" required>
-            <!--Ano-->
-            <label for="ano" id="ano-label">Ano de Início</label>
-            <input type="text" id="ano" class="placeholder" placeholder="50 DG - Início" required>
-            <!--Historia-->
-            <label for="historia" id="historia-label">História</label>
-            <textarea id="historia" class="placeholder" placeholder="RECOMENDADO: Escreva a história no Word para não perdê-la acidentalmente" style="height: 300px;" required></textarea>
-          </div>
-
         </div>
          
         <!--Navegação-->
@@ -887,6 +917,7 @@
     <script type="text/javascript" src="tabManager.js"></script>
     <script type="text/javascript" src="databook.js"></script>
     <script type="text/javascript" src="qualidadesDefeitos.js"></script>
+    <script type="text/javascript" src="clasKg.js"></script>
     <script src="script.js"></script>
     <script src="prism.js"></script>
 
