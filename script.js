@@ -12,9 +12,7 @@ sex = document.getElementById("sexualidade").value;
 //arquetipo
 arquetipo = document.getElementById("arquetipo-dropdown").value;
 //cla
-cla = document.getElementById("cla").value;
-//KG
-kg = document.getElementById("kg").value;
+cla = document.getElementById("cla-drowpdown").value;
 //idade
 idade = document.getElementById("idade").value;
 //aniversario

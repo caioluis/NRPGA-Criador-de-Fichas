@@ -128,6 +128,14 @@ body {
     background-color: #383851;
     margin: 1.1em 0 1em 0;
   }
+
+#clakg-label {
+  cursor: pointer;
+}
+
+#kg-dropdown {
+  display: none;
+}
   
 
 /*Qualidades e defeitos*/
