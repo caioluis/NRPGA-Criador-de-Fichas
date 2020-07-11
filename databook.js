@@ -25,11 +25,14 @@ function semClaHandler(field){
     document.getElementById("pontos-label").innerHTML = "Pontos a distribuir: " + getDatabookMaxPoints();
     
     if(field.checked){
-        document.getElementById('kg').disabled = true;
-        document.getElementById('cla').disabled = true;
+        document.getElementById('cla-dropdown').value = "--"
+        document.getElementById('cla-dropdown').disabled = true;
+        document.getElementById('kg-dropdown').value = "--"
+        document.getElementById('kg-dropdown').disabled = true;
     }else {
-        document.getElementById('kg').disabled = false;
-        document.getElementById('cla').disabled = false;
+        document.getElementById('cla-dropdown').disabled = false;
+        document.getElementById('kg-dropdown').disabled = false;
+
     }
 }
 
