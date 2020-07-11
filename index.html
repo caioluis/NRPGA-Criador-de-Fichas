@@ -13,8 +13,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
   <!-- Scripts -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-  <script src="script.js"></script>
-  <script src="prism.js"></script>
 
 
   <title>Senko's UltimateFichaMakerBeta</title>
@@ -340,6 +338,9 @@
                 <button class="sanfona">Defeitos de 2 pontos</button>
                 <div class="secao">
                   <div class="qualidades-defeitos">
+                    <!--Cegueira-->
+                    <button type="button" value="2" onclick="adicionarDefeito(this)">Cegueira (2)</button>
+
                     <!--Receptor Incompatível-->
                     <button type="button" value="2" onclick="adicionarDefeito(this)">Receptor Incompatível (2)</button>
 
@@ -411,23 +412,23 @@
                 <button class="sanfona">Defeitos de 2 pontos</button>
                 <div class="secao">
                   <div class="qualidades-defeitos">
+                    <!--Transtorno de Múltiplas Personalidades-->
+                    <button type="button" value="2" onclick="adicionarDefeito(this)">Transtorno de Múltiplas Personalidades (2)</button>
+
+                    <!--Suicida-->
+                    <button type="button" value="2" onclick="adicionarDefeito(this)">Suicida (2)</button>
+
                     <!--Esquizofrenia-->
                     <button type="button" value="2" onclick="adicionarDefeito(this)">Esquizofrenia (2)</button>
 
                     <!--Insegurança-->
                     <button type="button" value="2" onclick="adicionarDefeito(this)">Insegurança (2)</button>
 
-                    <!--Transtorno de Múltiplas Personalidades-->
-                    <button type="button" value="2" onclick="adicionarDefeito(this)">Transtorno de Múltiplas Personalidades (2)</button>
-
                     <!--Depressivo-->
                     <button type="button" value="2" onclick="adicionarDefeito(this)">Depressivo (2)</button>
 
                     <!--Paranoia-->
                     <button type="button" value="2" onclick="adicionarDefeito(this)">Paranoia (2)</button>
-
-                    <!--Suicida-->
-                    <button type="button" value="2" onclick="adicionarDefeito(this)">Suicida (2)</button>
                   </div>
                 </div>
                 <!--De 1 pontos-->
@@ -437,20 +438,135 @@
                   <!--Megalomaníaco-->
                   <button type="button" value="1" onclick="adicionarDefeito(this)">Megalomaníaco (1)</button>
 
+                  <!--Amnésia Dissociativa-->
+                  <button type="button" value="1" onclick="adicionarDefeito(this)">Amnésia Dissociativa (1)</button>
+
                   <!--Luto-->
                   <button type="button" value="1" onclick="adicionarDefeito(this)">Luto (1)</button>
-
-                  <!--Fobia-->
-                  <button type="button" value="1" onclick="adicionarDefeito(this)">Fobia (1)</button>
 
                   <!--Tique-->
                   <button type="button" value="1" onclick="adicionarDefeito(this)">Tique (1)</button>
 
-                  <!--Amnésia Dissociativa-->
-                  <button type="button" value="1" onclick="adicionarDefeito(this)">Amnésia Dissociativa (1)</button>
+                  <!--Fobia-->
+                  <button class="sanfona">Fobias</button>
+                    <div class="secao">
+                      <div class="qualidades-defeitos">
+                        <!--Acluofobia-->
+                        <button type="button" value="1" onclick="adicionarDefeito(this)">Acluofobia (1)</button>
+
+                        <!--Aerofobia-->
+                        <button type="button" value="1" onclick="adicionarDefeito(this)">Aerofobia (1)</button>
+
+                        <!--Agliofobia-->
+                        <button type="button" value="1" onclick="adicionarDefeito(this)">Agliofobia (1)</button>
+
+                        <!--Aicmofobia-->
+                        <button type="button" value="1" onclick="adicionarDefeito(this)">Aicmofobia (1)</button>
+
+                        <!--Ancraofobia-->
+                        <button type="button" value="1" onclick="adicionarDefeito(this)">Ancraofobia (1)</button>
+
+                        <!--Antropofobia-->
+                        <button type="button" value="1" onclick="adicionarDefeito(this)">Antropofobia (1)</button>
+
+                        <!--Astrofobia-->
+                        <button type="button" value="1" onclick="adicionarDefeito(this)">Astrofobia (1)</button>
+
+                        <!--Criofobia-->
+                        <button type="button" value="1" onclick="adicionarDefeito(this)">Criofobia (1)</button>
+
+                        <!--Hemofobia-->
+                        <button type="button" value="1" onclick="adicionarDefeito(this)">Hemofobia (1)</button>
+
+                        <!--Quimofobia-->
+                        <button type="button" value="1" onclick="adicionarDefeito(this)">Quimofobia (1)</button>
+
+                        <!--Quionofobia-->
+                        <button type="button" value="1" onclick="adicionarDefeito(this)">Quionofobia (1)</button>             
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              <!--Problemas de personalidade-->
+              <button class="sanfona">Problemas de personalidade</button>
+              <div id="problemas-personalidade" class="secao">
+                <!--De 2 pontos-->
+                <button class="sanfona">Defeitos de 2 pontos</button>
+                <div class="secao">
+                  <div class="qualidades-defeitos">
+                    <!--Egocêntrico-->
+                    <button type="button" value="2" onclick="adicionarDefeito(this)">Egocêntrico (2)</button>
+
+                    <!--Ingenuidade-->
+                    <button type="button" value="2" onclick="adicionarDefeito(this)">Ingenuidade (2)</button>
+
+                    <!--Covardia-->
+                    <button type="button" value="2" onclick="adicionarDefeito(this)">Covardia (2)</button>
+
+                    <!--Humanitário-->
+                    <button type="button" value="2" onclick="adicionarDefeito(this)">Humanitário (2)</button>
+
+                    <!--Derrota-->
+                    <button type="button" value="2" onclick="adicionarDefeito(this)">Derrota (2)</button>
+
+                    <!--Guerreiro-->
+                    <button type="button" value="2" onclick="adicionarDefeito(this)">Guerreiro (2)</button>
+                  </div>
+                </div>
+                <!--De 1 pontos-->
+                <button class="sanfona">Defeitos de 1 ponto</button>
+                <div class="secao">
+                  <div class="qualidades-defeitos">
+                  <!--Molenga-->
+                  <button type="button" value="1" onclick="adicionarDefeito(this)">Molenga (1)</button>
+
+                  <!--Mau Humor-->
+                  <button type="button" value="1" onclick="adicionarDefeito(this)">Mau Humor (1)</button>
+
+                  <!--Impulsivos-->
+                  <button type="button" value="1" onclick="adicionarDefeito(this)">Impulsivos (1)</button>
+
+                  <!--Mentira Compulsiva-->
+                  <button type="button" value="1" onclick="adicionarDefeito(this)">Mentira Compulsiva (1)</button>
+
+                  <!--Vícios-->
+                  <button type="button" value="1" onclick="adicionarDefeito(this)">Vícios (1)</button>
+
+                  <!--Ironia-->
+                  <button type="button" value="1" onclick="adicionarDefeito(this)">Ironia (1)</button>
+
+                  <!--Cabeça-dura-->
+                  <button type="button" value="1" onclick="adicionarDefeito(this)">Cabeça-dura (1)</button>
+
+                  <!--Cumpridor de Regras-->
+                  <button type="button" value="1" onclick="adicionarDefeito(this)">Cumpridor de Regras(1)</button>
+
+                  <!--Jogador-->
+                  <button type="button" value="1" onclick="adicionarDefeito(this)">Jogador (1)</button>
+
+                  <!--Falta de Habilidade Social-->
+                  <button type="button" value="1" onclick="adicionarDefeito(this)">Falta de Habilidade Social (1)</button>
+
+                  <!--Melancólico-->
+                  <button type="button" value="1" onclick="adicionarDefeito(this)">Melancólico (1)</button>
+
+                  <!--Melancólico-->
+                  <button type="button" value="1" onclick="adicionarDefeito(this)">Brincalhão (1)</button>
+
+                  <!--Melancólico-->
+                  <button type="button" value="1" onclick="adicionarDefeito(this)">Preguiçoso (1)</button>
+
+                  <!--Passivos-->
+                  <button type="button" value="1" onclick="adicionarDefeito(this)">Passivos (1)</button>
+
+                  <!--Agressivos-->
+                  <button type="button" value="1" onclick="adicionarDefeito(this)">Agressivos (1)</button>
+                  </div>
+                </div>
+              </div>
+
 
             </div>
 
@@ -689,6 +805,8 @@
     <script type="text/javascript" src="tabManager.js"></script>
     <script type="text/javascript" src="databook.js"></script>
     <script type="text/javascript" src="qualidadesDefeitos.js"></script>
+    <script src="script.js"></script>
+    <script src="prism.js"></script>
 
 
 </body>

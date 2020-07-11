@@ -16,11 +16,11 @@ function adicionarQualidade(element) {
         if(valorQualidade > maxPontosQualidades) {
             return false;
         } else{
-            element.classList.add("escolhido");
+            element.classList.add("qualidade-escolhida");
             pontosQualidades += valorQualidade;
         }
     } else {
-        element.classList.remove("escolhido");
+        element.classList.remove("qualidade-escolhida");
         pontosQualidades -= valorQualidade;
     }
 
@@ -34,10 +34,10 @@ function adicionarDefeito(element) {
     var valorDefeito = parseInt(element.value);
     
     if(element.className == ""){
-        element.classList.add("escolhido");
+        element.classList.add("defeito-escolhido");
         pontosDefeitos += valorDefeito;
     } else {
-        element.classList.remove("escolhido");
+        element.classList.remove("defeito-escolhido");
         pontosDefeitos -= valorDefeito;
     }
 

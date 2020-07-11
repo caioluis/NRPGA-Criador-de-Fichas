@@ -165,7 +165,11 @@ body {
     filter: brightness(1.2);
 }
 
-.escolhido {
+.qualidade-escolhida {
+  background-color:#c1242f!important;
+}
+
+.defeito-escolhido {
   background-color:#c1242f!important;
 }
 

@@ -70,7 +70,12 @@ sta = document.getElementById("sta").value;
 //selos
 selos = document.getElementById("selos").value;
 
-totalPontos = nin + gen + tai + int + forca + vel + sta + selos;
+//qualidades
+
+totalPontos = parseInt(nin) + parseInt(gen) + parseInt(tai) + parseInt(int) + parseInt(forca) + parseInt(vel) + parseInt(sta) + parseInt(selos);
+
+
+
 
 
 
@@ -80,6 +85,21 @@ console.log("Dados guardados!")
 }
 
 function salvar() {
+
+    var qualidadesSelecionadas = "";
+    var defeitosSelecionados = "";
+    //pegar todos as os as qualidades e defeitos escolhidos
+    qualidades = document.getElementsByClassName("qualidade-escolhida");
+    defeitos = document.getElementsByClassName("defeito-escolhido");
+    //transformá-los no formato desejado
+    for (i = 0; i < qualidades.length; i++) {
+        qualidadesSelecionadas += `&ltb&gt+&lt/b&gt${(qualidades[i].innerHTML)} \n`;
+    }
+    
+    for (i = 0; i < defeitos.length; i++) {
+        defeitosSelecionados += `&ltb&gt+&lt/b&gt${(defeitos[i].innerHTML)} \n`;
+    }
+
     document.getElementById("form-ficha").style.display = "none";
     document.getElementById("fim").style.display = "block";
     document.getElementById("codigo-ficha").innerHTML =
@@ -159,17 +179,8 @@ ${historia}&lt/div&gt&lt/div&gt
     
 &ltdiv class="dadosdopersonagem3-2"&gt&ltb&gtQualidades e Defeitos&lt/b&gt
     
-&lttable&gt&lttr&gt&lttd&gt&ltdiv class="qualidades"&gt&ltb&gt+&lt/b&gt Qualidade
-&ltb&gt+&lt/b&gt Qualidade
-&ltb&gt+&lt/b&gt Qualidade
-&ltb&gt+&lt/b&gt Qualidade
-&ltb&gt+&lt/b&gt Qualidade&lt/div&gt&lt/td&gt
-&lttd&gt&ltdiv class="defeitos"&gt&ltb&gt—&lt/b&gt Defeitos
-&ltb&gt—&lt/b&gt Defeitos
-&ltb&gt—&lt/b&gt Defeitos
-&ltb&gt—&lt/b&gt Defeitos
-&ltb&gt—&lt/b&gt Defeitos
-&ltb&gt—&lt/b&gt Defeitos&lt/div&gt&lt/td&gt&lt/tr&gt&lt/table&gt
+&lttable&gt&lttr&gt&lttd&gt&ltdiv class="qualidades"&gt${qualidadesSelecionadas}
+&lttd&gt&ltdiv class="defeitos"&gt${defeitosSelecionados}&lt/div&gt&lt/td&gt&lt/tr&gt&lt/table&gt
     
 &ltb&gtNaturezas e Particularidades&lt/b&gt
 [b]Primeira Natureza:[/b] --.
