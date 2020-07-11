@@ -602,10 +602,57 @@
                 </div>
               </div>
 
+              <!--Deficiências Shinobis-->
+              <button class="sanfona">Deficiências Shinobis</button>
+              <div id="problemas-personalidade" class="secao">
+                <!--De 3 pontos-->
+                <button class="sanfona">Defeitos de 3 pontos</button>
+                <div class="secao">
+                  <div class="qualidades-defeitos">
+                    <!--Inabilidade em Ninjutsus-->
+                    <button type="button" value="3" onclick="adicionarDefeito(this)">Inabilidade em Ninjutsus (3)</button>
+
+                    <!--Inabilidade Elemental-->
+                    <button type="button" value="3" onclick="adicionarDefeito(this)">Inabilidade Elemental (3)</button>
+                    
+                    <!--Inabilidade em Genjutsu-->
+                    <button type="button" value="3" onclick="adicionarDefeito(this)">Inabilidade em Genjutsu (3)</button>
+
+                    <!--Dificuldade em Aprender-->
+                    <button type="button" value="3" onclick="adicionarDefeito(this)">Dificuldade em Aprender (3)</button>
+                  </div>
+                </div>
+                <!--De 1 pontos-->
+                <button class="sanfona">Defeitos de 1 ponto</button>
+                <div class="secao">
+                  <div class="qualidades-defeitos">
+                  <!--Inabilidade Armamentista-->
+                  <button type="button" value="1" onclick="adicionarDefeito(this)">Inabilidade Armamentista (1)</button>
+
+                  <!--Inexperiência-->
+                  <button type="button" value="1" onclick="adicionarDefeito(this)">Inexperiência (1)</button>
+                  </div>
+                </div>
+              </div>
+
 
             </div>
 
                        
+          </div>
+
+          <div id="passo8" class="tab">
+            <h1>NATUREZA ELEMENTAL</h1>
+            <!--Título História-->
+            <label for="titulo" id="titulo-label">Título da História</label>
+            <input type="text" id="titulo" class="placeholder" placeholder="CARVED MY CURE WITH A BLADE THAT LEFT ME IN SCARS
+            NOW, EVERY TIME I'M WEAK, WORDS SCREAM FROM MY ARMS" required>
+            <!--Ano-->
+            <label for="ano" id="ano-label">Ano de Início</label>
+            <input type="text" id="ano" class="placeholder" placeholder="50 DG - Início" required>
+            <!--Historia-->
+            <label for="historia" id="historia-label">História</label>
+            <textarea id="historia" class="placeholder" placeholder="RECOMENDADO: Escreva a história no Word para não perdê-la acidentalmente" style="height: 300px;" required></textarea>
           </div>
 
         </div>
