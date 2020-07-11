@@ -51,11 +51,9 @@ function semClaHandler2(field){
 
     
     if(field.checked){
-        document.getElementById('kg').disabled = true;
-        document.getElementById('cla').disabled = true;
+        document.getElementById('cla-dropdown').disabled = true;
     }else {
-        document.getElementById('kg').disabled = false;
-        document.getElementById('cla').disabled = false;
+        document.getElementById('cla-dropdown').disabled = false;
     }
 }
 
