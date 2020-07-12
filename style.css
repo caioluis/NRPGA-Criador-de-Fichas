@@ -112,10 +112,13 @@ body {
     color: #5d646e;
   }
   
+
   textarea {
     height: 6em;
   }
   
+
+
   /* Style to offset for the extra padding */
   
   input, textarea {
@@ -135,6 +138,11 @@ body {
 
 #kg-dropdown {
   display: none;
+}
+
+mark {
+  color: #f8f8f8;
+  background-color: #912323;
 }
   
 
