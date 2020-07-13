@@ -4,8 +4,13 @@ var pontosDefeitos = 0;
 var maxPontosQualidades = getQualidadesMaxPoints();
 var minPontosDefeitos = getDefeitosMinPoints();
 
-document.getElementById("qualidades-contador").innerHTML = "Qualidades - Pontos restantes: " + (maxPontosQualidades);
+$("#qualidades-contador").html("Qualidades - Pontos restantes: " + (maxPontosQualidades));
 
+
+function atualizarTexto() {
+    $("#qualidades-contador").html("Qualidades - Pontos restantes: " + getQualidadesMaxPoints());
+    $("#defeitos-contador").html("Defeitos - Pontos necessários: " + getDefeitosMinPoints());
+}
 
 function adicionarQualidade(element) {
 
@@ -23,10 +28,7 @@ function adicionarQualidade(element) {
         element.classList.remove("qualidade-escolhida");
         pontosQualidades -= valorQualidade;
     }
-
-    document.getElementById("qualidades-contador").innerHTML = "Qualidades - Pontos restantes: " + getQualidadesMaxPoints();
-    document.getElementById("defeitos-contador").innerHTML = "Defeitos - Pontos necessários: " + getDefeitosMinPoints();
-
+    atualizarTexto();
 }
 
 function adicionarDefeito(element) {
@@ -41,25 +43,14 @@ function adicionarDefeito(element) {
         pontosDefeitos -= valorDefeito;
     }
 
-    document.getElementById("defeitos-contador").innerHTML = "Defeitos - Pontos necessários: " + getDefeitosMinPoints();
+    atualizarTexto();
     
 }
 
-function semClaHandler2(field){
-    document.getElementById("qualidades-contador").innerHTML = "Qualidades - Pontos restantes: " + getQualidadesMaxPoints();
-    document.getElementById("defeitos-contador").innerHTML = "Defeitos - Pontos necessários: " + getDefeitosMinPoints();
-
-    
-    if(field.checked){
-        document.getElementById('cla-dropdown').disabled = true;
-    }else {
-        document.getElementById('cla-dropdown').disabled = false;
-    }
-}
 
 function getQualidadesMaxPoints()
 {
-    return (4 + Number(document.getElementById('semCla').checked) - pontosQualidades);   
+    return (4 + Number($("#semCla").is(":checked")) - pontosQualidades);   
 }
 
 function getDefeitosMinPoints() {
@@ -67,8 +58,5 @@ function getDefeitosMinPoints() {
         return 4 - pontosDefeitos;
     } else{
         return pontosQualidades - pontosDefeitos;
-    }
-    
+    }    
 }
-
-
