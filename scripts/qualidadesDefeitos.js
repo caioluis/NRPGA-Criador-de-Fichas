@@ -4,53 +4,53 @@ var pontosDefeitos = 0;
 var maxPontosQualidades = getQualidadesMaxPoints();
 var minPontosDefeitos = getDefeitosMinPoints();
 
-$("#qualidades-contador").html("Qualidades - Pontos restantes: " + (maxPontosQualidades));
+$('#qualidades-contador').html('Qualidades - Pontos restantes: ' + (maxPontosQualidades));
 
 
 function atualizarTexto() {
-    $("#qualidades-contador").html("Qualidades - Pontos restantes: " + getQualidadesMaxPoints());
-    $("#defeitos-contador").html("Defeitos - Pontos necessários: " + getDefeitosMinPoints());
+    $('#qualidades-contador').html('Qualidades - Pontos restantes: ' + getQualidadesMaxPoints());
+    $('#defeitos-contador').html('Defeitos - Pontos necessários: ' + getDefeitosMinPoints());
 }
 
-function adicionarQualidade(element) {
 
-    this.maxPontosQualidades = getQualidadesMaxPoints();
-    var valorQualidade = parseInt(element.value);
+$('#qualidades .qualidades-defeitos :button').click(function(){
+    maxPontosQualidades = getQualidadesMaxPoints();
+    valorQualidade = parseInt($(this).val());
 
-    if(element.className == ""){
+    if( ($(this).attr('class') == undefined) || ($(this).attr('class') == '') ){
         if(valorQualidade > maxPontosQualidades) {
             return false;
         } else{
-            element.classList.add("qualidade-escolhida");
+            $(this).addClass('qualidade-escolhida');
             pontosQualidades += valorQualidade;
         }
     } else {
-        element.classList.remove("qualidade-escolhida");
+        $(this).removeClass('qualidade-escolhida');
         pontosQualidades -= valorQualidade;
     }
     atualizarTexto();
-}
+});
 
-function adicionarDefeito(element) {
-    this.minPontosDefeitos = getDefeitosMinPoints();
-    var valorDefeito = parseInt(element.value);
+$('#defeitos .qualidades-defeitos :button').click(function(){
+    minPontosDefeitos = getDefeitosMinPoints();
+    valorDefeito = parseInt($(this).val());
     
-    if(element.className == ""){
-        element.classList.add("defeito-escolhido");
+    if(($(this).attr('class') == undefined) || ($(this).attr('class') == '')){
+        $(this).addClass('defeito-escolhido');
         pontosDefeitos += valorDefeito;
     } else {
-        element.classList.remove("defeito-escolhido");
+        $(this).removeClass('defeito-escolhido');
         pontosDefeitos -= valorDefeito;
     }
 
     atualizarTexto();
-    
-}
+});
+
 
 
 function getQualidadesMaxPoints()
 {
-    return (4 + Number($("#semCla").is(":checked")) - pontosQualidades);   
+    return (4 + Number($('#semCla').is(':checked')) - pontosQualidades);   
 }
 
 function getDefeitosMinPoints() {

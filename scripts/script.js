@@ -27,8 +27,8 @@ repulsas = document.getElementById("repulsas").value;
 motivacoes = document.getElementById("motivacoes").value;
 //medos
 medos = document.getElementById("medos").value;
-//defeitos
-defeitos = document.getElementById("defeitos").value;
+//transtornos
+transtornos = document.getElementById("transtornos").value;
 //descpsicologica
 descpsicologica = document.getElementById("descpsicologica").value;
 //altura
