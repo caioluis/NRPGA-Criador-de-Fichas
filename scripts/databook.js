@@ -12,17 +12,13 @@ function databookAtualizarTexto() {
 
 // Manipulação Databook
 
-function addPointsToDatabook(field){
-    this.maxPontosDatabook = getDatabookMaxPoints();
-    
-    if(this.maxPontosDatabook < 0){
-        var reduction = (parseInt(this.maxPontosDatabook) == 0) ? -1 : 0
-        field.value = parseInt(field.value) + (parseInt(this.maxPontosDatabook) - reduction);
-        this.maxPontosDatabook = 0;
-    } 
+$('.atributo :input').on('input', function() {
+    maxPontosDatabook = getDatabookMaxPoints();
+    if(maxPontosDatabook < 0) {
+        $(this).val($(this).val() -1);
+    }
     databookAtualizarTexto();
-}
-
+}); 
 
 function getDatabookMaxPoints()
 {
