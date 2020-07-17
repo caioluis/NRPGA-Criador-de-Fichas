@@ -23,10 +23,23 @@ $('#qualidades .qualidades-defeitos :button').click(function(){
         } else{
             $(this).addClass('qualidade-escolhida');
             pontosQualidades += valorQualidade;
+            if ($(this).attr('id') == 'qualidadeNinjutsu') {
+                qualidadeGenjutsu.prop('disabled', true);
+                qualidadeTaijutsu.prop('disabled', true);
+            } else if ($(this).attr('id') == 'qualidadeTaijutsu') {
+                qualidadeGenjutsu.prop('disabled', true);
+                qualidadeNinjutsu.prop('disabled', true);
+            } else if ($(this).attr('id') == 'qualidadeGenjutsu') {
+                qualidadeNinjutsu.prop('disabled', true);
+                qualidadeTaijutsu.prop('disabled', true);
+            }
         }
     } else {
         $(this).removeClass('qualidade-escolhida');
         pontosQualidades -= valorQualidade;
+        qualidadeNinjutsu.prop('disabled', false);
+        qualidadeTaijutsu.prop('disabled', false);
+        qualidadeGenjutsu.prop('disabled', false);
     }
     atualizarTexto();
 });

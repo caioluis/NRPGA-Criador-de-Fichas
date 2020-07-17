@@ -85,7 +85,8 @@
 
             <!--Clã-->
             <label id="clakg-label"><mark>Clã</mark>/Kekkei Genkai</label>
-            <select id="cla-dropdown" class="placeholder">
+            <select id="cla-dropdown" class="placeholder" disabled>
+              <option value="--" disabled selected>--</option>
               <option value="Aburame">Aburame</option>
               <option value="Akimichi">Akimichi</option>
               <option value="Chinoike">Chinoike</option>
@@ -111,10 +112,10 @@
               <option value="Yamanaka">Yamanaka</option>
               <option value="Yuki">Yuki</option>
               <option value="Yotsuki">Yotsuki</option>
-              <option value="--" disabled>--</option>
               <br>
             </select>
-            <select id="kg-dropdown" class="placeholder">
+            <select id="kg-dropdown" class="placeholder" disabled>
+              <option value="--" disabled selected>--</option>
               <option value="Kugutsu">Kugutsu</option>
               <option value="Kumo Nenkin">Kumo Nenkin</option>
               <option value="Soma no Ko">Soma no Ko</option>
@@ -131,14 +132,13 @@
               <option value="Shōton">Shōton</option>
               <option value="Yōton">Yōton</option>
               <option value="Ketsuryūgan" disabled>Ketsuryūgan</option>
-              <option value="--" disabled>--</option>
               <br>
             </select>
 
 
             <!-- Sem Clã ou KG -->
             <label for="semCla">Sem Clã/Kekkei Genkai</label>
-            <input type="checkbox" name="semCla" id="semCla">
+            <input type="checkbox" name="semCla" id="semCla" checked>
           </div>
 
           <div id="passo3" class="tab">
@@ -382,7 +382,27 @@
                     <button type="button" value="1">Indolor (1)</button>
                   </div>
                 </div>
-            </div>
+              </div>
+
+                <div id="qualidadesHatake" class="qualidadesClas">
+                  <button class="sanfona">Qualidades do Clã Hatake</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Versátil & Hábil-->
+                      <button type="button" id="qualidadeVersatil" value="0" disabled>Versátil & Hábil (0)</button>
+
+                      <!--Habilidade em Ninjutsu-->
+                      <button type="button" id="hatakeNin" value="0">Habilidade em Ninjutsu (0)</button>
+                      
+                      <!--Habilidade em Taijutsu-->
+                      <button type="button" id="hatakeTai" value="0">Habilidade em Taijutsu (0)</button>
+
+                      <!--Habilidade em Genjutsu-->
+                      <button type="button" id="hatakeGen" value="0">Habilidade em Genjutsu (0)</button>
+                    </div>
+                  </div>
+                </div>
+            
 
             <hr>
 
