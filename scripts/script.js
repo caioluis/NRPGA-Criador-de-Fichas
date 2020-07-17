@@ -140,7 +140,7 @@ function salvar() {
 &ltdiv title="Graduação"&gt&lti class="fas fa-user-graduate"&gt&lt/i&gt Genin&lt/div&gt
 &ltdiv title="Idade"&gt&lti class="fas fa-baby"&gt&lt/i&gt ${idade}&lt/div&gt
 &ltdiv title="Aniversário"&gt&lti class="fas fa-calendar-alt"&gt&lt/i&gt ${aniversario}&lt/div&gt
-&ltdiv title="Estado"&gt&lti class="fas fa-smile"&gt&lt/i&gt Estado&lt/div&gt
+&ltdiv title="Estado"&gt&lti class="fas fa-smile"&gt&lt/i&gt Vivo&lt/div&gt
 &ltdiv title="Profissão"&gt&lti class="fas fa-user-md"&gt&lt/i&gt Profissão&lt/div&gt
 &ltdiv title="Bijuu"&gt&lti class="fas fa-paw"&gt&lt/i&gt Bijuu&lt/div&gt&lt/div&gt
     
