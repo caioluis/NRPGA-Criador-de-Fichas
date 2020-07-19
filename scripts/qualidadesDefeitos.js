@@ -13,49 +13,69 @@ function atualizarTexto() {
 }
 
 
-$('#qualidades .qualidades-defeitos :button').click(function(){
-    maxPontosQualidades = getQualidadesMaxPoints();
-    valorQualidade = parseInt($(this).val());
+function adicionarQualidade(botão) {
+    botão.addClass('qualidade-escolhida');
+    pontosQualidades += valorQualidade;
+}
 
-    if( ($(this).attr('class') == undefined) || ($(this).attr('class') == '') ){
+function removerQualidade(botão) {
+    botão.removeClass('qualidade-escolhida');
+    pontosQualidades -= valorQualidade;
+}
+
+function adicionarDefeito(botão) {
+    botão.addClass('defeito-escolhido');
+    pontosDefeitos += valorDefeito;
+}
+
+function removerDefeito(botão) {
+    botão.removeClass('defeito-escolhido');
+    pontosDefeitos -= valorDefeito;
+}
+
+
+
+
+$('#qualidades .qualidades-defeitos :button').click(function(){
+    botão = $(this);
+    maxPontosQualidades = getQualidadesMaxPoints();
+    valorQualidade = parseInt(botão.val());
+    if( (botão.attr('class') == undefined) || (botão.attr('class') == '') ){
         if(valorQualidade > maxPontosQualidades) {
             return false;
-        } else{
-            $(this).addClass('qualidade-escolhida');
-            pontosQualidades += valorQualidade;
-            if ($(this).attr('id') == 'qualidadeNinjutsu') {
+        } else{          
+            adicionarQualidade(botão);
+            if (botão.attr('id') == 'qualidadeNinjutsu') {
                 qualidadeGenjutsu.prop('disabled', true);
                 qualidadeTaijutsu.prop('disabled', true);
-            } else if ($(this).attr('id') == 'qualidadeTaijutsu') {
+            } else if (botão.attr('id') == 'qualidadeTaijutsu') {
                 qualidadeGenjutsu.prop('disabled', true);
                 qualidadeNinjutsu.prop('disabled', true);
-            } else if ($(this).attr('id') == 'qualidadeGenjutsu') {
+            } else if (botão.attr('id') == 'qualidadeGenjutsu') {
                 qualidadeNinjutsu.prop('disabled', true);
                 qualidadeTaijutsu.prop('disabled', true);
             }
         }
     } else {
-        $(this).removeClass('qualidade-escolhida');
-        pontosQualidades -= valorQualidade;
+        removerQualidade(botão);
         qualidadeNinjutsu.prop('disabled', false);
         qualidadeTaijutsu.prop('disabled', false);
-        qualidadeGenjutsu.prop('disabled', false);
+        qualidadeGenjutsu.prop('disabled', false);  
     }
     atualizarTexto();
 });
 
 $('#defeitos .qualidades-defeitos :button').click(function(){
+    botão = $(this);
     minPontosDefeitos = getDefeitosMinPoints();
-    valorDefeito = parseInt($(this).val());
-    
-    if(($(this).attr('class') == undefined) || ($(this).attr('class') == '')){
-        $(this).addClass('defeito-escolhido');
-        pontosDefeitos += valorDefeito;
+    valorDefeito = parseInt(botão.val());
+    botão = $(this)
+    if((botão.attr('class') == undefined) || (botão.attr('class') == '')){
+       adicionarDefeito(botão)
     } else {
-        $(this).removeClass('defeito-escolhido');
-        pontosDefeitos -= valorDefeito;
+        removerDefeito(botão)
     }
-
+    
     atualizarTexto();
 });
 
