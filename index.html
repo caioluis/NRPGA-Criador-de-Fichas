@@ -92,7 +92,7 @@
               <option value="Chinoike">Chinoike</option>
               <option value="Fuuma">Fuuma</option>
               <option value="Hatake">Hatake</option>
-              <option value="Hoki">Hoki</option>
+              <option value="Hōki">Hōki</option>
               <option value="Hoshigaki">Hoshigaki</option>
               <option value="Hozuki">Hozuki</option>
               <option value="Hyuuga">Hyuuga</option>
@@ -218,64 +218,30 @@
           </div>
 
           <div id="passo6" class="tab">
-            <h1>DATABOOK</h1>
-            <label for="pontos" id="pontos-label">Pontos a distribuir: </label>
-            <br>
 
-              <div id="atributos">
-                <div class="linhas">
-                  <!--Ninjutsu-->
-                  <div class="atributo">
-                    <label for="ninjutsu" id="ninjutsu-label">Ninjutsu</label>
-                    <input type="number" id="ninjutsu" class="placeholder" placeholder="" value="0" min="0" max="5" onkeydown="return false" required>
-                  </div>
-                  <!--Genjutsu-->
-                  <div class="atributo">
-                    <label for="genjutsu" id="genjutsu-label">Genjutsu</label>
-                    <input type="number" id="genjutsu" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
-                  </div>
-                  <!--Taijutsu-->
-                  <div class="atributo">
-                    <label for="taijutsu" id="taijutsu-label">Taijutsu</label>
-                    <input type="number" id="taijutsu" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
-                  </div>
-                  <!--Inteligência-->
-                  <div class="atributo">
-                    <label for="int" id="int-label">Inteligência</label>
-                    <input type="number" id="int" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
-                  </div>
-                </div>
-                <div class="linhas">
-                  <!--Força-->
-                  <div class="atributo">
-                    <label for="forca" id="forca-label">Força</label>
-                    <input type="number" id="forca" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
-                  </div>
-                  <!--Velocidade-->
-                  <div class="atributo">
-                    <label for="vel" id="vel-label">Velocidade</label>
-                    <input type="number" id="vel" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
-                  </div>
-                  <!--Stamina-->
-                  <div class="atributo">
-                    <label for="sta" id="sta-label">Stamina</label>
-                    <input type="number" id="sta" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
-                  </div>
-                  <!--Selos-->
-                  <div class="atributo">
-                    <label for="selos" id="selos-label">Selos</label>
-                    <input type="number" id="selos" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
-                  </div>
+            <h1>QUALIDADES E DEFEITOS</h1>
+            <h2 id="qualidades-contador" class="subtitulo branco">Qualidades</h2>
+            <div id="qualidadesClas"></div>
+            <div id="qualidadesHatake" class="qualidadesClas">
+              <button class="sanfona">Qualidades do Clã Hatake</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Versátil & Hábil-->
+                  <button type="button" id="qualidadeVersatil" value="0" disabled>Versátil & Hábil (0)</button>
+
+                  <!--Habilidade em Ninjutsu-->
+                  <button type="button" id="hatakeNin" value="0">Habilidade em Ninjutsu (0)</button>
+                  
+                  <!--Habilidade em Taijutsu-->
+                  <button type="button" id="hatakeTai" value="0">Habilidade em Taijutsu (0)</button>
+
+                  <!--Habilidade em Genjutsu-->
+                  <button type="button" id="hatakeGen" value="0">Habilidade em Genjutsu (0)</button>
                 </div>
               </div>
             </div>
-          
- 
-          <div id="passo7" class="tab">
 
-            <h1>QUALIDADES E DEFEITOS</h1>
             <div id="qualidades">
-              <h2 id="qualidades-contador" class="subtitulo branco">Qualidades</h2>
                 <!--Qualidades de 3 pontos-->
                 <button class="sanfona">Qualidades de 3 pontos</button>
                 <div id="qualidades3" class="secao">
@@ -315,7 +281,7 @@
                     <button type="button" value="2">Grande Determinação (2)</button>
 
                     <!--Grande Controle de Chakra-->
-                    <button type="button" value="2">Grande Controle de Chakra (2)</button>
+                    <button type="button" id="qualidadeGCC" value="2">Grande Controle de Chakra (2)</button>
 
                     <!--Visão Noturna-->
                     <button type="button" value="2">Visão Noturna (2)</button>
@@ -383,26 +349,7 @@
                   </div>
                 </div>
               </div>
-
-                <div id="qualidadesHatake" class="qualidadesClas">
-                  <button class="sanfona">Qualidades do Clã Hatake</button>
-                  <div class="secao">
-                    <div class="qualidades-defeitos">
-                      <!--Versátil & Hábil-->
-                      <button type="button" id="qualidadeVersatil" value="0" disabled>Versátil & Hábil (0)</button>
-
-                      <!--Habilidade em Ninjutsu-->
-                      <button type="button" id="hatakeNin" value="0">Habilidade em Ninjutsu (0)</button>
-                      
-                      <!--Habilidade em Taijutsu-->
-                      <button type="button" id="hatakeTai" value="0">Habilidade em Taijutsu (0)</button>
-
-                      <!--Habilidade em Genjutsu-->
-                      <button type="button" id="hatakeGen" value="0">Habilidade em Genjutsu (0)</button>
-                    </div>
-                  </div>
-                </div>
-            
+  
 
             <hr>
 
@@ -733,6 +680,61 @@
                        
           </div>
 
+          <div id="passo7" class="tab">
+            <h1>DATABOOK</h1>
+            <label for="pontos" id="pontos-label">Pontos a distribuir: </label>
+            <br>
+
+              <div id="atributos">
+                <div class="linhas">
+                  <!--Ninjutsu-->
+                  <div class="atributo">
+                    <label for="ninjutsu" id="ninjutsu-label">Ninjutsu</label>
+                    <input type="number" id="ninjutsu" class="placeholder" placeholder="" value="0" min="0" max="5" onkeydown="return false" required>
+                  </div>
+                  <!--Genjutsu-->
+                  <div class="atributo">
+                    <label for="genjutsu" id="genjutsu-label">Genjutsu</label>
+                    <input type="number" id="genjutsu" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
+                  </div>
+                  <!--Taijutsu-->
+                  <div class="atributo">
+                    <label for="taijutsu" id="taijutsu-label">Taijutsu</label>
+                    <input type="number" id="taijutsu" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
+                  </div>
+                  <!--Inteligência-->
+                  <div class="atributo">
+                    <label for="int" id="int-label">Inteligência</label>
+                    <input type="number" id="int" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
+                  </div>
+                </div>
+                <div class="linhas">
+                  <!--Força-->
+                  <div class="atributo">
+                    <label for="forca" id="forca-label">Força</label>
+                    <input type="number" id="forca" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
+                  </div>
+                  <!--Velocidade-->
+                  <div class="atributo">
+                    <label for="vel" id="vel-label">Velocidade</label>
+                    <input type="number" id="vel" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
+                  </div>
+                  <!--Stamina-->
+                  <div class="atributo">
+                    <label for="sta" id="sta-label">Stamina</label>
+                    <input type="number" id="sta" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
+                  </div>
+                  <!--Selos-->
+                  <div class="atributo">
+                    <label for="selos" id="selos-label">Selos</label>
+                    <input type="number" id="selos" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+ 
+          
 
           <div id="passo8" class="tab">
             <h1>NATUREZAS E PARTICULARIDADES</h1>
@@ -964,7 +966,15 @@
           <p><b>Observação:</b> Para mais informações acerca da Trama do fórum, pode-se acessar <a href="https://www.narutorpgakatsuki.net/f167-enredo">esta área</a>, que contempla (mesmo que de um modo resumido para uma visualização mais rápida) os acontecimentos oficiais do ONgame do Naruto RPG Akatsuki entre os arcos 01 e 07. Até que a área seja devidamente atualizada, para maiores informações sobre os arcos 08, 09 e 10 (sendo este o atual), pode-se entrar em contato direto com os administradores @Ange e/ou @Shion.</p>
         </div>
 
+       
+
         <div id="sextaDica" class="tipTabs">
+          <hr>
+          <h2 class="subtitulo">Sistema de Qualidades e Defeitos</h2>
+
+        </div>
+
+        <div id="setimaDica" class="tipTabs">
           <hr>
           <h2 class="subtitulo">Sistema de Databook</h2>
           <p>Para completar o Databook do personagem, os jogadores devem se atentar tanto ao <a href="https://www.narutorpgakatsuki.net/t66723-03-sistema-de-databook">Sistema de Databook</a> quanto à regra de obtenção de uso de Jutsus. Isso porque a distribuição de pontos tem duas formas predefinidas (focada e balanceada), além de um limite por rank, ambos aspectos que devem ser respeitados durante todo o jogo, e também porque os maiores requerimentos para a obtenção e o uso de técnicas são pontos em determinados atributos do Databook. Ou seja, para que Jutsus de ranks mais altos sejam acessíveis ao personagem, certos atributos devem já ter um mínimo de pontos, sem que o total ultrapasse o limite do rank atual do personagem nem quebre a forma de distribuição escolhida pelo jogador.</p>
@@ -1036,12 +1046,6 @@
               <b>05 Pontos:</b> Personagens gênios. São fantásticos no quesito estratégico; deduzem mais facilmente os detalhes percebidos, criam armadilhas e desvendam-nas com facilidade incrível e parecem capazes de perceber facilmente quando ilusões estão agindo. Conseguem tudo isso graças ao raciocínio elevado e processamento de informações.<br>
               <b>06 Pontos:</b> São ninjas que alcançaram possuindo qualidades diferentes dos demais shinobis. Caso a qualidade seja inata, este nível de intelecto permite que o usuário tenha uma habilidade mental tão aguçada que mesmo o tempo parece parar para ele quando está prestes a realizar um plano. Semelhante aos momentos da série em que um personagem percebe o mundo diferente do objetivo dele, o personagem pode realizar essa "pausa no tempo" uma vez a cada três turnos para encontrar uma solução para os seus problemas.</p>
           </div>
-        </div>
-
-        <div id="setimaDica" class="tipTabs">
-          <hr>
-          <h2 class="subtitulo">Sistema de Qualidades e Defeitos</h2>
-
         </div>
 
         <div id="oitavaDica" class="tipTabs">
