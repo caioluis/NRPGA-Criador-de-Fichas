@@ -100,6 +100,7 @@
               <option value="Juugo">Juugo</option>
               <option value="Kaguya ">Kaguya</option>
               <option value="Kamizuru">Kamizuru</option>
+              <option value="Kedoin">Kedoin</option>
               <option value="Kurama">Kurama</option>
               <option value="Lee">Lee</option>
               <option value="Nara">Nara</option>
@@ -110,8 +111,8 @@
               <option value="Uchiha">Uchiha</option>
               <option value="Uzumaki">Uzumaki</option>
               <option value="Yamanaka">Yamanaka</option>
-              <option value="Yuki">Yuki</option>
               <option value="Yotsuki">Yotsuki</option>
+              <option value="Yuki">Yuki</option>
               <br>
             </select>
             <select id="kg-dropdown" class="placeholder" disabled>
@@ -224,17 +225,17 @@
 
             <div id="qualidadesClas">
 
-              <div id="qualidadesAburame" >
+              <div id="qualidadesAburame" class="cla">
                 <button class="sanfona">Qualidades do Clã Aburame</button>
                 <div class="secao">
                   <div class="qualidades-defeitos">
                     <!--Conhecimentos Científicos-->
-                    <button type="button" id="qualidadeCientificos" value="0" disabled>Conhecimentos Científicos (0)</button>
+                    <button type="button" id="aburameCientificos" value="0" disabled>Conhecimentos Científicos (0)</button>
                   </div>
                 </div>
               </div>
               
-              <div id="qualidadesAkimichi" >
+              <div id="qualidadesAkimichi" class="cla">
                 <button class="sanfona">Qualidades do Clã Akmimichi</button>
                 <div class="secao">
                   <div class="qualidades-defeitos">
@@ -244,7 +245,7 @@
                 </div>
               </div>
 
-              <div id="qualidadesChinoike" >
+              <div id="qualidadesChinoike" class="cla">
                 <button class="sanfona">Qualidades do Clã Chinoike</button>
                 <div class="secao">
                   <div class="qualidades-defeitos">
@@ -254,7 +255,7 @@
                 </div>
               </div>
 
-              <div id="qualidadesFuuma" >
+              <div id="qualidadesFuuma" class="cla">
                 <button class="sanfona">Qualidades do Clã Fūma</button>
                 <div class="secao">
                   <div class="qualidades-defeitos">
@@ -264,7 +265,7 @@
                 </div>
               </div>
 
-              <div id="qualidadesHatake" >
+              <div id="qualidadesHatake" class="cla">
                 <button class="sanfona">Qualidades do Clã Hatake</button>
                 <div class="secao">
                   <div class="qualidades-defeitos">
@@ -282,27 +283,224 @@
                   </div>
                 </div>
               </div>
-            </div>
+            
 
-            <div id="qualidadesHoki" >
+            <div id="qualidadesHoki" class="cla">
               <button class="sanfona">Qualidades do Clã Hōki</button>
               <div class="secao">
                 <div class="qualidades-defeitos">
-                  <!--Habilidade em Ninjutsu-->
-                  <button type="button" id="hokiNin" value="0" disabled>Habilidade em Ninjutsu (0)</button>
+                  <!--Grande Controle de Chakra-->
+                  <button type="button" id="hokiGCC" value="0" disabled>Grande Controle de Chakra (0)</button>
                 </div>
               </div>
             </div>
 
-            <div id="qualidadesHoshigaki" >
+            <div id="qualidadesHoshigaki" class="cla">
               <button class="sanfona">Qualidades do Clã Hoshigaki</button>
               <div class="secao">
                 <div class="qualidades-defeitos">
                   <!--Híbrido Anfíbio-->
-                  <button type="button" id="anfibioHoshigaki" value="0" disabled>Híbrido Anfíbio (0)</button>
+                  <button type="button" id="hoshigakiAnfibio" value="0" disabled>Híbrido Anfíbio (0)</button>
+
+                  <!--Perícia Elemental: Suiton-->
+                  <button type="button" id="hoshigakiPericia" value="0" disabled>Perícia Elemental: Suiton (0)</button>
                 </div>
               </div>
             </div>
+
+            <div id="qualidadesHozuki" class="cla">
+              <button class="sanfona">Qualidades do Clã Hōzuki</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Perícia Elemental: Suiton-->
+                  <button type="button" id="hozukiPericia" value="0" disabled>Perícia Elemental: Suiton (0)</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="qualidadesHyuuga" class="cla">
+              <button class="sanfona">Qualidades do Clã Hyūga</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Habilidade em Taijutsu-->
+                  <button type="button" id="hyuugaTai" value="0" disabled>Habilidade em Taijutsu (0)</button>
+
+                  <!--Grande Controle de Chakra-->
+                  <button type="button" id="hyuugaGCC" value="0" disabled>Grande Controle de Chakra (0)</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="qualidadesInuzuka" class="cla">
+              <button class="sanfona">Qualidades do Clã Inuzuka</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Instintos Anormais-->
+                  <button type="button" id="inuzukaInstintos" value="0" disabled>Instintos Anormais (0)</button>
+
+                  <!--Olfato Aguçado-->
+                  <button type="button" id="inuzukaOlfato" value="0" disabled>Olfato Aguçado (0)</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="qualidadesJuugo" class="cla">
+              <button class="sanfona">Qualidades do Clã Jūgo</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Centro de Energia Natural-->
+                  <button type="button" id="juugoNatural" value="0" disabled>Centro de Energia Natural (0)</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="qualidadesKaguya" class="cla">
+              <button class="sanfona">Qualidades do Clã Kaguya</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Habilidade em Taijutsu-->
+                  <button type="button" id="kaguyaTai" value="0" disabled>Habilidade em Taijutsu (0)</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="qualidadesKamizuru" class="cla">
+              <button class="sanfona">Qualidades do Clã Kamizuru</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Conhecimento Cientifico-->
+                  <button type="button" id="kamizuruCientificos" value="0" disabled>Conhecimento Cientifico (0)</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="qualidadesKedoin" class="cla">
+              <button class="sanfona">Qualidades do Clã Kedōin</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Domínio Psicológico-->
+                  <button type="button" id="kedoinDominio" value="0" disabled>Domínio Psicológico (0)</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="qualidadesKurama" class="cla">
+              <button class="sanfona">Qualidades do Clã Kurama</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Habilidade em Genjutsu-->
+                  <button type="button" id="kuramaGen" value="0" disabled>Habilidade em Genjutsu (0)</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="qualidadesLee" class="cla">
+              <button class="sanfona">Qualidades do Clã Lee</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Habilidade em Taijutsu-->
+                  <button type="button" id="leeTai" value="0" disabled>Habilidade em Taijutsu (0)</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="qualidadesNara" class="cla">
+              <button class="sanfona">Qualidades do Clã Nara</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Inteligência Aguçada-->
+                  <button type="button" id="naraInt" value="0" disabled>Inteligência Aguçada (0)</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="qualidadesSarutobi" class="cla">
+              <button class="sanfona">Qualidades do Clã Sarutobi</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Habilidade em Ninjutsu-->
+                  <button type="button" id="sarutobiNin" value="0" disabled>Habilidade em Ninjutsu (0)</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="qualidadesSenju" class="cla">
+              <button class="sanfona">Qualidades do Clã Senju</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Grande Vitalidade-->
+                  <button type="button" id="senjuVitalidade" value="0" disabled>Grande Vitalidade (0)</button>
+
+                  <!--Grandes Reservas de Chakra-->
+                  <button type="button" id="senjuGRC" value="0" disabled>Grandes Reservas de Chakra (0)</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="qualidadesShimura" class="cla">
+              <button class="sanfona">Qualidades do Clã Shimura</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Perito Elemental: Futon-->
+                  <button type="button" id="periciaShimura" value="0" disabled>Perito Elemental: Futon (0)</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="qualidadesUchiha" class="cla">
+              <button class="sanfona">Qualidades do Clã Uchiha</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Grandes Reservas de Chakra-->
+                  <button type="button" id="uchihaGRC" value="0" disabled>Grandes Reservas de Chakra (0)</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="qualidadesUzumaki" class="cla">
+              <button class="sanfona">Qualidades do Clã Uzumaki</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Grandes Reservas de Chakra-->
+                  <button type="button" id="uzumakiGRC" value="0" disabled>Grandes Reservas de Chakra (0)</button>
+
+                  <!--Grande Vitalidade-->
+                  <button type="button" id="uzumakiVitalidade" value="0" disabled>Grande Vitalidade (0)</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="qualidadesYamanaka" class="cla">
+              <button class="sanfona">Qualidades do Clã Yamanaka</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Sensor-->
+                  <button type="button" id="yamanakaSensor" value="0" disabled>Sensor (0)</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="qualidadesYotsuki" class="cla">
+              <button class="sanfona">Qualidades do Clã Yotsuki</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Perito Armamentista: Kenjutsu-->
+                  <button type="button" id="yotsukiPericia" value="0" disabled>Perito Armamentista: Kenjutsu (0)</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="qualidadesYuki" class="cla">
+              <button class="sanfona">Qualidades do Clã Yuki</button>
+              <div class="secao">
+                <div class="qualidades-defeitos">
+                  <!--Perito Elemental: Hyōton-->
+                  <button type="button" id="yukiPericia" value="0" disabled>Perito Elemental: Hyōton (0)</button>
+                </div>
+              </div>
+            </div>
+            
+          </div>
 
             <div id="qualidades">
                 <!--Qualidades de 3 pontos-->

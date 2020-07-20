@@ -60,39 +60,116 @@ var kgEscolhida = $('#kg-dropdown');
         
         clearQualidades();
         clearDefeitos();
-        
-        $('#qualidadesClas').hide();
+        $('.cla').hide();
         
         switch (claEscolhido.val()) {
             case "Aburame":
-                qualidadesSelecionadas = "&ltb&gt+&lt/b&gtConhecimentos Científicos (0) \n";
-            break;
+                $('#qualidadesAburame').show();
+                $('#aburameCientificos').addClass('qualidade-escolhida');
+                break;
             case "Akimichi":
-                document.getElementById("qualidadeForca").classList.add("qualidade-escolhida")
-                document.getElementById("qualidadeForca").innerHTML = "Força Aguçada (0)"
-                document.getElementById("qualidadeForca").disabled = true;
-                document.getElementById("defeitoGordo").disabled = true;
-            break;
+                $('#qualidadesAkimichi').show();
+                $('#akimichiForca').addClass('qualidade-escolhida');
+                break;
             case "Chinoike":
-                qualidadeGenjutsu.addClass('qualidade-escolhida');
-                qualidadeGenjutsu.html('Habilidade em Genjutsu (0)');
-                qualidadeGenjutsu.prop('disabled', true);
-                document.getElementById("kg-dropdown").value = "Ketsuryūgan";
-            break;
+                $('#qualidadesChinoike').show();
+                $('#chinoikeGen').addClass('qualidade-escolhida');
+                kgEscolhida.val('Ketsuryūgan');
+                break;
             case "Fuuma":
-                qualidadeNinjutsu.addClass('qualidade-escolhida');
-                qualidadeNinjutsu.html('Habilidade em Ninjutsu (0)');
-                qualidadeNinjutsu.prop('disabled', true);
-            break;
+                $('#qualidadesFuuma').show();
+                $('#fuumaGen').addClass('qualidade-escolhida');
+                break;
             case "Hatake":
-                $('#qualidadeVersatil').addClass('qualidade-escolhida');
                 $('#qualidadesHatake').show();
+                $('#qualidadeVersatil').addClass('qualidade-escolhida');
             case "Hōki":
-                $('#qualidadeGCC').addClass('qualidade-escolhida');
-                $('#qualidadeGCC').html('Grande Controle de Chakra (0)');
-                $('#qualidadeGCC').prop('disabled', true);
-            default:
+                $('#qualidadesHoki').show();
+                $('#hokiGCC').addClass('qualidade-escolhida');
+                break;
+            case "Hoshigaki":
+                $('#qualidadesHoshigaki').show();
+                $('#hoshigakiAnfibio').addClass('qualidade-escolhida');
+                $('#hoshigakiPericia').addClass('qualidade-escolhida');
+                break;
+            case "Hozuki":
+                $('#qualidadesHozuki').show();
+                $('#hozukiPericia').addClass('qualidade-escolhida');
+                break;
+            case "Hyuuga":
+                $('#qualidadesHyuuga').show();
+                $('#hyuugaTai').addClass('qualidade-escolhida');
+                $('#hyuugaGCC').addClass('qualidade-escolhida');
+                break;
+            case "Inuzuka":
+                $('#qualidadesInuzuka').show();
+                $('#inuzukaInstintos').addClass('qualidade-escolhida');
+                $('#inuzukaOlfato').addClass('qualidade-escolhida');
+                break;
+            case "Juugo":
+                $('#qualidadesJuugo').show();
+                $('#juugoNatural').addClass('qualidade-escolhida');
+                break;
+            case "Kaguya":
+                $('#qualidadesKaguya').show();
+                $('#kaguyaTai').addClass('qualidade-escolhida');
+                break;
+            case "Kamizuru":
+                $('#qualidadesKamizuru').show();
+                $('#kamizuruCientificos').addClass('qualidade-escolhida');
+                break;
+            case "Kedoin":
+                $('#qualidadesKedoin').show();
+                $('#kedoinDominio').addClass('qualidade-escolhida');
+                break;
+            case "Kurama":
+                $('#qualidadesKurama').show();
+                $('#kuramaGen').addClass('qualidade-escolhida');
+                break;
+            case "Lee":
+                $('#qualidadesLee').show();
+                $('#leeTai').addClass('qualidade-escolhida');
+                break;
+            case "Nara":
+                $('#qualidadesNara').show();
+                $('#naraInt').addClass('qualidade-escolhida');
+                break;
+            case "Sarutobi":
+                $('#qualidadesSarutobi').show();
+                $('#sarutobiNin').addClass('qualidade-escolhida');
             break;
+            case "Senju":
+                $('#qualidadesSenju').show();
+                $('#senjuVitalidade').addClass('qualidade-escolhida');
+                $('#senjuGRC').addClass('qualidade-escolhida');
+                break;
+            case "Shimura":
+                $('#qualidadesShimura').show();
+                $('#periciaShimura').addClass('qualidade-escolhida');
+                break;
+            case "Uchiha":
+                $('#qualidadesUchiha').show();
+                $('#uchihaGRC').addClass('qualidade-escolhida');
+                break;
+            case "Uzumaki":
+                $('#qualidadesUzumaki').show();
+                $('#uzumakiGRC').addClass('qualidade-escolhida');
+                $('#uzumakiVitalidade').addClass('qualidade-escolhida');
+                break;
+            case "Yamanaka":
+                $('#qualidadesYamanaka').show();
+                $('#yamanakaSensor').addClass('qualidade-escolhida');
+                break;
+            case "Yotsuki":
+                $('#qualidadesYotsuki').show();
+                $('#yotsukiPericia').addClass('qualidade-escolhida');
+                break;
+            case "Yuki":
+                $('#qualidadesYuki').show();
+                $('#yukiPericia').addClass('qualidade-escolhida');
+                break;
+            default:
+                break;
             
         }
         document.getElementById("qualidades-contador").innerHTML = "Qualidades - Pontos restantes: " + getQualidadesMaxPoints();
