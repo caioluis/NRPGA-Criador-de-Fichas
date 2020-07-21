@@ -1,84 +1,84 @@
 function guardarInfo() {
 //nome do personagem
-nomePersonagem = document.getElementById("nome").value;
+nomePersonagem = $('nome').val();
 //sobrenome
-sobrenome = document.getElementById("sobrenome").value;
+sobrenome = $('sobrenome').val();
 // vilarejo
-vila = document.getElementById("vilarejo").value;
+vila = $('vilarejo').val();
 //genero
-genero = document.getElementById("genero").value;
+genero = $('genero').val();
 //sexualidade
-sex = document.getElementById("sexualidade").value;
+sex = $('sexualidade').val();
 //arquetipo
-arquetipo = document.getElementById("arquetipo-dropdown").value;
+arquetipo = $('arquetipo-dropdown').val();
 //cla
-cla = document.getElementById("cla-dropdown").value;
+cla = $('cla-dropdown').val();
 //kg
-kg = document.getElementById("kg-dropdown").value;
+kg = $('kg-dropdown').val();
 //idade
-idade = document.getElementById("idade").value;
+idade = $('idade').val();
 //aniversario
-aniversario = document.getElementById("aniversario-dropdown").value;
+aniversario = $('aniversario-dropdown').val();
 //gostos
-gostos = document.getElementById("gostos").value;
+gostos = $('gostos').val();
 //repulsas
-repulsas = document.getElementById("repulsas").value;
+repulsas = $('repulsas').val();
 //motivacoes
-motivacoes = document.getElementById("motivacoes").value;
+motivacoes = $('motivacoes').val();
 //medos
-medos = document.getElementById("medos").value;
-//defeitos
-defeitos = document.getElementById("defeitos").value;
+medos = $('medos').val();
+//transtornos
+transtornos = $('transtornos').val();
 //descpsicologica
-descpsicologica = document.getElementById("descpsicologica").value;
+descpsicologica = $('descpsicologica').val();
 //altura
-altura = document.getElementById("altura").value;
+altura = $('altura').val();
 //peso
-peso = document.getElementById("peso").value;
+peso = $('peso').val();
 //cabelos
-cabelos = document.getElementById("cabelos").value;
+cabelos = $('cabelos').val();
 //olhos
-olhos = document.getElementById("olhos").value;
+olhos = $('olhos').val();
 //braco
-braco = document.getElementById("braco").value;
+braco = $('braco').val();
 //outros
-outros = document.getElementById("outros").value;
+outros = $('outros').val();
 //ppbase
-ppbase = document.getElementById("ppbase").value;
+ppbase = $('ppbase').val();
 //descfisica
-descfisica = document.getElementById("descfisica").value;
+descfisica = $('descfisica').val();
 //titulo
-titulo = document.getElementById("titulo").value;
+titulo = $('titulo').val();
 //ano
-ano = document.getElementById("ano").value;
+ano = $('ano').val();
 //historia
-historia = document.getElementById("historia").value;
+historia = $('historia').val();
 //nin
-nin = document.getElementById("ninjutsu").value;
+nin = $('ninjutsu').val();
 //gen
-gen = document.getElementById("genjutsu").value;
+gen = $('genjutsu').val();
 //tai
-tai = document.getElementById("taijutsu").value;
+tai = $('taijutsu').val();
 //int
-int = document.getElementById("int").value;
+int = $('int').val();
 //forca
-forca = document.getElementById("forca").value;
+forca = $('forca').val();
 //vel
-vel = document.getElementById("vel").value;
+vel = $('vel').val();
 //sta
-sta = document.getElementById("sta").value;
+sta = $('sta').val();
 //selos
-selos = document.getElementById("selos").value;
+selos = $('selos').val();
 //1st Natureza
-primeiraNatureza = document.getElementById("primeira-natureza").value;
+primeiraNatureza = $('primeira-natureza').val();
 
-segundaNatureza = document.getElementById("segunda-natureza").value;
+segundaNatureza = $('segunda-natureza').val();
 
-kgElemental = document.getElementById("kg-elemental").value;
+kgElemental = $('kg-elemental').val();
 
-afinidadeElemental = document.getElementById("afinidade-elemental").value;
+afinidadeElemental = $('afinidade-elemental').val();
 
-limiteJutsus = document.getElementById("limite-jutsus").value;
+limiteJutsus = $('limite-jutsus').val();
 
 bolsaArmas = document.getElementById('bolsa-de-armas').value.split('\n');
 bolsaDeArmas = "";
@@ -97,33 +97,22 @@ console.log("Dados guardados!")
 }
 
 function salvar() {
-    /*
-    qualidades = document.getElementsByClassName("qualidade-escolhida");
-    defeitos = document.getElementsByClassName("defeito-escolhido");
-    
-    for (i = 0; i < qualidades.length; i++) {
-        qualidadesSelecionadas += `&ltb&gt+&lt/b&gt${(qualidades[i].innerHTML)} \n`;
-    }
-    
-    for (i = 0; i < defeitos.length; i++) {
-        defeitosSelecionados += `&ltb&gt+&lt/b&gt${(defeitos[i].innerHTML)} \n`;
-    }*/
-
     qualidadesSelecionadas = "";
     defeitosSelecionados = "";
 
-    qualidadesText = document.getElementById('text-qualidades').value.split('\n');
-    defeitosText = document.getElementById('text-defeitos').value.split('\n');
-
-    for (i = 0; i < qualidadesText.length-1; i++) {
-        qualidadesSelecionadas += `&ltb&gt+&lt/b&gt${(qualidadesText[i])} \n`;
-    }
-        qualidadesSelecionadas += `&ltb&gt+&lt/b&gt${(qualidadesText[qualidadesText.length-1])}`;
     
-    for (i = 0; i < defeitosText.length-1; i++) {
-        defeitosSelecionados += `&ltb&gt-&lt/b&gt${(defeitosText[i])} \n`;
-    }  
-        defeitosSelecionados += `&ltb&gt-&lt/b&gt${(defeitosText[defeitosText.length-1])}`;
+    qualidades = document.getElementsByClassName("qualidade-escolhida");
+    defeitos = document.getElementsByClassName("defeito-escolhido");
+    
+    for (i = 0; i < qualidades.length -1; i++) {
+        qualidadesSelecionadas += `&ltb&gt+&lt/b&gt${(qualidades[i].innerHTML)} \n`;
+    }
+        qualidadesSelecionadas += `&ltb&gt+&lt/b&gt${(qualidades[qualidades.length -1].innerHTML)}`;
+    
+    for (i = 0; i < defeitos.length -1; i++) {
+        defeitosSelecionados += `&ltb&gt-&lt/b&gt${(defeitos[i].innerHTML)} \n`;
+    }
+        defeitosSelecionados += `&ltb&gt-&lt/b&gt${(defeitos[defeitos.length -1].innerHTML)}`;
 
     document.getElementById("form-ficha").style.display = "none";
     document.getElementById("fim").style.display = "block";
@@ -151,7 +140,7 @@ function salvar() {
 &ltdiv title="Graduação"&gt&lti class="fas fa-user-graduate"&gt&lt/i&gt Genin&lt/div&gt
 &ltdiv title="Idade"&gt&lti class="fas fa-baby"&gt&lt/i&gt ${idade}&lt/div&gt
 &ltdiv title="Aniversário"&gt&lti class="fas fa-calendar-alt"&gt&lt/i&gt ${aniversario}&lt/div&gt
-&ltdiv title="Estado"&gt&lti class="fas fa-smile"&gt&lt/i&gt Estado&lt/div&gt
+&ltdiv title="Estado"&gt&lti class="fas fa-smile"&gt&lt/i&gt Vivo&lt/div&gt
 &ltdiv title="Profissão"&gt&lti class="fas fa-user-md"&gt&lt/i&gt Profissão&lt/div&gt
 &ltdiv title="Bijuu"&gt&lti class="fas fa-paw"&gt&lt/i&gt Bijuu&lt/div&gt&lt/div&gt
     

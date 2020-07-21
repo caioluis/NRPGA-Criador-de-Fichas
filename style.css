@@ -93,7 +93,13 @@ body {
   label {
     font-family: 'Open Sans', sans-serif;
     font-size: 1em;
-    color: #c4c4c5;  
+    color: #c4c4c5;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
   }
   
   input, select, textarea {
@@ -148,6 +154,10 @@ mark {
 
 /*Qualidades e defeitos*/
 
+.cla {
+  display: none;
+}
+
 .secao {
   display: flex;
   flex-wrap: wrap;
@@ -194,7 +204,7 @@ mark {
   background-color: #eee;
   color: #444;
   cursor: pointer;
-  padding: 18px;
+  padding: 12px;
   width: 100%;
   border: none;
   text-align: left;
@@ -217,6 +227,37 @@ mark {
 
 .sanfona-ativa:after {
   content: "\2212";
+}
+
+/* databook */
+#atributos {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.linhas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.atributo {
+  display:flex;
+  flex-direction: column;
+  margin: 0 10px;
+  align-items: center;
+}
+
+.atributo input {
+  width: 60px;
+}
+
+
+/*Qualidades Clã*/
+
+#qualidadesHatake {
+  display: none;
 }
 
   

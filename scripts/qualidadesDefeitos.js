@@ -4,62 +4,86 @@ var pontosDefeitos = 0;
 var maxPontosQualidades = getQualidadesMaxPoints();
 var minPontosDefeitos = getDefeitosMinPoints();
 
-document.getElementById("qualidades-contador").innerHTML = "Qualidades - Pontos restantes: " + (maxPontosQualidades);
+$('#qualidades-contador').html('Qualidades - Pontos restantes: ' + (maxPontosQualidades));
 
 
-function adicionarQualidade(element) {
+function atualizarTexto() {
+    $('#qualidades-contador').html('Qualidades - Pontos restantes: ' + getQualidadesMaxPoints());
+    $('#defeitos-contador').html('Defeitos - Pontos necessários: ' + getDefeitosMinPoints());
+}
 
-    this.maxPontosQualidades = getQualidadesMaxPoints();
-    var valorQualidade = parseInt(element.value);
 
-    if(element.className == ""){
+function adicionarQualidade(botão) {
+    botão.addClass('qualidade-escolhida');
+    pontosQualidades += valorQualidade;
+}
+
+function removerQualidade(botão) {
+    botão.removeClass('qualidade-escolhida');
+    pontosQualidades -= valorQualidade;
+}
+
+function adicionarDefeito(botão) {
+    botão.addClass('defeito-escolhido');
+    pontosDefeitos += valorDefeito;
+}
+
+function removerDefeito(botão) {
+    botão.removeClass('defeito-escolhido');
+    pontosDefeitos -= valorDefeito;
+}
+
+
+
+
+$('#qualidades .qualidades-defeitos :button').click(function(){
+    botão = $(this);
+    maxPontosQualidades = getQualidadesMaxPoints();
+    valorQualidade = parseInt(botão.val());
+    if( (botão.attr('class') == undefined) || (botão.attr('class') == '') ){
         if(valorQualidade > maxPontosQualidades) {
             return false;
-        } else{
-            element.classList.add("qualidade-escolhida");
-            pontosQualidades += valorQualidade;
+        } else{          
+            adicionarQualidade(botão);
+            if (botão.attr('id') == 'qualidadeNinjutsu') {
+                qualidadeGenjutsu.prop('disabled', true);
+                qualidadeTaijutsu.prop('disabled', true);
+            } else if (botão.attr('id') == 'qualidadeTaijutsu') {
+                qualidadeGenjutsu.prop('disabled', true);
+                qualidadeNinjutsu.prop('disabled', true);
+            } else if (botão.attr('id') == 'qualidadeGenjutsu') {
+                qualidadeNinjutsu.prop('disabled', true);
+                qualidadeTaijutsu.prop('disabled', true);
+            }
         }
     } else {
-        element.classList.remove("qualidade-escolhida");
-        pontosQualidades -= valorQualidade;
+        removerQualidade(botão);
+        qualidadeNinjutsu.prop('disabled', false);
+        qualidadeTaijutsu.prop('disabled', false);
+        qualidadeGenjutsu.prop('disabled', false);  
     }
+    atualizarTexto();
+});
 
-    document.getElementById("qualidades-contador").innerHTML = "Qualidades - Pontos restantes: " + getQualidadesMaxPoints();
-    document.getElementById("defeitos-contador").innerHTML = "Defeitos - Pontos necessários: " + getDefeitosMinPoints();
-
-}
-
-function adicionarDefeito(element) {
-    this.minPontosDefeitos = getDefeitosMinPoints();
-    var valorDefeito = parseInt(element.value);
-    
-    if(element.className == ""){
-        element.classList.add("defeito-escolhido");
-        pontosDefeitos += valorDefeito;
+$('#defeitos .qualidades-defeitos :button').click(function(){
+    botão = $(this);
+    minPontosDefeitos = getDefeitosMinPoints();
+    valorDefeito = parseInt(botão.val());
+    botão = $(this)
+    if((botão.attr('class') == undefined) || (botão.attr('class') == '')){
+       adicionarDefeito(botão)
     } else {
-        element.classList.remove("defeito-escolhido");
-        pontosDefeitos -= valorDefeito;
+        removerDefeito(botão)
     }
-
-    document.getElementById("defeitos-contador").innerHTML = "Defeitos - Pontos necessários: " + getDefeitosMinPoints();
     
-}
+    atualizarTexto();
+});
 
-function semClaHandler2(field){
-    document.getElementById("qualidades-contador").innerHTML = "Qualidades - Pontos restantes: " + getQualidadesMaxPoints();
-    document.getElementById("defeitos-contador").innerHTML = "Defeitos - Pontos necessários: " + getDefeitosMinPoints();
 
-    
-    if(field.checked){
-        document.getElementById('cla-dropdown').disabled = true;
-    }else {
-        document.getElementById('cla-dropdown').disabled = false;
-    }
-}
 
 function getQualidadesMaxPoints()
 {
-    return (4 + Number(document.getElementById('semCla').checked) - pontosQualidades);   
+    return (4 + Number($('#semCla').is(':checked')) - pontosQualidades);   
 }
 
 function getDefeitosMinPoints() {
@@ -67,8 +91,5 @@ function getDefeitosMinPoints() {
         return 4 - pontosDefeitos;
     } else{
         return pontosQualidades - pontosDefeitos;
-    }
-    
+    }    
 }
-
-

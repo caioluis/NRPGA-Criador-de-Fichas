@@ -1,69 +1,221 @@
 
-var toggleText = document.getElementById("clakg-label");
-var claEscolhido =  document.getElementById("cla-dropdown");
-var kgEscolhida = document.getElementById("kg-dropdown");
-
-toggleText.addEventListener("click", function claKgToggle () {
-    
-    if (toggleText.innerHTML == "<mark>Clã</mark>/Kekkei Genkai") {
-        toggleText.innerHTML = "Clã/<mark>Kekkei Genkai</mark>";
-        claEscolhido.value = "--"
-        claEscolhido.style.display = "none";
-        kgEscolhida.style.display = "inline-block";
-        
-    } else {
-        toggleText.innerHTML = "<mark>Clã</mark>/Kekkei Genkai";
-        kgEscolhida.value = "--"
-        kgEscolhida.style.display = "none";
-        claEscolhido.style.display = "inline-block";
-    }
+var toggleText = $('#clakg-label');
+var claEscolhido =  $('#cla-dropdown');
+var kgEscolhida = $('#kg-dropdown');
+    toggleText.click(
+        function claKgToggle () {     
+        if (toggleText.html() == '<mark>Clã</mark>/Kekkei Genkai') {
+            toggleText.html('Clã/<mark>Kekkei Genkai</mark>');
+            claEscolhido.val('--');
+            claEscolhido.hide();
+            kgEscolhida.show();
+            
+        } else {
+            toggleText.html('<mark>Clã</mark>/Kekkei Genkai');
+            kgEscolhida.val('--');
+            kgEscolhida.hide();
+            claEscolhido.show();
+        }
     });
 
-claEscolhido.addEventListener("change",
-function bonificarClasKgs(){
+    $(document).ready(function(){
+        $('#semCla').change(
+        function semClaHandler(field){
+            databookAtualizarTexto();
+            atualizarTexto();
+            if($('#semCla').is(':checked')){
+                $('.qualidadesClas').hide();
+                $('#cla-dropdown').val('--'); 
+                $('#cla-dropdown').attr("disabled", true);
+                $('#kg-dropdown').val('--'); 
+                $('#kg-dropdown').attr("disabled", true);
+            }else {
+                $('#cla-dropdown').attr("disabled", false);
+                $('#kg-dropdown').attr("disabled", false);
+            }
+        })
+    });
+    
 
-    var qualidadesEscolhidas = document.getElementsByClassName('qualidade-escolhida');
-    var defeitosEscolhidos = document.getElementsByClassName('defeito-escolhido');
+    qualidadeNinjutsu = $('#qualidadeNinjutsu')
+    qualidadeTaijutsu = $('#qualidadeTaijutsu')
+    qualidadeGenjutsu = $('#qualidadeGenjutsu')
 
-    while (qualidadesEscolhidas.length > 0){
-        qualidadesEscolhidas[0].classList.remove('qualidade-escolhida');
+    function clearQualidades() {
+        qualidadesEscolhidas = $('.qualidade-escolhida');
+        qualidadesEscolhidas.removeClass('qualidade-escolhida');
+        qualidadesSelecionadas = '';
+        pontosQualidades = 0;
     }
-    while (defeitosEscolhidos.length > 0) {
-        defeitosEscolhidos[0].classList.remove('defeito-escolhido');
+
+    function clearDefeitos(){
+        defeitosEscolhidos = $('.defeito-escolhido');
+        defeitosEscolhidos.removeClass('defeito-escolhido');
+        defeitosSelecionados = '';
+        pontosDefeitos = 0;
     }
 
-    qualidadesSelecionadas = "";
-    defeitosSelecionados = "";
-    pontosQualidades = 0;
-    pontosDefeitos = 0;
+    claEscolhido.change(
+    function bonificarClasKgs(){
+        
+        clearQualidades();
+        clearDefeitos();
+        $('.cla').hide();
+        
+        switch (claEscolhido.val()) {
+            case "Aburame":
+                $('#qualidadesAburame').show();
+                $('#aburameCientificos').addClass('qualidade-escolhida');
+                break;
+            case "Akimichi":
+                $('#qualidadesAkimichi').show();
+                $('#akimichiForca').addClass('qualidade-escolhida');
+                break;
+            case "Chinoike":
+                $('#qualidadesChinoike').show();
+                $('#chinoikeGen').addClass('qualidade-escolhida');
+                kgEscolhida.val('Ketsuryūgan');
+                break;
+            case "Fuuma":
+                $('#qualidadesFuuma').show();
+                $('#fuumaGen').addClass('qualidade-escolhida');
+                break;
+            case "Hatake":
+                $('#qualidadesHatake').show();
+                $('#qualidadeVersatil').addClass('qualidade-escolhida');
+            case "Hōki":
+                $('#qualidadesHoki').show();
+                $('#hokiGCC').addClass('qualidade-escolhida');
+                break;
+            case "Hoshigaki":
+                $('#qualidadesHoshigaki').show();
+                $('#hoshigakiAnfibio').addClass('qualidade-escolhida');
+                $('#hoshigakiPericia').addClass('qualidade-escolhida');
+                break;
+            case "Hozuki":
+                $('#qualidadesHozuki').show();
+                $('#hozukiPericia').addClass('qualidade-escolhida');
+                break;
+            case "Hyuuga":
+                $('#qualidadesHyuuga').show();
+                $('#hyuugaTai').addClass('qualidade-escolhida');
+                $('#hyuugaGCC').addClass('qualidade-escolhida');
+                break;
+            case "Inuzuka":
+                $('#qualidadesInuzuka').show();
+                $('#inuzukaInstintos').addClass('qualidade-escolhida');
+                $('#inuzukaOlfato').addClass('qualidade-escolhida');
+                break;
+            case "Juugo":
+                $('#qualidadesJuugo').show();
+                $('#juugoNatural').addClass('qualidade-escolhida');
+                break;
+            case "Kaguya":
+                $('#qualidadesKaguya').show();
+                $('#kaguyaTai').addClass('qualidade-escolhida');
+                break;
+            case "Kamizuru":
+                $('#qualidadesKamizuru').show();
+                $('#kamizuruCientificos').addClass('qualidade-escolhida');
+                break;
+            case "Kedoin":
+                $('#qualidadesKedoin').show();
+                $('#kedoinDominio').addClass('qualidade-escolhida');
+                break;
+            case "Kurama":
+                $('#qualidadesKurama').show();
+                $('#kuramaGen').addClass('qualidade-escolhida');
+                break;
+            case "Lee":
+                $('#qualidadesLee').show();
+                $('#leeTai').addClass('qualidade-escolhida');
+                break;
+            case "Nara":
+                $('#qualidadesNara').show();
+                $('#naraInt').addClass('qualidade-escolhida');
+                break;
+            case "Sarutobi":
+                $('#qualidadesSarutobi').show();
+                $('#sarutobiNin').addClass('qualidade-escolhida');
+            break;
+            case "Senju":
+                $('#qualidadesSenju').show();
+                $('#senjuVitalidade').addClass('qualidade-escolhida');
+                $('#senjuGRC').addClass('qualidade-escolhida');
+                break;
+            case "Shimura":
+                $('#qualidadesShimura').show();
+                $('#periciaShimura').addClass('qualidade-escolhida');
+                break;
+            case "Uchiha":
+                $('#qualidadesUchiha').show();
+                $('#uchihaGRC').addClass('qualidade-escolhida');
+                break;
+            case "Uzumaki":
+                $('#qualidadesUzumaki').show();
+                $('#uzumakiGRC').addClass('qualidade-escolhida');
+                $('#uzumakiVitalidade').addClass('qualidade-escolhida');
+                break;
+            case "Yamanaka":
+                $('#qualidadesYamanaka').show();
+                $('#yamanakaSensor').addClass('qualidade-escolhida');
+                break;
+            case "Yotsuki":
+                $('#qualidadesYotsuki').show();
+                $('#yotsukiPericia').addClass('qualidade-escolhida');
+                break;
+            case "Yuki":
+                $('#qualidadesYuki').show();
+                $('#yukiPericia').addClass('qualidade-escolhida');
+                break;
+            default:
+                break;
+            
+        }
+        document.getElementById("qualidades-contador").innerHTML = "Qualidades - Pontos restantes: " + getQualidadesMaxPoints();
+        document.getElementById("defeitos-contador").innerHTML = "Defeitos - Pontos necessários: " + getDefeitosMinPoints();
+    });
 
-switch (claEscolhido.value) {
-    case "Aburame":
-        qualidadesSelecionadas = "&ltb&gt+&lt/b&gtConhecimentos Científicos (0) \n";
-        break;
-    case "Akimichi":
-        document.getElementById("qualidadeForca").classList.add("qualidade-escolhida")
-        document.getElementById("qualidadeForca").innerHTML = "Força Aguçada (0)"
-        document.getElementById("qualidadeForca").disabled = true;
-        document.getElementById("defeitoGordo").classList.add("defeito-escolhido");
-        pontosDefeitos++;
-        document.getElementById("defeitoGordo").disabled = true;
-        break;
-    case "Chinoike":
-        document.getElementById("qualidadeGenjutsu").classList.add("qualidade-escolhida")
-        document.getElementById("qualidadeGenjutsu").innerHTML = "Habilidade em Genjutsu (0)"
-        document.getElementById("qualidadeGenjutsu").disabled = true;
-        document.getElementById("kg-dropdown").value = "Ketsuryūgan";
-        break;
-    case "Fuuma":
-        document.getElementById("qualidadeNinjutsu").classList.add("qualidade-escolhida")
-        document.getElementById("qualidadeNinjutsu").innerHTML = "Habilidade em Ninjutsu (0)"
-        document.getElementById("qualidadeNinjutsu").disabled = true;
-        break;
-    default:
-        break;
+    $('#qualidadesHatake .qualidades-defeitos :button').click(function(){
 
-    }
-    document.getElementById("qualidades-contador").innerHTML = "Qualidades - Pontos restantes: " + getQualidadesMaxPoints();
-    document.getElementById("defeitos-contador").innerHTML = "Defeitos - Pontos necessários: " + getDefeitosMinPoints();
-});
+        qualidadesEscolhidas = $('#qualidades .qualidade-escolhida');
+        qualidadesEscolhidas.removeClass('qualidade-escolhida');
+        qualidadesSelecionadas = '';
+        pontosQualidades = 0;
+        qualidadeNinjutsu.prop("disabled", false);
+        qualidadeTaijutsu.prop('disabled', false);
+        qualidadeGenjutsu.prop('disabled', false);
+
+        if ( ($(this).attr('class') == undefined) || ($(this).attr('class') == '') ) {
+            $(this).addClass('qualidade-escolhida');
+            $('#hatakeNin').prop('disabled', true);
+            $('#hatakeTai').prop('disabled', true);
+            $('#hatakeGen').prop('disabled', true);
+            $(this).prop('disabled', false);
+            $('#qualidades').show();
+            if ($(this).attr('id') == 'hatakeNin') {
+                qualidadeNinjutsu.removeClass('qualidade-escolhida')
+                qualidadeNinjutsu.hide();
+            } else if ($(this).attr('id') == 'hatakeTai') {
+                qualidadeTaijutsu.removeClass('qualidade-escolhida')
+                qualidadeTaijutsu.hide()
+            } else {
+                qualidadeGenjutsu.removeClass('qualidade-escolhida')
+                qualidadeGenjutsu.hide()
+            }
+        } else {
+            $(this).removeClass('qualidade-escolhida');
+            $('#hatakeNin').prop('disabled', false);
+            $('#hatakeTai').prop('disabled', false);
+            $('#hatakeGen').prop('disabled', false);
+            $(this).prop('disabled', false);
+            if ($(this).attr('id') == 'hatakeNin') {
+                qualidadeNinjutsu.show();
+            } else if ($(this).attr('id') == 'hatakeTai') {
+                qualidadeTaijutsu.show()
+            } else {
+                qualidadeGenjutsu.show()
+            }
+        }
+        atualizarTexto();
+    });
