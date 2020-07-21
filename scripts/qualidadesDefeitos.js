@@ -14,22 +14,26 @@ function atualizarTexto() {
 
 
 function adicionarQualidade(botão) {
-    botão.addClass('qualidade-escolhida');
+    botão.addClass('qualidade-escolhida'); 
+    valorQualidade = parseInt(botão.val());
     pontosQualidades += valorQualidade;
 }
 
 function removerQualidade(botão) {
     botão.removeClass('qualidade-escolhida');
+    valorQualidade = parseInt(botão.val());
     pontosQualidades -= valorQualidade;
 }
 
 function adicionarDefeito(botão) {
     botão.addClass('defeito-escolhido');
+    valorDefeito = parseInt(botão.val());
     pontosDefeitos += valorDefeito;
 }
 
 function removerDefeito(botão) {
     botão.removeClass('defeito-escolhido');
+    valorDefeito = parseInt(botão.val());
     pontosDefeitos -= valorDefeito;
 }
 
