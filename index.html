@@ -508,13 +508,13 @@
                 <div id="qualidades3" class="secao">
                   <div class="qualidades-defeitos">
                     <!--Grandes Reservas de Chakra-->
-                    <button type="button" value="3">Grandes Reservas de Chakra (3)</button>
+                    <button type="button" id="qualidadeGRC" value="3">Grandes Reservas de Chakra (3)</button>
                   
                     <!--Grande Vitalidade-->
-                    <button type="button" value="3">Grande Vitalidade (3)</button>
+                    <button type="button" id="qualidadeVitalidade" value="3">Grande Vitalidade (3)</button>
 
                     <!--Instintos Anormais-->
-                    <button type="button" value="3">Instintos Anormais (3)</button>
+                    <button type="button" id="qualidaeInstintos" value="3">Instintos Anormais (3)</button>
 
                     <!--Poder Oculto-->
                     <button type="button" value="3">Poder Oculto (3)</button>
@@ -530,7 +530,7 @@
 
                   <div class="qualidades-defeitos">
                     <!--Inteligência Aguçada-->
-                    <button type="button" value="2">Inteligência Aguçada (2)</button>
+                    <button type="button" id="qualidadeInt" value="2">Inteligência Aguçada (2)</button>
 
                     <!--Agilidade Aguçada-->
                     <button type="button" value="2">Agilidade Aguçada (2)</button>
@@ -551,7 +551,7 @@
                     <button type="button" value="2">Comedor de Chakra (2)</button>
 
                     <!--Sensor-->
-                    <button type="button" value="2">Sensor (2)</button>
+                    <button type="button" id="qualidadeSensor" value="2">Sensor (2)</button>
 
                     <!--Visão Aguçada-->
                     <button type="button" value="2">Visão Aguçada (2)</button>
@@ -560,7 +560,7 @@
                     <button type="button" value="2">Audição Aguçada (2)</button>
 
                     <!--Olfato Aguçada-->
-                    <button type="button" value="2">Olfato Aguçada (2)</button>
+                    <button type="button" id="qualidadeOlfato" value="2">Olfato Aguçada (2)</button>
 
                     <!--Habilidade em Ninjutsu-->
                     <button type="button" id="qualidadeNinjutsu" value="2">Habilidade em Ninjutsu (2)</button>
@@ -588,7 +588,7 @@
 
                   <div class="qualidades-defeitos">
                     <!--Híbrido Anfíbio-->
-                    <button type="button" value="1">Híbrido Anfíbio (1)</button>
+                    <button type="button" id="qualidadeAnfibio" value="1">Híbrido Anfíbio (1)</button>
 
                     <!--Excelente Senso de Direção-->
                     <button type="button" value="1">Excelente Senso de Direção (1)</button>
@@ -754,7 +754,7 @@
                     <button type="button" id="defeitoGordo" value="1">Gordo (1)</button>
 
                     <!--Magricelo-->
-                    <button type="button" value="1">Magricelo (1)</button>
+                    <button type="button" id="defeitoMagricelo" value="1">Magricelo (1)</button>
 
                     <!--Nanismo-->
                     <button type="button" value="1">Nanismo (1)</button>
@@ -807,7 +807,7 @@
                     <button type="button" value="1">Megalomaníaco (1)</button>
 
                     <!--Amnésia Dissociativa-->
-                    <button type="button" value="1">Amnésia Dissociativa (1)</button>
+                    <button type="button" id="defeitoAmnesia" value="1">Amnésia Dissociativa (1)</button>
 
                     <!--Luto-->
                     <button type="button" value="1">Luto (1)</button>
@@ -978,13 +978,13 @@
                   <div class="secao">
                     <div class="qualidades-defeitos">
                       <!--Inabilidade em Ninjutsus-->
-                      <button type="button" value="3">Inabilidade em Ninjutsus (3)</button>
+                      <button type="button" id="defeitoNin" value="3">Inabilidade em Ninjutsus (3)</button>
 
                       <!--Inabilidade Elemental-->
                       <button type="button" value="3">Inabilidade Elemental (3)</button>
                       
                       <!--Inabilidade em Genjutsu-->
-                      <button type="button" value="3">Inabilidade em Genjutsu (3)</button>
+                      <button type="button" id="defeitoGen" value="3">Inabilidade em Genjutsu (3)</button>
 
                       <!--Dificuldade em Aprender-->
                       <button type="button" value="3">Dificuldade em Aprender (3)</button>
@@ -1014,44 +1014,44 @@
                 <div class="linhas">
                   <!--Ninjutsu-->
                   <div class="atributo">
-                    <label for="ninjutsu" id="ninjutsu-label">Ninjutsu</label>
+                    <label for="ninjutsu" id="ninjutsu-label">Ninjutsu<span class="pontoBonus"></span></label>
                     <input type="number" id="ninjutsu" class="placeholder" placeholder="" value="0" min="0" max="5" onkeydown="return false" required>
                   </div>
                   <!--Genjutsu-->
                   <div class="atributo">
-                    <label for="genjutsu" id="genjutsu-label">Genjutsu</label>
+                    <label for="genjutsu" id="genjutsu-label">Genjutsu<span class="pontoBonus"></span></label><span></span>
                     <input type="number" id="genjutsu" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
                   </div>
                   <!--Taijutsu-->
                   <div class="atributo">
-                    <label for="taijutsu" id="taijutsu-label">Taijutsu</label>
+                    <label for="taijutsu" id="taijutsu-label">Taijutsu<span class="pontoBonus"></span></label><span></span>
                     <input type="number" id="taijutsu" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
                   </div>
                   <!--Inteligência-->
                   <div class="atributo">
-                    <label for="int" id="int-label">Inteligência</label>
+                    <label for="int" id="int-label">Inteligência<span class="pontoBonus"></span></label><span></span>
                     <input type="number" id="int" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
                   </div>
                 </div>
                 <div class="linhas">
                   <!--Força-->
                   <div class="atributo">
-                    <label for="forca" id="forca-label">Força</label>
+                    <label for="forca" id="forca-label">Força<span class="pontoBonus"></span></label><span></span>
                     <input type="number" id="forca" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
                   </div>
                   <!--Velocidade-->
                   <div class="atributo">
-                    <label for="vel" id="vel-label">Velocidade</label>
+                    <label for="vel" id="vel-label">Velocidade<span class="pontoBonus"></span></label><span></span>
                     <input type="number" id="vel" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
                   </div>
                   <!--Stamina-->
                   <div class="atributo">
-                    <label for="sta" id="sta-label">Stamina</label>
+                    <label for="sta" id="sta-label">Stamina<span class="pontoBonus"></span></label><span></span>
                     <input type="number" id="sta" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
                   </div>
                   <!--Selos-->
                   <div class="atributo">
-                    <label for="selos" id="selos-label">Selos</label>
+                    <label for="selos" id="selos-label">Selos<span class="pontoBonus"></span></label><span></span>
                     <input type="number" id="selos" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
                   </div>
                 </div>

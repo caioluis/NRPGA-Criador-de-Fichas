@@ -391,3 +391,21 @@ input.invalido {
   opacity: 1;
   transition: 0.5s;
   }
+
+  .pontoBonus {
+    position: absolute;
+    top: 17px;
+    left: 65px;
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: block;
+    color: black;
+    text-align: center;
+    line-height: 23px;
+  }
+
+  .atributo {
+    position: relative;
+  }

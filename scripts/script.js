@@ -1,84 +1,84 @@
 function guardarInfo() {
 //nome do personagem
-nomePersonagem = $('nome').val();
+nomePersonagem = $('#nome').val();
 //sobrenome
-sobrenome = $('sobrenome').val();
+sobrenome = $('#sobrenome').val();
 // vilarejo
-vila = $('vilarejo').val();
+vila = $('#vilarejo').val();
 //genero
-genero = $('genero').val();
+genero = $('#genero').val();
 //sexualidade
-sex = $('sexualidade').val();
+sex = $('#sexualidade').val();
 //arquetipo
-arquetipo = $('arquetipo-dropdown').val();
+arquetipo = $('#arquetipo-dropdown').val();
 //cla
-cla = $('cla-dropdown').val();
+cla = $('#cla-dropdown').val();
 //kg
-kg = $('kg-dropdown').val();
+kg = $('#kg-dropdown').val();
 //idade
-idade = $('idade').val();
+idade = $('#idade').val();
 //aniversario
-aniversario = $('aniversario-dropdown').val();
+aniversario = $('#aniversario-dropdown').val();
 //gostos
-gostos = $('gostos').val();
+gostos = $('#gostos').val();
 //repulsas
-repulsas = $('repulsas').val();
+repulsas = $('#repulsas').val();
 //motivacoes
-motivacoes = $('motivacoes').val();
+motivacoes = $('#motivacoes').val();
 //medos
-medos = $('medos').val();
+medos = $('#medos').val();
 //transtornos
-transtornos = $('transtornos').val();
+transtornos = $('#transtornos').val();
 //descpsicologica
-descpsicologica = $('descpsicologica').val();
+descpsicologica = $('#descpsicologica').val();
 //altura
-altura = $('altura').val();
+altura = $('#altura').val();
 //peso
-peso = $('peso').val();
+peso = $('#peso').val();
 //cabelos
-cabelos = $('cabelos').val();
+cabelos = $('#cabelos').val();
 //olhos
-olhos = $('olhos').val();
+olhos = $('#olhos').val();
 //braco
-braco = $('braco').val();
+braco = $('#braco').val();
 //outros
-outros = $('outros').val();
+outros = $('#outros').val();
 //ppbase
-ppbase = $('ppbase').val();
+ppbase = $('#ppbase').val();
 //descfisica
-descfisica = $('descfisica').val();
+descfisica = $('#descfisica').val();
 //titulo
-titulo = $('titulo').val();
+titulo = $('#titulo').val();
 //ano
-ano = $('ano').val();
+ano = $('#ano').val();
 //historia
-historia = $('historia').val();
+historia = $('#historia').val();
 //nin
-nin = $('ninjutsu').val();
+nin = $('#ninjutsu').val();
 //gen
-gen = $('genjutsu').val();
+gen = $('#genjutsu').val();
 //tai
-tai = $('taijutsu').val();
+tai = $('#taijutsu').val();
 //int
-int = $('int').val();
+int = $('#int').val();
 //forca
-forca = $('forca').val();
+forca = $('#forca').val();
 //vel
-vel = $('vel').val();
+vel = $('#vel').val();
 //sta
-sta = $('sta').val();
+sta = $('#sta').val();
 //selos
-selos = $('selos').val();
+selos = $('#selos').val();
 //1st Natureza
-primeiraNatureza = $('primeira-natureza').val();
+primeiraNatureza = $('#primeira-natureza').val();
 
-segundaNatureza = $('segunda-natureza').val();
+segundaNatureza = $('#segunda-natureza').val();
 
-kgElemental = $('kg-elemental').val();
+kgElemental = $('#kg-elemental').val();
 
-afinidadeElemental = $('afinidade-elemental').val();
+afinidadeElemental = $('#afinidade-elemental').val();
 
-limiteJutsus = $('limite-jutsus').val();
+limiteJutsus = $('#limite-jutsus').val();
 
 bolsaArmas = document.getElementById('bolsa-de-armas').value.split('\n');
 bolsaDeArmas = "";

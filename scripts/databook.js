@@ -1,5 +1,5 @@
 var pontosDistribuidos = 0;
-
+var bonus = 0;
 // Máximo de pontos Databook
 var maxPontosDatabook = getDatabookMaxPoints();
 
@@ -32,7 +32,8 @@ function getDatabookMaxPoints()
     selos = parseInt($('#selos').val());
     
     somaDosAtributos = nin + tai + gen + int + forca + vel + sta + selos;
+    limiteDatabook = (7 + Number($('#semCla').is(':checked')) + bonus) - somaDosAtributos;
 
-    return (7 + Number($('#semCla').is(':checked'))) - somaDosAtributos;
+    return limiteDatabook;
     
 }

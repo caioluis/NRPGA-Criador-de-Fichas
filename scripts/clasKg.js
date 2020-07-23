@@ -25,6 +25,7 @@ var kgEscolhida = $('#kg-dropdown');
             clearDefeitos();
             databookAtualizarTexto();
             atualizarTexto();
+            $('.cla').hide();
             if($('#semCla').is(':checked')){
                 $('.qualidadesClas').hide();
                 $('#cla-dropdown').val('--'); 
@@ -62,6 +63,9 @@ var kgEscolhida = $('#kg-dropdown');
         
         clearQualidades();
         clearDefeitos();
+        bonus = 0;
+        $('.atributo span').text('');
+        $('.atributo span').hide();
         $('.cla').hide();
         
         switch (claEscolhido.val()) {
@@ -71,31 +75,39 @@ var kgEscolhida = $('#kg-dropdown');
                 break;
             case "Akimichi":
                 $('#qualidadesAkimichi').show();
-                $('#akimichiForca').addClass('qualidade-escolhida');
+                adicionarQualidade($('#akimichiForca'));
+                $('#qualidadeForca').hide();
                 $('#defeitosAkimichi').show();
-                $('#akimichiGordo').addClass('defeito-escolhido');
+                adicionarDefeito($('#akimichiGordo'));
+                $('#defeitoGordo').hide();
+                $('defeitoMagricelo').hide();
                 break;
             case "Chinoike":
                 $('#qualidadesChinoike').show();
-                $('#chinoikeGen').addClass('qualidade-escolhida');
+                adicionarQualidade($('#chinoikeGen'));
+                qualidadeGenjutsu.hide();
                 kgEscolhida.val('Ketsuryūgan');
                 break;
             case "Fuuma":
                 $('#qualidadesFuuma').show();
-                $('#fuumaGen').addClass('qualidade-escolhida');
+                $('#fuumaNin').addClass('qualidade-escolhida');
+                qualidadeNinjutsu.hide();
                 break;
             case "Hatake":
                 $('#qualidadesHatake').show();
                 $('#qualidadeVersatil').addClass('qualidade-escolhida');
+                bonus = 1;
                 break;
             case "Hōki":
                 $('#qualidadesHoki').show();
                 $('#hokiGCC').addClass('qualidade-escolhida');
+                $('#qualidadeGCC').hide();
                 break;
             case "Hoshigaki":
                 $('#qualidadesHoshigaki').show();
                 $('#hoshigakiAnfibio').addClass('qualidade-escolhida');
                 $('#hoshigakiPericia').addClass('qualidade-escolhida');
+                $('#qualidadeAnfibio').hide();
                 break;
             case "Hozuki":
                 $('#qualidadesHozuki').show();
@@ -107,11 +119,15 @@ var kgEscolhida = $('#kg-dropdown');
                 $('#qualidadesHyuuga').show();
                 $('#hyuugaTai').addClass('qualidade-escolhida');
                 $('#hyuugaGCC').addClass('qualidade-escolhida');
+                $('#qualidadeGCC').hide();
+                qualidadeTaijutsu.hide();
                 break;
             case "Inuzuka":
                 $('#qualidadesInuzuka').show();
                 $('#inuzukaInstintos').addClass('qualidade-escolhida');
                 $('#inuzukaOlfato').addClass('qualidade-escolhida');
+                $('#qualidadeInstintos').hide();
+                $('#qualidadeOlfato').hide();
                 break;
             case "Juugo":
                 $('#qualidadesJuugo').show();
@@ -122,6 +138,7 @@ var kgEscolhida = $('#kg-dropdown');
             case "Kaguya":
                 $('#qualidadesKaguya').show();
                 $('#kaguyaTai').addClass('qualidade-escolhida');
+                qualidadeTaijutsu.hide();
                 break;
             case "Kamizuru":
                 $('#qualidadesKamizuru').show();
@@ -134,6 +151,7 @@ var kgEscolhida = $('#kg-dropdown');
             case "Kurama":
                 $('#qualidadesKurama').show();
                 $('#kuramaGen').addClass('qualidade-escolhida');
+                qualidadeGenjutsu.hide();
                 break;
             case "Lee":
                 $('#qualidadesLee').show();
@@ -141,19 +159,27 @@ var kgEscolhida = $('#kg-dropdown');
                 $('#defeitosLee').show();
                 adicionarDefeito($('#leeInabilidadeTai'));
                 adicionarDefeito($('#leeInabilidadeGen'));
+                qualidadeGenjutsu.hide();
+                qualidadeTaijutsu.hide();
+                qualidadeNinjutsu.hide();
+                $('#defeitoNin').hide();
+                $('#defeitoGen').hide()
                 break;
             case "Nara":
                 $('#qualidadesNara').show();
                 $('#naraInt').addClass('qualidade-escolhida');
+                ('#qualidadeInt').hide();
                 break;
             case "Sarutobi":
                 $('#qualidadesSarutobi').show();
                 $('#sarutobiNin').addClass('qualidade-escolhida');
+                qualiadadeNinjutsu.hide();
             break;
             case "Senju":
                 $('#qualidadesSenju').show();
                 $('#senjuVitalidade').addClass('qualidade-escolhida');
                 $('#senjuGRC').addClass('qualidade-escolhida');
+                $('#qualidadeGRC').hide();
                 break;
             case "Shimura":
                 $('#qualidadesShimura').show();
@@ -161,19 +187,24 @@ var kgEscolhida = $('#kg-dropdown');
                 break;
             case "Uchiha":
                 $('#qualidadesUchiha').show();
-                $('#uchihaGRC').addClass('qualidade-escolhida');
+                adicionarQualidade($('#uchihaGRC'));
+                $('#qualidadeGRC').hide();
                 $('#defeitosUchiha').show();
                 adicionarDefeito($('#uchihaAmnesia'));
                 adicionarDefeito($('#uchihaMaldicao'));
+                $('#defeitoAmnesia').hide();
                 break;
             case "Uzumaki":
                 $('#qualidadesUzumaki').show();
                 $('#uzumakiGRC').addClass('qualidade-escolhida');
                 $('#uzumakiVitalidade').addClass('qualidade-escolhida');
+                $('#qualidadeGRC').hide();
+                $('#qualidadeVitalidade').hide();
                 break;
             case "Yamanaka":
                 $('#qualidadesYamanaka').show();
                 $('#yamanakaSensor').addClass('qualidade-escolhida');
+                $('#qualidadeSensor').hide();
                 break;
             case "Yotsuki":
                 $('#qualidadesYotsuki').show();
@@ -187,8 +218,8 @@ var kgEscolhida = $('#kg-dropdown');
                 break;
             
         }
-        document.getElementById("qualidades-contador").innerHTML = "Qualidades - Pontos restantes: " + getQualidadesMaxPoints();
-        document.getElementById("defeitos-contador").innerHTML = "Defeitos - Pontos necessários: " + getDefeitosMinPoints();
+        databookAtualizarTexto();
+        atualizarTexto();
     });
 
     $('#qualidadesHatake .qualidades-defeitos :button').click(function(){

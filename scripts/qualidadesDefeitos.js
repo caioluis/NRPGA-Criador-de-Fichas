@@ -17,6 +17,7 @@ function adicionarQualidade(botão) {
     botão.addClass('qualidade-escolhida'); 
     valorQualidade = parseInt(botão.val());
     pontosQualidades += valorQualidade;
+    bonusDatabook(botão);
 }
 
 function removerQualidade(botão) {
@@ -36,8 +37,6 @@ function removerDefeito(botão) {
     valorDefeito = parseInt(botão.val());
     pontosDefeitos -= valorDefeito;
 }
-
-
 
 
 $('#qualidades .qualidades-defeitos :button').click(function(){
@@ -96,4 +95,13 @@ function getDefeitosMinPoints() {
     } else{
         return pontosQualidades - pontosDefeitos;
     }    
+}
+
+function bonusDatabook(botão) {
+    console.log('bonus')
+    if (botão.text().includes('Força Aguçada')) {
+        console.log('teste')
+        $('#forca-label span').show();
+        $('#forca-label span').text('+1');
+    }
 }
