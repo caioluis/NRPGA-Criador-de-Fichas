@@ -1,6 +1,6 @@
 var pontosQualidades = 0;
 var pontosDefeitos = 0;
-
+var quantBonus = 0;
 var maxPontosQualidades = getQualidadesMaxPoints();
 var minPontosDefeitos = getDefeitosMinPoints();
 
@@ -17,13 +17,14 @@ function adicionarQualidade(botão) {
     botão.addClass('qualidade-escolhida'); 
     valorQualidade = parseInt(botão.val());
     pontosQualidades += valorQualidade;
-    bonusDatabook(botão);
+    adicionarBonusDatabook(botão);
 }
 
 function removerQualidade(botão) {
     botão.removeClass('qualidade-escolhida');
     valorQualidade = parseInt(botão.val());
     pontosQualidades -= valorQualidade;
+    removerBonusDatabook(botão);
 }
 
 function adicionarDefeito(botão) {
@@ -97,11 +98,116 @@ function getDefeitosMinPoints() {
     }    
 }
 
-function bonusDatabook(botão) {
-    console.log('bonus')
+function adicionarBonusDatabook(botão) {
+    if (quantBonus == 2) {
+        alert("Você já atingiu o máximo de pontos adquiríveis através das qualidades. Esta qualidade será adicionada, mas não dará pontos extra.")
+    } else {
+        if (botão.text().includes('Habilidade em Ninjutsu')) {
+            $('#ninjutsu-label span').show();
+            $('#ninjutsu-label span').text('+1');
+            bonusNin++;
+            quantBonus++;
+        }
+
+        if (botão.text().includes('Habilidade em Taijutsu')) {
+            $('#taijutsu-label span').show();
+            $('#taijutsu-label span').text('+1');
+            bonusTai++;
+            quantBonus++;
+        }
+
+        if (botão.text().includes('Habilidade em Genjutsu')) {
+            $('#genjutsu-label span').show();
+            $('#genjutsu-label span').text('+1');
+            bonusTai++;
+            quantBonus++;
+        }
+
+        if (botão.text().includes('Força Aguçada')) {
+            $('#forca-label span').show();
+            $('#forca-label span').text('+1')
+            bonusForca++;
+            quantBonus++;
+        }
+
+        if (botão.text().includes('Inteligência Aguçada')) {
+            $('#int-label span').show();
+            $('#int-label span').text('+1')
+            bonusInt++;
+            quantBonus++;
+        }
+
+        if (botão.text().includes('Agilidade Aguçada')) {
+            $('#vel-label span').show();
+            $('#vel-label span').text('+1')
+            bonusVel++;
+            quantBonus++;
+        }
+
+        if (botão.text().includes('Grande Durabilidade')) {
+            $('#sta-label span').show();
+            $('#sta-label span').text('+1')
+            bonusSta++;
+            quantBonus++;
+        }
+    }
+}
+
+function removerBonusDatabook(botão) {
+    if (botão.text().includes('Habilidade em Ninjutsu')) {
+        if ($('#ninjutsu-label span').text() == '+1') {
+            $('#ninjutsu-label span').hide();
+            bonusNin--;
+            quantBonus--;
+        }
+    }
+
+    if (botão.text().includes('Habilidade em Taijutsu')) {
+        if ($('#taijutsu-label span').text() == '+1') {
+            $('#taijutsu-label span').hide();
+            bonusTai--;
+            quantBonus--;
+        }
+    }
+
+    if (botão.text().includes('Habilidade em Genjutsu')) {
+        if ($('#genjutsu-label span').text() == '+1') {
+            $('#genjutsu-label span').hide();
+            bonusTai--;
+            quantBonus--;
+        }
+    }
+
     if (botão.text().includes('Força Aguçada')) {
-        console.log('teste')
-        $('#forca-label span').show();
-        $('#forca-label span').text('+1');
+        if ($('#forca-label span').text() == '+1') {
+            $('#forca-label span').hide();
+            bonusForca--;
+            quantBonus--;   
+        }
+    }
+
+    if (botão.text().includes('Inteligência Aguçada')) {
+        if ($('#int-label span').text() == '+1') {
+            $('#int-label span').show();
+            $('#int-label span').text('+1')
+            bonusInt--;
+            quantBonus--;
+        }   
+    }
+
+    if (botão.text().includes('Agilidade Aguçada')) {
+        if ($('#vel-label span').text() = '+1') {
+            $('#vel-label span').show();
+            bonusVel++;
+            quantBonus++;
+        }
+    }
+
+    if (botão.text().includes('Grande Durabilidade')) {
+        if ($('#sta-label span').text() = '+1') {
+            $('#sta-label span').show();
+            bonusSta--;
+            quantBonus--; 
+        }
     }
 }
