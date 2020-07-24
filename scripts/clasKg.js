@@ -25,6 +25,8 @@ var kgEscolhida = $('#kg-dropdown');
             clearDefeitos();
             databookAtualizarTexto();
             atualizarTexto();
+            $('.atributo span').text('');
+            $('.atributo span').hide();
             $('.cla').hide();
             if($('#semCla').is(':checked')){
                 $('.qualidadesClas').hide();
