@@ -63,7 +63,7 @@ var kgEscolhida = $('#kg-dropdown');
         
         clearQualidades();
         clearDefeitos();
-        bonus = 0;
+        bonusHatake = 0;
         $('.atributo span').text('');
         $('.atributo span').hide();
         $('.cla').hide();
@@ -96,7 +96,7 @@ var kgEscolhida = $('#kg-dropdown');
             case "Hatake":
                 $('#qualidadesHatake').show();
                 $('#qualidadeVersatil').addClass('qualidade-escolhida');
-                bonus = 1;
+                bonusHatake = 1;
                 break;
             case "Hōki":
                 $('#qualidadesHoki').show();
@@ -223,17 +223,18 @@ var kgEscolhida = $('#kg-dropdown');
     });
 
     $('#qualidadesHatake .qualidades-defeitos :button').click(function(){
-
+        botão = $(this);
         qualidadesEscolhidas = $('#qualidades .qualidade-escolhida');
         qualidadesEscolhidas.removeClass('qualidade-escolhida');
         qualidadesSelecionadas = '';
         pontosQualidades = 0;
+        quantBonus = 0;
         qualidadeNinjutsu.prop("disabled", false);
         qualidadeTaijutsu.prop('disabled', false);
         qualidadeGenjutsu.prop('disabled', false);
 
         if ( ($(this).attr('class') == undefined) || ($(this).attr('class') == '') ) {
-            $(this).addClass('qualidade-escolhida');
+            adicionarQualidade(botão);
             $('#hatakeNin').prop('disabled', true);
             $('#hatakeTai').prop('disabled', true);
             $('#hatakeGen').prop('disabled', true);
