@@ -34,7 +34,7 @@ var kgEscolhida = $('#kg-dropdown');
                 $('#cla-dropdown').attr("disabled", true);
                 $('#kg-dropdown').val('--'); 
                 $('#kg-dropdown').attr("disabled", true);
-            }else {
+            } else {
                 $('#cla-dropdown').attr("disabled", false);
                 $('#kg-dropdown').attr("disabled", false);
             }
