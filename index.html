@@ -1056,28 +1056,39 @@
                   </div>
                 </div>
               </div>
-            </div>
+          </div>
           
  
           
 
           <div id="passo8" class="tab">
             <h1>NATUREZAS E PARTICULARIDADES</h1>
-            <!--Primeira Natureza-->
-            <label for="primeira-natureza" id="primeira-natureza-label">Primeira Natureza</label>
-            <input type="text" id="primeira-natureza" class="placeholder" placeholder="" required>
-
-            <!--Segunda Natureza-->
-            <label for="segunda-natureza" id="segunda-natureza-label">Segunda Natureza</label>
-            <input type="text" id="segunda-natureza" class="placeholder" placeholder="" required>
-
-            <!--Kekkei Genkai Elemental-->
-            <label for="kg-elemental" id="kg-elemental-label">Kekkei Genkai Elemental</label>
-            <input type="text" id="kg-elemental" class="placeholder" placeholder="" required>
-
-            <!--Afinidade Elemental-->
-            <label for="afinidade-elemental" id="afinidade-label">Afinidade Elemental</label>
-            <input type="text" id="afinidade-elemental" class="placeholder" placeholder="" required>
+            
+            <div id="naturezas">
+              <!--Primeira Natureza-->
+              <div class="natureza">
+                <label for="primeira-natureza" id="primeira-natureza-label">Primeira Natureza</label>
+                <input type="text" id="primeira-natureza" class="placeholder" placeholder="" required>
+              </div>
+  
+              <!--Segunda Natureza-->
+              <div class="natureza">
+                <label for="segunda-natureza" id="segunda-natureza-label">Segunda Natureza</label>
+                <input type="text" id="segunda-natureza" class="placeholder" placeholder="" required>
+              </div>
+  
+              <!--Kekkei Genkai Elemental-->
+              <div class="natureza">
+                <label for="kg-elemental" id="kg-elemental-label">KG Elemental</label>
+                <input type="text" id="kg-elemental" class="placeholder" placeholder="" required>
+              </div>
+  
+              <!--Afinidade Elemental-->
+              <div class="natureza">
+                <label for="afinidade-elemental" id="afinidade-label">Afinidade Elemental</label>
+                <input type="text" id="afinidade-elemental" class="placeholder" placeholder="" required>
+              </div>
+            </div>
             <hr>
 
             <!--Limite de Jutsus-->
@@ -1085,8 +1096,107 @@
             <input type="text" id="limite-jutsus" class="placeholder" placeholder="5 Jutsus & +1 Rank S" required>
 
             <label for="bolsa-de-armas" id="bolsa-de-armas-label">Bolsa de Armas</label>
-            <textarea id="bolsa-de-armas" class="placeholder" placeholder="Um item por linha. Ex.:&#10;+5 Kunais [5]&#10;+ 20 Kibaku Fuuda [5]&#10;+ 25m de Fio [5]&#10;+ 10 Senbon [5]" style="height: 200px" required></textarea>
-
+            <div id="armas">
+              <div class="arma"> 
+                <div class="item">
+                  <p>Kunai</p>
+                </div>
+                <div class="adicionarRemover">
+                	<button type="button">-</button>
+                	<button type="button" class="adicionarArma">+</button>
+                </div>
+              </div>
+  
+              <div class="arma">
+                <div class="item">
+                  <p>Shuriken</p>
+                </div>
+                <div class="adicionarRemover">
+                	<button type="button">-</button>
+                	<button type="button" class="adicionarArma">+</button>
+                </div>
+              </div>
+  
+              <div class="arma">
+                <div class="item">
+                  <p>‏‏‎‎Fuma Shuriken</p>
+                </div>
+                <div class="adicionarRemover">
+                	<button type="button">-</button>
+                	<button type="button" class="adicionarArma">+</button>
+                </div>
+              </div>
+  
+              <div class="arma"> 
+                <div class="item">
+                  <p>‎Senbon</p>
+                </div>
+                <div class="adicionarRemover">
+                	<button type="button">-</button>
+                	<button type="button" class="adicionarArma">+</button>
+                </div>
+              </div>
+  
+              <div class="arma">
+                <div class="item">
+                  <p>Kibaku Fuuda</p>
+                </div>
+                <div class="adicionarRemover">
+                	<button type="button">-</button>
+                	<button type="button" class="adicionarArma">+</button>
+                </div>
+              </div>
+  
+              <div class="arma">               
+                <div class="item">
+                  <p>Kemuridama</p>
+                </div>
+                <div class="adicionarRemover">
+                	<button type="button">-</button>
+                	<button type="button" class="adicionarArma">+</button>
+                </div>
+              </div>
+  
+              <div class="arma">
+                <div class="item">
+                  <p>‎Makibishi</p>
+                </div>
+                <div class="adicionarRemover">
+                	<button type="button">-</button>
+                	<button type="button" class="adicionarArma">+</button>
+                </div>
+              </div>
+  
+              <div class="arma">
+                <div class="item">
+                  <p>‎‎Hikaridama</p>
+                </div>
+                <div class="adicionarRemover">
+                	<button type="button">-</button>
+                	<button type="button" class="adicionarArma">+</button>
+                </div>
+              </div>
+  
+              <div class="arma">
+                <div class="item">
+                  <p>‎Fios de aço</p>
+                </div>
+                <div class="adicionarRemover">
+                	<button type="button">-</button>
+                	<button type="button" class="adicionarArma">+</button>
+                </div>
+              </div>
+  
+              <div class="arma">
+                <div class="item">
+                  <p>Ampola</p>
+                </div>
+                <div class="adicionarRemover">
+                	<button type="button">-</button>
+                	<button type="button" class="adicionarArma">+</button>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -1400,6 +1510,7 @@
     <script type="text/javascript" src="scripts/databook.js"></script>
     <script type="text/javascript" src="scripts/qualidadesDefeitos.js"></script>
     <script type="text/javascript" src="scripts/clasKg.js"></script>
+    <script type="text/javascript" src="scripts/bolsaDeArmas.js"></script>
     <script src="scripts/prism.js"></script>
 
 
