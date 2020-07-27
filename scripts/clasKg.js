@@ -119,8 +119,8 @@ var kgEscolhida = $('#kg-dropdown');
                 break;
             case "Hyuuga":
                 $('#qualidadesHyuuga').show();
-                $('#hyuugaTai').addClass('qualidade-escolhida');
-                $('#hyuugaGCC').addClass('qualidade-escolhida');
+                adicionarQualidade($('#hyuugaTai'));
+                adicionarQualidade($('#hyuugaGCC'));
                 $('#qualidadeGCC').hide();
                 qualidadeTaijutsu.hide();
                 break;
@@ -139,7 +139,7 @@ var kgEscolhida = $('#kg-dropdown');
                 break;
             case "Kaguya":
                 $('#qualidadesKaguya').show();
-                $('#kaguyaTai').addClass('qualidade-escolhida');
+                adicionarQualidade($('#kaguyaTai'));
                 qualidadeTaijutsu.hide();
                 break;
             case "Kamizuru":
@@ -152,12 +152,12 @@ var kgEscolhida = $('#kg-dropdown');
                 break;
             case "Kurama":
                 $('#qualidadesKurama').show();
-                $('#kuramaGen').addClass('qualidade-escolhida');
+                adicionarQualidade($('#kuramaGen'));
                 qualidadeGenjutsu.hide();
                 break;
             case "Lee":
                 $('#qualidadesLee').show();
-                $('#leeTai').addClass('qualidade-escolhida');
+                adicionarQualidade($('#leeTai'));
                 $('#defeitosLee').show();
                 adicionarDefeito($('#leeInabilidadeTai'));
                 adicionarDefeito($('#leeInabilidadeGen'));
@@ -169,12 +169,12 @@ var kgEscolhida = $('#kg-dropdown');
                 break;
             case "Nara":
                 $('#qualidadesNara').show();
-                $('#naraInt').addClass('qualidade-escolhida');
+                adicionarQualidade($('#naraInt'));
                 ('#qualidadeInt').hide();
                 break;
             case "Sarutobi":
                 $('#qualidadesSarutobi').show();
-                $('#sarutobiNin').addClass('qualidade-escolhida');
+                adicionarQualidade($('#sarutobiNin'));
                 qualiadadeNinjutsu.hide();
             break;
             case "Senju":
@@ -199,7 +199,7 @@ var kgEscolhida = $('#kg-dropdown');
             case "Uzumaki":
                 $('#qualidadesUzumaki').show();
                 $('#uzumakiGRC').addClass('qualidade-escolhida');
-                $('#uzumakiVitalidade').addClass('qualidade-escolhida');
+                adicionarQualidade($('#uzumakiVitalidade'));
                 $('#qualidadeGRC').hide();
                 $('#qualidadeVitalidade').hide();
                 break;
