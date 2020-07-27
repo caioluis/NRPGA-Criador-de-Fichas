@@ -410,3 +410,64 @@ input.invalido {
   .atributo {
     position: relative;
   }
+
+  #naturezas {
+    display: flex;
+    height: 100px;
+  }
+
+  .natureza {
+    width: 50%;
+    margin: 5px;
+    text-align: center;
+  }
+
+
+  #armas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  .arma {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    margin: 2px;
+    background-color: #efefef;
+    width: 197px;
+    height: fit-content; 
+    border-radius:5px;
+    align-items: center;
+  }
+
+  .arma p {
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-size: 14px;
+    font-family: 'Rubik';
+    text-transform: uppercase;
+    text-align: right;
+  }
+
+  .arma button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-style: none;
+    background-color: #c1242f;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    line-height: 10px;
+    font-family: 'Rubik';
+    font-weight: 800;
+    color: white;
+    transition: .2s;
+  }
+
+  .arma button:hover {
+    background-color: #911a22;
+  }
