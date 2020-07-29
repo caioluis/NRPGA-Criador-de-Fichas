@@ -1,5 +1,9 @@
 var bonusNin = bonusTai = bonusGen = bonusInt = bonusForca = bonusVel = bonusSta = 0;
-var nerfVel = 0;
+var nerfVel = nerfSta = nerfInt = nerfVel = nerfForca = 0;
+var primeiraHabilidade = '--';
+
+var limiteNin = 0 ;
+
 function guardarInfo() {
 nomePersonagem = $('#nome').val();
 sobrenome = $('#sobrenome').val();
@@ -37,16 +41,13 @@ vel = $('#vel').val();
 sta = $('#sta').val();
 selos = $('#selos').val();
 
-
 primeiraNatureza = $('#primeira-natureza').val();
-
 segundaNatureza = $('#segunda-natureza').val();
-
+terceiraNatureza = $('#terceira-natureza').val();
 kgElemental = $('#kg-elemental').val();
-
 afinidadeElemental = $('#afinidade-elemental').val();
 
-limiteJutsus = $('#limite-jutsus').val();
+limiteJutsus = $('#limite-jutsus');
 
 
 bolsaDeArmas = armasEscolhidas.join('\n');
@@ -163,11 +164,11 @@ ${historia}&lt/div&gt&lt/div&gt
 &ltb&gtNaturezas e Particularidades&lt/b&gt
 [b]Primeira Natureza:[/b] ${primeiraNatureza}
 [b]Segunda Natureza:[/b] ${segundaNatureza}
-[b]Terceira Natureza:[/b] --.
+[b]Terceira Natureza:[/b] ${terceiraNatureza}
 [b]Kekkei Genkai Elemental:[/b] ${kgElemental}
 [b]Afinidade Elemental:[/b] ${afinidadeElemental}
     
-[b]Primeira Habilidade:[/b] --.
+[b]Primeira Habilidade:[/b] ${primeiraHabilidade}
 [b]Segunda Habilidade:[/b] --.
 [b]Primeira Especialidade:[/b] --.
 [b]Segunda Especialidade:[/b] --.
