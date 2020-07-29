@@ -466,8 +466,24 @@ input.invalido {
     font-weight: 800;
     color: white;
     transition: .2s;
+    outline: none;
   }
 
   .arma button:hover {
     background-color: #911a22;
   }
+
+  .peso, .quantidade {
+    display: none;
+  }
+
+  #bolsa-de-armas {
+    margin:0;
+    resize: none;
+    height: 140px;
+  }
+
+  #bolsa-de-armas:disabled {
+    background-color: white;
+  }
+
