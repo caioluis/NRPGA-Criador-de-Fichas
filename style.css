@@ -487,3 +487,7 @@ input.invalido {
     background-color: white;
   }
 
+.natureza .placeholder {
+  font-size: 0.84em;
+  background-color: white;
+}
