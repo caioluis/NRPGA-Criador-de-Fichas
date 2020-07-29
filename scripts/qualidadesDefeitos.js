@@ -31,6 +31,7 @@ function adicionarDefeito(botão) {
     botão.addClass('defeito-escolhido');
     valorDefeito = parseInt(botão.val());
     pontosDefeitos += valorDefeito;
+    adicionarNerfDatabook();
 }
 
 function removerDefeito(botão) {
@@ -209,5 +210,13 @@ function removerBonusDatabook(botão) {
             bonusSta--;
             quantBonus--; 
         }
+    }
+}
+
+function adicionarNerfDatabook(botão) {
+    if (botão.text().includes('Gordo')) {
+        $('#vel-label span').show();
+        $('#vel-label span').text('-1');
+        nerfVel++;
     }
 }
