@@ -1,4 +1,5 @@
 var bonusNin = bonusTai = bonusGen = bonusInt = bonusForca = bonusVel = bonusSta = 0;
+var nerfVel = 0;
 function guardarInfo() {
 nomePersonagem = $('#nome').val();
 sobrenome = $('#sobrenome').val();
@@ -47,12 +48,8 @@ afinidadeElemental = $('#afinidade-elemental').val();
 
 limiteJutsus = $('#limite-jutsus').val();
 
-bolsaArmas = document.getElementById('bolsa-de-armas').value.split('\n');
-bolsaDeArmas = "";
-for (i = 0; i < bolsaArmas.length; i++) {
-    bolsaDeArmas += `${(bolsaArmas[i])} \n`;
-}
-    
+
+bolsaDeArmas = armasEscolhidas.join('\n');
 
 
 totalPontos = parseInt(nin) + parseInt(gen) + parseInt(tai) + parseInt(int) + parseInt(forca) + parseInt(vel) + parseInt(sta) + parseInt(selos);
