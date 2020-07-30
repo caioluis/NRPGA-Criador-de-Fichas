@@ -37,13 +37,3 @@ function getDatabookMaxPoints()
     return limiteDatabook;
     
 }
-/*
-$('.atributo :input').on('change', function() {
-
-    if((parseInt(nin) + bonusNin) == 6) {
-        limiteNin = '+8 Ninjutsus +1 Genjutsu de todos os Ranks';
-    } else {
-        limiteNin = `+${(parseInt(nin) + bonusNin)} Ninjutsus`;
-    }
-    $('#limite-jutsus').val(limiteNin);
-})*/
