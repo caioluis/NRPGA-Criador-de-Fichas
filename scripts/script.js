@@ -28,6 +28,7 @@ olhos = $('#olhos').val();
 braco = $('#braco').val();
 outros = $('#outros').val();
 ppbase = $('#ppbase').val();
+ppserie = $('#ppserie').val();
 descfisica = $('#descfisica').val();
 titulo = $('#titulo').val();
 ano = $('#ano').val();
@@ -152,7 +153,7 @@ ${historia}&lt/div&gt&lt/div&gt
 &ltdiv title="Ilusão"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gtIlusão&lt/div&gt
     
 &ltdiv title="Total"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${totalPontos}]&lt/c&gtTotal&lt/div&gt
-&ltdiv title="Extras"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Extras&lt/div&gt
+&ltdiv title="Extras"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${quantBonus}]&lt/c&gt Extras&lt/div&gt
 &ltdiv title="Adquiridos"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Adquiridos&lt/div&gt
 &lt/div&gt
     
@@ -195,7 +196,7 @@ ${bolsaDeArmas}
 &ltb&gtLinks comprovatórios&lt/b&gt
 &ltquadro&gtTodos os acontecimentos do personagem.&lt/quadro&gt&lt/div&gt&lt/div&gt&lt/div&gt
     
-&ltdiv class="finaldaficha"&gtEste personagem tem a aparência de &ltb&gt???&lt/b&gt da série &ltb&gt???&lt/b&gt
+&ltdiv class="finaldaficha"&gtEste personagem tem a aparência de &ltb&gt${ppbase}&lt/b&gt da série &ltb&gt${ppserie}&lt/b&gt
 &ltb&gtPlayer Off:&lt/b&gt  / &ltb&gtContatos:&lt/b&gt &lt/div&gt&lt/div&gt&lt/center&gt
     
 &ltstyle&gt.dadosdopersonagem {background-color: #989898!important} .dadosdopersonagem2 i, #celC, .finaldaficha b, .dadosdopersonagem2 div1, .histdopersonagem b, .outrosdopersonagem b, .dadosdopersonagem3 b, .dadosdopersonagem3-2 b, .outrosdopersonagem missoes b  {color: #989898!important;} dl.codebox {border-left: 0px solid black; padding: 15px;}&lt/style>`
