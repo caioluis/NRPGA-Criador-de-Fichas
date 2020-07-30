@@ -64,12 +64,8 @@ var kgEscolhida = $('#kg-dropdown');
 
     function clearNerfsBuffs(){
         quantBonus = 0;
-        bonusDatabook.forEach(atributo => {
-            atributo = 0;
-        });
-        nerfsDatabook.forEach(atributo => {
-            atributo = 0;
-        });
+        bonusNin = bonusTai = bonusGen = bonusInt = bonusForca = bonusVel = bonusSta = 0;
+        nerfVel = nerfSta = nerfInt = nerfVel = nerfForca = 0;
     }
 
     function clearNaturezas() {
@@ -85,7 +81,6 @@ var kgEscolhida = $('#kg-dropdown');
 
     claEscolhido.change(
     function bonificarClas(){
-        
         clearQualidades();
         clearDefeitos();
         clearNaturezas();
@@ -411,9 +406,11 @@ var kgEscolhida = $('#kg-dropdown');
 
     $('#qualidadesHatake .qualidades-defeitos :button').click(function(){
         botão = $(this);
-        clearQualidades();
-        clearDefeitos();
-        clearNaturezas();
+        qualidadesEscolhidas = $('#qualidades .qualidade-escolhida');
+        qualidadesEscolhidas.removeClass('qualidade-escolhida');
+        qualidadesSelecionadas = '';
+        pontosQualidades = 0;
+        quantBonus = 0;
         clearNerfsBuffs();
         qualidadeNinjutsu.prop("disabled", false);
         qualidadeTaijutsu.prop('disabled', false);
@@ -427,17 +424,17 @@ var kgEscolhida = $('#kg-dropdown');
             $(this).prop('disabled', false);
             $('#qualidades').show();
             if ($(this).attr('id') == 'hatakeNin') {
-                qualidadeNinjutsu.removeClass('qualidade-escolhida')
+                removerQualidade(qualidadeNinjutsu);
                 qualidadeNinjutsu.hide();
             } else if ($(this).attr('id') == 'hatakeTai') {
-                qualidadeTaijutsu.removeClass('qualidade-escolhida')
-                qualidadeTaijutsu.hide()
+                removerQualidade(qualidadeTaijutsu);
+                qualidadeTaijutsu.hide();
             } else {
-                qualidadeGenjutsu.removeClass('qualidade-escolhida')
-                qualidadeGenjutsu.hide()
+                removerQualidade(qualidadeGenjutsu);
+                qualidadeGenjutsu.hide();
             }
         } else {
-            $(this).removeClass('qualidade-escolhida');
+            removerQualidade($(this));
             $('#hatakeNin').prop('disabled', false);
             $('#hatakeTai').prop('disabled', false);
             $('#hatakeGen').prop('disabled', false);
