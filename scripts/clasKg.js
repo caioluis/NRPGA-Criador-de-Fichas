@@ -52,6 +52,9 @@ var kgEscolhida = $('#kg-dropdown');
         qualidadesSelecionadas = '';
         pontosQualidades = 0;
         quantBonus = 0;
+        bonusDatabook.forEach(atributo => {
+            atributo = 0;
+        });
         $('button').show();
     }
 
