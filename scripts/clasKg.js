@@ -51,10 +51,6 @@ var kgEscolhida = $('#kg-dropdown');
         qualidadesEscolhidas.removeClass('qualidade-escolhida');
         qualidadesSelecionadas = '';
         pontosQualidades = 0;
-        quantBonus = 0;
-        bonusDatabook.forEach(atributo => {
-            atributo = 0;
-        });
         $('button').show();
     }
 
@@ -64,6 +60,16 @@ var kgEscolhida = $('#kg-dropdown');
         defeitosSelecionados = '';
         pontosDefeitos = 0;
         $('button').show();
+    }
+
+    function clearNerfsBuffs(){
+        quantBonus = 0;
+        bonusDatabook.forEach(atributo => {
+            atributo = 0;
+        });
+        nerfsDatabook.forEach(atributo => {
+            atributo = 0;
+        });
     }
 
     function clearNaturezas() {
@@ -83,6 +89,7 @@ var kgEscolhida = $('#kg-dropdown');
         clearQualidades();
         clearDefeitos();
         clearNaturezas();
+        clearNerfsBuffs();
         bonusHatake = 0;
         $('.atributo span').text('');
         $('.atributo span').hide();
@@ -248,6 +255,7 @@ var kgEscolhida = $('#kg-dropdown');
         clearQualidades();
         clearDefeitos();
         clearNaturezas();
+        clearNerfsBuffs();
         $('.atributo span').text('');
         $('.atributo span').hide();
         $('.cla').hide();
@@ -403,11 +411,10 @@ var kgEscolhida = $('#kg-dropdown');
 
     $('#qualidadesHatake .qualidades-defeitos :button').click(function(){
         botão = $(this);
-        qualidadesEscolhidas = $('#qualidades .qualidade-escolhida');
-        qualidadesEscolhidas.removeClass('qualidade-escolhida');
-        qualidadesSelecionadas = '';
-        pontosQualidades = 0;
-        quantBonus = 0;
+        clearQualidades();
+        clearDefeitos();
+        clearNaturezas();
+        clearNerfsBuffs();
         qualidadeNinjutsu.prop("disabled", false);
         qualidadeTaijutsu.prop('disabled', false);
         qualidadeGenjutsu.prop('disabled', false);
