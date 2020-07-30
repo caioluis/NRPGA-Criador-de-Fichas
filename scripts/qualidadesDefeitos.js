@@ -81,7 +81,7 @@ $('#defeitos .qualidades-defeitos :button').click(function(){
     minPontosDefeitos = getDefeitosMinPoints();
     valorDefeito = parseInt(botão.val());
     if((botão.attr('class') == undefined) || (botão.attr('class') == '')){
-       adicionarDefeito(botão)
+        adicionarDefeito(botão)
     } else {
         removerDefeito(botão)
     }
