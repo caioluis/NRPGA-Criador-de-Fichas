@@ -1,6 +1,7 @@
 var bonusNin = bonusTai = bonusGen = bonusInt = bonusForca = bonusVel = bonusSta = 0;
-var bonusDatabook = [bonusNin, bonusTai, bonusGen, bonusInt, bonusForca, bonusVel, bonusSta];
 var nerfVel = nerfSta = nerfInt = nerfVel = nerfForca = 0;
+var bonusDatabook = [bonusNin, bonusTai, bonusGen, bonusInt, bonusForca, bonusVel, bonusSta];
+var nerfsDatabook = [nerfVel, nerfSta, nerfInt, nerfVel, nerfForca];
 var primeiraHabilidade = '--';
 
 var limiteNin = 0 ;
