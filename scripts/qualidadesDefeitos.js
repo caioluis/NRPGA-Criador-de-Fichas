@@ -113,7 +113,6 @@ function adicionarBonusDatabook(botão) {
             $('#ninjutsu-label span').text('+1');
             bonusNin++;
             quantBonus++;
-            limiteNin += 2;
         }
 
         if (botão.text().includes('Habilidade em Taijutsu')) {
@@ -169,7 +168,13 @@ function adicionarBonusDatabook(botão) {
 
     if (botão.text().includes('Prodígio')) {
         $('#defeitoDificuldade').hide();
-    } 
+        contadorJutsusGerais += 2;
+    }
+
+    if (botão.text().includes('Memória Eidética')) {
+        $('#defeitoAmnesia').hide();
+        contadorJutsusGerais += 1;
+    }
 }
 
 function removerBonusDatabook(botão) {
@@ -178,7 +183,6 @@ function removerBonusDatabook(botão) {
             $('#ninjutsu-label span').hide();
             bonusNin--;
             quantBonus--;
-            limiteNin -= 2;
         }
     }
 
@@ -241,7 +245,13 @@ function removerBonusDatabook(botão) {
 
     if (botão.text().includes('Prodígio')) {
         $('#defeitoDificuldade').show();
-    } 
+        contadorJutsusGerais -= 2;
+    }
+    
+    if (botão.text().includes('Memória Eidética')) {
+        $('#defeitoAmnesia').show();
+        contadorJutsusGerais -= 1;
+    }
 }
 
 function adicionarNerfDatabook(botão) {
