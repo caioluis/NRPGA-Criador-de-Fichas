@@ -1,4 +1,4 @@
-var limiteNin = limiteGen = limiteTai = 0;
+var limiteNin = limiteGen = limiteTai = '';
 var pontosNin = pontosTai = pontosGen = 0;
 var pericia = '';
 var contadorJutsusGerais = 0;
