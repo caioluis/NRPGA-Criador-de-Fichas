@@ -11,15 +11,15 @@ vila = $('#vilarejo').val();
 genero = $('#genero').val();
 sex = $('#sexualidade').val();
 arquetipo = $('#arquetipo-dropdown').val();
-cla = $('#cla-dropdown').val();
-kg = $('#kg-dropdown').val();
+cla = $('#cla-dropdown option:selected').text();
+kg = $('#kg-dropdown option:selected').text();
 idade = $('#idade').val();
 aniversario = $('#aniversario-dropdown').val();
 gostos = $('#gostos').val();
 repulsas = $('#repulsas').val();
 motivacoes = $('#motivacoes').val();
-medos = $('#medos').val();
 transtornos = $('#transtornos').val();
+medos = $('#medos').val();
 descpsicologica = $('#descpsicologica').val();
 altura = $('#altura').val();
 peso = $('#peso').val();
@@ -48,13 +48,55 @@ terceiraNatureza = $('#terceira-natureza').val();
 kgElemental = $('#kg-elemental').val();
 afinidadeElemental = $('#afinidade-elemental').val();
 
-limiteJutsus = $('#limite-jutsus');
+limiteJutsus = $('#limite-jutsus').val();
 
 
 bolsaDeArmas = armasEscolhidas.join('\n');
 
 
 totalPontos = parseInt(nin) + parseInt(gen) + parseInt(tai) + parseInt(int) + parseInt(forca) + parseInt(vel) + parseInt(sta) + parseInt(selos);
+
+if(bonusNin == 1) {
+    bonusNin = '+1';
+} else {
+    bonusNin = '';
+}
+
+if(bonusTai == 1) {
+    bonusTai = '+1';
+} else {
+    bonusTai = '';
+}
+
+if(bonusGen == 1) {
+    bonusGen = '+1';
+} else {
+    bonusGen = '';
+}
+
+if(bonusInt == 1) {
+    bonusInt = '+1';
+} else {
+    bonusInt = '';
+}
+
+if(bonusForca == 1) {
+    bonusForca = '+1';
+} else {
+    bonusForca = '';
+}
+
+if(bonusVel == 1) {
+    bonusVel = '+1';
+} else {
+    bonusVel = '';
+}
+
+if(bonusSta == 1) {
+    bonusSta = '+1';
+} else {
+    bonusSta = '';
+}
 
 
 salvar()
@@ -89,7 +131,7 @@ function salvar() {
 &ltnome&gt${nomePersonagem}&lt/nome&gt
 &ltsobrenome&gt${sobrenome}&lt/sobrenome&gt
 &lttipodetopico&gt${vila}&lt/tipodetopico&gt
-    
+&ltbr&gt
 &lttable&gt&lttr&gt&lttd&gt&ltdiv id="celC" class="c1" title="Dados Básicos"&gt&lti class="fas fa-id-card"&gt&lt/i&gt&lt/div&gt&lt/td&gt
 &lttd&gt&ltdiv id="celC" class="c2" title="História"&gt&lti class="fas fa-book"&gt&lt/i&gt&lt/div&gt&lt/td&gt
 &lttd&gt&ltdiv id="celC" class="c3" title="Databook"&gt&lti class="fas fa-list"&gt&lt/i&gt&lt/div&gt&lt/td&gt
@@ -115,7 +157,7 @@ function salvar() {
 [b]Coisas que não gosta:[/b] ${repulsas}
 [b]Motivações:[/b] ${motivacoes}
 [b]Medos:[/b] ${medos}
-[b]Transtornos/Defeitos:[/b] ${defeitos}
+[b]Transtornos/Defeitos:[/b] ${transtornos}
 [b]Descrição Geral:[/b] ${descpsicologica}
     
 &ltb&gtDescrição física&lt/b&gt
@@ -133,13 +175,13 @@ function salvar() {
 ${historia}&lt/div&gt&lt/div&gt
     
 &ltdiv class="dados3"&gt&ltdiv class="dadosdopersonagem2"&gt&ltdiv1&gtDatabook&lt/div1&gt
-&ltdiv title="Ninjutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${nin}]&lt/c&gt Ninjutsu&lt/div&gt
-&ltdiv title="Genjutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${gen}]&lt/c&gt Genjutsu&lt/div&gt
-&ltdiv title="Taijutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${tai}]&lt/c&gt Taijutsu&lt/div&gt
-&ltdiv title="Inteligência"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt&ltc&gt[0${int}]&lt/c&gt Inteligência&lt/div&gt
-&ltdiv title="Força"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${forca}]&lt/c&gt Força&lt/div&gt
-&ltdiv title="Velocidade"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${vel}]&lt/c&gt Velocidade&lt/div&gt
-&ltdiv title="Stamina"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${sta}]&lt/c&gt Stamina&lt/div&gt
+&ltdiv title="Ninjutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${nin + bonusNin}]&lt/c&gt Ninjutsu&lt/div&gt
+&ltdiv title="Genjutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${gen + bonusGen}]&lt/c&gt Genjutsu&lt/div&gt
+&ltdiv title="Taijutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${tai + bonusTai}]&lt/c&gt Taijutsu&lt/div&gt
+&ltdiv title="Inteligência"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt&ltc&gt[0${int + bonusInt}]&lt/c&gt Inteligência&lt/div&gt
+&ltdiv title="Força"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${forca + bonusForca}]&lt/c&gt Força&lt/div&gt
+&ltdiv title="Velocidade"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${vel + bonusVel}]&lt/c&gt Velocidade&lt/div&gt
+&ltdiv title="Stamina"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${sta + bonusSta}]&lt/c&gt Stamina&lt/div&gt
 &ltdiv title="Selos"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${selos}]&lt/c&gt Selos&lt/div&gt
     
 &ltdiv title="Regeneração"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Regeneração&lt/div&gt
