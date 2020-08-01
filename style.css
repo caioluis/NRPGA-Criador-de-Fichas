@@ -491,3 +491,8 @@ input.invalido {
   font-size: 0.84em;
   background-color: white;
 }
+
+#limite-jutsus {
+  height: 80px;
+  resize: none;
+}
