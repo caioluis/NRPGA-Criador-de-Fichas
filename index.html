@@ -13,13 +13,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
   <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
+  <script src="https://cdn.ckeditor.com/4.14.1/full-all/ckeditor.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <title>Senko's UltimateFichaMaker 0.8</title>
 </head>
 
 <body>
-  
   <div id="formContainer">
     <form id="form-ficha">
       
@@ -215,12 +214,13 @@
           <label for="titulo" id="titulo-label">Título da História</label>
           <input type="text" id="titulo" class="placeholder" placeholder="CARVED MY CURE WITH A BLADE THAT LEFT ME IN SCARS
           NOW, EVERY TIME I'M WEAK, WORDS SCREAM FROM MY ARMS" required>
-          <!--Ano-->
-          <label for="ano" id="ano-label">Ano de Início</label>
-          <input type="text" id="ano" class="placeholder" placeholder="50 DG - Início" required>
           <!--Historia-->
           <label for="historia" id="historia-label">História</label>
-          <textarea id="historia" class="placeholder" placeholder="RECOMENDADO: Escreva a história no Word para não perdê-la acidentalmente" style="height: 300px;" required></textarea>
+          <textarea id="historia" class="placeholder" required><b>50 DG - Início</b>
+          <p style="text-align: justify">Escreva sua história aqui. Para adicionar um novo subtítulo, clique no "B". Sim, é estranho, mas por enquanto tem que ser assim. Se quiser expandir o editor e editar com mais espaço, é só apertar no último botão, aquele com setas, e vai ficar em fullscreen.</p>
+          <b>69 DG - Takura&Shion: Amor</b>
+          <p style="text-align: justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta diam est, sed auctor leo volutpat in. Cras blandit tempor justo, non condimentum ligula faucibus nec. Phasellus lacus ligula, interdum scelerisque dictum sit amet, blandit lobortis tellus. Aenean sagittis pharetra nunc, et euismod nunc volutpat sed. Nulla diam arcu, luctus eu libero vitae, rutrum commodo tellus. Nulla facilisi. Proin ultrices luctus arcu, a semper turpis tempus et. Mauris fringilla mauris ut justo laoreet dignissim.</p>
+        </textarea>
         </div>
         
         <div id="passo6" class="tab">
