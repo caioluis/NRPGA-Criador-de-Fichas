@@ -99,25 +99,6 @@ if(bonusSta == 1) {
 
 
 
-
-if(bonusNin == 1) {
-    nerfNin = '-1';
-} else {
-    nerfNin = '';
-}
-
-if(nerfTai == 1) {
-    nerfTai = '-1';
-} else {
-    nerfTai = '';
-}
-
-if(nerfGen == 1) {
-    nerfGen = '-1';
-} else {
-    nerfGen = '';
-}
-
 if(nerfInt == 1) {
     nerfInt = '-1';
 } else {
