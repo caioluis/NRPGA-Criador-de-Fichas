@@ -25,7 +25,7 @@ var myRadarChart = new Chart(ctx, {
                 fontSize: 14
             },
             gridLines: {
-                color:'white'
+                color:'rgba(255,255,255,0.3)'
             },
             angleLines: {
                 display: true,
@@ -33,9 +33,10 @@ var myRadarChart = new Chart(ctx, {
                 color: 'rgba(255,255,255,0.1)'
             },
             ticks: {
+                beginAtZero: true,
                 backdropColor: 'rgba(000,000,00,0)',
                 fontColor: 'white',
-                min: 0,
+                min: -1,
                 max: 5,
                 stepSize: 1
             }
