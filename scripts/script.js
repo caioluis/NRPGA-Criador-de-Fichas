@@ -1,5 +1,5 @@
 var bonusNin = bonusTai = bonusGen = bonusInt = bonusForca = bonusVel = bonusSta = 0;
-var nerfVel = nerfSta = nerfInt = nerfVel = nerfForca = 0;
+var nerfVel = nerfSta = nerfInt = nerfForca = 0;
 var primeiraHabilidade = '--';
 
 var limiteNin = 0 ;
@@ -31,8 +31,7 @@ ppbase = $('#ppbase').val();
 ppserie = $('#ppserie').val();
 descfisica = $('#descfisica').val();
 titulo = $('#titulo').val();
-ano = $('#ano').val();
-historia = $('#historia').val();
+historia = $('#historia').text();
 nin = $('#ninjutsu').val();
 gen = $('#genjutsu').val();
 tai = $('#taijutsu').val();
@@ -96,6 +95,51 @@ if(bonusSta == 1) {
     bonusSta = '+1';
 } else {
     bonusSta = '';
+}
+
+
+
+
+if(bonusNin == 1) {
+    nerfNin = '-1';
+} else {
+    nerfNin = '';
+}
+
+if(nerfTai == 1) {
+    nerfTai = '-1';
+} else {
+    nerfTai = '';
+}
+
+if(nerfGen == 1) {
+    nerfGen = '-1';
+} else {
+    nerfGen = '';
+}
+
+if(nerfInt == 1) {
+    nerfInt = '-1';
+} else {
+    nerfInt = '';
+}
+
+if(nerfForca == 1) {
+    nerfForca = '-1';
+} else {
+    nerfForca = '';
+}
+
+if(nerfVel == 1) {
+    nerfVel = '-1';
+} else {
+    nerfVel = '';
+}
+
+if(nerfSta == 1) {
+    nerfSta = '-1';
+} else {
+    nerfSta = '';
 }
 
 
@@ -171,17 +215,16 @@ function salvar() {
 [b]Descrição Geral:[/b] ${descfisica}&lt/div&gt&lt/div&gt
     
 &ltdiv class="dados2"&gt&ltdiv class="titdaficha"&gt${titulo}&lt/div&gt
-&ltdiv class="histdopersonagem" style="margin: 0px -15px;"&gt&ltb&gt${ano}&lt/b&gt
-${historia}&lt/div&gt&lt/div&gt
+&ltdiv class="histdopersonagem" style="margin: 0px -15px;"&gt${historia}&lt/div&gt&lt/div&gt
     
 &ltdiv class="dados3"&gt&ltdiv class="dadosdopersonagem2"&gt&ltdiv1&gtDatabook&lt/div1&gt
 &ltdiv title="Ninjutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${nin + bonusNin}]&lt/c&gt Ninjutsu&lt/div&gt
 &ltdiv title="Genjutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${gen + bonusGen}]&lt/c&gt Genjutsu&lt/div&gt
 &ltdiv title="Taijutsu"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${tai + bonusTai}]&lt/c&gt Taijutsu&lt/div&gt
-&ltdiv title="Inteligência"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt&ltc&gt[0${int + bonusInt}]&lt/c&gt Inteligência&lt/div&gt
-&ltdiv title="Força"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${forca + bonusForca}]&lt/c&gt Força&lt/div&gt
-&ltdiv title="Velocidade"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${vel + bonusVel}]&lt/c&gt Velocidade&lt/div&gt
-&ltdiv title="Stamina"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${sta + bonusSta}]&lt/c&gt Stamina&lt/div&gt
+&ltdiv title="Inteligência"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt&ltc&gt[0${int + bonusInt + nerfInt}]&lt/c&gt Inteligência&lt/div&gt
+&ltdiv title="Força"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${forca + bonusForca + nerfForca}]&lt/c&gt Força&lt/div&gt
+&ltdiv title="Velocidade"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${vel + bonusVel + nerfVel}]&lt/c&gt Velocidade&lt/div&gt
+&ltdiv title="Stamina"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${sta + bonusSta + nerfSta}]&lt/c&gt Stamina&lt/div&gt
 &ltdiv title="Selos"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[0${selos}]&lt/c&gt Selos&lt/div&gt
     
 &ltdiv title="Regeneração"&gt&lti class="fas fa-user-ninja"&gt&lt/i&gt &ltc&gt[00]&lt/c&gt Regeneração&lt/div&gt
