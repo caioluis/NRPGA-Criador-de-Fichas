@@ -1,3 +1,96 @@
+$(document).ready(function() {
+  $.validator.messages.required = '';
+  $.validator.messages.max = '';
+  $.validator.messages.min = ''
+  
+  $('#dados-basicos').validate({
+    rules: {
+      idade: {
+        range: [8,20]
+      }
+    }
+  });
+  
+  $('#dados-basicos-ninja').validate();
+  
+  $('#descricao-psicologica').validate();
+  
+  $('.gotoStep1').on('click', function () {
+    $('.form-ficha').hide();
+    $('#dados-basicos').show();
+  });
+  
+  $('.gotoStep2').on('click', function () {
+    if ($('#dados-basicos').valid()) {
+      $('.form-ficha').hide();
+      $('#dados-basicos-ninja').show();
+    }
+  });
+  
+  $('.gotoStep3').on('click', function () {
+    if ($('#dados-basicos-ninja').valid()) {
+      $('.form-ficha').hide();
+      $('#descricao-psicologica').show();
+    }
+  });
+  
+  $('.gotoStep4').on('click', function () {
+    if ($('#transtornos').val() == "") {
+      $('#transtornos').val('--')
+    }
+    if ($('#descricao-psicologica').valid()) {
+      $('.form-ficha').hide();
+      $('#descricao-fisica').show();
+    }
+  });
+  
+  $('.gotoStep5').on('click', function () {
+    if ($('#outros').val() == "") {
+      $('#outros').val('--')
+    }
+    if ($('#descricao-fisica').valid()) {
+      $('.form-ficha').hide();
+      $('#historia-form').show();
+    }
+  });
+
+  $('.gotoStep6').on('click', function () {
+    if ($('#historia-form').valid()) {
+      $('.form-ficha').hide();
+      $('#qualidadesDefeitos-form').show();
+    }
+  });
+
+  $('.gotoStep7').on('click', function () {
+    if (getDefeitosMinPoints() > 0) {
+      alert('Você precisa distribuir mais pontos de defeitos')
+    } else {
+      $('.form-ficha').hide();
+      $('#databook').show();
+    }
+  });
+
+  $('.gotoStep8').on('click', function () {
+    if (getDatabookMaxPoints() > 0) {
+      alert('Distribua os pontos restantes')
+    } else {
+      $('.form-ficha').hide();
+      $('#naturezas-form').show();
+    }
+  });
+
+  $('.saveAll').on('click', function () {
+    if (getDatabookMaxPoints() > 0) {
+      alert('Distribua os pontos restantes')
+    } else {
+      $('.form-ficha').hide();
+      $('#naturezas-form').show();
+    }
+  });
+});
+
+
+
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
@@ -94,16 +187,16 @@ document.getElementById("descricao-" + arquetipoAtual).style.display = "row";
 document.getElementById("arquetipo-dropdown").onchange = function() {arquetipoHelper()};
 
 function arquetipoHelper() {
-    console.log(arquetipoAtual)
-    document.getElementById(arquetipoAtual).style.display = "none"
-    document.getElementById("descricao-" + arquetipoAtual).style.display = "none";
-    
-    
-    arquetipoAtual = document.getElementById("arquetipo-dropdown").value;
-    document.getElementById(arquetipoAtual).style.display = "flex"
-    document.getElementById(arquetipoAtual).style.flexDirection = "column"
-    document.getElementById("descricao-" + arquetipoAtual).style.display = "flex";
-    document.getElementById("descricao-" + arquetipoAtual).style.display = "row";
+  console.log(arquetipoAtual)
+  document.getElementById(arquetipoAtual).style.display = "none"
+  document.getElementById("descricao-" + arquetipoAtual).style.display = "none";
+  
+  
+  arquetipoAtual = document.getElementById("arquetipo-dropdown").value;
+  document.getElementById(arquetipoAtual).style.display = "flex"
+  document.getElementById(arquetipoAtual).style.flexDirection = "column"
+  document.getElementById("descricao-" + arquetipoAtual).style.display = "flex";
+  document.getElementById("descricao-" + arquetipoAtual).style.display = "row";
 }
 
 
