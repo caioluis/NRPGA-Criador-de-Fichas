@@ -4,6 +4,17 @@ var pericia = '';
 var contadorJutsusGerais = 0;
 var jutsusGerais = '';
 
+$('#segunda-natureza').parent().hide();
+$('#terceira-natureza').parent().hide();
+$('#kg-elemental').parent().hide();
+
+$('#primeira-natureza').val('--');
+$('#segunda-natureza').val('--');
+$('#terceira-natureza').val('--');
+$('#kg-elemental').val('--');
+
+
+
 $('.atributo').on('change', function() {
     pontosNin = parseInt($('#ninjutsu').val()) + bonusNin;
     pontosTai = parseInt($('#taijutsu').val()) + bonusTai;
@@ -35,9 +46,31 @@ $('.atributo').on('change', function() {
     if (contadorJutsusGerais != 0){
         jutsusGerais = ` +${contadorJutsusGerais} Jutsus Gerais`;
     }
-    
 
-    $('#limite-jutsus').val('5 Jutsus & +1 Rank S' + jutsusGerais + limiteNin + limiteTai + limiteGen + pericia);
+    $('#limite-jutsus').val('5 Jutsus & +1 Rank S' + jutsusGerais + limiteNin + limiteTai + limiteGen);
+
+    if (pontosNin > 2) {
+        $('#limite-jutsus').val($('#limite-jutsus').val() + pericia)
+    }
+
+    if (pontosNin == 0) {
+        $('#primeira-natureza').val('--');
+    }
 });
 
+$('#afinidade-elemental').on('keyup', function() {
+    if(pontosNin == 0) {
+        $('#primeira-natureza').val('--');
+    } else {
+        $('#primeira-natureza').val($('#afinidade-elemental').val());
+        $('#primeira-natureza').val(($('#primeira-natureza').val()).replace(/e Kōton/g, ''));
+    }
+});
 
+$('#afinidade-elemental').on('keypress', function (e) {
+    var e = window.event || e;
+    var key = e.keyCode;
+     if (key == 32) {
+      e.preventDefault();
+     }
+})
