@@ -1,41 +1,60 @@
+* { padding: 0; margin: 0;}
+html, body, #fullheight {
+    min-height: 100% !important;
+    height: 100%;
+}
+
 body {
     background: #E0E0E0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   #formContainer {
-    max-width:100%;
     display: flex;
     justify-content: space-between;
-    width:100%;
+    width: 99%;
+    height: 98.4%;
     margin:0 auto;
     position:relative;
     background-image: url(https://i.imgur.com/KMVSJei.png);
   }
   
-  #form-ficha {
+  .form-ficha {
     position: relative;
-    min-height: 825px;
+    overflow-y: auto;
     min-width: 438px;
     max-width: 32em;
-    max-height: 825px;
     background:#252525;
     padding: 3.1em;
     margin:1em;
     border-style: solid;
     border-color: #383851;
     border-width: 1px;
-    border-radius: 5px
+    border-radius: 5px;
    /* Box Shadow */
     -webkit-box-shadow: 0px 4px 13px -1px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 4px 13px -1px rgba(0,0,0,0.3);
     box-shadow: 0px 4px 13px -1px rgba(0,0,0,0.3);
   }
 
-  #passos {
+  .conteudo-form {
     max-height: 700px;
     overflow-y: auto;
   }
 
+  .corpo-form {
+    margin-right: 15px;
+  }
+
+  .mesma-linha {
+    display: flex;
+  }
+
+  .mesma-linha input {
+    width: 180px;
+  }
 
   #infos-importantes {
     width: 100%;
@@ -58,6 +77,7 @@ body {
     color: #f8f8f8;
     font-family: 'Rubik', sans-serif;
     font-size: 2em;
+    margin: 20px 0;
   }
 
   .titulo-akatsuki {
@@ -138,19 +158,103 @@ body {
     margin: 1.1em 0 1em 0;
   }
 
-#clakg-label {
-  cursor: pointer;
-}
-
-#kg-dropdown {
-  display: none;
-}
-
 mark {
   color: #f8f8f8;
   background-color: #912323;
 }
-  
+
+#claKgCheck {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #444444;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#semCla {
+  width: 2em;
+  margin: 0;
+}
+
+#clasKgsDropdown {
+  display:none;
+}
+
+.claskg-buttons::-webkit-scrollbar{
+  background-color:  #585858;
+  width: 3px;
+}
+
+.claskg-buttons {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #171717;
+  height: 345px;
+  overflow-y: auto;
+  transition: all 1s;
+}
+
+.claskg-buttons.close {
+  height: 0;
+}
+
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+[type=radio] + img {
+  max-width: 70px;
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+  padding: 10px;
+  background-color: #a8a8a8;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+[type=radio] + img:hover {
+  background-color:#f1f1f1;
+}
+
+[type=radio]:checked + img {
+  background-color:#ffffff;
+  border-width: 1px;
+  -webkit-box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
+}
+
+.logo-cla {
+  position: flex;
+  text-align: center;
+}
+
+.descricao-imagem {
+  color: #fff;
+  font-size: 16px;
+  margin-top: -10px;
+  padding: 0;
+  font-family: 'rubik';
+}
+
+#switchClaKg {
+  display: none;
+  border: none;
+  background-color: #171717;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  color: white;
+  font-family: 'rubik';
+  outline: none;
+  float: right;
+}
+
 
 /*Qualidades e defeitos*/
 
@@ -495,4 +599,43 @@ input.invalido {
 #limite-jutsus {
   height: 80px;
   resize: none;
+}
+
+select.error, textarea.error, input.error {
+  background-color:rgb(255, 176, 176);
+}
+
+.next {
+  background-color: #c1242f;
+  color: white;
+  right: 50px;
+}
+
+.prev {
+  background-color: #c1242f;
+  color: white;
+  left: 50px;
+}
+
+.next:hover {
+  background-color: #991b23;
+  color: white;
+}
+
+.round {
+  position: absolute;
+  bottom: 50px;
+  border-style: none;
+  font-size: 32px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  outline: none;
+}
+
+#limite-jutsus:disabled {
+  background-color: white;
 }
