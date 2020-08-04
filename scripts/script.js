@@ -11,8 +11,8 @@ vila = $('#vilarejo').val();
 genero = $('#genero').val();
 sex = $('#sexualidade').val();
 arquetipo = $('#arquetipo-dropdown').val();
-cla = $('#cla-dropdown option:selected').text();
-kg = $('#kg-dropdown option:selected').text();
+cla = $('input[name=cla]:checked', '#dados-basicos-ninja').val()
+kg = $('input[name=kg]:checked', '#dados-basicos-ninja').val()
 idade = $('#idade').val();
 aniversario = $('#aniversario-dropdown').val();
 gostos = $('#gostos').val();
