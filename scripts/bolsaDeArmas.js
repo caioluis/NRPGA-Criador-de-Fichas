@@ -14,10 +14,8 @@ function getBolsaMaxSlots() {
     shuriken = parseFloat($('#shuriken-quantidade').val());
     kemuridama = parseFloat($('#kemuridama-quantidade').val());
     hikaridama = parseFloat($('#hikaridama-quantidade').val());
-
-    console.log(slotsOcupados)
+    
     slotsOcupados = packSenbon + packKibaku + packAmpola + packFio + packMakibishi + kunai + shuriken + kemuridama + hikaridama + fumaShuriken;
-    console.log(slotsOcupados)
 
     return (20 - slotsOcupados).toFixed(2).replace(/\.00$/, '');;
 }
