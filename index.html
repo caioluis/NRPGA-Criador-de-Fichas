@@ -15,1380 +15,1664 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.ckeditor.com/4.14.1/full-all/ckeditor.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.js"></script>
   <title>Senko's UltimateFichaMaker 0.8</title>
 </head>
 
 <body>
   <div id="formContainer">
-    <form id="form-ficha">
-      
-      <div id="passos">
-        
-        <div id="passo1" class="tab">
-          <h1>DADOS BÁSICOS</h1>
-          
-          <!--Nome-->
-          <label for="nome" id="nome-label">Nome da personagem</label>
-          <input type="text" id="nome" class="placeholder" placeholder="Insira o nome da personagem" required>
-          <!--Sobrenome-->
-          <label for="sobrenome" id="sobrenome-label">Sobrenome</label>
-          <input type="text" id="sobrenome" class="placeholder" placeholder="Insira o sobrenome" required>
-          <!--Gênero-->
-          <label for="genero" id="genero-label">Gênero</label>
-          <select id="genero">
-            <option value="Masculino">Masculino</option>
-            <option value="Feminino">Feminino</option>
-            <option value="Não Definido">Não Definido</option>
-          </select>
-          <!--Sexualidade-->
-          <label for="sexualidade" id="sexualidade-label">Sexualidade</label>
-          <input type="text" id="sexualidade" class="placeholder" placeholder="Insira a sexualidade da sua personagem" required>
-          <!--Idade-->
-          <label for="idade" id="idade-label">Idade</label>
-          <input type="number" id="idade" class="placeholder" placeholder="Entre 8 e 20 anos" maxlength="1" min="8" max="20" required onkeydown="return false">
-          <!--Aniversário-->
-          <div>
-            <label for="aniversario-dropdown">Aniversário</label>
-            <select id="aniversario-dropdown" class="placeholder">
-              <option value="Verão">Verão</option>
-              <option value="Outono">Outono</option>
-              <option value="Inverno">Inverno</option>
-              <option value="Primavera">Primavera</option><br>
-            </select>
-          </div>
-        </div>
-        
-        <div id="passo2" class="tab">
-          <h1>DADOS BÁSICOS</h1>
-          <!--Vilarejo-->
-          <label for="vilarejo" id="vilarejo-label">Vilarejo atual</label>
-          <input type="text" id="vilarejo" class="placeholder" placeholder="Verifique se há vagas para o vilarejo!" required>
-          
-          <!--Arquétipo-->
-          <div>
-            <label for="arquetipo-dropdown">Arquétipo</label>
-            <select id="arquetipo-dropdown" class="placeholder">
-              <option value="Neutro">Neutro</option>
-              <option value="Herói">Herói</option>
-              <option value="Anti-herói">Anti-herói</option>
-              <option value="Vilão">Vilão</option>
-              <option value="Individualista">Individualista</option>
-              <option value="Mártir">Mártir</option>
-              <option value="Devoto">Devoto</option>
-              <option value="Ajudante">Ajudante</option>
-              <option value="Governante">Governante</option>
-              <option value="Pesquisador">Pesquisador</option>
-              <option value="Tolo">Tolo</option><br>
-            </select>
-          </div>
-          
-          <!--Clã-->
-          <label id="clakg-label"><mark>Clã</mark>/Kekkei Genkai</label>
-          <select id="cla-dropdown" class="placeholder" disabled>
-            <option value="--" disabled selected>--</option>
-            <option value="Aburame">Aburame</option>
-            <option value="Akimichi">Akimichi</option>
-            <option value="Chinoike">Chinoike</option>
-            <option value="Fuuma">Fuuma</option>
-            <option value="Hatake">Hatake</option>
-            <option value="Hōki">Hōki</option>
-            <option value="Hoshigaki">Hoshigaki</option>
-            <option value="Hozuki">Hozuki</option>
-            <option value="Hyuuga">Hyuuga</option>
-            <option value="Inuzuka">Inuzuka</option>
-            <option value="Juugo">Juugo</option>
-            <option value="Kaguya ">Kaguya</option>
-            <option value="Kamizuru">Kamizuru</option>
-            <option value="Kedoin">Kedoin</option>
-            <option value="Kurama">Kurama</option>
-            <option value="Lee">Lee</option>
-            <option value="Nara">Nara</option>
-            <option value="Sarutobi">Sarutobi</option>
-            <option value="Senju">Senju</option>
-            <option value="Shiin">Shiin</option>
-            <option value="Shimura">Shimura</option>
-            <option value="Uchiha">Uchiha</option>
-            <option value="Uzumaki">Uzumaki</option>
-            <option value="Yamanaka">Yamanaka</option>
-            <option value="Yotsuki">Yotsuki</option>
-            <option value="Yuki">Yuki</option>
-            <br>
-          </select>
-          <select id="kg-dropdown" class="placeholder" disabled>
-            <option value="--" disabled selected>--</option>
-            <option value="Kugutsu">Kugutsu</option>
-            <option value="Kumo Nenkin">Kumo Nenkin</option>
-            <option value="Sōma no Kō">Sōma no Kō</option>
-            <option value="Akagan">Akagan</option>
-            <option value="Bakuton">Bakuton</option>
-            <option value="Futton">Futton</option>
-            <option value="Jinton">Jinton</option>
-            <option value="Jinton(Velocidade)">Jinton(Velocidade)</option>
-            <option value="Jiton">Jiton</option>
-            <option value="Kōton">Kōton</option>
-            <option value="Meiton">Meiton</option>
-            <option value="Ranton">Ranton</option>
-            <option value="Kamizuru">Shakuton</option>
-            <option value="Shōton">Shōton</option>
-            <option value="Yōton">Yōton</option>
-            <option value="Ketsuryūgan" disabled>Ketsuryūgan</option>
-            <br>
-          </select>
-          
-          
-          <!-- Sem Clã ou KG -->
-          <label for="semCla">Sem Clã/Kekkei Genkai</label>
-          <input type="checkbox" name="semCla" id="semCla" checked>
-        </div>
-        
-        <div id="passo3" class="tab">
-          <h1>DESCRIÇÃO PSICOLÓGICA</h1>
-          <!--Gostos-->
-          <label for="gostos" id="gostos-label">Coisas que gosta</label>
-          <input type="text" id="gostos" class="placeholder" placeholder="Gosta de macarrão, picanha e coquinha gelada." required>
-          
-          <!--Repulsas-->
-          <label for="repulsas" id="repulsas-label">Coisas que não gosta</label>
-          <input type="text" id="repulsas" class="placeholder" placeholder="Bife de figado" required>
-          
-          <!--Motivações-->
-          <label for="motivacoes" id="motivacoes-label">Motivações</label>
-          <input type="text" id="motivacoes" class="placeholder" placeholder="Matar um certo alguém" required>
-          
-          <!--Medos-->
-          <label for="medos" id="medos-label">Medos</label>
-          <input type="text" id="medos" class="placeholder" placeholder="Messi careca" required>
-          
-          <!--Transtornos/Defeitos-->
-          <label for="transtornos" id="transtornos-label">Transtornos/Defeitos</label>
-          <input type="text" id="transtornos" class="placeholder" placeholder="Palmeirense" required>
-          
-          <!--Descrição Geral-->
-          <label for="descpsicologica" id="descpsicologica-label">Descrição Geral</label>
-          <textarea id="descpsicologica" class="placeholder" placeholder="" required></textarea>
-        </div>
-        
-        <div id="passo4" class="tab">
-          <h1>DESCRIÇÃO FÍSICA</h1>
-          <!--Altura-->
-          <label for="altura" id="altura-label">Altura</label>
-          <input type="text" id="altura" class="placeholder" placeholder="Insira a altura. Ex.: 178cm" required>
-          
-          <!--Peso-->
-          <label for="peso" id="peso-label">Peso</label>
-          <input type="text" id="peso" class="placeholder" placeholder="Insira o peso. Ex.: 68kg" required>
-          
-          <!--Cabelos-->
-          <label for="cabelos" id="cabelos-label">Cabelos</label>
-          <input type="text" id="cabelos" class="placeholder" placeholder="Características dos cabelos. Ex.: Longos e castanhos" required>
-          
-          <!--Olhos-->
-          <label for="olhos" id="olhos-label">Olhos</label>
-          <input type="text" id="olhos" class="placeholder" placeholder="Cor dos olhos" required>
-          
-          <!--Braço Dominante-->
-          <label for="braco" id="braco-label">Braço Dominante</label>
-          <input type="text" id="braco" class="placeholder" placeholder="Direito ou esquerdo" required>
-          
-          <!--Outros-->
-          <label for="outros" id="outros-label">Outros</label>
-          <input type="text" id="outros" class="placeholder" placeholder="Outras características físicas" required>
-          
-          <!--Personagem Base-->
-          <label for="ppbase" id="ppbase-label">Personagem Base</label>
-          <input type="text" id="ppbase" class="placeholder" placeholder="ex.: Saitama" required>
-          
-          <!--Série-->
-          <label for="ppserie" id="ppserie-label">Série da Personagem Base</label>
-          <input type="text" id="ppserie" class="placeholder" placeholder="ex.: One Punch Man" required>
-          
-          
-          <!--Descrição Geral-->
-          <label for="descfisica" id="descfisica-label">Descrição Geral</label>
-          <textarea id="descfisica" class="placeholder" placeholder="" required></textarea>
-        </div>
-        
-        <div id="passo5" class="tab">
-          <h1>HISTÓRIA</h1>
-          <!--Título História-->
-          <label for="titulo" id="titulo-label">Título da História</label>
-          <input type="text" id="titulo" class="placeholder" placeholder="CARVED MY CURE WITH A BLADE THAT LEFT ME IN SCARS
-          NOW, EVERY TIME I'M WEAK, WORDS SCREAM FROM MY ARMS" required>
-          <!--Historia-->
-          <label for="historia" id="historia-label">História</label>
-          <textarea id="historia" class="placeholder" required><b>50 DG - Início</b>
-          <p style="text-align: justify">Escreva sua história aqui. Para adicionar um novo subtítulo, clique no "B". Sim, é estranho, mas por enquanto tem que ser assim. Se quiser expandir o editor e editar com mais espaço, é só apertar no último botão, aquele com setas, e vai ficar em fullscreen.</p>
-          <b>69 DG - Takura&Shion: Amor</b>
-          <p style="text-align: justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta diam est, sed auctor leo volutpat in. Cras blandit tempor justo, non condimentum ligula faucibus nec. Phasellus lacus ligula, interdum scelerisque dictum sit amet, blandit lobortis tellus. Aenean sagittis pharetra nunc, et euismod nunc volutpat sed. Nulla diam arcu, luctus eu libero vitae, rutrum commodo tellus. Nulla facilisi. Proin ultrices luctus arcu, a semper turpis tempus et. Mauris fringilla mauris ut justo laoreet dignissim.</p>
-        </textarea>
-        </div>
-        
-        <div id="passo6" class="tab">
-          
-          <h1>QUALIDADES E DEFEITOS</h1>
-          <h2 id="qualidades-contador" class="subtitulo branco">Qualidades</h2>
-          
-          <div id="qualidadesKg">
-            
-            <div id="qualidadesAkagan" class="cla">
-              <button class="sanfona">Qualidades da KG Akagan</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Habilidade em Genjutsu-->
-                  <button type="button" id="akaganGen" value="0" disabled>Habilidade em Genjutsu (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesBakuton" class="cla">
-              <button class="sanfona">Qualidades da KG Bakuton</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Perito Elemental: Bakuton-->
-                  <button type="button" id="bakutonPericia" value="0" disabled>Perito Elemental: Bakuton (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesFutton" class="cla">
-              <button class="sanfona">Qualidades da KG Futton</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Perito Elemental: Futton-->
-                  <button type="button" id="futtonPericia" value="0" disabled>Perito Elemental: Futton (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesJinton" class="cla">
-              <button class="sanfona">Qualidades da KG Jinton</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Perito Elemental: Jinton-->
-                  <button type="button" id="jintonPericia" value="0" disabled>Perito Elemental: Jinton (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesJintonVel" class="cla">
-              <button class="sanfona">Qualidades da KG Jinton(Velocidade)</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Agilidade Aguçada-->
-                  <button type="button" id="jintonAgilidade" value="0" disabled>Agilidade Aguçada - Jinton (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesJiton" class="cla">
-              <button class="sanfona">Qualidades da KG Jiton</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Perito Elemental: Jiton-->
-                  <button type="button" id="jitonPericia" value="0" disabled>Perito Elemental: Jiton (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesKoton" class="cla">
-              <button class="sanfona">Qualidades da KG Kōton</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Perito Elemental: Kōton-->
-                  <button type="button" id="kotonPericia" value="0" disabled>Perito Elemental: Kōton (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesMeiton" class="cla">
-              <button class="sanfona">Qualidades da KG Meiton</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Comedor de Chakra-->
-                  <button type="button" id="meitonComedor" value="0" disabled>Comedor de Chakra (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesRanton" class="cla">
-              <button class="sanfona">Qualidades da KG Ranton</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Perito Elemental: Ranton-->
-                  <button type="button" id="rantonPericia" value="0" disabled>Perito Elemental: Ranton (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesShakuton" class="cla">
-              <button class="sanfona">Qualidades da KG Shakuton</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Perito Elemental: Shakuton-->
-                  <button type="button" id="shakutonPericia" value="0" disabled>Perito Elemental: Shakuton (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesShoton" class="cla">
-              <button class="sanfona">Qualidades da KG Shōton</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Perito Elemental: Shōton-->
-                  <button type="button" id="shotonPericia" value="0" disabled>Perito Elemental: Shōton (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesYoton" class="cla">
-              <button class="sanfona">Qualidades da KG Yōton</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Perito Elemental: Yōton-->
-                  <button type="button" id="yotonPericia" value="0" disabled>Perito Elemental: Yōton (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesKumoNenkin" class="cla">
-              <button class="sanfona">Qualidades da KG Kumo Nenkin</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Corpo Aracnídeo-->
-                  <button type="button" id="kumoAracnideo" value="0" disabled>Corpo Aracnídeo (0)</button>
-                  
-                  <!--Ambidestria-->
-                  <button type="button" id="kumoAmbidestria" value="0" disabled>Ambidestria (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesKugutsu" class="cla">
-              <button class="sanfona">Qualidades da KG Kugutsu</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Perícia em Shurikenjutsu-->
-                  <button type="button" id="kugutsuPericia" value="0" disabled>Perícia em Shurikenjutsu (0)</button>
-                  
-                  <!--Ambidestria-->
-                  <button type="button" id="kugutsuAmbidestria" value="0" disabled>Ambidestria (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesSoma" class="cla">
-              <button class="sanfona">Qualidades da KG Sōma no Kō</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Agilidade Aguçada-->
-                  <button type="button" id="somaVel" value="0" disabled>Agilidade Aguçada (0)</button>
-                </div>
+        <form id="dados-basicos" class="tab form-ficha">
+          <div class="conteudo-form">
+            <h1>DADOS BÁSICOS</h1>
+            <div class="corpo-form">
+              <!--Nome-->
+              <label for="nome" id="nome-label">Nome da personagem</label>
+              <input type="text" id="nome" name="nome" class="placeholder" placeholder="Insira o nome da personagem" required>
+              <!--Sobrenome-->
+              <label for="sobrenome" id="sobrenome-label">Sobrenome</label>
+              <input type="text" id="sobrenome" name="sobrenome" class="placeholder" placeholder="Insira o sobrenome" required>
+              <!--Gênero-->
+              <label for="genero" id="genero-label">Gênero</label>
+              <select id="genero">
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Não Definido">Não Definido</option>
+              </select>
+              <!--Sexualidade-->
+              <label for="sexualidade" id="sexualidade-label">Sexualidade</label>
+              <input type="text" id="sexualidade" name="sexualidade" class="placeholder" placeholder="Insira a sexualidade da sua personagem" required>
+              <!--Idade-->
+              <label for="idade" id="idade-label">Idade</label>
+              <input type="number" id="idade" name="idade" class="placeholder" placeholder="Entre 8 e 20 anos" min="8" max="20" required>
+              <!--Aniversário-->
+              <div>
+                <label for="aniversario-dropdown">Aniversário</label>
+                <select id="aniversario-dropdown" class="placeholder">
+                  <option value="Verão">Verão</option>
+                  <option value="Outono">Outono</option>
+                  <option value="Inverno">Inverno</option>
+                  <option value="Primavera">Primavera</option><br>
+                </select>
               </div>
             </div>
           </div>
-          
-          <div id="qualidadesClas">
-            
-            <div id="qualidadesAburame" class="cla">
-              <button class="sanfona">Qualidades do Clã Aburame</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Conhecimentos Científicos-->
-                  <button type="button" id="aburameCientificos" value="0" disabled>Conhecimentos Científicos (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesAkimichi" class="cla">
-              <button class="sanfona">Qualidades do Clã Akmimichi</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Força Aguçada-->
-                  <button type="button" id="akimichiForca" value="0" disabled>Força Aguçada (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesChinoike" class="cla">
-              <button class="sanfona">Qualidades do Clã Chinoike</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Habilidade em Genjutsu-->
-                  <button type="button" id="chinoikeGen" value="0" disabled>Habilidade em Genjutsu (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesFuuma" class="cla">
-              <button class="sanfona">Qualidades do Clã Fūma</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Habilidade em Ninjutsu-->
-                  <button type="button" id="fuumaNin" value="0" disabled>Habilidade em Ninjutsu (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesHatake" class="cla">
-              <button class="sanfona">Qualidades do Clã Hatake</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Versátil & Hábil-->
-                  <button type="button" id="qualidadeVersatil" value="0" disabled>Versátil & Hábil (0)</button>
-                  
-                  <!--Habilidade em Ninjutsu-->
-                  <button type="button" id="hatakeNin" value="0">Habilidade em Ninjutsu (0)</button>
-                  
-                  <!--Habilidade em Taijutsu-->
-                  <button type="button" id="hatakeTai" value="0">Habilidade em Taijutsu (0)</button>
-                  
-                  <!--Habilidade em Genjutsu-->
-                  <button type="button" id="hatakeGen" value="0">Habilidade em Genjutsu (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            
-            <div id="qualidadesHoki" class="cla">
-              <button class="sanfona">Qualidades do Clã Hōki</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Grande Controle de Chakra-->
-                  <button type="button" id="hokiGCC" value="0" disabled>Grande Controle de Chakra (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesHoshigaki" class="cla">
-              <button class="sanfona">Qualidades do Clã Hoshigaki</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Híbrido Anfíbio-->
-                  <button type="button" id="hoshigakiAnfibio" value="0" disabled>Híbrido Anfíbio (0)</button>
-                  
-                  <!--Perícia Elemental: Suiton-->
-                  <button type="button" id="hoshigakiPericia" value="0" disabled>Perícia Elemental: Suiton (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesHozuki" class="cla">
-              <button class="sanfona">Qualidades do Clã Hōzuki</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Perícia Elemental: Suiton-->
-                  <button type="button" id="hozukiPericia" value="0" disabled>Perícia Elemental: Suiton (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesHyuuga" class="cla">
-              <button class="sanfona">Qualidades do Clã Hyūga</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Habilidade em Taijutsu-->
-                  <button type="button" id="hyuugaTai" value="0" disabled>Habilidade em Taijutsu (0)</button>
-                  
-                  <!--Grande Controle de Chakra-->
-                  <button type="button" id="hyuugaGCC" value="0" disabled>Grande Controle de Chakra (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesInuzuka" class="cla">
-              <button class="sanfona">Qualidades do Clã Inuzuka</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Instintos Anormais-->
-                  <button type="button" id="inuzukaInstintos" value="0" disabled>Instintos Anormais (0)</button>
-                  
-                  <!--Olfato Aguçado-->
-                  <button type="button" id="inuzukaOlfato" value="0" disabled>Olfato Aguçado (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesJuugo" class="cla">
-              <button class="sanfona">Qualidades do Clã Jūgo</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Centro de Energia Natural-->
-                  <button type="button" id="juugoNatural" value="0" disabled>Centro de Energia Natural (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesKaguya" class="cla">
-              <button class="sanfona">Qualidades do Clã Kaguya</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Habilidade em Taijutsu-->
-                  <button type="button" id="kaguyaTai" value="0" disabled>Habilidade em Taijutsu (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesKamizuru" class="cla">
-              <button class="sanfona">Qualidades do Clã Kamizuru</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Conhecimento Cientifico-->
-                  <button type="button" id="kamizuruCientificos" value="0" disabled>Conhecimento Cientifico (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesKedoin" class="cla">
-              <button class="sanfona">Qualidades do Clã Kedōin</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Domínio Psicológico-->
-                  <button type="button" id="kedoinDominio" value="0" disabled>Domínio Psicológico (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesKurama" class="cla">
-              <button class="sanfona">Qualidades do Clã Kurama</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Habilidade em Genjutsu-->
-                  <button type="button" id="kuramaGen" value="0" disabled>Habilidade em Genjutsu (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesLee" class="cla">
-              <button class="sanfona">Qualidades do Clã Lee</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Habilidade em Taijutsu-->
-                  <button type="button" id="leeTai" value="0" disabled>Habilidade em Taijutsu (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesNara" class="cla">
-              <button class="sanfona">Qualidades do Clã Nara</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Inteligência Aguçada-->
-                  <button type="button" id="naraInt" value="0" disabled>Inteligência Aguçada (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesSarutobi" class="cla">
-              <button class="sanfona">Qualidades do Clã Sarutobi</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Habilidade em Ninjutsu-->
-                  <button type="button" id="sarutobiNin" value="0" disabled>Habilidade em Ninjutsu (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesSenju" class="cla">
-              <button class="sanfona">Qualidades do Clã Senju</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Grande Vitalidade-->
-                  <button type="button" id="senjuVitalidade" value="0" disabled>Grande Vitalidade (0)</button>
-                  
-                  <!--Grandes Reservas de Chakra-->
-                  <button type="button" id="senjuGRC" value="0" disabled>Grandes Reservas de Chakra (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesShimura" class="cla">
-              <button class="sanfona">Qualidades do Clã Shimura</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Perito Elemental: Futon-->
-                  <button type="button" id="periciaShimura" value="0" disabled>Perito Elemental: Futon (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesUchiha" class="cla">
-              <button class="sanfona">Qualidades do Clã Uchiha</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Grandes Reservas de Chakra-->
-                  <button type="button" id="uchihaGRC" value="0" disabled>Grandes Reservas de Chakra (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesUzumaki" class="cla">
-              <button class="sanfona">Qualidades do Clã Uzumaki</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Grandes Reservas de Chakra-->
-                  <button type="button" id="uzumakiGRC" value="0" disabled>Grandes Reservas de Chakra (0)</button>
-                  
-                  <!--Grande Vitalidade-->
-                  <button type="button" id="uzumakiVitalidade" value="0" disabled>Grande Vitalidade (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesYamanaka" class="cla">
-              <button class="sanfona">Qualidades do Clã Yamanaka</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Sensor-->
-                  <button type="button" id="yamanakaSensor" value="0" disabled>Sensor (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesYotsuki" class="cla">
-              <button class="sanfona">Qualidades do Clã Yotsuki</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Perito Armamentista: Kenjutsu-->
-                  <button type="button" id="yotsukiPericia" value="0" disabled>Perito Armamentista: Kenjutsu (0)</button>
-                </div>
-              </div>
-            </div>
-            
-            <div id="qualidadesYuki" class="cla">
-              <button class="sanfona">Qualidades do Clã Yuki</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Perito Elemental: Hyōton-->
-                  <button type="button" id="yukiPericia" value="0" disabled>Perito Elemental: Hyōton (0)</button>
-                </div>
-              </div>
-            </div>
-            
+          <div class="navegacao">
+            <hr>
+            <button type="button" class="gotoStep2 next round">&#8250;</button>
           </div>
-          
-          <div id="qualidades">
-            <!--Qualidades de 3 pontos-->
-            <button class="sanfona">Qualidades de 3 pontos</button>
-            <div id="qualidades3" class="secao">
-              <div class="qualidades-defeitos">
-                <!--Grandes Reservas de Chakra-->
-                <button type="button" id="qualidadeGRC" value="3">Grandes Reservas de Chakra (3)</button>
-                
-                <!--Grande Vitalidade-->
-                <button type="button" id="qualidadeVitalidade" value="3">Grande Vitalidade (3)</button>
-                
-                <!--Instintos Anormais-->
-                <button type="button" id="qualidaeInstintos" value="3">Instintos Anormais (3)</button>
-                
-                <!--Poder Oculto-->
-                <button type="button" value="3">Poder Oculto (3)</button>
-                
-                <!--Prodígio-->
-                <button type="button" id="qualidadeProdigio" value="3">Prodígio (3)</button>
-              </div>
-            </div>
-            
-            <!--Qualidades de 2 pontos-->
-            <button class="sanfona">Qualidades de 2 pontos</button>
-            <div id="qualidades2" class="secao">
+        </form>
+        
+        <form id="dados-basicos-ninja" class="tab form-ficha">
+          <div class="conteudo-form">
+            <h1>DADOS BÁSICOS</h1>
+            <div class="corpo-form">
+              <!--Vilarejo-->
+              <label for="vilarejo" id="vilarejo-label">Vilarejo atual</label>
+              <input type="text" id="vilarejo" name="vilarejo" class="placeholder" placeholder="Verifique se há vagas para o vilarejo!" required>
               
-              <div class="qualidades-defeitos">
-                <!--Inteligência Aguçada-->
-                <button type="button" id="qualidadeInt" value="2">Inteligência Aguçada (2)</button>
-                
-                <!--Agilidade Aguçada-->
-                <button type="button" id="qualidadeVel" value="2">Agilidade Aguçada (2)</button>
-                
-                <!--Força Aguçada-->
-                <button type="button" id="qualidadeForca" value="2">Força Aguçada (2)</button>
-                
-                <!--Grande Determinação-->
-                <button type="button" value="2">Grande Determinação (2)</button>
-                
-                <!--Grande Controle de Chakra-->
-                <button type="button" id="qualidadeGCC" value="2">Grande Controle de Chakra (2)</button>
-                
-                <!--Visão Noturna-->
-                <button type="button" value="2">Visão Noturna (2)</button>
-                
-                <!--Comedor de Chakra-->
-                <button type="button" id="qualidadeComedor" value="2">Comedor de Chakra (2)</button>
-                
-                <!--Sensor-->
-                <button type="button" id="qualidadeSensor" value="2">Sensor (2)</button>
-                
-                <!--Visão Aguçada-->
-                <button type="button" id="qualidadeVisao" value="2">Visão Aguçada (2)</button>
-                
-                <!--Audição Aguçada-->
-                <button type="button" id="qualidadeAudicao" value="2">Audição Aguçada (2)</button>
-                
-                <!--Olfato Aguçada-->
-                <button type="button" id="qualidadeOlfato" value="2">Olfato Aguçada (2)</button>
-                
-                <!--Habilidade em Ninjutsu-->
-                <button type="button" id="qualidadeNinjutsu" value="2">Habilidade em Ninjutsu (2)</button>
-                
-                <!--Habilidade em Taijutsu-->
-                <button type="button" id="qualidadeTaijutsu" value="2">Habilidade em Taijutsu (2)</button>
-                
-                <!--Habilidade em Genjutsu-->
-                <button type="button" id="qualidadeGenjutsu" value="2">Habilidade em Genjutsu (2)</button>
-                
-                <!--Memória Eidética-->
-                <button type="button" id="qualidadeMemoria" value="2">Memória Eidética (2)</button>
-                
-                <!--Altruísmo-->
-                <button type="button" value="2">Altruísmo (2)</button>
-                
-                <!--Aptidão Genética-->
-                <button type="button" value="2">Aptidão Genética (2)</button>
+              <!--Arquétipo-->
+              <div>
+                <label for="arquetipo-dropdown">Arquétipo</label>
+                <select id="arquetipo-dropdown" name="arquetipo-dropdown" class="placeholder">
+                  <option value="Neutro">Neutro</option>
+                  <option value="Herói">Herói</option>
+                  <option value="Anti-herói">Anti-herói</option>
+                  <option value="Vilão">Vilão</option>
+                  <option value="Individualista">Individualista</option>
+                  <option value="Mártir">Mártir</option>
+                  <option value="Devoto">Devoto</option>
+                  <option value="Ajudante">Ajudante</option>
+                  <option value="Governante">Governante</option>
+                  <option value="Pesquisador">Pesquisador</option>
+                  <option value="Tolo">Tolo</option><br>
+                </select>
               </div>
-            </div>
-            
-            <!--Qualidades de 1 ponto-->
-            <button class="sanfona">Qualidades de 1 ponto</button>
-            <div id="qualidades1" class="secao">  
+  
+              <!-- Sem Clã ou KG -->
+              <div id="claKgCheck">
+                <label for="semCla">Sem Clã/Kekkei Genkai</label>
+                <input type="checkbox" name="semCla" id="semCla" checked>
+              </div>
               
-              <div class="qualidades-defeitos">
-                <!--Híbrido Anfíbio-->
-                <button type="button" id="qualidadeAnfibio" value="1">Híbrido Anfíbio (1)</button>
+              <!--Clã-->
+              <div id="clas-buttons" class="claskg-buttons close">
+                <label class="logo-cla">
+                  <input type="radio" id="aburameRadio" name="cla" value="Aburame">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/2/21/S%C3%ADmbolo_Cl%C3%A3_Aburame.svg/revision/latest/scale-to-width-down/100?cb=20150802160555&path-prefix=pt-br" alt="Aburame">
+                  <p class="descricao-imagem">Aburame</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="akimichiRadio" name="cla" value="Akimichi">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/5/53/S%C3%ADmbolo_Cl%C3%A3_Akimichi.svg/revision/latest/scale-to-width-down/100?cb=20121117153814&path-prefix=pt-br" alt="Akimichi">
+                  <p class="descricao-imagem">Akimichi</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="chinoikeRadio" name="cla" value="Chinoike">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/3/38/Chinoike_Symbol.svg/revision/latest/scale-to-width-down/100?cb=20160808154412" alt="Chinoike">
+                  <p class="descricao-imagem">Chinoike</p>
+                </label>
                 
-                <!--Excelente Senso de Direção-->
-                <button type="button" value="1">Excelente Senso de Direção (1)</button>
-                
-                <!--Relíquia de Família-->
-                <button type="button" value="1">Relíquia de Família (1)</button>
-                
-                <!--Grande Durabilidade-->
-                <button type="button" value="1">Grande Durabilidade (1)</button>
-                
-                <!--Instinto Assassinoo-->
-                <button type="button" value="1">Instinto Assassino (1)</button>
-                
-                <!--Resistência Toxicológica -->
-                <button type="button" value="1">Resistência Toxicológica  (1)</button>
-                
-                <!--Indolor-->
-                <button type="button" value="1">Indolor (1)</button>
+                <label class="logo-cla">
+                  <input type="radio" id="fuumaRadio" name="cla" value="Fūma">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/8/82/S%C3%ADmbolo_Cl%C3%A3_F%C5%ABma_%28anime%29.svg/revision/latest/scale-to-width-down/100?cb=20130723143049&path-prefix=pt-br" alt="Fūma">
+                  <p class="descricao-imagem">Fūma</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="hatakeRadio" name="cla" value="Hatake">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/a/ae/S%C3%ADmbolo_Cl%C3%A3_Hatake.svg/revision/latest/scale-to-width-down/100?cb=20151026235515&path-prefix=pt-br" alt="Hatake">
+                  <p class="descricao-imagem">Hatake</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="hokiRadio" name="cla" value="Hōki">
+                  <img src="https://i.imgur.com/17qMx2A.png" alt="Hōki">
+                  <p class="descricao-imagem">Hōki</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="hoshigakiRadio" name="cla" value="Hoshigaki">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/9/98/S%C3%ADmbolo_Cl%C3%A3_Hoshigaki.png/revision/latest/scale-to-width-down/100?cb=20180308220812&path-prefix=pt-br" alt="Hoshigaki">
+                  <p class="descricao-imagem">Hoshigaki</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="hozukiRadio" name="cla" value="Hōzuki">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/2/24/S%C3%ADmbolo_Cl%C3%A3_Hozuki.svg/revision/latest/scale-to-width-down/100?cb=20121117155848&path-prefix=pt-br" alt="Hōzuki">
+                  <p class="descricao-imagem">Hōzuki</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="hyuugaRadio" name="cla" value="Hyūga">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/2/20/S%C3%ADmbolo_Cl%C3%A3_Hyuga.svg/revision/latest/scale-to-width-down/100?cb=20151026211510&path-prefix=pt-br" alt="Hyūga">
+                  <p class="descricao-imagem">Hyūga</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="inuzukaRadio" name="cla" value="Inuzuka">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/1/12/S%C3%ADmbolo_Cl%C3%A3_Inuzuka.svg/revision/latest/scale-to-width-down/100?cb=20150515014016&path-prefix=pt-br" alt="Inuzuka">
+                  <p class="descricao-imagem">Inuzuka</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="juugoRadio" name="cla" value="Jūgo">
+                  <img src="https://i.imgur.com/BSG8dHV.png" alt="Jūgo">
+                  <p class="descricao-imagem">Jūgo</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="kaguyaRadio" name="cla" value="Kaguya">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/f/f9/S%C3%ADmbolo_Cl%C3%A3_Kaguya.svg/revision/latest/scale-to-width-down/100?cb=20121117155548&path-prefix=pt-br" alt="Kaguya">
+                  <p class="descricao-imagem">Kaguya</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="kamizuruRadio" name="cla" value="Kamizuru">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/1/1e/S%C3%ADmbolo_Cl%C3%A3_Kamizuru.svg/revision/latest/scale-to-width-down/100?cb=20151007030807&path-prefix=pt-br" alt="Kamizuru">
+                  <p class="descricao-imagem">Kamizuru</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="kedoinRadio" name="cla" value="Kedōin">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/5/57/S%C3%ADmbolo_Cl%C3%A3_Ked%C5%8Din.svg/revision/latest/scale-to-width-down/100?cb=20130225031102&path-prefix=pt-br" alt="Kedōin">
+                  <p class="descricao-imagem">Kedōin</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="kuramaRadio" name="cla" value="Kurama">
+                  <img src="https://i.imgur.com/edpu08P.png" alt="Kurama">
+                  <p class="descricao-imagem">Kurama</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="leeRadio" name="cla" value="Lee">
+                  <img src="https://i.imgur.com/tJwcpNf.png" alt="Lee">
+                  <p class="descricao-imagem">Lee</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="naraRadio" name="cla" value="Nara">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/3/39/S%C3%ADmbolo_Cl%C3%A3_Nara.svg/revision/latest/scale-to-width-down/100?cb=20121117153914&path-prefix=pt-br" alt="Nara">
+                  <p class="descricao-imagem">Nara</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="sarutobiRadio" name="cla" value="Sarutobi">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/8/89/S%C3%ADmbolo_Cl%C3%A3_Sarutobi.svg/revision/latest/scale-to-width-down/100?cb=20151027001416&path-prefix=pt-br" alt="Sarutobi">
+                  <p class="descricao-imagem">Sarutobi</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="senjuRadio" name="cla" value="Senju">
+                  <img src="https://i.imgur.com/ayz29zR.png" alt="Senju">
+                  <p class="descricao-imagem">Senju</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="shiinRadio" name="cla" value="Shiin">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/6/69/S%C3%ADmbolo_Cl%C3%A3_Shiin.svg/revision/latest/scale-to-width-down/100?cb=20130605205639&path-prefix=pt-br" alt="Shiin">
+                  <p class="descricao-imagem">Shiin</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="shimuraRadio" name="cla" value="Shimura">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/9/96/S%C3%ADmbolo_Cl%C3%A3_Shimura.png/revision/latest/scale-to-width-down/100?cb=20180308221706&path-prefix=pt-br" alt="Shimura">
+                  <p class="descricao-imagem">Shimura</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="uchihaRadio" name="cla" value="Uchiha">
+                  <img src="https://i.imgur.com/RZGOi3F.png" alt="Uchiha">
+                  <p class="descricao-imagem">Uchiha</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="uzumakiRadio" name="cla" value="Uzumaki">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/2/23/S%C3%ADmbolo_Cl%C3%A3_Uzumaki.svg/revision/latest/scale-to-width-down/100?cb=20150816002851&path-prefix=pt-br" alt="Uzumaki">
+                  <p class="descricao-imagem">Uzumaki</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="yamanakaRadio" name="cla" value="Yamanaka">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/0/0b/S%C3%ADmbolo_Cl%C3%A3_Yamanaka.svg/revision/latest/scale-to-width-down/100?cb=20120928011913&path-prefix=pt-br" alt="Yamanaka">
+                  <p class="descricao-imagem">Yamanaka</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="yotsukiRadio" name="cla" value="Yotsuki">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/f/f9/S%C3%ADmbolo_Cl%C3%A3_Yotsuki.svg/revision/latest/scale-to-width-down/100?cb=20121117155818&path-prefix=pt-br" alt="Yotsuki">
+                  <p class="descricao-imagem">Yotsuki</p>
+                </label>
+  
+                <label class="logo-cla">
+                  <input type="radio" id="yukiRadio" name="cla" value="Yuki">
+                  <img src="https://vignette.wikia.nocookie.net/naruto/images/f/f0/S%C3%ADmbolo_Cl%C3%A3_Yuki.svg/revision/latest/scale-to-width-down/100?cb=20121117160031&path-prefix=pt-br" alt="Yuki">
+                  <p class="descricao-imagem">Yuki</p>
+                </label>
+  
+                <input type="radio" id="emptyCla" name="cla" value="--" checked>
               </div>
+  
+                <div id="kgs-buttons" class="claskg-buttons close">
+                  <label class="logo-cla">
+                    <input type="radio" id="kugutsuRadio" name="kg" value="Kugutsu">
+                    <img src="https://i.imgur.com/lEhvokr.png" alt="Kugutsu">
+                    <p class="descricao-imagem">Kugutsu</p>
+                  </label>
+  
+                  <label class="logo-cla">
+                    <input type="radio" id="kumoRadio" name="kg" value="Kumo Nenkin">
+                    <img src="https://i.imgur.com/K1xPzEQ.png" alt="Kumo Nenkin">
+                    <p class="descricao-imagem">Kumo Nenkin</p>
+                  </label>
+  
+                  <label class="logo-cla">
+                    <input type="radio" id="somaRadio" name="kg" value="Sōma no Kō">
+                    <img src="https://vignette.wikia.nocookie.net/naruto/images/4/47/Sakon_and_Ukon%27s_Kekkei_Genkai.svg/revision/latest/scale-to-width-down/100?cb=20160708041755" alt="Sōma no Kō">
+                    <p class="descricao-imagem">Sōma no Kō</p>
+                  </label>
+  
+                  <label class="logo-cla">
+                    <input type="radio" id="akaganRadio" name="kg" value="Akagan">
+                    <img src="https://vignette.wikia.nocookie.net/naruto/images/7/72/S%C3%ADmbolo_Kekkei_Genkai_de_Ranmaru.svg/revision/latest/scale-to-width-down/100?cb=20200219031154&path-prefix=pt-br" alt="Akagan">
+                    <p class="descricao-imagem">Akagan</p>
+                  </label>
+  
+                  <label class="logo-cla">
+                    <input type="radio" id="bakutonRadio" name="kg" value="Bakuton">
+                    <img src="https://vignette.wikia.nocookie.net/naruto/images/7/7e/S%C3%ADmbolo_Bakuton.svg/revision/latest/scale-to-width-down/100?cb=20121010212124&path-prefix=pt-br" alt="Bakuton">
+                    <p class="descricao-imagem">Bakuton</p>
+                  </label>
+  
+                  <label class="logo-cla">
+                    <input type="radio" id="futtonRadio" name="kg" value="Futton">
+                    <img src="https://vignette.wikia.nocookie.net/naruto/images/f/fd/S%C3%ADmbolo_Futton.svg/revision/latest/scale-to-width-down/100?cb=20121116181358&path-prefix=pt-br" alt="Kugutsu">
+                    <p class="descricao-imagem">Futton</p>
+                  </label>
+  
+                  <label class="logo-cla">
+                    <input type="radio" id="jintonRadio" name="kg" value="Jinton">
+                    <img src="https://vignette.wikia.nocookie.net/naruto/images/3/30/S%C3%ADmbolo_Jinton.svg/revision/latest/scale-to-width-down/100?cb=20121118202534&path-prefix=pt-br" alt="Jinton">
+                    <p class="descricao-imagem">Jinton</p>
+                  </label>
+  
+                  <label class="logo-cla">
+                    <input type="radio" id="jintonVelRadio" name="kg" value="Jinton(Velocidade)">
+                    <img src="https://vignette.wikia.nocookie.net/naruto/images/b/bc/S%C3%ADmbolo_Jinton_%28velocidade%29.svg/revision/latest/scale-to-width-down/100?cb=20140712064139&path-prefix=pt-br" alt="Jinton(Velocidade)">
+                    <p class="descricao-imagem">Jinton(VEL)</p>
+                  </label>
+  
+                  <label class="logo-cla">
+                    <input type="radio" id="jitonRadio" name="kg" value="Jiton">
+                    <img src="https://vignette.wikia.nocookie.net/naruto/images/3/30/S%C3%ADmbolo_Jiton.svg/revision/latest/scale-to-width-down/100?cb=20121118202932&path-prefix=pt-br" alt="Jiton">
+                    <p class="descricao-imagem">Jiton</p>
+                  </label>
+  
+                  <label class="logo-cla">
+                    <input type="radio" id="kotonRadio" name="kg" value="Kōton">
+                    <img src="https://vignette.wikia.nocookie.net/naruto/images/1/17/S%C3%ADmbolo_K%C5%8Dton.svg/revision/latest/scale-to-width-down/100?cb=20140712063643&path-prefix=pt-br" alt="Kōton">
+                    <p class="descricao-imagem">Kōton</p>
+                  </label>
+  
+                  <label class="logo-cla">
+                    <input type="radio" id="meitonRadio" name="kg" value="Meiton">
+                    <img src="https://vignette.wikia.nocookie.net/naruto/images/8/87/S%C3%ADmbolo_Meiton.svg/revision/latest/scale-to-width-down/100?cb=20140712053306&path-prefix=pt-br" alt="Meiton">
+                    <p class="descricao-imagem">Meiton</p>
+                  </label>
+  
+                  <label class="logo-cla">
+                    <input type="radio" id="rantonRadio" name="kg" value="Ranton">
+                    <img src="https://vignette.wikia.nocookie.net/naruto/images/4/4d/S%C3%ADmbolo_Ranton.svg/revision/latest/scale-to-width-down/100?cb=20121014211559&path-prefix=pt-br" alt="Ranton">
+                    <p class="descricao-imagem">Ranton</p>
+                  </label>
+  
+                  <label class="logo-cla">
+                    <input type="radio" id="shakutonRadio" name="kg" value="Shakuton">
+                    <img src="https://vignette.wikia.nocookie.net/naruto/images/8/87/S%C3%ADmbolo_Shakuton.svg/revision/latest/scale-to-width-down/100?cb=20121118202428&path-prefix=pt-br" alt="Shakuton">
+                    <p class="descricao-imagem">Shakuton</p>
+                  </label>
+  
+                  <label class="logo-cla">
+                    <input type="radio" id="shotonRadio" name="kg" value="Shōton">
+                    <img src="https://vignette.wikia.nocookie.net/naruto/images/3/33/S%C3%ADmbolo_Shoton.svg/revision/latest/scale-to-width-down/100?cb=20121118235707&path-prefix=pt-br" alt="Shōton">
+                    <p class="descricao-imagem">Shōton</p>
+                  </label>
+  
+                  <label class="logo-cla">
+                    <input type="radio" id="yotonRadio" name="kg" value="Yōton">
+                    <img src="https://vignette.wikia.nocookie.net/naruto/images/f/fd/S%C3%ADmbolo_Yoton.svg/revision/latest/scale-to-width-down/100?cb=20121006002116&path-prefix=pt-br" alt="Yōton">
+                    <p class="descricao-imagem">Yōton</p>
+                  </label>
+  
+                  <input type="radio" id="ketsuryuganRadio" name="kg" value="Ketsuryūgan">
+                  <input type="radio" id="emptyKg" name="kg" value="--">
+                </div>
+  
+                <button type="button" id="switchClaKg">Mudar para Kekkei Genkais</button>
             </div>
           </div>
-          
-          
-          <hr>
-          
-          <h2 id="defeitos-contador" class="subtitulo branco">Defeitos</h2>
-          
-          <div id="defeitosClas">
-            <div id="defeitosAkimichi" class="cla">
-              <button class="sanfona">Defeitos do Clã Akimichi</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Gordo-->
-                  <button type="button" id="akimichiGordo" value="1" disabled>Gordo (1)</button>
-                </div>
-              </div>
-            </div>
-            
-            
-            
-            <div id="defeitosHozuki" class="cla">
-              <button class="sanfona">Defeitos do Clã Hōzuki</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Vício: Ingestão de Líquidos-->
-                  <button type="button" id="hozukiVicio" value="1" disabled>Vício: Ingestão de Líquidos (1)</button>
-                </div>
-              </div>
-            </div>
-            
-            
-            
-            <div id="defeitosJuugo" class="cla">
-              <button class="sanfona">Defeitos do Clã Jūgo</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Insanidade-->
-                  <button type="button" id="juugoInsanidade" value="2" disabled>Insanidade (2)</button>
-                </div>
-              </div>
-            </div>
-            
-            
-            
-            <div id="defeitosLee" class="cla">
-              <button class="sanfona">Defeitos do Clã Lee</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Inabilidade em Ninjutsu-->
-                  <button type="button" id="leeInabilidadeTai" value="3" disabled>Inabilidade em Ninjutsu (3)</button>
-                  
-                  <!--Inabilidade em Genjutsu-->
-                  <button type="button" id="leeInabilidadeGen" value="3" disabled>Inabilidade em Genjutsu (3)</button>
-                </div>
-              </div>
-            </div>
-            
-            
-            
-            <div id="defeitosUchiha" class="cla">
-              <button class="sanfona">Defeitos do Clã Uchiha</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Amnésia Dissociativa-->
-                  <button type="button" id="uchihaAmnesia" value="1" disabled>Amnésia Dissociativa (1)</button>
-                  
-                  <!--Maldição do Ódio-->
-                  <button type="button" id="uchihaMaldicao" value="1" disabled>Maldição do Ódio (1)</button>
-                </div>
-              </div>
+
+          <div class="navegacao">
+            <hr>
+            <button type="button" class="gotoStep1 prev round">&#8249;</button>
+            <button type="button" class="gotoStep3 next round">&#8250;</button>
+          </div>
+        </form>
+        
+        <form id="descricao-psicologica" class="tab form-ficha">
+          <div clas="conteudo-form">
+            <h1>DESCRIÇÃO PSICOLÓGICA</h1>
+            <div class="corpo-form">
+              <!--Gostos-->
+              <label for="gostos" id="gostos-label">Coisas que gosta</label>
+              <input type="text" id="gostos" name="gostos" class="placeholder" placeholder="" required>
+              
+              <!--Repulsas-->
+              <label for="repulsas" id="repulsas-label">Coisas que não gosta</label>
+              <input type="text" id="repulsas" name="repulsas" class="placeholder" placeholder="" required>
+              
+              <!--Motivações-->
+              <label for="motivacoes" id="motivacoes-label">Motivações</label>
+              <input type="text" id="motivacoes" name="motivacoes" class="placeholder" placeholder="" required>
+              
+              <!--Medos-->
+              <label for="medos" id="medos-label">Medos</label>
+              <input type="text" id="medos" name="medos" class="placeholder" placeholder="" required>
+              
+              <!--Transtornos/Defeitos-->
+              <label for="transtornos" id="transtornos-label">Transtornos/Defeitos</label>
+              <input type="text" id="transtornos" name="transtornos" class="placeholder" placeholder="Opcional, mas pode ser relacionado aos defeitos" required>
+              
+              <!--Descrição Geral-->
+              <label for="descpsicologica" id="descpsicologica-label">Descrição Geral</label>
+              <textarea id="descpsicologica" name="descpsicologica" class="placeholder" placeholder="" required></textarea>
             </div>
           </div>
-          
-          
-          
-          <div id="defeitos">
-            <!--Deficiências Físicas-->
-            <button class="sanfona">Deficiências Físicas</button>
-            <div id="deficiencias-fisicas" class="secao">
-              <!--De 3 pontos-->
-              <button class="sanfona">Defeitos de 3 pontos</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Cegueira-->
-                  <button type="button" value="3">Cegueira (3)</button>
-                  
-                  <!--Surdez-->
-                  <button type="button" value="3">Surdez (3)</button>
-                  
-                  <!--Fraqueza Muscular-->
-                  <button type="button" id="defeitoFraqueza" value="3">Fraqueza Muscular (3)</button>
+
+          <div class="navegacao">
+            <hr>
+            <button type="button" class="gotoStep2 prev round">&#8249;</button>
+            <button type="button" class="gotoStep4 next round">&#8250;</button>
+          </div>
+        </form>
+        
+        <form id="descricao-fisica" class="tab form-ficha">
+          <div class="conteudo-form">
+            <h1>DESCRIÇÃO FÍSICA</h1>
+            <div class="corpo-form">
+              <div class="mesma-linha">
+                <!--Altura-->
+                <div>
+                  <label for="altura" id="altura-label">Altura</label>
+                  <input type="text" id="altura" name="altura" class="placeholder" placeholder="Ex.: 178cm" required>
+                </div>
+                <!--Peso-->
+                <div>
+                  <label for="peso" id="peso-label">Peso</label>
+                  <input type="text" id="peso" name="peso" class="placeholder" placeholder="Ex.: 68kg" required>
                 </div>
               </div>
-              <!--De 2 pontos-->
-              <button class="sanfona">Defeitos de 2 pontos</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Cegueira-->
-                  <button type="button" value="2">Cegueira (2)</button>
-                  
-                  <!--Receptor Incompatível-->
-                  <button type="button" value="2">Receptor Incompatível (2)</button>
-                  
-                  <!--Reflexos Retardados-->
-                  <button type="button" value="2">Reflexos Retardados (2)</button>
-                  
-                  <!--Insuficiência Respiratória-->
-                  <button type="button" value="2">Insuficiência Respiratória (2)</button>
-                  
-                  <!--Mudez-->
-                  <button type="button" value="2">Mudez (2)</button>
-                  
-                  <!--Baixa Coordenação Motora-->
-                  <button type="button" value="2">Baixa Coordenação Motora (2)</button>
-                </div>
-              </div>
-              <!--De 1 pontos-->
-              <button class="sanfona">Defeitos de 1 ponto</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Visão Prejudicada-->
-                  <button type="button" value="1">Visão Prejudicada (1)</button>
-                  
-                  <!--Audição Prejudicada-->
-                  <button type="button" value="1">Audição Prejudicada (1)</button>
-                  
-                  <!--Olfato Prejudicado-->
-                  <button type="button" value="1">Olfato Prejudicado (1)</button>
-                  
-                  <!--Falta de Membros-->
-                  <button type="button" value="1">Falta de Membros (1)</button>
-                  
-                  <!--Paralisia-->
-                  <button type="button" value="1">Paralisia (1)</button>
-                  
-                  <!--Grande Cicatriz-->
-                  <button type="button" value="1">Grande Cicatriz (1)</button>
-                  
-                  <!--Membro Quebrado-->
-                  <button type="button" value="1">Membro Quebrado (1)</button>
-                  
-                  <!--Gordo-->
-                  <button type="button" id="defeitoGordo" value="1">Gordo (1)</button>
-                  
-                  <!--Magricelo-->
-                  <button type="button" id="defeitoMagricelo" value="1">Magricelo (1)</button>
-                  
-                  <!--Nanismo-->
-                  <button type="button" id="defeitoNanismo" value="1">Nanismo (1)</button>
-                  
-                  <!--Gigantismo-->
-                  <button type="button" id="defeitoGigantismo" value="1">Gigantismo (1)</button>
-                </div>
-              </div>
+              
+              <!--Cabelos-->
+              <label for="cabelos" id="cabelos-label">Cabelos</label>
+              <input type="text" id="cabelos" name="cabelos" class="placeholder" placeholder="Características dos cabelos. Ex.: Longos e castanhos" required>
+              
+              <!--Olhos-->
+              <label for="olhos" id="olhos-label">Olhos</label>
+              <input type="text" id="olhos" name="olhos" class="placeholder" placeholder="Cor dos olhos" required>
+              
+              <!--Braço Dominante-->
+              <label for="braco" id="braco-label">Braço Dominante</label>
+              <input type="text" id="braco" name="braco" class="placeholder" placeholder="Direito ou esquerdo" required>
+              
+              <!--Outros-->
+              <label for="outros" id="outros-label">Outros</label>
+              <input type="text" id="outros" name="outros" class="placeholder" placeholder="Outras características físicas" required>
+              
+              <!--Personagem Base-->
+              <label for="ppbase" id="ppbase-label">Personagem Base</label>
+              <input type="text" id="ppbase" name="ppbase" class="placeholder" placeholder="ex.: Saitama" required>
+              
+              <!--Série-->
+              <label for="ppserie" id="ppserie-label">Série da Personagem Base</label>
+              <input type="text" id="ppserie" name="ppserie" class="placeholder" placeholder="ex.: One Punch Man" required>
+              
+              <!--Descrição Geral-->
+              <label for="descfisica" id="descfisica-label">Descrição Geral</label>
+              <textarea id="descfisica" name="descfisica" class="placeholder" placeholder="" required></textarea>
             </div>
-            
-            <!--Deficiências Psicológicas-->
-            <button class="sanfona">Deficiências Psicológicas</button>
-            <div id="deficiencias-psicologicas" class="secao">
-              <!--De 3 pontos-->
-              <button class="sanfona">Defeitos de 3 pontos</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Estresse Pós-Traumático-->
-                  <button type="button" value="3">Estresse Pós-Traumático (3)</button>
-                </div>
-              </div>
-              <!--De 2 pontos-->
-              <button class="sanfona">Defeitos de 2 pontos</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Transtorno de Múltiplas Personalidades-->
-                  <button type="button" value="2">Transtorno de Múltiplas Personalidades (2)</button>
-                  
-                  <!--Suicida-->
-                  <button type="button" value="2">Suicida (2)</button>
-                  
-                  <!--Esquizofrenia-->
-                  <button type="button" value="2">Esquizofrenia (2)</button>
-                  
-                  <!--Insegurança-->
-                  <button type="button" value="2">Insegurança (2)</button>
-                  
-                  <!--Depressivo-->
-                  <button type="button" value="2">Depressivo (2)</button>
-                  
-                  <!--Paranoia-->
-                  <button type="button" value="2">Paranoia (2)</button>
-                </div>
-              </div>
-              <!--De 1 pontos-->
-              <button class="sanfona">Defeitos de 1 ponto</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Megalomaníaco-->
-                  <button type="button" value="1">Megalomaníaco (1)</button>
-                  
-                  <!--Amnésia Dissociativa-->
-                  <button type="button" id="defeitoAmnesia" value="1">Amnésia Dissociativa (1)</button>
-                  
-                  <!--Luto-->
-                  <button type="button" value="1">Luto (1)</button>
-                  
-                  <!--Tique-->
-                  <button type="button" value="1">Tique (1)</button>
+          </div>
+
+          <div class="navegacao">
+            <hr>
+            <button type="button" class="gotoStep3 prev round">&#8249;</button>
+            <button type="button" class="gotoStep5 next round">&#8250;</button>
+          </div>
+        </form>
+        
+        <form id="historia-form" class="tab form-ficha">
+          <div class="conteudo-form">
+            <h1>HISTÓRIA</h1>
+            <div class="corpo-form">
+              <!--Título História-->
+              <label for="titulo" id="titulo-label">Título da História</label>
+              <input type="text" id="titulo" name="titulo" class="placeholder" placeholder="CARVED MY CURE WITH A BLADE THAT LEFT ME IN SCARS
+              NOW, EVERY TIME I'M WEAK, WORDS SCREAM FROM MY ARMS" required>
+              <!--História-->
+              <label for="historia" id="historia-label">História</label>
+              <textarea id="historia" name="historia" class="placeholder" required><b>50 DG - Início</b>
+                <p style="text-align: justify">Escreva sua história aqui. Para adicionar um novo subtítulo, clique no "B". Sim, é estranho, mas por enquanto tem que ser assim. Se quiser expandir o editor e editar com mais espaço, é só apertar no último botão, aquele com setas, e vai ficar em fullscreen.</p>
+                <b>69 DG - Takura&Shion: Amor</b>
+                <p style="text-align: justify">Ao criar sua história, não se esqueça de que você deve <span style="background-color:#f1c40f;">contar brevemente como o personagem se tornou Genin</span> e também que o personagem <span style="background-color:#f1c40f;">não pode crescer fora do vilarejo/país</span></p>  
+              </textarea>
+            </div>
+          </div>
+
+          <div class="navegacao">
+            <hr>
+            <button type="button" class="gotoStep4 prev round">&#8249;</button>
+            <button type="button" class="gotoStep6 next round">&#8250;</button>
+          </div>
+        </form>
+        
+        <form id="qualidadesDefeitos-form" class="tab form-ficha">
+          <div class="conteudo-form">
+            <h1>QUALIDADES E DEFEITOS</h1>
+            <div class="corpo-form">
+              <h2 id="qualidades-contador" class="subtitulo branco">Qualidades</h2>
+              <div id="qualidadesKg">
+                
+                <div id="qualidadesAkagan" class="cla">
+                  <button type="button" class="sanfona">Qualidades da KG Akagan</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Habilidade em Genjutsu-->
+                      <button type="button" id="akaganGen" value="0" disabled>Habilidade em Genjutsu (0)</button>
+                    </div>
+                  </div>
                 </div>
                 
-                <!--Fobia-->
-                <button class="sanfona">Fobias</button>
-                <div class="secao">
+                <div id="qualidadesBakuton" class="cla">
+                  <button type="button" class="sanfona">Qualidades da KG Bakuton</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Perito Elemental: Bakuton-->
+                      <button type="button" id="bakutonPericia" value="0" disabled>Perito Elemental: Bakuton (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesFutton" class="cla">
+                  <button type="button" class="sanfona">Qualidades da KG Futton</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Perito Elemental: Futton-->
+                      <button type="button" id="futtonPericia" value="0" disabled>Perito Elemental: Futton (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesJinton" class="cla">
+                  <button type="button" class="sanfona">Qualidades da KG Jinton</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Perito Elemental: Jinton-->
+                      <button type="button" id="jintonPericia" value="0" disabled>Perito Elemental: Jinton (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesJintonVel" class="cla">
+                  <button type="button" class="sanfona">Qualidades da KG Jinton(Velocidade)</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Agilidade Aguçada-->
+                      <button type="button" id="jintonAgilidade" value="0" disabled>Agilidade Aguçada - Jinton (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesJiton" class="cla">
+                  <button type="button" class="sanfona">Qualidades da KG Jiton</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Perito Elemental: Jiton-->
+                      <button type="button" id="jitonPericia" value="0" disabled>Perito Elemental: Jiton (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesKoton" class="cla">
+                  <button type="button" class="sanfona">Qualidades da KG Kōton</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Perito Elemental: Kōton-->
+                      <button type="button" id="kotonPericia" value="0" disabled>Perito Elemental: Kōton (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesMeiton" class="cla">
+                  <button type="button" class="sanfona">Qualidades da KG Meiton</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Comedor de Chakra-->
+                      <button type="button" id="meitonComedor" value="0" disabled>Comedor de Chakra (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesRanton" class="cla">
+                  <button type="button" class="sanfona">Qualidades da KG Ranton</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Perito Elemental: Ranton-->
+                      <button type="button" id="rantonPericia" value="0" disabled>Perito Elemental: Ranton (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesShakuton" class="cla">
+                  <button type="button" class="sanfona">Qualidades da KG Shakuton</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Perito Elemental: Shakuton-->
+                      <button type="button" id="shakutonPericia" value="0" disabled>Perito Elemental: Shakuton (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesShoton" class="cla">
+                  <button type="button" class="sanfona">Qualidades da KG Shōton</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Perito Elemental: Shōton-->
+                      <button type="button" id="shotonPericia" value="0" disabled>Perito Elemental: Shōton (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesYoton" class="cla">
+                  <button type="button" class="sanfona">Qualidades da KG Yōton</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Perito Elemental: Yōton-->
+                      <button type="button" id="yotonPericia" value="0" disabled>Perito Elemental: Yōton (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesKumoNenkin" class="cla">
+                  <button type="button" class="sanfona">Qualidades da KG Kumo Nenkin</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Corpo Aracnídeo-->
+                      <button type="button" id="kumoAracnideo" value="0" disabled>Corpo Aracnídeo (0)</button>
+                      
+                      <!--Ambidestria-->
+                      <button type="button" id="kumoAmbidestria" value="0" disabled>Ambidestria (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesKugutsu" class="cla">
+                  <button type="button" class="sanfona">Qualidades da KG Kugutsu</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Perícia em Shurikenjutsu-->
+                      <button type="button" id="kugutsuPericia" value="0" disabled>Perícia em Shurikenjutsu (0)</button>
+                      
+                      <!--Ambidestria-->
+                      <button type="button" id="kugutsuAmbidestria" value="0" disabled>Ambidestria (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesSoma" class="cla">
+                  <button type="button" class="sanfona">Qualidades da KG Sōma no Kō</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Agilidade Aguçada-->
+                      <button type="button" id="somaVel" value="0" disabled>Agilidade Aguçada (0)</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div id="qualidadesClas">
+                
+                <div id="qualidadesAburame" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Aburame</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Conhecimentos Científicos-->
+                      <button type="button" id="aburameCientificos" value="0" disabled>Conhecimentos Científicos (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesAkimichi" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Akmimichi</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Força Aguçada-->
+                      <button type="button" id="akimichiForca" value="0" disabled>Força Aguçada (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesChinoike" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Chinoike</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Habilidade em Genjutsu-->
+                      <button type="button" id="chinoikeGen" value="0" disabled>Habilidade em Genjutsu (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesFuuma" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Fūma</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Habilidade em Ninjutsu-->
+                      <button type="button" id="fuumaNin" value="0" disabled>Habilidade em Ninjutsu (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesHatake" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Hatake</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Versátil & Hábil-->
+                      <button type="button" id="qualidadeVersatil" value="0" disabled>Versátil & Hábil (0)</button>
+                      
+                      <!--Habilidade em Ninjutsu-->
+                      <button type="button" id="hatakeNin" value="0">Habilidade em Ninjutsu (0)</button>
+                      
+                      <!--Habilidade em Taijutsu-->
+                      <button type="button" id="hatakeTai" value="0">Habilidade em Taijutsu (0)</button>
+                      
+                      <!--Habilidade em Genjutsu-->
+                      <button type="button" id="hatakeGen" value="0">Habilidade em Genjutsu (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                <div id="qualidadesHoki" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Hōki</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Grande Controle de Chakra-->
+                      <button type="button" id="hokiGCC" value="0" disabled>Grande Controle de Chakra (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesHoshigaki" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Hoshigaki</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Híbrido Anfíbio-->
+                      <button type="button" id="hoshigakiAnfibio" value="0" disabled>Híbrido Anfíbio (0)</button>
+                      
+                      <!--Perícia Elemental: Suiton-->
+                      <button type="button" id="hoshigakiPericia" value="0" disabled>Perícia Elemental: Suiton (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesHozuki" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Hōzuki</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Perícia Elemental: Suiton-->
+                      <button type="button" id="hozukiPericia" value="0" disabled>Perícia Elemental: Suiton (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesHyuuga" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Hyūga</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Habilidade em Taijutsu-->
+                      <button type="button" id="hyuugaTai" value="0" disabled>Habilidade em Taijutsu (0)</button>
+                      
+                      <!--Grande Controle de Chakra-->
+                      <button type="button" id="hyuugaGCC" value="0" disabled>Grande Controle de Chakra (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesInuzuka" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Inuzuka</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Instintos Anormais-->
+                      <button type="button" id="inuzukaInstintos" value="0" disabled>Instintos Anormais (0)</button>
+                      
+                      <!--Olfato Aguçado-->
+                      <button type="button" id="inuzukaOlfato" value="0" disabled>Olfato Aguçado (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesJuugo" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Jūgo</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Centro de Energia Natural-->
+                      <button type="button" id="juugoNatural" value="0" disabled>Centro de Energia Natural (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesKaguya" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Kaguya</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Habilidade em Taijutsu-->
+                      <button type="button" id="kaguyaTai" value="0" disabled>Habilidade em Taijutsu (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesKamizuru" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Kamizuru</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Conhecimento Cientifico-->
+                      <button type="button" id="kamizuruCientificos" value="0" disabled>Conhecimento Cientifico (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesKedoin" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Kedōin</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Domínio Psicológico-->
+                      <button type="button" id="kedoinDominio" value="0" disabled>Domínio Psicológico (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesKurama" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Kurama</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Habilidade em Genjutsu-->
+                      <button type="button" id="kuramaGen" value="0" disabled>Habilidade em Genjutsu (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesLee" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Lee</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Habilidade em Taijutsu-->
+                      <button type="button" id="leeTai" value="0" disabled>Habilidade em Taijutsu (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesNara" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Nara</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Inteligência Aguçada-->
+                      <button type="button" id="naraInt" value="0" disabled>Inteligência Aguçada (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesSarutobi" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Sarutobi</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Habilidade em Ninjutsu-->
+                      <button type="button" id="sarutobiNin" value="0" disabled>Habilidade em Ninjutsu (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesSenju" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Senju</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Grande Vitalidade-->
+                      <button type="button" id="senjuVitalidade" value="0" disabled>Grande Vitalidade (0)</button>
+                      
+                      <!--Grandes Reservas de Chakra-->
+                      <button type="button" id="senjuGRC" value="0" disabled>Grandes Reservas de Chakra (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesShimura" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Shimura</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Perito Elemental: Futon-->
+                      <button type="button" id="periciaShimura" value="0" disabled>Perito Elemental: Futon (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesUchiha" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Uchiha</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Grandes Reservas de Chakra-->
+                      <button type="button" id="uchihaGRC" value="0" disabled>Grandes Reservas de Chakra (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesUzumaki" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Uzumaki</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Grandes Reservas de Chakra-->
+                      <button type="button" id="uzumakiGRC" value="0" disabled>Grandes Reservas de Chakra (0)</button>
+                      
+                      <!--Grande Vitalidade-->
+                      <button type="button" id="uzumakiVitalidade" value="0" disabled>Grande Vitalidade (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesYamanaka" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Yamanaka</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Sensor-->
+                      <button type="button" id="yamanakaSensor" value="0" disabled>Sensor (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesYotsuki" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Yotsuki</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Perito Armamentista: Kenjutsu-->
+                      <button type="button" id="yotsukiPericia" value="0" disabled>Perito Armamentista: Kenjutsu (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="qualidadesYuki" class="cla">
+                  <button type="button" class="sanfona">Qualidades do Clã Yuki</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Perito Elemental: Hyōton-->
+                      <button type="button" id="yukiPericia" value="0" disabled>Perito Elemental: Hyōton (0)</button>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              
+              <div id="qualidades">
+                <!--Qualidades de 3 pontos-->
+                <button type="button" class="sanfona">Qualidades de 3 pontos</button>
+                <div id="qualidades3" class="secao">
                   <div class="qualidades-defeitos">
-                    <!--Acluofobia-->
-                    <button type="button" value="1">Acluofobia (1)</button>
+                    <!--Grandes Reservas de Chakra-->
+                    <button type="button" id="qualidadeGRC" value="3">Grandes Reservas de Chakra (3)</button>
                     
-                    <!--Aerofobia-->
-                    <button type="button" value="1">Aerofobia (1)</button>
+                    <!--Grande Vitalidade-->
+                    <button type="button" id="qualidadeVitalidade" value="3">Grande Vitalidade (3)</button>
                     
-                    <!--Agliofobia-->
-                    <button type="button" value="1">Agliofobia (1)</button>
+                    <!--Instintos Anormais-->
+                    <button type="button" id="qualidaeInstintos" value="3">Instintos Anormais (3)</button>
                     
-                    <!--Aicmofobia-->
-                    <button type="button" value="1">Aicmofobia (1)</button>
+                    <!--Poder Oculto-->
+                    <button type="button" value="3">Poder Oculto (3)</button>
                     
-                    <!--Ancraofobia-->
-                    <button type="button" value="1">Ancraofobia (1)</button>
+                    <!--Prodígio-->
+                    <button type="button" id="qualidadeProdigio" value="3">Prodígio (3)</button>
+                  </div>
+                </div>
+                
+                <!--Qualidades de 2 pontos-->
+                <button type="button" class="sanfona">Qualidades de 2 pontos</button>
+                <div id="qualidades2" class="secao">
+                  
+                  <div class="qualidades-defeitos">
+                    <!--Inteligência Aguçada-->
+                    <button type="button" id="qualidadeInt" value="2">Inteligência Aguçada (2)</button>
                     
-                    <!--Antropofobia-->
-                    <button type="button" value="1">Antropofobia (1)</button>
+                    <!--Agilidade Aguçada-->
+                    <button type="button" id="qualidadeVel" value="2">Agilidade Aguçada (2)</button>
                     
-                    <!--Astrofobia-->
-                    <button type="button" value="1">Astrofobia (1)</button>
+                    <!--Força Aguçada-->
+                    <button type="button" id="qualidadeForca" value="2">Força Aguçada (2)</button>
                     
-                    <!--Criofobia-->
-                    <button type="button" value="1">Criofobia (1)</button>
+                    <!--Grande Determinação-->
+                    <button type="button" value="2">Grande Determinação (2)</button>
                     
-                    <!--Hemofobia-->
-                    <button type="button" value="1">Hemofobia (1)</button>
+                    <!--Grande Controle de Chakra-->
+                    <button type="button" id="qualidadeGCC" value="2">Grande Controle de Chakra (2)</button>
                     
-                    <!--Quimofobia-->
-                    <button type="button" value="1">Quimofobia (1)</button>
+                    <!--Visão Noturna-->
+                    <button type="button" value="2">Visão Noturna (2)</button>
                     
-                    <!--Quionofobia-->
-                    <button type="button" value="1">Quionofobia (1)</button>             
+                    <!--Comedor de Chakra-->
+                    <button type="button" id="qualidadeComedor" value="2">Comedor de Chakra (2)</button>
+                    
+                    <!--Sensor-->
+                    <button type="button" id="qualidadeSensor" value="2">Sensor (2)</button>
+                    
+                    <!--Visão Aguçada-->
+                    <button type="button" id="qualidadeVisao" value="2">Visão Aguçada (2)</button>
+                    
+                    <!--Audição Aguçada-->
+                    <button type="button" id="qualidadeAudicao" value="2">Audição Aguçada (2)</button>
+                    
+                    <!--Olfato Aguçada-->
+                    <button type="button" id="qualidadeOlfato" value="2">Olfato Aguçada (2)</button>
+                    
+                    <!--Habilidade em Ninjutsu-->
+                    <button type="button" id="qualidadeNinjutsu" value="2">Habilidade em Ninjutsu (2)</button>
+                    
+                    <!--Habilidade em Taijutsu-->
+                    <button type="button" id="qualidadeTaijutsu" value="2">Habilidade em Taijutsu (2)</button>
+                    
+                    <!--Habilidade em Genjutsu-->
+                    <button type="button" id="qualidadeGenjutsu" value="2">Habilidade em Genjutsu (2)</button>
+                    
+                    <!--Memória Eidética-->
+                    <button type="button" id="qualidadeMemoria" value="2">Memória Eidética (2)</button>
+                    
+                    <!--Altruísmo-->
+                    <button type="button" value="2">Altruísmo (2)</button>
+                    
+                    <!--Aptidão Genética-->
+                    <button type="button" value="2">Aptidão Genética (2)</button>
+                  </div>
+                </div>
+                
+                <!--Qualidades de 1 ponto-->
+                <button type="button" class="sanfona">Qualidades de 1 ponto</button>
+                <div id="qualidades1" class="secao">  
+                  
+                  <div class="qualidades-defeitos">
+                    <!--Híbrido Anfíbio-->
+                    <button type="button" id="qualidadeAnfibio" value="1">Híbrido Anfíbio (1)</button>
+                    
+                    <!--Excelente Senso de Direção-->
+                    <button type="button" value="1">Excelente Senso de Direção (1)</button>
+                    
+                    <!--Relíquia de Família-->
+                    <button type="button" value="1">Relíquia de Família (1)</button>
+                    
+                    <!--Grande Durabilidade-->
+                    <button type="button" value="1">Grande Durabilidade (1)</button>
+                    
+                    <!--Instinto Assassinoo-->
+                    <button type="button" value="1">Instinto Assassino (1)</button>
+                    
+                    <!--Resistência Toxicológica -->
+                    <button type="button" value="1">Resistência Toxicológica  (1)</button>
+                    
+                    <!--Indolor-->
+                    <button type="button" value="1">Indolor (1)</button>
+                  </div>
+                </div>
+              </div>
+              
+              <hr>
+              
+              <h2 id="defeitos-contador" class="subtitulo branco">Defeitos</h2>
+              <div id="defeitosClas">
+                <div id="defeitosAkimichi" class="cla">
+                  <button type="button" class="sanfona">Defeitos do Clã Akimichi</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Gordo-->
+                      <button type="button" id="akimichiGordo" value="1" disabled>Gordo (1)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                
+                <div id="defeitosHozuki" class="cla">
+                  <button type="button" class="sanfona">Defeitos do Clã Hōzuki</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Vício: Ingestão de Líquidos-->
+                      <button type="button" id="hozukiVicio" value="1" disabled>Vício: Ingestão de Líquidos (1)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                
+                <div id="defeitosJuugo" class="cla">
+                  <button type="button" class="sanfona">Defeitos do Clã Jūgo</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Insanidade-->
+                      <button type="button" id="juugoInsanidade" value="2" disabled>Insanidade (2)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                
+                <div id="defeitosLee" class="cla">
+                  <button type="button" class="sanfona">Defeitos do Clã Lee</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Inabilidade em Ninjutsu-->
+                      <button type="button" id="leeInabilidadeTai" value="3" disabled>Inabilidade em Ninjutsu (3)</button>
+                      
+                      <!--Inabilidade em Genjutsu-->
+                      <button type="button" id="leeInabilidadeGen" value="3" disabled>Inabilidade em Genjutsu (3)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                
+                <div id="defeitosUchiha" class="cla">
+                  <button type="button" class="sanfona">Defeitos do Clã Uchiha</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Amnésia Dissociativa-->
+                      <button type="button" id="uchihaAmnesia" value="1" disabled>Amnésia Dissociativa (1)</button>
+                      
+                      <!--Maldição do Ódio-->
+                      <button type="button" id="uchihaMaldicao" value="1" disabled>Maldição do Ódio (1)</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div id="defeitos">
+                <!--Deficiências Físicas-->
+                <button type="button" class="sanfona">Deficiências Físicas</button>
+                <div id="deficiencias-fisicas" class="secao">
+                  <!--De 3 pontos-->
+                  <button type="button" class="sanfona">Defeitos de 3 pontos</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Cegueira-->
+                      <button type="button" value="3">Cegueira (3)</button>
+                      
+                      <!--Surdez-->
+                      <button type="button" value="3">Surdez (3)</button>
+                      
+                      <!--Fraqueza Muscular-->
+                      <button type="button" id="defeitoFraqueza" value="3">Fraqueza Muscular (3)</button>
+                    </div>
+                  </div>
+                  <!--De 2 pontos-->
+                  <button type="button" class="sanfona">Defeitos de 2 pontos</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Cegueira-->
+                      <button type="button" value="2">Cegueira (2)</button>
+                      
+                      <!--Receptor Incompatível-->
+                      <button type="button" value="2">Receptor Incompatível (2)</button>
+                      
+                      <!--Reflexos Retardados-->
+                      <button type="button" value="2">Reflexos Retardados (2)</button>
+                      
+                      <!--Insuficiência Respiratória-->
+                      <button type="button" value="2">Insuficiência Respiratória (2)</button>
+                      
+                      <!--Mudez-->
+                      <button type="button" value="2">Mudez (2)</button>
+                      
+                      <!--Baixa Coordenação Motora-->
+                      <button type="button" value="2">Baixa Coordenação Motora (2)</button>
+                    </div>
+                  </div>
+                  <!--De 1 pontos-->
+                  <button type="button" class="sanfona">Defeitos de 1 ponto</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Visão Prejudicada-->
+                      <button type="button" value="1">Visão Prejudicada (1)</button>
+                      
+                      <!--Audição Prejudicada-->
+                      <button type="button" value="1">Audição Prejudicada (1)</button>
+                      
+                      <!--Olfato Prejudicado-->
+                      <button type="button" value="1">Olfato Prejudicado (1)</button>
+                      
+                      <!--Falta de Membros-->
+                      <button type="button" value="1">Falta de Membros (1)</button>
+                      
+                      <!--Paralisia-->
+                      <button type="button" value="1">Paralisia (1)</button>
+                      
+                      <!--Grande Cicatriz-->
+                      <button type="button" value="1">Grande Cicatriz (1)</button>
+                      
+                      <!--Membro Quebrado-->
+                      <button type="button" value="1">Membro Quebrado (1)</button>
+                      
+                      <!--Gordo-->
+                      <button type="button" id="defeitoGordo" value="1">Gordo (1)</button>
+                      
+                      <!--Magricelo-->
+                      <button type="button" id="defeitoMagricelo" value="1">Magricelo (1)</button>
+                      
+                      <!--Nanismo-->
+                      <button type="button" id="defeitoNanismo" value="1">Nanismo (1)</button>
+                      
+                      <!--Gigantismo-->
+                      <button type="button" id="defeitoGigantismo" value="1">Gigantismo (1)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <!--Deficiências Psicológicas-->
+                <button type="button" class="sanfona">Deficiências Psicológicas</button>
+                <div id="deficiencias-psicologicas" class="secao">
+                  <!--De 3 pontos-->
+                  <button type="button" class="sanfona">Defeitos de 3 pontos</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Estresse Pós-Traumático-->
+                      <button type="button" value="3">Estresse Pós-Traumático (3)</button>
+                    </div>
+                  </div>
+                  <!--De 2 pontos-->
+                  <button type="button" class="sanfona">Defeitos de 2 pontos</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Transtorno de Múltiplas Personalidades-->
+                      <button type="button" value="2">Transtorno de Múltiplas Personalidades (2)</button>
+                      
+                      <!--Suicida-->
+                      <button type="button" value="2">Suicida (2)</button>
+                      
+                      <!--Esquizofrenia-->
+                      <button type="button" value="2">Esquizofrenia (2)</button>
+                      
+                      <!--Insegurança-->
+                      <button type="button" value="2">Insegurança (2)</button>
+                      
+                      <!--Depressivo-->
+                      <button type="button" value="2">Depressivo (2)</button>
+                      
+                      <!--Paranoia-->
+                      <button type="button" value="2">Paranoia (2)</button>
+                    </div>
+                  </div>
+                  <!--De 1 pontos-->
+                  <button type="button" class="sanfona">Defeitos de 1 ponto</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Megalomaníaco-->
+                      <button type="button" value="1">Megalomaníaco (1)</button>
+                      
+                      <!--Amnésia Dissociativa-->
+                      <button type="button" id="defeitoAmnesia" value="1">Amnésia Dissociativa (1)</button>
+                      
+                      <!--Luto-->
+                      <button type="button" value="1">Luto (1)</button>
+                      
+                      <!--Tique-->
+                      <button type="button" value="1">Tique (1)</button>
+                    </div>
+                    
+                    <!--Fobia-->
+                    <button type="button" class="sanfona">Fobias</button>
+                    <div class="secao">
+                      <div class="qualidades-defeitos">
+                        <!--Acluofobia-->
+                        <button type="button" value="1">Acluofobia (1)</button>
+                        
+                        <!--Aerofobia-->
+                        <button type="button" value="1">Aerofobia (1)</button>
+                        
+                        <!--Agliofobia-->
+                        <button type="button" value="1">Agliofobia (1)</button>
+                        
+                        <!--Aicmofobia-->
+                        <button type="button" value="1">Aicmofobia (1)</button>
+                        
+                        <!--Ancraofobia-->
+                        <button type="button" value="1">Ancraofobia (1)</button>
+                        
+                        <!--Antropofobia-->
+                        <button type="button" value="1">Antropofobia (1)</button>
+                        
+                        <!--Astrofobia-->
+                        <button type="button" value="1">Astrofobia (1)</button>
+                        
+                        <!--Criofobia-->
+                        <button type="button" value="1">Criofobia (1)</button>
+                        
+                        <!--Hemofobia-->
+                        <button type="button" value="1">Hemofobia (1)</button>
+                        
+                        <!--Quimofobia-->
+                        <button type="button" value="1">Quimofobia (1)</button>
+                        
+                        <!--Quionofobia-->
+                        <button type="button" value="1">Quionofobia (1)</button>             
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!--Problemas de personalidade-->
+                <button type="button" class="sanfona">Problemas de personalidade</button>
+                <div id="problemas-personalidade" class="secao">
+                  <!--De 2 pontos-->
+                  <button type="button" class="sanfona">Defeitos de 2 pontos</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Egocêntrico-->
+                      <button type="button" value="2">Egocêntrico (2)</button>
+                      
+                      <!--Ingenuidade-->
+                      <button type="button" value="2">Ingenuidade (2)</button>
+                      
+                      <!--Covardia-->
+                      <button type="button" value="2">Covardia (2)</button>
+                      
+                      <!--Humanitário-->
+                      <button type="button" value="2">Código de Honra: Humanitário (2)</button>
+                      
+                      <!--Derrota-->
+                      <button type="button" value="2">Código de Honra: Derrota (2)</button>
+                      
+                      <!--Guerreiro-->
+                      <button type="button" value="2">Código de Honra: Guerreiro (2)</button>
+                    </div>
+                  </div>
+                  <!--De 1 pontos-->
+                  <button type="button" class="sanfona">Defeitos de 1 ponto</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Molenga-->
+                      <button type="button" value="1">Molenga (1)</button>
+                      
+                      <!--Mau Humor-->
+                      <button type="button" value="1">Mau Humor (1)</button>
+                      
+                      <!--Impulsivos-->
+                      <button type="button" value="1">Impulsivos (1)</button>
+                      
+                      <!--Mentira Compulsiva-->
+                      <button type="button" value="1">Mentira Compulsiva (1)</button>
+                      
+                      <!--Vícios-->
+                      <button type="button" value="1">Vícios (1)</button>
+                      
+                      <!--Ironia-->
+                      <button type="button" value="1">Ironia (1)</button>
+                      
+                      <!--Cabeça-dura-->
+                      <button type="button" value="1">Cabeça-dura (1)</button>
+                      
+                      <!--Cumpridor de Regras-->
+                      <button type="button" value="1">Cumpridor de Regras(1)</button>
+                      
+                      <!--Jogador-->
+                      <button type="button" value="1">Jogador (1)</button>
+                      
+                      <!--Falta de Habilidade Social-->
+                      <button type="button" id="defeitoHabilidadeSocial" value="1">Falta de Habilidade Social (1)</button>
+                      
+                      <!--Melancólico-->
+                      <button type="button" value="1">Melancólico (1)</button>
+                      
+                      <!--Brincalhão-->
+                      <button type="button" value="1">Brincalhão (1)</button>
+                      
+                      <!--Preguiçoso-->
+                      <button type="button" value="1">Preguiçoso (1)</button>
+                      
+                      <!--Passivos-->
+                      <button type="button" value="1">Passivos (1)</button>
+                      
+                      <!--Agressivos-->
+                      <button type="button" value="1">Agressivos (1)</button>
+    
+                      <!--Cavalheiro-->
+                      <button type="button" value="1">Código de Honra: Cavalheiro (1)</button>
+    
+                      <!--Arena-->
+                      <button type="button" value="1">Código de Honra: Arena (1)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <!--Doenças-->
+                <button type="button" class="sanfona">Doenças</button>
+                <div id="problemas-personalidade" class="secao">
+                  <!--De 2 pontos-->
+                  <button type="button" class="sanfona">Defeitos de 2 pontos</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Arritmia Cardíaca-->
+                      <button type="button" value="2">Arritmia Cardíaca (2)</button>
+                      
+                      <!--Imunidade Baixa-->
+                      <button type="button" id="defeitoImunidade" value="2">Imunidade Baixa (2)</button>
+                    </div>
+                  </div>
+                  <!--De 1 pontos-->
+                  <button type="button" class="sanfona">Defeitos de 1 ponto</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Enjoos-->
+                      <button type="button" value="1">Enjoos (1)</button>
+                      
+                      <!--Sempre Jovem-->
+                      <button type="button" value="1">Sempre Jovem (1)</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <!--Deficiências Shinobis-->
+                <button type="button" class="sanfona">Deficiências Shinobis</button>
+                <div id="problemas-personalidade" class="secao">
+                  <!--De 3 pontos-->
+                  <button type="button" class="sanfona">Defeitos de 3 pontos</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Inabilidade em Ninjutsus-->
+                      <button type="button" id="defeitoNin" value="3">Inabilidade em Ninjutsus (3)</button>
+                      
+                      <!--Inabilidade Elemental-->
+                      <button type="button" id="defeitoElemental" value="3">Inabilidade Elemental (3)</button>
+                      
+                      <!--Inabilidade em Genjutsu-->
+                      <button type="button" id="defeitoGen" value="3">Inabilidade em Genjutsu (3)</button>
+                      
+                      <!--Dificuldade em Aprender-->
+                      <button type="button" id="defeitoDificuldade" value="3">Dificuldade em Aprender (3)</button>
+                    </div>
+                  </div>
+                  <!--De 1 pontos-->
+                  <button type="button" class="sanfona">Defeitos de 1 ponto</button>
+                  <div class="secao">
+                    <div class="qualidades-defeitos">
+                      <!--Inabilidade Armamentista-->
+                      <button type="button" value="1">Inabilidade Armamentista (1)</button>
+                      
+                      <!--Inexperiência-->
+                      <button type="button" value="1">Inexperiência (1)</button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            
-            <!--Problemas de personalidade-->
-            <button class="sanfona">Problemas de personalidade</button>
-            <div id="problemas-personalidade" class="secao">
-              <!--De 2 pontos-->
-              <button class="sanfona">Defeitos de 2 pontos</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Egocêntrico-->
-                  <button type="button" value="2">Egocêntrico (2)</button>
-                  
-                  <!--Ingenuidade-->
-                  <button type="button" value="2">Ingenuidade (2)</button>
-                  
-                  <!--Covardia-->
-                  <button type="button" value="2">Covardia (2)</button>
-                  
-                  <!--Humanitário-->
-                  <button type="button" value="2">Humanitário (2)</button>
-                  
-                  <!--Derrota-->
-                  <button type="button" value="2">Derrota (2)</button>
-                  
-                  <!--Guerreiro-->
-                  <button type="button" value="2">Guerreiro (2)</button>
-                </div>
-              </div>
-              <!--De 1 pontos-->
-              <button class="sanfona">Defeitos de 1 ponto</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Molenga-->
-                  <button type="button" value="1">Molenga (1)</button>
-                  
-                  <!--Mau Humor-->
-                  <button type="button" value="1">Mau Humor (1)</button>
-                  
-                  <!--Impulsivos-->
-                  <button type="button" value="1">Impulsivos (1)</button>
-                  
-                  <!--Mentira Compulsiva-->
-                  <button type="button" value="1">Mentira Compulsiva (1)</button>
-                  
-                  <!--Vícios-->
-                  <button type="button" value="1">Vícios (1)</button>
-                  
-                  <!--Ironia-->
-                  <button type="button" value="1">Ironia (1)</button>
-                  
-                  <!--Cabeça-dura-->
-                  <button type="button" value="1">Cabeça-dura (1)</button>
-                  
-                  <!--Cumpridor de Regras-->
-                  <button type="button" value="1">Cumpridor de Regras(1)</button>
-                  
-                  <!--Jogador-->
-                  <button type="button" value="1">Jogador (1)</button>
-                  
-                  <!--Falta de Habilidade Social-->
-                  <button type="button" id="defeitoHabilidadeSocial" value="1">Falta de Habilidade Social (1)</button>
-                  
-                  <!--Melancólico-->
-                  <button type="button" value="1">Melancólico (1)</button>
-                  
-                  <!--Brincalhão-->
-                  <button type="button" value="1">Brincalhão (1)</button>
-                  
-                  <!--Preguiçoso-->
-                  <button type="button" value="1">Preguiçoso (1)</button>
-                  
-                  <!--Passivos-->
-                  <button type="button" value="1">Passivos (1)</button>
-                  
-                  <!--Agressivos-->
-                  <button type="button" value="1">Agressivos (1)</button>
-                </div>
-              </div>
-            </div>
-            
-            <!--Doenças-->
-            <button class="sanfona">Doenças</button>
-            <div id="problemas-personalidade" class="secao">
-              <!--De 2 pontos-->
-              <button class="sanfona">Defeitos de 2 pontos</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Arritmia Cardíaca-->
-                  <button type="button" value="2">Arritmia Cardíaca (2)</button>
-                  
-                  <!--Imunidade Baixa-->
-                  <button type="button" id="defeitoImunidade" value="2">Imunidade Baixa (2)</button>
-                </div>
-              </div>
-              <!--De 1 pontos-->
-              <button class="sanfona">Defeitos de 1 ponto</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Enjoos-->
-                  <button type="button" value="1">Enjoos (1)</button>
-                  
-                  <!--Sempre Jovem-->
-                  <button type="button" value="1">Sempre Jovem (1)</button>
-                </div>
-              </div>
-            </div>
-            
-            <!--Deficiências Shinobis-->
-            <button class="sanfona">Deficiências Shinobis</button>
-            <div id="problemas-personalidade" class="secao">
-              <!--De 3 pontos-->
-              <button class="sanfona">Defeitos de 3 pontos</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Inabilidade em Ninjutsus-->
-                  <button type="button" id="defeitoNin" value="3">Inabilidade em Ninjutsus (3)</button>
-                  
-                  <!--Inabilidade Elemental-->
-                  <button type="button" id="defeitoElemental" value="3">Inabilidade Elemental (3)</button>
-                  
-                  <!--Inabilidade em Genjutsu-->
-                  <button type="button" id="defeitoGen" value="3">Inabilidade em Genjutsu (3)</button>
-                  
-                  <!--Dificuldade em Aprender-->
-                  <button type="button" id="defeitoDificuldade" value="3">Dificuldade em Aprender (3)</button>
-                </div>
-              </div>
-              <!--De 1 pontos-->
-              <button class="sanfona">Defeitos de 1 ponto</button>
-              <div class="secao">
-                <div class="qualidades-defeitos">
-                  <!--Inabilidade Armamentista-->
-                  <button type="button" value="1">Inabilidade Armamentista (1)</button>
-                  
-                  <!--Inexperiência-->
-                  <button type="button" value="1">Inexperiência (1)</button>
-                </div>
-              </div>
-            </div>
-          </div>       
-        </div>
+          </div>
+
+          <div class="navegacao">
+            <hr>
+            <button type="button" class="gotoStep5 prev round">&#8249;</button>
+            <button type="button" class="gotoStep7 next round">&#8250;</button>
+          </div>
+        </form>
         
-        <div id="passo7" class="tab">
-          <h1>DATABOOK</h1>
-          <label for="pontos" id="pontos-label">Pontos a distribuir: </label>
-          <br>
-          
-          <div id="atributos">
-            <div class="linhas">
-              <!--Ninjutsu-->
-              <div class="atributo">
-                <label for="ninjutsu" id="ninjutsu-label">Ninjutsu<span class="pontoBonus"></span></label>
-                <input type="number" id="ninjutsu" class="placeholder" placeholder="" value="0" min="0" max="5" onkeydown="return false" required>
-              </div>
-              <!--Genjutsu-->
-              <div class="atributo">
-                <label for="genjutsu" id="genjutsu-label">Genjutsu<span class="pontoBonus"></span></label>
-                <input type="number" id="genjutsu" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
-              </div>
-              <!--Taijutsu-->
-              <div class="atributo">
-                <label for="taijutsu" id="taijutsu-label">Taijutsu<span class="pontoBonus"></span></label>
-                <input type="number" id="taijutsu" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
-              </div>
-              <!--Inteligência-->
-              <div class="atributo">
-                <label for="int" id="int-label">Inteligência<span class="pontoBonus"></span></label>
-                <input type="number" id="int" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
-              </div>
+        <form id="databook" class="tab form-ficha">
+          <div class="conteudo-form">
+            <h1>DATABOOK</h1>
+            <div class="corpo-form">
+              <label for="pontos" id="pontos-label">Pontos a distribuir: </label>
+              <br>
+              
+              <div id="atributos">
+                <div class="linhas">
+                  <!--Ninjutsu-->
+                  <div class="atributo">
+                    <label for="ninjutsu" id="ninjutsu-label">Ninjutsu<span class="pontoBonus"></span></label>
+                    <input type="number" id="ninjutsu" class="placeholder" placeholder="" value="0" min="0" max="5" onkeydown="return false" required>
+                  </div>
+                  <!--Genjutsu-->
+                  <div class="atributo">
+                    <label for="genjutsu" id="genjutsu-label">Genjutsu<span class="pontoBonus"></span></label>
+                    <input type="number" id="genjutsu" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
+                  </div>
+                  <!--Taijutsu-->
+                  <div class="atributo">
+                    <label for="taijutsu" id="taijutsu-label">Taijutsu<span class="pontoBonus"></span></label>
+                    <input type="number" id="taijutsu" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
+                  </div>
+                  <!--Inteligência-->
+                  <div class="atributo">
+                    <label for="int" id="int-label">Inteligência<span class="pontoBonus"></span></label>
+                    <input type="number" id="int" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
+                  </div>
+                </div>
+                <div class="linhas">
+                  <!--Força-->
+                  <div class="atributo">
+                    <label for="forca" id="forca-label">Força<span class="pontoBonus"></span></label>
+                    <input type="number" id="forca" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
+                  </div>
+                  <!--Velocidade-->
+                  <div class="atributo">
+                    <label for="vel" id="vel-label">Velocidade<span class="pontoBonus"></span></label>
+                    <input type="number" id="vel" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
+                  </div>
+                  <!--Stamina-->
+                  <div class="atributo">
+                    <label for="sta" id="sta-label">Stamina<span class="pontoBonus"></span></label>
+                    <input type="number" id="sta" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
+                  </div>
+                  <!--Selos-->
+                  <div class="atributo">
+                    <label for="selos" id="selos-label">Selos</label>
+                    <input type="number" id="selos" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
+                  </div>
+                </div>
             </div>
-            <div class="linhas">
-              <!--Força-->
-              <div class="atributo">
-                <label for="forca" id="forca-label">Força<span class="pontoBonus"></span></label>
-                <input type="number" id="forca" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
+            </div>
+            <hr>
+            
+            <!--Limite de Jutsus-->
+            <label for="limite-jutsus" id="limite-jutsus-label">Limite de Jutsus</label>
+            <textarea id="limite-jutsus" class="placeholder" placeholder="5 Jutsus & +1 Rank S" disabled></textarea>
+            <hr>
+            <canvas id="myChart"></canvas>
+          </div>
+
+          <div class="navegacao">
+            <hr>
+            <button type="button" class="gotoStep6 prev round">&#8249;</button>
+            <button type="button" class="gotoStep8 next round">&#8250;</button>
+          </div>
+        </form>
+        
+        
+        
+        
+        <form id="naturezas-form" class="tab form-ficha">
+          <div class="conteudo-form">
+            <h1>NATUREZAS E PARTICULARIDADES</h1>
+            
+            <div class="corpo-form">
+              <div id="naturezas">
+                <!--Afinidade Elemental-->
+                <div class="natureza">
+                  <label for="afinidade-elemental" id="afinidade-label">Afinidade Elemental</label>
+                  <input type="text" id="afinidade-elemental" class="placeholder" placeholder="" required>
+                </div>
+
+                <!--Primeira Natureza-->
+                <div class="natureza">
+                  <label for="primeira-natureza" id="primeira-natureza-label">Primeira Natureza</label>
+                  <input type="text" id="primeira-natureza" class="placeholder" placeholder="" disabled required>
+                </div>
+                
+                <!--Segunda Natureza-->
+                <div class="natureza">
+                  <label for="segunda-natureza" id="segunda-natureza-label">Segunda Natureza</label>
+                  <input type="text" id="segunda-natureza" class="placeholder" placeholder="" disabled required>
+                </div>
+                
+                <!--Terceira Natureza-->
+                <div class="natureza">
+                  <label for="terceira-natureza" id="terceira-natureza-label">Terceira Natureza</label>
+                  <input type="text" id="terceira-natureza" class="placeholder" placeholder="" disabled required>
+                </div>
+                
+                <!--Kekkei Genkai Elemental-->
+                <div class="natureza">
+                  <label for="kg-elemental" id="kg-elemental-label">KG Elemental</label>
+                  <input type="text" id="kg-elemental" class="placeholder" placeholder="" disabled required>
+                </div>
               </div>
-              <!--Velocidade-->
-              <div class="atributo">
-                <label for="vel" id="vel-label">Velocidade<span class="pontoBonus"></span></label>
-                <input type="number" id="vel" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
+              <hr>
+              
+              <label for="bolsa-de-armas" id="bolsa-de-armas-label">Bolsa de Armas</label>
+              <div id="armas">
+                <div id="kunai" class="arma"> 
+                  <div class="item">
+                    <p>Kunai</p>
+                    <input type="number" name="kunai-quantidade" id="kunai-quantidade" class="quantidade" value="0">
+                    <input type="number" name="kunai-peso" id="kunai-peso" class="peso" value="1">
+                  </div>
+                  <div class="adicionarRemover">
+                    <button type="button" class="removerArma">-</button>
+                    <button type="button" class="adicionarArma">+</button>
+                  </div>
+                </div>
+                
+                <div id="shuriken" class="arma">
+                  <div class="item">
+                    <p>Shuriken</p>
+                    <input type="number" name="shuriken-quantidade" id="shuriken-quantidade" class="quantidade" value="0">
+                    <input type="number" name="shuriken-peso" id="shuriken-peso" class="peso" value="1">
+                  </div>
+                  <div class="adicionarRemover">
+                    <button type="button" class="removerArma">-</button>
+                    <button type="button" class="adicionarArma">+</button>
+                  </div>
+                </div>
+                
+                <div id="fumaShuriken" class="arma">
+                  <div class="item">
+                    <p>‏‏‎‎Fuma Shuriken</p>
+                    <input type="number" name="fumaShuriken-quantidade" id="fumaShuriken-quantidade" class="quantidade" value="0">
+                    <input type="number" name="fumaShuriken-peso" id="fumaShuriken-peso" class="peso" value="4">
+                  </div>
+                  <div class="adicionarRemover">
+                    <button type="button" class="removerArma">-</button>
+                    <button type="button" class="adicionarArma">+</button>
+                  </div>
+                </div>
+                
+                <div id="senbon" class="arma"> 
+                  <div class="item">
+                    <p>‎Senbon</p>
+                    <input type="number" name="senbon-quantidade" id="senbon-quantidade" class="quantidade" value="0">
+                    <input type="number" name="senbon-peso" id="senbon-peso" class="peso" value="0.5">
+                  </div>
+                  <div class="adicionarRemover">
+                    <button type="button" class="removerArma">-</button>
+                    <button type="button" class="adicionarArma">+</button>
+                  </div>
+                </div>
+                
+                <div id="kibaku" class="arma">
+                  <div class="item">
+                    <p>Kibaku Fuuda</p>
+                    <input type="number" name="kibaku-quantidade" id="kibaku-quantidade" class="quantidade" value="0">
+                    <input type="number" name="kibaku-peso" id="kibaku-peso" class="peso" value="0.25">
+                  </div>
+                  <div class="adicionarRemover">
+                    <button type="button" class="removerArma">-</button>
+                    <button type="button" class="adicionarArma">+</button>
+                  </div>
+                </div>
+                
+                <div id="kemuridama" class="arma">               
+                  <div class="item">
+                    <p>Kemuridama</p>
+                    <input type="number" name="kemuridama-quantidade" id="kemuridama-quantidade" class="quantidade" value="0">
+                    <input type="number" name="kemuridama-peso" id="kemuridama-peso" class="peso" value="1">
+                  </div>
+                  <div class="adicionarRemover">
+                    <button type="button" class="removerArma">-</button>
+                    <button type="button" class="adicionarArma">+</button>
+                  </div>
+                </div>
+                
+                <div id="makibishi" class="arma">
+                  <div class="item">
+                    <p>‎Makibishi</p>
+                    <input type="number" name="makibishi-quantidade" id="makibishi-quantidade" class="quantidade" value="0">
+                    <input type="number" name="makibishi-peso" id="makibishi-peso" class="peso" value="0.2">
+                  </div>
+                  <div class="adicionarRemover">
+                    <button type="button" class="removerArma">-</button>
+                    <button type="button" class="adicionarArma">+</button>
+                  </div>
+                </div>
+                
+                <div id="hikaridama" class="arma">
+                  <div class="item">
+                    <p>‎‎Hikaridama</p>
+                    <input type="number" name="hikaridama-quantidade" id="hikaridama-quantidade" class="quantidade" value="0">
+                    <input type="number" name="hikaridama-peso" id="hikaridama-peso" class="peso" value="1">
+                  </div>
+                  <div class="adicionarRemover">
+                    <button type="button"class="removerArma">-</button>
+                    <button type="button" class="adicionarArma">+</button>
+                  </div>
+                </div>
+                
+                <div id="fiosdeaco" class="arma">
+                  <div class="item">
+                    <p>‎Fio de aço</p>
+                    <input type="number" name="fiosdeaco-quantidade" id="fiosdeaco-quantidade" class="quantidade" value="0">
+                    <input type="number" name="fiosdeaco-peso" id="fiosdeaco-peso" class="peso" value="0.2">
+                  </div>
+                  <div class="adicionarRemover">
+                    <button type="button" class="removerArma">-</button>
+                    <button type="button" class="adicionarArma">+</button>
+                  </div>
+                </div>
+                
+                <div id="ampola" class="arma">
+                  <div class="item">
+                    <p>Ampola Vazia</p>
+                    <input type="number" name="ampola-quantidade" id="ampola-quantidade" class="quantidade" value="0">
+                    <input type="number" name="ampola-peso" id="ampola-peso" class="peso" value="0.25">
+                  </div>
+                  <div class="adicionarRemover">
+                    <button type="button" class="removerArma">-</button>
+                    <button type="button" class="adicionarArma">+</button>
+                  </div>
+                </div>
               </div>
-              <!--Stamina-->
-              <div class="atributo">
-                <label for="sta" id="sta-label">Stamina<span class="pontoBonus"></span></label>
-                <input type="number" id="sta" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
-              </div>
-              <!--Selos-->
-              <div class="atributo">
-                <label for="selos" id="selos-label">Selos</label>
-                <input type="number" id="selos" class="placeholder" placeholder="" size="2" value="0" min="0" max="5" onkeydown="return false" required>
-              </div>
+              <textarea id="bolsa-de-armas" disabled></textarea>
             </div>
           </div>
-          <hr>
-          
-          <!--Limite de Jutsus-->
-          <label for="limite-jutsus" id="limite-jutsus-label">Limite de Jutsus</label>
-          <textarea id="limite-jutsus" class="placeholder" placeholder="5 Jutsus & +1 Rank S"></textarea>
-          <hr>
-          <canvas id="myChart"></canvas>
-        </div>
-        
-        
-        
-        
-        <div id="passo8" class="tab">
-          <h1>NATUREZAS E PARTICULARIDADES</h1>
-          
-          <div id="naturezas">
-            <!--Primeira Natureza-->
-            <div class="natureza">
-              <label for="primeira-natureza" id="primeira-natureza-label">Primeira Natureza</label>
-              <input type="text" id="primeira-natureza" class="placeholder" placeholder="" required>
-            </div>
-            
-            <!--Segunda Natureza-->
-            <div class="natureza">
-              <label for="segunda-natureza" id="segunda-natureza-label">Segunda Natureza</label>
-              <input type="text" id="segunda-natureza" class="placeholder" placeholder="" required>
-            </div>
-            
-            <!--Terceira Natureza-->
-            <div class="natureza">
-              <label for="terceira-natureza" id="terceira-natureza-label">Terceira Natureza</label>
-              <input type="text" id="terceira-natureza" class="placeholder" placeholder="" required>
-            </div>
-            
-            <!--Kekkei Genkai Elemental-->
-            <div class="natureza">
-              <label for="kg-elemental" id="kg-elemental-label">KG Elemental</label>
-              <input type="text" id="kg-elemental" class="placeholder" placeholder="" required>
-            </div>
-            
-            <!--Afinidade Elemental-->
-            <div class="natureza">
-              <label for="afinidade-elemental" id="afinidade-label">Afinidade Elemental</label>
-              <input type="text" id="afinidade-elemental" class="placeholder" placeholder="" required>
-            </div>
+
+          <div class="navegacao">
+            <hr>
+            <button type="button" class="gotoStep7 prev round">&#8249;</button>
+            <button type="button" class="saveAll next round">&#8250;</button>
           </div>
-          <hr>
-          
-          <label for="bolsa-de-armas" id="bolsa-de-armas-label">Bolsa de Armas</label>
-          <div id="armas">
-            <div id="kunai" class="arma"> 
-              <div class="item">
-                <p>Kunai</p>
-                <input type="number" name="kunai-quantidade" id="kunai-quantidade" class="quantidade" value="0">
-                <input type="number" name="kunai-peso" id="kunai-peso" class="peso" value="1">
-              </div>
-              <div class="adicionarRemover">
-                <button type="button" class="removerArma">-</button>
-                <button type="button" class="adicionarArma">+</button>
-              </div>
-            </div>
-            
-            <div id="shuriken" class="arma">
-              <div class="item">
-                <p>Shuriken</p>
-                <input type="number" name="shuriken-quantidade" id="shuriken-quantidade" class="quantidade" value="0">
-                <input type="number" name="shuriken-peso" id="shuriken-peso" class="peso" value="1">
-              </div>
-              <div class="adicionarRemover">
-                <button type="button" class="removerArma">-</button>
-                <button type="button" class="adicionarArma">+</button>
-              </div>
-            </div>
-            
-            <div id="fumaShuriken" class="arma">
-              <div class="item">
-                <p>‏‏‎‎Fuma Shuriken</p>
-                <input type="number" name="fumaShuriken-quantidade" id="fumaShuriken-quantidade" class="quantidade" value="0">
-                <input type="number" name="fumaShuriken-peso" id="fumaShuriken-peso" class="peso" value="4">
-              </div>
-              <div class="adicionarRemover">
-                <button type="button" class="removerArma">-</button>
-                <button type="button" class="adicionarArma">+</button>
-              </div>
-            </div>
-            
-            <div id="senbon" class="arma"> 
-              <div class="item">
-                <p>‎Senbon</p>
-                <input type="number" name="senbon-quantidade" id="senbon-quantidade" class="quantidade" value="0">
-                <input type="number" name="senbon-peso" id="senbon-peso" class="peso" value="0.5">
-              </div>
-              <div class="adicionarRemover">
-                <button type="button" class="removerArma">-</button>
-                <button type="button" class="adicionarArma">+</button>
-              </div>
-            </div>
-            
-            <div id="kibaku" class="arma">
-              <div class="item">
-                <p>Kibaku Fuuda</p>
-                <input type="number" name="kibaku-quantidade" id="kibaku-quantidade" class="quantidade" value="0">
-                <input type="number" name="kibaku-peso" id="kibaku-peso" class="peso" value="0.25">
-              </div>
-              <div class="adicionarRemover">
-                <button type="button" class="removerArma">-</button>
-                <button type="button" class="adicionarArma">+</button>
-              </div>
-            </div>
-            
-            <div id="kemuridama" class="arma">               
-              <div class="item">
-                <p>Kemuridama</p>
-                <input type="number" name="kemuridama-quantidade" id="kemuridama-quantidade" class="quantidade" value="0">
-                <input type="number" name="kemuridama-peso" id="kemuridama-peso" class="peso" value="1">
-              </div>
-              <div class="adicionarRemover">
-                <button type="button" class="removerArma">-</button>
-                <button type="button" class="adicionarArma">+</button>
-              </div>
-            </div>
-            
-            <div id="makibishi" class="arma">
-              <div class="item">
-                <p>‎Makibishi</p>
-                <input type="number" name="makibishi-quantidade" id="makibishi-quantidade" class="quantidade" value="0">
-                <input type="number" name="makibishi-peso" id="makibishi-peso" class="peso" value="0.2">
-              </div>
-              <div class="adicionarRemover">
-                <button type="button" class="removerArma">-</button>
-                <button type="button" class="adicionarArma">+</button>
-              </div>
-            </div>
-            
-            <div id="hikaridama" class="arma">
-              <div class="item">
-                <p>‎‎Hikaridama</p>
-                <input type="number" name="hikaridama-quantidade" id="hikaridama-quantidade" class="quantidade" value="0">
-                <input type="number" name="hikaridama-peso" id="hikaridama-peso" class="peso" value="1">
-              </div>
-              <div class="adicionarRemover">
-                <button type="button"class="removerArma">-</button>
-                <button type="button" class="adicionarArma">+</button>
-              </div>
-            </div>
-            
-            <div id="fiosdeaco" class="arma">
-              <div class="item">
-                <p>‎Fio de aço</p>
-                <input type="number" name="fiosdeaco-quantidade" id="fiosdeaco-quantidade" class="quantidade" value="0">
-                <input type="number" name="fiosdeaco-peso" id="fiosdeaco-peso" class="peso" value="0.2">
-              </div>
-              <div class="adicionarRemover">
-                <button type="button" class="removerArma">-</button>
-                <button type="button" class="adicionarArma">+</button>
-              </div>
-            </div>
-            
-            <div id="ampola" class="arma">
-              <div class="item">
-                <p>Ampola Vazia</p>
-                <input type="number" name="ampola-quantidade" id="ampola-quantidade" class="quantidade" value="0">
-                <input type="number" name="ampola-peso" id="ampola-peso" class="peso" value="0.25">
-              </div>
-              <div class="adicionarRemover">
-                <button type="button" class="removerArma">-</button>
-                <button type="button" class="adicionarArma">+</button>
-              </div>
-            </div>
-          </div>
-          <textarea id="bolsa-de-armas" disabled></textarea>
-        </div>
+        </form>
         
-      </div>
+      
       
       <!--Navegação-->
-      <div id="navegacao">
+      <div id="">
         <hr>
         <!--Círculos dos passos do formulário-->
         <div id="circulos-navegacao" style="text-align:center;margin-top:40px;">
@@ -1414,7 +1698,6 @@
         </div>
       </div>
       
-    </form>
     
     <div id="infos-importantes">
       <div id="header">
@@ -1600,7 +1883,7 @@
           <h2 class="subtitulo">Sistema de Databook</h2>
           <p>Para completar o Databook do personagem, os jogadores devem se atentar tanto ao <a href="https://www.narutorpgakatsuki.net/t66723-03-sistema-de-databook">Sistema de Databook</a> quanto à regra de obtenção de uso de Jutsus. Isso porque a distribuição de pontos tem duas formas predefinidas (focada e balanceada), além de um limite por rank, ambos aspectos que devem ser respeitados durante todo o jogo, e também porque os maiores requerimentos para a obtenção e o uso de técnicas são pontos em determinados atributos do Databook. Ou seja, para que Jutsus de ranks mais altos sejam acessíveis ao personagem, certos atributos devem já ter um mínimo de pontos, sem que o total ultrapasse o limite do rank atual do personagem nem quebre a forma de distribuição escolhida pelo jogador.</p>
           <p>Os atributos primários são limitados a cinco (5) pontos distribuídos naturalmente assim como é na série, alcançando seis (6) através de bonificações, iniciando sempre com zero (00). Todos os personagens com Clã/Kekkei Genkai iniciam com <b>sete</b> pontos distribuíveis inicialmente e os que iniciam sem possuem <b>oito</b> pontos. Estes atributos são os primeiros a serem adquiridos.</p>
-          <button class="sanfona">NINJUTSU</button>
+          <button type="button" class="sanfona">NINJUTSU</button>
           <div class="secao">
             <p>Ninjutsu usa como base o chakra na criação de técnicas poderosas. É a base da utilização das naturezas do chakra (elementos), além de ter relevância nos conhecimentos de controle de chakra de um personagem. Mais pontos, maior conhecimento e habilidade na área. A distribuição de pontos neste atributo não determina necessariamente o nível das técnicas usadas pelo personagem. As normas de atributos necessários para cada nível se encontram em <a href="https://www.narutorpgakatsuki.net/t54032-01-obtendo-usando-jutsus">Regra: Obtendo & Usando Jutsus</a>.</p>
             <p><b>00 Pontos:</b> Personagens inpatos a usarem Ninjutsus. São incapazes de produzir até mesmo técnicas genéricas (exceto o Gake Nobori no Gyō, o Ki Nobori no Shugyō e o Suimen Hokō no Gyō), entretanto conhecem a existência dos ninjutsus.<br>
@@ -1612,7 +1895,7 @@
               <b>06 Pontos:</b> São ninjas que alcançaram possuindo qualidades diferentes dos demais shinobis. Caso a qualidade seja inata, as forças produzidos através de ninjutsus do personagem ganha, 200 pontos a mais de força.</p>
             </div>
             
-            <button class="sanfona">TAIJUTSU</button>
+            <button type="button" class="sanfona">TAIJUTSU</button>
             <div class="secao">
               <p>Taijutsu tem como base os movimentos físicos mesclados ou não ao chakra para provocar inúmeros efeitos, sejam de punhos nus ou através de armas. Mais pontos, maiores são os domínios físicos do indivíduo. A distribuição de pontos neste atributo não determina necessariamente o nível das técnicas usadas pelo personagem. As normas de atributos necessários para cada nível se encontram em <a href="https://www.narutorpgakatsuki.net/t54032-01-obtendo-usando-jutsus">Regra: Obtendo & Usando Jutsus</a>.</a></p>
               <p><b>00 Pontos:</b> Personagens inpatos a usarem Taijutsus. São ninjas que dominam apenas o básico como socos e chutes simples incapaz de reproduzir movimentos muito elaborados como esquivas rápidas e manobras.<br>
@@ -1624,7 +1907,7 @@
                 <b>06 Pontos:</b> São ninjas que alcançaram possuindo qualidades diferentes dos demais shinobis. Caso a qualidade seja inata, os danos ignoram até mesmo a Força dos seus alvos, atravessando a proteção natural, aumentando o dano de seus ataques físicos em 100 pontos.</p>
               </div>
               
-              <button class="sanfona">GENJUTSU</button>
+              <button type="button" class="sanfona">GENJUTSU</button>
               <div class="secao">
                 <p>Genjutsu tem como base o uso do chakra para manipular a mente dos adversários, induzindo-os a ilusões e hipnoses dos mais diversos tipos. Mais pontos, maior habilidade para utilizar e anular ilusões.  A distribuição de pontos neste atributo não determina necessariamente o nível das técnicas usadas pelo personagem. As normas de atributos necessários para cada nível e para anulação se encontram em <a href="https://www.narutorpgakatsuki.net/t54032-01-obtendo-usando-jutsus">Regra: Obtendo & Usando Jutsus</a>.</p>
                 <p><b>00 Pontos:</b> Personagens inpatos a usarem Genjutsus.<br>
@@ -1636,10 +1919,10 @@
                   <b>06 Pontos:</b> São ninjas que alcançaram possuindo qualidades diferentes dos demais shinobis. Caso a qualidade seja inata, as técnicas usadas pelo usuário podem alterar o nível de realidade em níveis catastróficos e fatais, manipulando o espaço e tempo dentro da mente da vítima com perfeição.</p>
                 </div>
                 
-                <button class="sanfona">INTELIGÊNCIA</button>
+                <button type="button" class="sanfona">INTELIGÊNCIA</button>
                 <div class="secao">
                   <p>Inteligência representa as habilidades cognitivas/intelectuais do personagem. Mais pontos distribuídos, maiores as capacidades para produzir estratégias, perceber armadilhas e produzi-las, nunca evitando a necessidade narrativa e lógica de tais feitos. Da mesma forma, a Inteligência permite a capacidade de deduzir movimentos (não prevê-los) e desvendar ilusões, tudo demandando de narração e lógica narrativa. Alguns níveis apresentam certos problemas de personalidade.</p>
-                  <button class="sanfona">ARMADILHAS</button>
+                  <button type="button" class="sanfona">ARMADILHAS</button>
                   <div class="secao">
                     <p>
                       <b>Armadilhas</b> (Colocadas)<br>
