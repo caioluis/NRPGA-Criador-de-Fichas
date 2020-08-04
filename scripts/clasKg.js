@@ -1,26 +1,33 @@
 
-var toggleText = $('#clakg-label');
-var claEscolhido =  $('#cla-dropdown');
-var kgEscolhida = $('#kg-dropdown');
+var toggleText = $('#switchClaKg');
+var botoesDosClas =  $('input[type=radio][name=cla]');
+var botoesDasKgs = $('input[type=radio][name=kg]');
+$('#emptyKg').prop('checked', true);
+$('#emptyCla').prop('checked', true);
+
     toggleText.click(
         function claKgToggle () {     
-        if (toggleText.html() == '<mark>Clã</mark>/Kekkei Genkai') {
-            toggleText.html('Clã/<mark>Kekkei Genkai</mark>');
-            claEscolhido.val('--');
-            claEscolhido.hide();
-            kgEscolhida.show();
-            
+        if (toggleText.html() == 'Mudar para Kekkei Genkais') {
+            toggleText.html('Mudar para Clãs');
+            $('#emptyKg').prop('checked', true);
+            $('#kgs-buttons').toggleClass('close');
+            $('#clas-buttons').toggleClass('close');   
         } else {
-            toggleText.html('<mark>Clã</mark>/Kekkei Genkai');
-            kgEscolhida.val('--');
-            kgEscolhida.hide();
-            claEscolhido.show();
+            toggleText.html('Mudar para Kekkei Genkais');
+            $('#emptyKg').prop('checked', true);
+            $('#clas-buttons').toggleClass('close');
+            $('#kgs-buttons').toggleClass('close');
         }
     });
 
     $(document).ready(function(){
         $('#semCla').change(
         function semClaHandler(field){
+            if ($('#kgs-buttons').hasClass('close')) {
+                $('#clas-buttons').toggleClass('close');
+            } else {
+                $('#kgs-buttons').toggleClass('close');
+            }
             clearQualidades();
             clearDefeitos();
             databookAtualizarTexto();
@@ -30,13 +37,11 @@ var kgEscolhida = $('#kg-dropdown');
             $('.cla').hide();
             if($('#semCla').is(':checked')){
                 $('.qualidadesClas').hide();
-                $('#cla-dropdown').val('--'); 
-                $('#cla-dropdown').attr("disabled", true);
-                $('#kg-dropdown').val('--'); 
-                $('#kg-dropdown').attr("disabled", true);
+                $('#emptyCla').prop('checked', true);
+                $('#emptyKg').prop('checked', true);
+                $('#switchClaKg').hide();
             } else {
-                $('#cla-dropdown').attr("disabled", false);
-                $('#kg-dropdown').attr("disabled", false);
+                $('#switchClaKg').show();
             }
         })
     });
@@ -73,28 +78,36 @@ var kgEscolhida = $('#kg-dropdown');
     }
 
     function clearNaturezas() {
-        $('#primeira-natureza').text('');
-        $('#primeira-natureza').prop('disabled', false);
-        $('#segunda-natureza').text('');
-        $('#segunda-natureza').prop('disabled', false);
-        $('#kg-elemental').text('');
-        $('#kg-elemental').prop('disabled', false);
+        $('#segunda-natureza').parent().hide();
+        $('#terceira-natureza').parent().hide();
+        $('#kg-elemental').parent().hide();
+        $('#primeira-natureza').val('--');
+        $('#segunda-natureza').val('--');
+        $('#terceira-natureza').val('--');
+        $('#kg-elemental').val('--');
         $('#afinidade-elemental').text('');
         $('#afinidade-elemental').prop('disabled', false);
     }
 
-    claEscolhido.change(
+    function showNaturezas() {
+        $('#segunda-natureza').parent().show();
+        $('#terceira-natureza').parent().show();
+        $('#kg-elemental').parent().show();
+    }
+
+    botoesDosClas.change(
     function bonificarClas(){
         clearQualidades();
         clearDefeitos();
         clearNaturezas();
         clearNerfsBuffs();
         bonusHatake = 0;
+        $('#emptyKg').prop('checked', true);
         $('.atributo span').text('');
         $('.atributo span').hide();
         $('.cla').hide();
         
-        switch (claEscolhido.val()) {
+        switch ($('input[name=cla]:checked', '#dados-basicos-ninja').val()) {
             case "Aburame":
                 $('#qualidadesAburame').show();
                 $('#aburameCientificos').addClass('qualidade-escolhida');
@@ -113,9 +126,9 @@ var kgEscolhida = $('#kg-dropdown');
                 $('#qualidadesChinoike').show();
                 adicionarQualidade($('#chinoikeGen'));
                 qualidadeGenjutsu.hide();
-                kgEscolhida.val('Ketsuryūgan');
+                $('#ketsuryuganRadio').prop('checked', true);
                 break;
-            case "Fuuma":
+            case "Fūma":
                 $('#qualidadesFuuma').show();
                 $('#fuumaNin').addClass('qualidade-escolhida');
                 qualidadeNinjutsu.hide();
@@ -136,13 +149,13 @@ var kgEscolhida = $('#kg-dropdown');
                 $('#hoshigakiPericia').addClass('qualidade-escolhida');
                 $('#qualidadeAnfibio').hide();
                 break;
-            case "Hozuki":
+            case "Hōzuki":
                 $('#qualidadesHozuki').show();
                 $('#hozukiPericia').addClass('qualidade-escolhida');
                 $('#defeitosHozuki').show();
                 $('#hozukiVicio').addClass('defeito-escolhido');
                 break;
-            case "Hyuuga":
+            case "Hyūga":
                 $('#qualidadesHyuuga').show();
                 adicionarQualidade($('#hyuugaTai'));
                 adicionarQualidade($('#hyuugaGCC'));
@@ -156,7 +169,7 @@ var kgEscolhida = $('#kg-dropdown');
                 $('#qualidadeInstintos').hide();
                 $('#qualidadeOlfato').hide();
                 break;
-            case "Juugo":
+            case "Jūgo":
                 $('#qualidadesJuugo').show();
                 $('#juugoNatural').addClass('qualidade-escolhida');
                 $('#defeitosJuugo').show();
@@ -171,7 +184,7 @@ var kgEscolhida = $('#kg-dropdown');
                 $('#qualidadesKamizuru').show();
                 $('#kamizuruCientificos').addClass('qualidade-escolhida');
                 break;
-            case "Kedoin":
+            case "Kedōin":
                 $('#qualidadesKedoin').show();
                 $('#kedoinDominio').addClass('qualidade-escolhida');
                 $('#defeitoHabilidadeSocial').hide();
@@ -201,7 +214,7 @@ var kgEscolhida = $('#kg-dropdown');
             case "Sarutobi":
                 $('#qualidadesSarutobi').show();
                 adicionarQualidade($('#sarutobiNin'));
-                qualiadadeNinjutsu.hide();
+                qualidadeNinjutsu.hide();
             break;
             case "Senju":
                 $('#qualidadesSenju').show();
@@ -251,16 +264,17 @@ var kgEscolhida = $('#kg-dropdown');
         atualizarTexto();
     });
 
-    kgEscolhida.change(function bonificarKgs(){
+    botoesDasKgs.change(function bonificarKgs(){
         clearQualidades();
         clearDefeitos();
         clearNaturezas();
         clearNerfsBuffs();
+        $('#emptyCla').prop('checked', true);
         $('.atributo span').text('');
         $('.atributo span').hide();
         $('.cla').hide();
 
-        switch (kgEscolhida.val()) {
+        switch ($('input[name=kg]:checked', '#dados-basicos-ninja').val()) {
             case 'Akagan':
                 $('#qualidadesAkagan').show();
                 adicionarQualidade($('#akaganGen'));
@@ -271,12 +285,10 @@ var kgEscolhida = $('#kg-dropdown');
                 adicionarQualidade($('#bakutonPericia'));
                 pericia = ' +3 Jutsus de Bakuton'
                 $('#defeitoElemental').hide();
+                showNaturezas();
                 $('#primeira-natureza').val('Doton');
-                $('#primeira-natureza').prop('disabled', true);
                 $('#segunda-natureza').val('Raiton');
-                $('#segunda-natureza').prop('disabled', true);
                 $('#kg-elemental').val('Bakuton');
-                $('#kg-elemental').prop('disabled', true);
                 $('#afinidade-elemental').val('Doton, Raiton e Bakuton');
                 $('#afinidade-elemental').prop('disabled', true);
                 break;
@@ -285,12 +297,10 @@ var kgEscolhida = $('#kg-dropdown');
                 adicionarQualidade($('#futtonPericia'));
                 pericia = ' +3 Jutsus de Futton'
                 $('#defeitoElemental').hide();
+                showNaturezas();
                 $('#primeira-natureza').val('Katon');
-                $('#primeira-natureza').prop('disabled', true);
                 $('#segunda-natureza').val('Suiton');
-                $('#segunda-natureza').prop('disabled', true);
                 $('#kg-elemental').val('Futton');
-                $('#kg-elemental').prop('disabled', true);
                 $('#afinidade-elemental').val('Katon, Suiton e Futton');
                 $('#afinidade-elemental').prop('disabled', true);
                 break;
@@ -299,14 +309,11 @@ var kgEscolhida = $('#kg-dropdown');
                 adicionarQualidade($('#jintonPericia'));
                 pericia = ' +3 Jutsus de Jinton'
                 $('#defeitoElemental').hide();
+                showNaturezas();
                 $('#primeira-natureza').val('Doton');
-                $('#primeira-natureza').prop('disabled', true);
                 $('#segunda-natureza').val('Fūton');
-                $('#segunda-natureza').prop('disabled', true);
                 $('#terceira-natureza').val('Katon');
-                $('#terceira-natureza').prop('disabled', true);
                 $('#kg-elemental').val('Jinton');
-                $('#kg-elemental').prop('disabled', true);
                 $('#afinidade-elemental').val('Doton, Fūton, Katon e Jinton');
                 $('#afinidade-elemental').prop('disabled', true);
                 break;
@@ -320,12 +327,10 @@ var kgEscolhida = $('#kg-dropdown');
                 adicionarQualidade($('#jitonPericia'));
                 pericia = ' +3 Jutsus de Jiton'
                 $('#defeitoElemental').hide();
+                showNaturezas();
                 $('#primeira-natureza').val('Fūton');
-                $('#primeira-natureza').prop('disabled', true);
                 $('#segunda-natureza').val('Doton');
-                $('#segunda-natureza').prop('disabled', true);
                 $('#kg-elemental').val('Jiton');
-                $('#kg-elemental').prop('disabled', true);
                 $('#afinidade-elemental').val('Fūton, Doton e Jiton');
                 $('#afinidade-elemental').prop('disabled', true);
                 break;
@@ -333,10 +338,11 @@ var kgEscolhida = $('#kg-dropdown');
                 $('#qualidadesKoton').show();
                 adicionarQualidade($('#kotonPericia'));
                 pericia = ' +3 Jutsus de Kōton'
-                $('#primeira-natureza').on('keyup', function() {
-                    $('#afinidade-elemental').val($('#primeira-natureza').val() + ' e Kōton');
+                showNaturezas();
+                $('#afinidade-elemental').on('change', function() {
+                    $('#afinidade-elemental').val($('#afinidade-elemental').val() + ' e Kōton');
                 });
-                $('#afinidade-elemental').prop('disabled', true);
+                $('#kg-elemental').val('Kōton');
                 break;
             case 'Meiton':
                 $('#qualidadesMeiton').show();
@@ -349,12 +355,10 @@ var kgEscolhida = $('#kg-dropdown');
                 adicionarQualidade($('#rantonPericia'));
                 pericia = ' +3 Jutsus de Ranton'
                 $('#defeitoElemental').hide();
+                showNaturezas();
                 $('#primeira-natureza').val('Raiton');
-                $('#primeira-natureza').prop('disabled', true);
                 $('#segunda-natureza').val('Suiton');
-                $('#segunda-natureza').prop('disabled', true);
                 $('#kg-elemental').val('Ranton');
-                $('#kg-elemental').prop('disabled', true);
                 $('#afinidade-elemental').val('Raiton, Suiton e Ranton');
                 $('#afinidade-elemental').prop('disabled', true);
                 break;
@@ -363,12 +367,10 @@ var kgEscolhida = $('#kg-dropdown');
                 adicionarQualidade($('#shakutonPericia'));
                 pericia = ' +3 Jutsus de Shakuton'
                 $('#defeitoElemental').hide();
+                showNaturezas();
                 $('#primeira-natureza').val('Katon');
-                $('#primeira-natureza').prop('disabled', true);
                 $('#segunda-natureza').val('Fūton');
-                $('#segunda-natureza').prop('disabled', true);
                 $('#kg-elemental').val('Shakuton');
-                $('#kg-elemental').prop('disabled', true);
                 $('#afinidade-elemental').val('Raiton, Suiton e Shakuton');
                 $('#afinidade-elemental').prop('disabled', true);
                 break;
@@ -377,10 +379,9 @@ var kgEscolhida = $('#kg-dropdown');
                 adicionarQualidade($('#shotonPericia'));
                 pericia = ' +3 Jutsus de Shōton'
                 $('#defeitoElemental').hide();
+                showNaturezas();
                 $('#primeira-natureza').val('Doton');
-                $('#primeira-natureza').prop('disabled', true);
                 $('#kg-elemental').val('Shōton');
-                $('#kg-elemental').prop('disabled', true);
                 $('#afinidade-elemental').val('Doton e Shōton');
                 $('#afinidade-elemental').prop('disabled', true);
                 break;
@@ -389,12 +390,10 @@ var kgEscolhida = $('#kg-dropdown');
                 adicionarQualidade($('#yotonPericia'));
                 pericia = ' +3 Jutsus de Yōton'
                 $('#defeitoElemental').hide();
+                showNaturezas();
                 $('#primeira-natureza').val('Katon');
-                $('#primeira-natureza').prop('disabled', true);
                 $('#segunda-natureza').val('Doton');
-                $('#segunda-natureza').prop('disabled', true);
                 $('#kg-elemental').val('Yōton');
-                $('#kg-elemental').prop('disabled', true);
                 $('#afinidade-elemental').val('Katon, Doton e Yōton');
                 $('#afinidade-elemental').prop('disabled', true);
                 break;
