@@ -1,15 +1,26 @@
 var armasEscolhidas = [];
+var packSenbon = packKibaku = packAmpola = packFio = packMakibishi = kunai = shuriken = kemuridama = hikaridama = fumaShuriken = 0;
 
 function getBolsaMaxSlots() {
     var slotsOcupados = 0;
-    $('.item').each(function() {
-        pesoArma = parseFloat($(this).find('.peso').val());
-        quantidadeArma = parseFloat($(this).find('.quantidade').val());
-        slotsOcupados += quantidadeArma * pesoArma;
-    });
+
+    packSenbon = Math.ceil(parseFloat($('#senbon-quantidade').val()) * 0.5);
+    packKibaku = Math.ceil(parseFloat($('#kibaku-quantidade').val()) * 0.25);
+    packAmbpola = Math.ceil(parseFloat($('#ampola-quantidade').val()) * 0.25);
+    packFio = Math.ceil(parseFloat($('#fiosdeaco-quantidade').val()) * 0.2);
+    packMakibishi = Math.ceil(parseFloat($('#makibishi-quantidade').val()) * 0.2);
+    fumaShuriken = Math.ceil(parseFloat($('#fumaShuriken-quantidade').val()) * 4);
+    kunai = parseFloat($('#kunai-quantidade').val());
+    shuriken = parseFloat($('#shuriken-quantidade').val());
+    kemuridama = parseFloat($('#kemuridama-quantidade').val());
+    hikaridama = parseFloat($('#hikaridama-quantidade').val());
+
+    console.log(slotsOcupados)
+    slotsOcupados = packSenbon + packKibaku + packAmpola + packFio + packMakibishi + kunai + shuriken + kemuridama + hikaridama + fumaShuriken;
+    console.log(slotsOcupados)
+
     return (20 - slotsOcupados).toFixed(2).replace(/\.00$/, '');;
 }
-
 
 
 var espacoBolsa = getBolsaMaxSlots();
@@ -34,11 +45,12 @@ $('.adicionarArma').click(function adicionarArma() {
         quantidadeArma.val(parseFloat(quantidadeArma.val()) + 1);
         index = armasEscolhidas.findIndex(a => a.includes(textoArma));
         if(index == -1) {
-            armasEscolhidas.push(`+${quantidadeArma.val()} ${textoArma}`);
+            armasEscolhidas.push(`+${quantidadeArma.val()} ${textoArma} [${Math.ceil(parseFloat(quantidadeArma.val()) * pesoArma)}]`);
         } else {
-            armasEscolhidas[index] = `+${quantidadeArma.val()} ${textoArma}`;
+            armasEscolhidas[index] = `+${quantidadeArma.val()} ${textoArma} [${Math.ceil(parseFloat(quantidadeArma.val()) * pesoArma)}]`;
         }
     }
+
     atualizarBolsa();
     atualizarCarrinhoArmas();
 });
@@ -56,9 +68,8 @@ $('.removerArma').click(function removerArma(){
         index = armasEscolhidas.findIndex(a => a.includes(textoArma));
         if (quantidadeArma.val() > 1) {
             quantidadeArma.val(parseFloat(quantidadeArma.val()) - 1);
-            armasEscolhidas[index] = `+${quantidadeArma.val()} ${textoArma}`;  
+            armasEscolhidas[index] = `+${quantidadeArma.val()} ${textoArma} [${Math.ceil(parseFloat(quantidadeArma.val()) * pesoArma)}]`;  
         } else {
-            
             armasEscolhidas.splice(index, 1);
             quantidadeArma.val(parseFloat(quantidadeArma.val()) - 1);
         }
