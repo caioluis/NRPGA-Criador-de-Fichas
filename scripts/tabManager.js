@@ -1,3 +1,5 @@
+var firstTime = true;
+
 $(document).ready(function() {
   $.validator.messages.required = '';
   $.validator.messages.max = '';
@@ -62,7 +64,10 @@ $(document).ready(function() {
   });
 
   $('.gotoStep7').on('click', function () {
-    if (getDefeitosMinPoints() > 0) {
+    if(getQualidadesMaxPoints() > 0 && firstTime == true) {
+      alert('Você ainda tem pontos de qualidade para distribuir. Tem certeza que quer continuar?')
+      firstTime = false;
+    } else if (getDefeitosMinPoints() > 0) {
       alert('Você precisa distribuir mais pontos de defeitos')
     } else {
       $('.form-ficha').hide();
