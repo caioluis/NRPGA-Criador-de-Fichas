@@ -1,6 +1,7 @@
 var firstTime = true;
 
 $(document).ready(function() {
+  $('#dados-basicos').show();
   $.validator.messages.required = '';
   $.validator.messages.max = '';
   $.validator.messages.min = ''
@@ -19,7 +20,7 @@ $(document).ready(function() {
   
   $('.gotoStep2').on('click', function () {
     if ($('#dados-basicos').valid()) {
-      $('.form-ficha').hide();~
+      $('.form-ficha').hide();
       $('#primeiraDica').hide();
       $('#dados-basicos-ninja').show();
       $('#segundaDica').show();
