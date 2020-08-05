@@ -45,7 +45,7 @@ var myRadarChart = new Chart(ctx, {
     }
 });
 
-$('.atributo').on('change', function() {
+function atualizarGrafico() {
     nin = parseInt($('#ninjutsu').val()) + bonusNin;
     tai = parseInt($('#taijutsu').val()) + bonusTai;
     gen = parseInt($('#genjutsu').val()) + bonusGen;
@@ -57,4 +57,5 @@ $('.atributo').on('change', function() {
 
     myRadarChart.data.datasets[0].data.splice(0, 8, nin, tai, gen, int, forca, vel, sta, selos);
     myRadarChart.update();
-});
+    
+};
