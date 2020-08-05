@@ -72,6 +72,7 @@ $(document).ready(function() {
     } else {
       $('.form-ficha').hide();
       $('#databook').show();
+      firstTime = true;
     }
   });
 
@@ -85,8 +86,9 @@ $(document).ready(function() {
   });
 
   $('.saveAll').on('click', function () {
-    if (getDatabookMaxPoints() > 0) {
-      alert('Distribua os pontos restantes')
+    if (getBolsaMaxSlots() > 0 && firstTime == true) {
+      alert('Você pode ter mais armas em sua bolsa. Tem certeza que deseja continuar?')
+      firsTime = false;
     } else {
       $('.form-ficha').hide();
       $('#naturezas-form').show();
