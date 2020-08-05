@@ -175,6 +175,10 @@ function adicionarBonusDatabook(botão) {
         $('#defeitoAmnesia').hide();
         contadorJutsusGerais += 1;
     }
+
+    if (botão.text().includes('Mente Implacável')) {
+        menteImplacavel = ' +10 Jutsus de rank-E a rank-A';
+    } 
 }
 
 function removerBonusDatabook(botão) {
@@ -251,6 +255,10 @@ function removerBonusDatabook(botão) {
     if (botão.text().includes('Memória Eidética')) {
         $('#defeitoAmnesia').show();
         contadorJutsusGerais -= 1;
+    }
+
+    if (botão.text().includes('Mente Implacável')) {
+        menteImplacavel = '';
     }
 }
 
@@ -471,3 +479,8 @@ function removerNerfDatabook(botão) {
         $('#qualidadeProdigio').show()
     }
 }
+
+$('#qualidadeElemental').hide();
+$('#qualidadeMestre').hide();
+$('#qualidadeFuin').hide();
+$('#qualidadeArmamentista').hide();
