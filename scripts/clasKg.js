@@ -113,6 +113,7 @@ $('#emptyCla').prop('checked', true);
             case "Aburame":
                 $('#qualidadesAburame').show();
                 $('#aburameCientificos').addClass('qualidade-escolhida');
+                $('#qualidadeCientifico').hide();
                 break;
             case "Akimichi":
                 $('#qualidadesAkimichi').show();
@@ -189,6 +190,7 @@ $('#emptyCla').prop('checked', true);
             case "Kedōin":
                 $('#qualidadesKedoin').show();
                 $('#kedoinDominio').addClass('qualidade-escolhida');
+                $('#qualidadeDominio').hide();
                 $('#defeitoHabilidadeSocial').hide();
                 break;
             case "Kurama":
@@ -237,6 +239,8 @@ $('#emptyCla').prop('checked', true);
                 adicionarDefeito($('#uchihaMaldicao'));
                 $('#defeitoAmnesia').hide();
                 $('#qualidadeMemoria').hide();
+                $('#afinidade-elemental').val('Katon');
+                $('#afinidade-elemental').prop('disabled', true);
                 break;
             case "Uzumaki":
                 $('#qualidadesUzumaki').show();
