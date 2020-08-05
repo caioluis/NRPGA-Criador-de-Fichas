@@ -1,7 +1,6 @@
 var bonusNin = bonusTai = bonusGen = bonusInt = bonusForca = bonusVel = bonusSta = 0;
 var nerfVel = nerfSta = nerfInt = nerfForca = 0;
 var primeiraHabilidade = '--';
-
 var limiteNin = 0 ;
 
 function guardarInfo() {
@@ -130,11 +129,10 @@ salvar()
 console.log("Dados guardados!")
 }
 
+
 function salvar() {
     qualidadesSelecionadas = "";
     defeitosSelecionados = "";
-
-    
     qualidades = document.getElementsByClassName("qualidade-escolhida");
     defeitos = document.getElementsByClassName("defeito-escolhido");
     
@@ -148,8 +146,6 @@ function salvar() {
     }
         defeitosSelecionados += `&ltb&gt-&lt/b&gt${(defeitos[defeitos.length -1].innerHTML)}`;
 
-    document.getElementById("form-ficha").style.display = "none";
-    document.getElementById("fim").style.display = "block";
     document.getElementById("codigo-ficha").innerHTML =
 `&ltcenter&gt&ltdiv class="fichadepersonagem"&gt&ltdiv class="imagemdaficha" style="background-image: url(http://placehold.it/630x300)"&gt&lt/div&gt
 &ltdiv class="dadosdopersonagem"&gt&ltdiv class="iconedaficha" style="background-image: url(http://placehold.it/100x100)"&gt&lt/div&gt&ltdiv3&gt&lt/div3&gt
@@ -267,3 +263,9 @@ ${bolsaDeArmas}
 &ltb&gtPlayer Off:&lt/b&gt  / &ltb&gtContatos:&lt/b&gt &lt/div&gt&lt/div&gt&lt/center&gt`
 }
 
+new ClipboardJS('#codigo-ficha');
+
+$('#codigo-ficha').on('click', function() {
+    $('#codigo-ficha').addClass('copiado');
+    alert('Código copiado!');
+})
