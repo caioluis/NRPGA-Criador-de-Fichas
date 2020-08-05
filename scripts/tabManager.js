@@ -17,22 +17,21 @@ $(document).ready(function() {
   
   $('#descricao-psicologica').validate();
   
-  $('.gotoStep1').on('click', function () {
-    $('.form-ficha').hide();
-    $('#dados-basicos').show();
-  });
-  
   $('.gotoStep2').on('click', function () {
     if ($('#dados-basicos').valid()) {
-      $('.form-ficha').hide();
+      $('.form-ficha').hide();~
+      $('#primeiraDica').hide();
       $('#dados-basicos-ninja').show();
+      $('#segundaDica').show();
     }
   });
   
   $('.gotoStep3').on('click', function () {
     if ($('#dados-basicos-ninja').valid()) {
       $('.form-ficha').hide();
+      $('#segundaDica').hide();
       $('#descricao-psicologica').show();
+      $('#terceiraDica').show();
     }
   });
   
@@ -42,7 +41,9 @@ $(document).ready(function() {
     }
     if ($('#descricao-psicologica').valid()) {
       $('.form-ficha').hide();
+      $('#terceiraDica').hide();
       $('#descricao-fisica').show();
+      $('#quartaDica').show();
     }
   });
   
@@ -52,14 +53,18 @@ $(document).ready(function() {
     }
     if ($('#descricao-fisica').valid()) {
       $('.form-ficha').hide();
+      $('#quartaDica').hide();
       $('#historia-form').show();
+      $('#quintaDica').show();
     }
   });
 
   $('.gotoStep6').on('click', function () {
     if ($('#historia-form').valid()) {
       $('.form-ficha').hide();
+      $('#quintaDica').hide();
       $('#qualidadesDefeitos-form').show();
+      $('#sextaDica').show();
     }
   });
 
@@ -71,7 +76,9 @@ $(document).ready(function() {
       alert('Você precisa distribuir mais pontos de defeitos')
     } else {
       $('.form-ficha').hide();
+      $('#sextaDica').hide();
       $('#databook').show();
+      $('#setimaDica').show();
       firstTime = true;
     }
   });
@@ -81,7 +88,9 @@ $(document).ready(function() {
       alert('Distribua os pontos restantes')
     } else {
       $('.form-ficha').hide();
+      $('#setimaDica').hide();
       $('#naturezas-form').show();
+      $('#oitavaDica').show();
     }
   });
 
@@ -90,92 +99,14 @@ $(document).ready(function() {
       alert('Você pode ter mais armas em sua bolsa. Tem certeza que deseja continuar?')
       firsTime = false;
     } else {
-      $('.form-ficha').hide();
-      $('#naturezas-form').show();
+      $('#formContainer').hide();
+      $('#infos-importantes').hide();
+      guardarInfo();
+      $('#fim').show();
     }
   });
 });
 
-
-
-var currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
-
-function showTab(n) {
-  // This function will display the specified tab of the form...
-  var x = document.getElementsByClassName("tab");
-  var z = document.getElementsByClassName("tipTabs")
-  x[n].style.display = "flex";
-  x[n].style.flexDirection = "column"
-  z[n].style.display = "block";
-  //... and fix the Previous/Next buttons:
-  if (n == 0) {
-    document.getElementById("prevBtn").style.display = "none";
-  } else {
-    document.getElementById("prevBtn").style.display = "inline";
-  }
-  if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "SALVAR";
-  } else {
-    document.getElementById("nextBtn").innerHTML = "PRÓXIMO";
-  }
-  //... and run a function that will display the correct step indicator:
-  fixStepIndicator(n)
-}
-
-function nextPrev(n) {
-  // This function will figure out which tab to display
-  var x = document.getElementsByClassName("tab");
-  var z = document.getElementsByClassName("tipTabs")
-  // Exit the function if any field in the current tab is invalid:
-  //if (n == 1 && !validateForm()) return false;
-  // Hide the current tab:
-  x[currentTab].style.display = "none";
-  z[currentTab].style.display = "none";
-  // Increase or decrease the current tab by 1:
-  currentTab = currentTab + n;
-  // if you have reached the end of the form...
-  if (currentTab >= x.length) {
-    // ... the form gets submitted:
-    guardarInfo();
-    return false;
-  }
-  // Otherwise, display the correct tab:
-  showTab(currentTab);
-}
-
-function validateForm() {
-  // This function deals with validation of the form fields
-  var x, y, i, valid = true;
-  x = document.getElementsByClassName("tab");
-  y = x[currentTab].getElementsByTagName("input");
-  z = document.getElementsByClassName("tipTabs");
-  // A loop that checks every input field in the current tab:
-  for (i = 0; i < y.length; i++) {
-    // If a field is empty...
-    if (y[i].value == "") {
-      // add an "invalid" class to the field:
-      y[i].className += " invalido";
-      // and set the current valid status to false
-      valid = false;
-    }
-  }
-  // If the valid status is true, mark the step as finished and valid:
-  if (valid) {
-    document.getElementsByClassName("circulo")[currentTab].className += " finalizado";
-  }
-  return valid; // return the valid status
-}
-
-function fixStepIndicator(n) {
-  // This function removes the "active" class of all steps...
-  var i, x = document.getElementsByClassName("circulo");
-  for (i = 0; i < x.length; i++) {
-    x[i].className = x[i].className.replace(" ativo", "");
-  }
-  //... and adds the "active" class on the current step:
-  x[n].className += " ativo";
-}
 
 //Controle dos Arquétipos
 
