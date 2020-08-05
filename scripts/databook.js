@@ -36,3 +36,34 @@ function getDatabookMaxPoints()
 
     return limiteDatabook;   
 }
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+	var inputs = document.getElementsByClassName('input-number-wrapper')
+	Array.prototype.forEach.call(inputs, function(el) {
+		var input = el.getElementsByTagName('input')[0]
+		
+		el.getElementsByClassName('increase')[0].addEventListener('click', function() {
+            maxPontosDatabook = getDatabookMaxPoints();
+            var val = +input.value;
+            if (maxPontosDatabook == 0 || input.getAttribute('max') == input.value) {
+                return false;
+            }
+            val++;
+            input.value = val
+            databookAtualizarTexto();
+            atualizarGrafico();
+        });
+
+		el.getElementsByClassName('decrease')[0].addEventListener('click', function() {
+            var val = +input.value
+            val--;
+            input.value = val > 0 ? val: 0
+            databookAtualizarTexto();
+            atualizarGrafico();
+        });
+	});
+});
+
+$( ".spinner" ).spinner();
