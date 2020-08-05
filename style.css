@@ -9,23 +9,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(https://i.imgur.com/KMVSJei.png);
   }
   
   #formContainer {
     display: flex;
     justify-content: space-between;
-    width: 99%;
-    height: 98.4%;
+    height: 100%;
+    width: 576px;
+    min-width: 576px;
     margin:0 auto;
     position:relative;
-    background-image: url(https://i.imgur.com/KMVSJei.png);
   }
   
   .form-ficha {
     position: relative;
     overflow-y: auto;
-    min-width: 438px;
-    max-width: 32em;
+    width: 100%;
     background:#252525;
     padding: 3.1em;
     margin:1em;
@@ -40,7 +40,7 @@ body {
   }
 
   .conteudo-form {
-    max-height: 700px;
+    max-height: 85%;
     overflow-y: auto;
   }
 
@@ -53,11 +53,12 @@ body {
   }
 
   .mesma-linha input {
-    width: 180px;
+    width: 160px;
   }
 
   #infos-importantes {
-    width: 100%;
+    width: 70%;
+    height: 100%;
     text-align: justify;
   }
 
@@ -436,7 +437,7 @@ input.invalido {
   
 /*dicas*/
 #dicas {
-  max-height: 800px;
+  max-height: 80%;
   overflow-y: auto;
   margin: 0 2em;
   justify-content: center;
@@ -517,7 +518,7 @@ input.invalido {
 
   #naturezas {
     display: flex;
-    height: 100px;
+    justify-content: space-around;
   }
 
   .natureza {
@@ -530,7 +531,7 @@ input.invalido {
   #armas {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 10px 0;
   }
 
@@ -540,7 +541,7 @@ input.invalido {
     padding: 5px;
     margin: 2px;
     background-color: #efefef;
-    width: 197px;
+    width: 170px;
     height: fit-content; 
     border-radius:5px;
     align-items: center;
@@ -606,23 +607,20 @@ select.error, textarea.error, input.error {
 }
 
 .next {
-  background-color: #c1242f;
-  color: white;
   right: 50px;
 }
 
 .prev {
-  background-color: #c1242f;
-  color: white;
   left: 50px;
 }
 
-.next:hover {
+.round:hover {
   background-color: #991b23;
-  color: white;
 }
 
 .round {
+  background-color: #c1242f;
+  color: white;
   position: absolute;
   bottom: 50px;
   border-style: none;
@@ -636,6 +634,155 @@ select.error, textarea.error, input.error {
   outline: none;
 }
 
+.saveAll {
+  font-size: 10px;
+}
+
 #limite-jutsus:disabled {
   background-color: white;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+   opacity: 1;
+}
+
+input{
+  &::-webkit-inner-spin-button{
+    opacity:1; // magic!
+  } 
+}
+
+
+@media only screen and (max-width: 1280px) {
+  #formContainer {
+    min-width: 500px;
+    width: 500px;
+  }
+  .form-ficha {
+    padding: 1.8em;
+  }
+  .round {
+    bottom: 30px;
+  }
+
+
+
+  .mesma-linha input {
+    width: 160px;
+  }
+
+  .titulo-akatsuki {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .titulo-akatsuki {
+    font-size: 38px;
+  }
+  p {
+    font-size: 1em;
+  }
+  .subtitulo {
+    font-size: 19px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #formContainer {
+    min-width: 400px;
+  }
+  .form-ficha {
+    padding: 1em;
+  }
+  label {
+    font-size: 0.7em;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  .titulo-akatsuki {
+    font-size: 40px;
+  }
+  .subtitulo {
+    font-size: 13px;
+  }
+  .placeholder {
+    font-size: 0.7em;
+  }
+  .mesma-linha input {
+    width: 110px;
+  }
+  p {
+    font-size: 0.8em;
+  }
+  .atributo input {
+    width: 35px;
+  }
+  .natureza {
+    width: 25%;
+  }
+  .arma {
+    width: 119px;
+  }
+  .arma p {
+    font-size:9px;
+  }
+  .round {
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 426px) {
+  #infos-importantes {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  #infos-importantes {
+    display:none;
+  }
+
+  #formContainer {
+    width:  100%;
+    height: 100%;
+  }
+
+  .mesma-linha input {
+    width: 150px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  #formContainer{
+    min-width: 375px;
+  }
+  .mesma-linha input {
+    width:140px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  #formContainer{
+    min-width: 320px;
+  }
+  .mesma-linha input {
+    width:100px;
+  }
+  .atributo input {
+    width: 30px;
+  }
+  #atributos label {
+    font-size: 0.6em;
+  }
+}
+
+
+.atributo input[type=number]::-webkit-inner-spin-button {
+  width: 20px;
+  height: 20px;
 }
