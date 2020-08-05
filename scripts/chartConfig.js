@@ -54,8 +54,7 @@ function atualizarGrafico() {
     vel = parseInt($('#vel').val()) + bonusVel;
     sta = parseInt($('#sta').val()) + bonusSta;
     selos = parseInt($('#selos').val());
-
+    
     myRadarChart.data.datasets[0].data.splice(0, 8, nin, tai, gen, int, forca, vel, sta, selos);
     myRadarChart.update();
-    
 };
