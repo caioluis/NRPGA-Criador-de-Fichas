@@ -30,6 +30,8 @@ $('#emptyCla').prop('checked', true);
             }
             clearQualidades();
             clearDefeitos();
+            clearNaturezas();
+            clearNerfsBuffs();
             databookAtualizarTexto();
             atualizarTexto();
             $('.atributo span').text('');
@@ -85,7 +87,7 @@ $('#emptyCla').prop('checked', true);
         $('#segunda-natureza').val('--');
         $('#terceira-natureza').val('--');
         $('#kg-elemental').val('--');
-        $('#afinidade-elemental').text('');
+        $('#afinidade-elemental').val('');
         $('#afinidade-elemental').prop('disabled', false);
     }
 
