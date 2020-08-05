@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Style sheet -->
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="prism.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
@@ -17,6 +17,8 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
   <title>Senko's UltimateFichaMaker 0.8</title>
 </head>
 
@@ -1975,8 +1977,6 @@
         <p><b>Observação:</b> Para mais informações acerca da Trama do fórum, pode-se acessar <a href="https://www.narutorpgakatsuki.net/f167-enredo">esta área</a>, que contempla (mesmo que de um modo resumido para uma visualização mais rápida) os acontecimentos oficiais do ONgame do Naruto RPG Akatsuki entre os arcos 01 e 07. Até que a área seja devidamente atualizada, para maiores informações sobre os arcos 08, 09 e 10 (sendo este o atual), pode-se entrar em contato direto com os administradores @Ange e/ou @Shion.</p>
       </div>
       
-      
-      
       <div id="sextaDica" class="tipTabs">
         <hr>
         <h2 class="subtitulo">Sistema de Qualidades e Defeitos</h2>
@@ -2061,15 +2061,16 @@
         <hr>
         <h2 class="subtitulo">Naturezas e Particularidades</h2>               
       </div>
+    </div>
   </div>
 
   <div id="fim">
+    <h2 class="subtitulo">Clique em qualquer parte do código para copiá-lo e <a target="_blank" href="https://www.narutorpgakatsuki.net/post?f=142&mode=newtopic">clique aqui para se inscrever</a></h2>
     <hr>
     <pre>
-      <code id="codigo-ficha" class="language-markup">
+      <code id="codigo-ficha" class="html" data-clipboard-target="#codigo-ficha">
       </code>
     </pre>
-    <h2 class="subtitulo">Copie o código e <a href="https://www.narutorpgakatsuki.net/post?f=142&mode=newtopic">clique aqui para se inscrever</a></h2>
   </div>    
             
   <!--Cantinho dos scripts-->
@@ -2082,6 +2083,6 @@
   <script type="text/javascript" src="scripts/limiteJutsus.js"></script>
   <script type="text/javascript" src="scripts/config.js"></script>
   <script type="text/javascript" src="scripts/chartConfig.js"></script>
-  <script src="scripts/prism.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
