@@ -13,9 +13,7 @@ $('#segunda-natureza').val('--');
 $('#terceira-natureza').val('--');
 $('#kg-elemental').val('--');
 
-
-
-$('.atributo').on('change', function() {
+function atualizarLimites() {
     pontosNin = parseInt($('#ninjutsu').val()) + bonusNin;
     pontosTai = parseInt($('#taijutsu').val()) + bonusTai;
     pontosGen = parseInt($('#genjutsu').val()) + bonusGen;
@@ -56,7 +54,7 @@ $('.atributo').on('change', function() {
     if (pontosNin == 0) {
         $('#primeira-natureza').val('--');
     }
-});
+};
 
 $('#afinidade-elemental').on('keyup', function() {
     if(pontosNin == 0) {
