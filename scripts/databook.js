@@ -19,6 +19,7 @@ $('.atributo :input').on('input', function() {
     }
     databookAtualizarTexto();
     atualizarLimites();
+    atualizarGrafico();
 }); 
 
 function getDatabookMaxPoints()
