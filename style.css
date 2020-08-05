@@ -649,7 +649,7 @@ select.error, textarea.error, input.error {
 }
 
 .atributo button {
-  display: none;
+  display: none!important;
   outline: none;
   border-style: none;
 }
@@ -660,6 +660,20 @@ select.error, textarea.error, input.error {
 
 .decrease {
   border-radius:1px 0 0 1px;
+}
+
+#fim {
+  max-height: 80%;
+  max-width: 80%;
+  overflow-y: auto;
+}
+
+.copiado {
+  background-color: #c1242f70;
+}
+
+#codigo-ficha:hover {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1280px) {
@@ -742,7 +756,7 @@ select.error, textarea.error, input.error {
   }
 
   .input-number-wrapper button {
-    display: block;
+    display: block!important;
   }
 
   .atributo input {
@@ -758,13 +772,13 @@ select.error, textarea.error, input.error {
 
 @media only screen and (max-width: 700px) and (min-width: 426px) {
   #infos-importantes {
-    display: none;
+    display: none!important;
   }
 }
 
 @media only screen and (max-width: 425px) {
   #infos-importantes {
-    display:none;
+    display: none!important;
   }
   #formContainer {
     width:  100%;
