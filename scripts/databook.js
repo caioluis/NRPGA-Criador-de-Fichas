@@ -18,6 +18,7 @@ $('.atributo :input').on('input', function() {
         $(this).val($(this).val() -1);
     }
     databookAtualizarTexto();
+    atualizarLimites();
 }); 
 
 function getDatabookMaxPoints()
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             val++;
             input.value = val
             databookAtualizarTexto();
+            atualizarLimites();
             atualizarGrafico();
         });
 
@@ -61,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             val--;
             input.value = val > 0 ? val: 0
             databookAtualizarTexto();
+            atualizarLimites();
             atualizarGrafico();
         });
 	});
