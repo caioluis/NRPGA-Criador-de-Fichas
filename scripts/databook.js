@@ -34,6 +34,5 @@ function getDatabookMaxPoints()
     somaDosAtributos = nin + tai + gen + int + forca + vel + sta + selos;
     limiteDatabook = (7 + Number($('#semCla').is(':checked')) + bonusHatake) - somaDosAtributos;
 
-    return limiteDatabook;
-    
+    return limiteDatabook;   
 }
