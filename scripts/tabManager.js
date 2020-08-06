@@ -119,7 +119,7 @@ $(document).ready(function() {
   $('.saveAll').on('click', function () {
     if (getBolsaMaxSlots() > 0 && firstTime == true) {
       alert('Você pode ter mais armas em sua bolsa. Tem certeza que deseja continuar?')
-      firsTime = false;
+      firstTime = false;
     } else {
       $('#formContainer').hide();
       $('#infos-importantes').hide();
