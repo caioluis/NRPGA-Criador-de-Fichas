@@ -378,7 +378,7 @@ $('#emptyCla').prop('checked', true);
                 $('#primeira-natureza').val('Katon');
                 $('#segunda-natureza').val('Fūton');
                 $('#kg-elemental').val('Shakuton');
-                $('#afinidade-elemental').val('Raiton, Suiton e Shakuton');
+                $('#afinidade-elemental').val('Katon, Fūton e Shakuton');
                 $('#afinidade-elemental').prop('disabled', true);
                 break;
             case 'Shōton':
