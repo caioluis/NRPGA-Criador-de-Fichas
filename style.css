@@ -296,6 +296,11 @@ mark {
     filter: brightness(1.2);
 }
 
+.qualidades-defeitos button:disabled {
+  color: grey;
+  background-color: #474747;
+}
+
 .qualidade-escolhida {
   background-color:#c1242f!important;
 }
