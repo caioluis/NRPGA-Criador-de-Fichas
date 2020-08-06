@@ -28,6 +28,14 @@ $(document).ready(function() {
   });
 
   $('.gotoStep2').on('click', function () {
+    if ($('#sobrenome').val() == '') {
+      $('#sobrenome').val(' ')
+    }
+
+    if ($('#sexualidade').val() == '') {
+      $('#sexualidade').val('--')
+    }
+
     if ($('#dados-basicos').valid()) {
       $('.form-ficha').hide();
       $('.tipTabs').hide();
@@ -50,7 +58,7 @@ $(document).ready(function() {
   });
   
   $('.gotoStep4').on('click', function () {
-    if ($('#transtornos').val() == "") {
+    if ($('#transtornos').val() == '') {
       $('#transtornos').val('--')
     }
     if ($('#descricao-psicologica').valid()) {
@@ -62,7 +70,7 @@ $(document).ready(function() {
   });
   
   $('.gotoStep5').on('click', function () {
-    if ($('#outros').val() == "") {
+    if ($('#outros').val() == '') {
       $('#outros').val('--')
     }
     if ($('#descricao-fisica').valid()) {
