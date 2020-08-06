@@ -2,6 +2,7 @@ var firstTime = true;
 
 $(document).ready(function() {
   $('#dados-basicos').show();
+  $('#primeiraDica').show();
   $.validator.messages.required = '';
   $.validator.messages.max = '';
   $.validator.messages.min = ''
