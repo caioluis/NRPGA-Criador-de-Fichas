@@ -288,8 +288,6 @@ $('#emptyCla').prop('checked', true);
                 break;
             case 'Bakuton':
                 $('#qualidadesBakuton').show();
-                adicionarQualidade($('#bakutonPericia'));
-                pericia = ' +3 Jutsus de Bakuton';
                 $('#defeitoElemental').prop('disabled', true);
                 showNaturezas();
                 $('#primeira-natureza').val('Doton');
@@ -300,8 +298,6 @@ $('#emptyCla').prop('checked', true);
                 break;
             case 'Futton':
                 $('#qualidadesFutton').show();
-                adicionarQualidade($('#futtonPericia'));
-                pericia = ' +3 Jutsus de Futton';
                 $('#defeitoElemental').prop('disabled', true);
                 showNaturezas();
                 $('#primeira-natureza').val('Katon');
@@ -312,8 +308,6 @@ $('#emptyCla').prop('checked', true);
                 break;
             case 'Jinton':
                 $('#qualidadesJinton').show();
-                adicionarQualidade($('#jintonPericia'));
-                pericia = ' +3 Jutsus de Jinton';
                 $('#defeitoElemental').prop('disabled', true);
                 showNaturezas();
                 $('#primeira-natureza').val('Doton');
@@ -330,8 +324,6 @@ $('#emptyCla').prop('checked', true);
                 break;
             case 'Jiton':
                 $('#qualidadesJiton').show();
-                adicionarQualidade($('#jitonPericia'));
-                pericia = ' +3 Jutsus de Jiton';
                 $('#defeitoElemental').prop('disabled', true);
                 showNaturezas();
                 $('#primeira-natureza').val('Fūton');
@@ -342,8 +334,6 @@ $('#emptyCla').prop('checked', true);
                 break;
             case 'Kōton':
                 $('#qualidadesKoton').show();
-                adicionarQualidade($('#kotonPericia'));
-                pericia = ' +3 Jutsus de Kōton';
                 $('#defeitoElemental').prop('disabled', true);
                 showNaturezas();
                 $('#afinidade-elemental').on('change', function() {
@@ -359,8 +349,6 @@ $('#emptyCla').prop('checked', true);
                 break;
             case 'Ranton':
                 $('#qualidadesRanton').show();
-                adicionarQualidade($('#rantonPericia'));
-                pericia = ' +3 Jutsus de Ranton';
                 $('#defeitoElemental').prop('disabled', true);
                 showNaturezas();
                 $('#primeira-natureza').val('Raiton');
@@ -371,8 +359,6 @@ $('#emptyCla').prop('checked', true);
                 break;
             case 'Shakuton':
                 $('#qualidadesShakuton').show();
-                adicionarQualidade($('#shakutonPericia'));
-                pericia = ' +3 Jutsus de Shakuton';
                 $('#defeitoElemental').prop('disabled', true);
                 showNaturezas();
                 $('#primeira-natureza').val('Katon');
@@ -383,8 +369,6 @@ $('#emptyCla').prop('checked', true);
                 break;
             case 'Shōton':
                 $('#qualidadesShoton').show();
-                adicionarQualidade($('#shotonPericia'));
-                pericia = ' +3 Jutsus de Shōton';
                 $('#defeitoElemental').prop('disabled', true);
                 showNaturezas();
                 $('#primeira-natureza').val('Doton');
@@ -394,8 +378,6 @@ $('#emptyCla').prop('checked', true);
                 break;
             case 'Yōton':
                 $('#qualidadesYoton').show();
-                adicionarQualidade($('#yotonPericia'));
-                pericia = ' +3 Jutsus de Yōton';
                 $('#defeitoElemental').prop('disabled', true);
                 showNaturezas();
                 $('#primeira-natureza').val('Katon');
@@ -470,3 +452,46 @@ $('#emptyCla').prop('checked', true);
         }
         atualizarTexto();
     });
+
+    function adicionarPericia(){
+        switch ($('input[name=kg]:checked', '#dados-basicos-ninja').val()) {
+            case 'Bakuton':
+                adicionarQualidade($('#bakutonPericia'));
+                pericia = ' +3 Jutsus de Bakuton';
+                break;
+            case 'Futton':
+                adicionarQualidade($('#futtonPericia'));
+                pericia = ' +3 Jutsus de Futton';
+                break;
+            case 'Jinton':
+                adicionarQualidade($('#jintonPericia'));
+                pericia = ' +3 Jutsus de Jinton';
+                break;
+            case 'Jiton':
+                adicionarQualidade($('#jitonPericia'));
+                pericia = ' +3 Jutsus de Jiton';
+                break;
+            case 'Kōton':
+                adicionarQualidade($('#kotonPericia'));
+                pericia = ' +3 Jutsus de Kōton';
+                break;
+            case 'Ranton':
+                adicionarQualidade($('#rantonPericia'));
+                pericia = ' +3 Jutsus de Ranton';
+                break;
+            case 'Shakuton':
+                adicionarQualidade($('#shakutonPericia'));
+                pericia = ' +3 Jutsus de Shakuton';
+                break;
+            case 'Shōton':
+                adicionarQualidade($('#shotonPericia'));
+                pericia = ' +3 Jutsus de Shōton';
+                break;
+            case 'Yōton':
+                adicionarQualidade($('#yotonPericia'));
+                pericia = ' +3 Jutsus de Yōton';
+                break;
+            default:
+                break;
+        }
+    }

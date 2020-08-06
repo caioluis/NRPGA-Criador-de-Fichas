@@ -49,14 +49,14 @@ function atualizarLimites() {
         jutsusGerais = ` +${contadorJutsusGerais} Jutsus Gerais`;
     }
 
-    $('#limite-jutsus').val('5 Jutsus & +1 Rank S' + jutsusGerais + limiteNin + limiteTai + limiteGen + menteImplacavel);
-
     if (pontosNin > 2) {
-        $('#limite-jutsus').val($('#limite-jutsus').val() + pericia);
+        adicionarPericia();
         $('#qualidadeElemental').prop('disabled', false);
     } else {
         $('#qualidadeElemental').prop('disabled', true);
         removerQualidade($('#qualidadeElemental'));
+        removerQualidade($('#qualidadesKg :button'));
+        pericia = '';
     }
 
     if (pontosNin > 4 && $('#qualidadeElemental').hasClass('qualidade-escolhida')) {
@@ -85,6 +85,8 @@ function atualizarLimites() {
         $('#qualidadeArmamentista').prop('disabled', true);
         removerQualidade($('#qualidadeArmamentista'));
     }
+
+    $('#limite-jutsus').val('5 Jutsus & +1 Rank S' + jutsusGerais + limiteNin + limiteTai + limiteGen + menteImplacavel + pericia);
 };
 
 $('#afinidade-elemental').on('keyup', function() {
