@@ -52,10 +52,18 @@ function atualizarLimites() {
     $('#limite-jutsus').val('5 Jutsus & +1 Rank S' + jutsusGerais + limiteNin + limiteTai + limiteGen + menteImplacavel);
 
     if (pontosNin > 2) {
-        $('#limite-jutsus').val($('#limite-jutsus').val() + pericia)
-        ('#qualidadeElemental').show();
+        $('#limite-jutsus').val($('#limite-jutsus').val() + pericia);
+        $('#qualidadeElemental').prop('disabled', false);
     } else {
-        $('#qualidadeElemental').hide();
+        $('#qualidadeElemental').prop('disabled', true);
+        removerQualidade($('#qualidadeElemental'));
+    }
+
+    if (pontosNin > 4 && $('#qualidadeElemental').hasClass('qualidade-escolhida')) {
+        $('#qualidadeMestre').prop('disabled', false);
+    } else {
+        $('#qualidadeElemental').prop('disabled', true);
+        removerQualidade($('#qualidadeElemental'));
     }
 
     if (pontosNin == 0) {
@@ -65,15 +73,17 @@ function atualizarLimites() {
     }
 
     if (pontosNin > 2 && pontosSelos > 0 && pontosInt > 2 && $('#qualidadeGCC').hasClass('qualidade-escolhida')){
-        $('#qualidadeFuin').show();
+        $('#qualidadeFuin').prop('disabled', false);
     } else {
-        $('#qualidadeFuin').hide();
+        $('#qualidadeFuin').prop('disabled', true);
+        removerQualidade($('#qualidadeFuin'));
     }
 
     if (pontosTai > 2) {
-        $('#qualidadeArmamentista').show();
+        $('#qualidadeArmamentista').prop('disabled', false);
     } else {
-        $('#qualidadeArmamentista').hide();
+        $('#qualidadeArmamentista').prop('disabled', true);
+        removerQualidade($('#qualidadeArmamentista'));
     }
 };
 

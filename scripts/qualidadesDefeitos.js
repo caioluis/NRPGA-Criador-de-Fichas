@@ -51,8 +51,8 @@ $('#qualidades .qualidades-defeitos :button').click(function(){
     var botão = $(this);
     maxPontosQualidades = getQualidadesMaxPoints();
     valorQualidade = parseInt(botão.val());
-    if( (botão.attr('class') == undefined) || (botão.attr('class') == '') ){
-        if(valorQualidade > maxPontosQualidades) {
+    if (botão.hasClass('qualidade-escolhida') == false){
+        if (valorQualidade > maxPontosQualidades) {
             return false;
         } else{          
             adicionarQualidade(botão);
@@ -69,9 +69,16 @@ $('#qualidades .qualidades-defeitos :button').click(function(){
         }
     } else {
         removerQualidade(botão);
-        qualidadeNinjutsu.prop('disabled', false);
-        qualidadeTaijutsu.prop('disabled', false);
-        qualidadeGenjutsu.prop('disabled', false);  
+        if (botão.attr('id') == 'qualidadeNinjutsu') {
+            qualidadeGenjutsu.prop('disabled', false);
+            qualidadeTaijutsu.prop('disabled', false);
+        } else if (botão.attr('id') == 'qualidadeTaijutsu') {
+            qualidadeGenjutsu.prop('disabled', false);
+            qualidadeNinjutsu.prop('disabled', false);
+        } else if (botão.attr('id') == 'qualidadeGenjutsu') {
+            qualidadeNinjutsu.prop('disabled', false);
+            qualidadeTaijutsu.prop('disabled', false);
+        }
     }
     atualizarTexto();
 });
@@ -105,11 +112,13 @@ function getDefeitosMinPoints() {
 }
 
 function adicionarBonusDatabook(botão) {
-    if (quantBonus == 2) {
+    if (quantBonus == 2 && botão.hasClass('temBonus')) {
         alert("Você já atingiu o máximo de pontos adquiríveis através das qualidades. Esta qualidade será adicionada, mas não dará pontos extra.")
     } else {
         if (botão.text().includes('Habilidade em Ninjutsu')) {
             $('#ninjutsu-label span').show();
+            $('#defeitoNin').prop('disabled', true);
+            removerDefeito($('#defeitoNin'));
             $('#ninjutsu-label span').text('+1');
             bonusNin++;
             quantBonus++;
@@ -118,6 +127,8 @@ function adicionarBonusDatabook(botão) {
         if (botão.text().includes('Habilidade em Taijutsu')) {
             $('#taijutsu-label span').show();
             $('#taijutsu-label span').text('+1');
+            removerDefeito($('#defeitoCoordenacao'));
+            $('#defeitoCoordenacao').prop('disabled', true);
             bonusTai++;
             quantBonus++;
         }
@@ -125,6 +136,8 @@ function adicionarBonusDatabook(botão) {
         if (botão.text().includes('Habilidade em Genjutsu')) {
             $('#genjutsu-label span').show();
             $('#genjutsu-label span').text('+1');
+            removerDefeito($('#defeitoGen'));
+            $('#defeitoGen').prop('disabled', true);
             bonusGen++;
             quantBonus++;
         }
@@ -132,6 +145,8 @@ function adicionarBonusDatabook(botão) {
         if (botão.text().includes('Força Aguçada')) {
             $('#forca-label span').show();
             $('#forca-label span').text('+1')
+            removerDefeito($('#defeitoFraqueza'));
+            $('#defeitoFraqueza').prop('disabled', true);
             bonusForca++;
             quantBonus++;
         }
@@ -146,6 +161,8 @@ function adicionarBonusDatabook(botão) {
         if (botão.text().includes('Agilidade Aguçada')) {
             $('#vel-label span').show();
             $('#vel-label span').text('+1')
+            removerDefeito($('#defeitoReflexos'));
+            $('#defeitoReflexos').prop('disabled', true);
             bonusVel++;
             quantBonus++;
         }
@@ -158,32 +175,44 @@ function adicionarBonusDatabook(botão) {
         }
     }
 
-    if (botão.text().includes('Habilidade em Ninjutsu')) {
-        $('#defeitoNin').hide();
+    if (botão.text().includes('Olfato Aguçado')) {
+        removerDefeito($('#defeitoOlfato'));
+        $('#defeitoOlfato').prop('disabled', true);
     }
 
-    if (botão.text().includes('Habilidade em Genjutsu')) {
-        $('#defeitoGen').hide();
+    if (botão.text().includes('Audição Aguçada')) {
+        removerDefeito($('#defeitoSurdez'));
+        $('#defeitoSurdez').prop('disabled', true);
+        removerDefeito($('#defeitoAudicao'));
+        $('#defeitoAudicao').prop('disabled', true);
     }
 
+    if (botão.text().includes('Visão Aguçada')) {
+        removerDefeito($('#defeitoVisao'));
+        $('#defeitoVisao').prop('disabled', true);
+    }
+   
     if (botão.text().includes('Prodígio')) {
-        $('#defeitoDificuldade').hide();
+        $('#defeitoDificuldade').prop('disabled', true);
+        removerDefeito($('#defeitoDificuldade'));
         contadorJutsusGerais += 2;
     }
 
     if (botão.text().includes('Memória Eidética')) {
-        $('#defeitoAmnesia').hide();
+        $('#defeitoAmnesia').prop('disabled', true);
+        removerDefeito($('#defeitoAmnesia'));
         contadorJutsusGerais += 1;
     }
 
     if (botão.text().includes('Mente Implacável')) {
         menteImplacavel = ' +10 Jutsus de rank-E a rank-A';
-    } 
+    }
 }
 
 function removerBonusDatabook(botão) {
     if (botão.text().includes('Habilidade em Ninjutsu')) {
         if ($('#ninjutsu-label span').text() == '+1') {
+            $('#defeitoNin').prop('disabled', false);
             $('#ninjutsu-label span').hide();
             bonusNin--;
             quantBonus--;
@@ -200,7 +229,8 @@ function removerBonusDatabook(botão) {
 
     if (botão.text().includes('Habilidade em Genjutsu')) {
         if ($('#genjutsu-label span').text() == '+1') {
-            $('#genjutsu-label span').hide();
+            $('#defeitoGen').show();
+            $('#genjutsu-label span').prop('disabled', false);
             bonusGen--;
             quantBonus--;
         }
@@ -209,6 +239,7 @@ function removerBonusDatabook(botão) {
     if (botão.text().includes('Força Aguçada')) {
         if ($('#forca-label span').text() == '+1' || $('#forca-label span').text() == '0') {
             $('#forca-label span').hide();
+            $('#defeitoFraqueza').prop('disabled', false);
             bonusForca--;
             quantBonus--;
         }
@@ -225,6 +256,7 @@ function removerBonusDatabook(botão) {
     if (botão.text().includes('Agilidade Aguçada')) {
         if ($('#vel-label span').text() == '+1') {
             $('#vel-label span').hide();
+            $('#defeitoReflexos').prop('disabled', false);
             bonusVel--;
             quantBonus--;
         }
@@ -238,22 +270,26 @@ function removerBonusDatabook(botão) {
         }
     }
 
-    if (botão.text().includes('Habilidade em Ninjutsu')) {
-        $('#defeitoNin').show();
+    if (botão.text().includes('Olfato Aguçado')) {
+        $('#defeitoOlfato').prop('disabled', false);
     }
 
-    if (botão.text().includes('Habilidade em Genjutsu')) {
-        $('#defeitoGen').show();
+    if (botão.text().includes('Audição Aguçada')) {
+        $('#defeitoSurdez').prop('disabled', false);
+        $('#defeitoAudicao').prop('disabled', false);
     }
 
+    if (botão.text().includes('Visão Aguçada')) {
+        $('#defeitoVisao').prop('disabled', false);
+    }
 
     if (botão.text().includes('Prodígio')) {
-        $('#defeitoDificuldade').show();
+        $('#defeitoDificuldade').prop('disabled', false);
         contadorJutsusGerais -= 2;
     }
     
     if (botão.text().includes('Memória Eidética')) {
-        $('#defeitoAmnesia').show();
+        $('#defeitoAmnesia').prop('disabled', false);
         contadorJutsusGerais -= 1;
     }
 
@@ -269,7 +305,7 @@ function adicionarNerfDatabook(botão) {
         $('#forca').val(0);
         $('#forca').prop('disabled', true);
         removerQualidade($('#qualidadeForca'));
-        $('#qualidadeForca').hide();
+        $('#qualidadeForca').prop('disabled', true);
     }
 
     if (botão.text().includes('Baixa Coordenação Motora')) {
@@ -279,35 +315,42 @@ function adicionarNerfDatabook(botão) {
 
     if (botão.text().includes('Reflexos Retardados')) {
         removerQualidade($('#qualidadeVel'));
-        $('#qualidadeVel').hide();
+        $('#qualidadeVel').prop('disabled', true);
     }
 
     if (botão.text().includes('Visão Prejudicada')) {
         removerQualidade($('#qualidadeVisao'));
-        $('#qualidadeVisao').hide();
+        $('#qualidadeVisao').prop('disabled', true);
     }
 
     if (botão.text().includes('Audição Prejudicada')) {
         removerQualidade($('#qualidadeAudicao'));
-        $('#qualidadeAudicao').hide();
+        $('#qualidadeAudicao').prop('disabled', true);
     }
 
-    if (botão.text().includes('Audição Prejudicada')) {
+    if (botão.text().includes('Olfato Prejudicado')) {
+        removerQualidade($('#qualidadeOlfato'));
+        $('#qualidadeOlfato').prop('disabled', true);
+    }
+
+    if (botão.text().includes('Surdez')) {
         removerQualidade($('#qualidadeAudicao'));
-        $('#qualidadeAudicao').hide();
+        $('#qualidadeAudicao').prop('disabled', true);
     }
 
     if (botão.text().includes('Gordo')) {
         $('#vel-label span').show();
         $('#vel-label span').text('-1');
-        $('#defeitoMagricelo').hide();
+        removerDefeito('#defeitoMagricelo');
+        $('#defeitoMagricelo').prop('disabled', true);
         nerfVel++;
     }
 
     if (botão.text().includes('Magricelo')) {
         $('#sta-label span').show();
         $('#sta-label span').text('-1');
-        $('#defeitoGordo').hide();
+        removerDefeito('#defeitoGordo');
+        $('#defeitoGordo').prop('disabled', true);
         nerfSta++;
     }
 
@@ -317,17 +360,18 @@ function adicionarNerfDatabook(botão) {
         $('#forca').val(0);
         $('#forca').prop('disabled', true);
         removerQualidade($('#qualidadeForca'));
-        $('#qualidadeForca').hide();
-        $('#defeitoGigantismo').hide();
+        $('#qualidadeForca').prop('disabled', true);
+        $('#defeitoGigantismo').prop('disabled', true);
     }
 
     if (botão.text().includes('Gigantismo')) {
-        $('#defeitoNanismo').hide();
+        removerDefeito('#defeitoNanismo');
+        $('#defeitoNanismo').prop('disabled', true);
     }
 
     if (botão.text().includes('Amnésia Dissociativa')) {
         removerQualidade($('#qualidadeMemoria'));
-        $('#qualidadeMemoria').hide();
+        $('#qualidadeMemoria').prop('disabled', true);
     }
 
     if (botão.text().includes('Impulsivos')) {
@@ -374,7 +418,7 @@ function adicionarNerfDatabook(botão) {
 
     if (botão.text().includes('Dificuldade em Aprender')) {
         removerQualidade($('#qualidadeProdigio'));
-        $('#qualidadeProdigio').hide()
+        $('#qualidadeProdigio').prop('disabled', true);
     }
 }
 
@@ -383,7 +427,7 @@ function removerNerfDatabook(botão) {
         if($('#forca-label span').text() == '0') {
             $('#forca-label span').hide();
             $('#forca').prop('disabled', false);
-            $('#qualidadeForca').show();
+            $('#qualidadeForca').prop('disabled', false);
         }
     }
 
@@ -392,21 +436,21 @@ function removerNerfDatabook(botão) {
     }
 
     if (botão.text().includes('Reflexos Retardados')) {    
-            $('#qualidadeVel').show();
+            $('#qualidadeVel').prop('disabled', false);
     }
 
     if (botão.text().includes('Visão Prejudicada')) {
-        $('#qualidadeVisao').show();
+        $('#qualidadeVisao').prop('disabled', false);
     }
 
     if (botão.text().includes('Audição Prejudicada')) {
-        $('#qualidadeAudicao').show();
+        $('#qualidadeAudicao').prop('disabled', false);
     }
 
     if (botão.text().includes('Gordo')) {
         if($('#vel-label span').text() == '-1') {
             $('#vel-label span').hide();
-            $('#defeitoMagricelo').show();
+            $('#defeitoMagricelo').prop('disabled', false);
             nerfVel--;
         }
     }
@@ -414,7 +458,7 @@ function removerNerfDatabook(botão) {
     if (botão.text().includes('Magricelo')) {
         if($('#sta-label span').text() == '-1') {
             $('#sta-label span').hide();
-            $('#defeitoGordo').show();
+            $('#defeitoGordo').prop('disabled', false);
             nerfSta--;
         }
     }
@@ -423,22 +467,22 @@ function removerNerfDatabook(botão) {
         if($('#forca-label span').text() == '0') {
             $('#forca-label span').hide();
             $('#forca').prop('disabled', false);
-            $('#qualidadeForca').show();
-            $('#defeitoGigantismo').show();
+            $('#qualidadeForca').prop('disabled', false);
+            $('#defeitoGigantismo').prop('disabled', false);
         }
     }
 
     if (botão.text().includes('Gigantismo')) {
-        $('#defeitoNanismo').show();
+        $('#defeitoNanismo').prop('disabled', false);
     }
 
     if (botão.text().includes('Amnésia Dissociativa')) {
-        $('#qualidadeMemoria').show();
+        $('#qualidadeMemoria').prop('disabled', false);
     }
 
     if (botão.text().includes('Impulsivos')) {
         if($('#int-label span').text() == '-1') {
-            $('#int-label span').hide();
+            $('#int-label span').prop('disabled', false);
             nerfVel--;
         }
     }
@@ -447,13 +491,13 @@ function removerNerfDatabook(botão) {
         if ($('#vel-label span').text() == '-2') {
             $('#vel-label span').text('-1');
         } else {
-            $('#vel-label span').hide();
+            $('#vel-label span').prop('disabled', false);
         }
 
         if ($('#forca-label span').text() == '-2') {
             $('#forca-label span').text('-1');
         } else {
-            $('#forca-label span').hide();
+            $('#forca-label span').prop('disabled', false);
         }
         nerfVel--;
         nerfForca--;
@@ -476,11 +520,11 @@ function removerNerfDatabook(botão) {
     }
 
     if (botão.text().includes('Dificuldade em Aprender')) {
-        $('#qualidadeProdigio').show()
+        $('#qualidadeProdigio').prop('disabled', false);
     }
 }
 
-$('#qualidadeElemental').hide();
-$('#qualidadeMestre').hide();
-$('#qualidadeFuin').hide();
-$('#qualidadeArmamentista').hide();
+$('#qualidadeElemental').prop('disabled', true);
+$('#qualidadeMestre').prop('disabled', true);
+$('#qualidadeFuin').prop('disabled', true);
+$('#qualidadeArmamentista').prop('disabled', true);
