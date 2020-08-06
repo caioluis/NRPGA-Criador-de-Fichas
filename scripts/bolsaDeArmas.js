@@ -17,7 +17,7 @@ function getBolsaMaxSlots() {
     
     slotsOcupados = packSenbon + packKibaku + packAmpola + packFio + packMakibishi + kunai + shuriken + kemuridama + hikaridama + fumaShuriken;
 
-    return (20 - slotsOcupados).toFixed(2).replace(/\.00$/, '');;
+    return (20 - slotsOcupados).toFixed(2).replace(/\.00$/, '');
 }
 
 
