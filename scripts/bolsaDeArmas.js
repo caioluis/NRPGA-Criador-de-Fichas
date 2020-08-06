@@ -6,7 +6,7 @@ function getBolsaMaxSlots() {
 
     packSenbon = Math.ceil(parseFloat($('#senbon-quantidade').val()) * 0.5);
     packKibaku = Math.ceil(parseFloat($('#kibaku-quantidade').val()) * 0.25);
-    packAmbpola = Math.ceil(parseFloat($('#ampola-quantidade').val()) * 0.25);
+    packAmpola = Math.ceil(parseFloat($('#ampola-quantidade').val()) * 0.25);
     packFio = Math.ceil(parseFloat($('#fiosdeaco-quantidade').val()) * 0.2);
     packMakibishi = Math.ceil(parseFloat($('#makibishi-quantidade').val()) * 0.2);
     fumaShuriken = Math.ceil(parseFloat($('#fumaShuriken-quantidade').val()) * 4);
