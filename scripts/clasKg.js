@@ -1,33 +1,41 @@
 
-var toggleText = $('#switchClaKg');
+var toggleText = $('.switch');
 var botoesDosClas =  $('input[type=radio][name=cla]');
 var botoesDasKgs = $('input[type=radio][name=kg]');
+var botoesDasHis = $('input[type=radio][name=hi]');
 $('#emptyKg').prop('checked', true);
 $('#emptyCla').prop('checked', true);
+$('#emptyHi').prop('checked', true);
 
-    toggleText.click(
+    toggleText.on('click',
         function claKgToggle () {     
-        if (toggleText.html() == 'Mudar para Kekkei Genkais') {
-            toggleText.html('Mudar para Clãs');
+        if ($(this).html() == 'Mudar para KGs') {
             $('#emptyCla').prop('checked', true);
-            $('#kgs-buttons').toggleClass('close');
-            $('#clas-buttons').toggleClass('close');   
-        } else {
-            toggleText.html('Mudar para Kekkei Genkais');
+            $('#emptyHi').prop('checked', true);
+            $('#kgs-buttons').removeClass('close');
+            $('#clas-buttons').addClass('close');
+            $('#hi-buttons').addClass('close');
+        } else if ($(this).html() == 'Mudar para Clãs') {
             $('#emptyKg').prop('checked', true);
-            $('#clas-buttons').toggleClass('close');
-            $('#kgs-buttons').toggleClass('close');
+            $('#emptyHi').prop('checked', true);
+            $('#clas-buttons').removeClass('close');
+            $('#kgs-buttons').addClass('close');
+            $('#hi-buttons').addClass('close');
+        } else {
+            $('#emptyCla').prop('checked', true);
+            $('#emptyKg').prop('checked', true);
+            $('#hi-buttons').removeClass('close');
+            $('#clas-buttons').addClass('close');
+            $('#kgs-buttons').addClass('close');  
         }
     });
 
     $(document).ready(function(){
         $('#semCla').change(
         function semClaHandler(field){
-            if ($('#kgs-buttons').hasClass('close')) {
-                $('#clas-buttons').toggleClass('close');
-            } else {
-                $('#kgs-buttons').toggleClass('close');
-            }
+            $('#clas-buttons').addClass('close');
+            $('#kgs-buttons').addClass('close');
+            $('#hi-buttons').addClass('close');
             clearQualidades();
             clearDefeitos();
             clearNaturezas();
@@ -41,9 +49,11 @@ $('#emptyCla').prop('checked', true);
                 $('.qualidadesClas').hide();
                 $('#emptyCla').prop('checked', true);
                 $('#emptyKg').prop('checked', true);
-                $('#switchClaKg').hide();
+                $('#emptyHi').prop('checked', true);
+                $('.switch').hide();
             } else {
-                $('#switchClaKg').show();
+                $('#clas-buttons').removeClass('close');
+                $('.switch').show();
             }
         })
     });
@@ -105,6 +115,7 @@ $('#emptyCla').prop('checked', true);
         clearNerfsBuffs();
         bonusHatake = 0;
         $('#emptyKg').prop('checked', true);
+        $('#emptyHi').prop('checked', true);
         $('.atributo span').text('');
         $('.atributo span').hide();
         $('.cla').hide();
@@ -276,6 +287,7 @@ $('#emptyCla').prop('checked', true);
         clearNaturezas();
         clearNerfsBuffs();
         $('#emptyCla').prop('checked', true);
+        $('#emptyHi').prop('checked', true);
         $('.atributo span').text('');
         $('.atributo span').hide();
         $('.cla').hide();
@@ -386,6 +398,23 @@ $('#emptyCla').prop('checked', true);
                 $('#afinidade-elemental').val('Katon, Doton e Yōton');
                 $('#afinidade-elemental').prop('disabled', true);
                 break;
+            default:
+                break;
+        }
+    });
+
+    botoesDasHis.change(function bonificarKgs(){
+        clearQualidades();
+        clearDefeitos();
+        clearNaturezas();
+        clearNerfsBuffs();
+        $('#emptyCla').prop('checked', true);
+        $('#emptyKg').prop('checked', true);
+        $('.atributo span').text('');
+        $('.atributo span').hide();
+        $('.cla').hide();
+
+        switch ($('input[name=hi]:checked', '#dados-basicos-ninja').val()) {
             case 'Kumo Nenkin':
                 $('#qualidadesKumoNenkin').show();
                 adicionarQualidade($('#kumoAracnideo'));
@@ -401,8 +430,6 @@ $('#emptyCla').prop('checked', true);
                 $('#qualidadesSoma').show();
                 adicionarQualidade($('#somaVel'));
                 $('#qualidadeVel').prop('disabled', true);
-                break;
-            default:
                 break;
         }
     });

@@ -244,7 +244,7 @@ mark {
   font-family: 'rubik';
 }
 
-#switchClaKg {
+.switch {
   display: none;
   border: none;
   background-color: #171717;
@@ -699,6 +699,10 @@ select.error, textarea.error, input.error {
 
   .titulo-akatsuki {
     font-size: 50px;
+  }
+
+  .claskg-buttons {
+    height:auto;
   }
 }
 
