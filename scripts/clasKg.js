@@ -425,6 +425,7 @@ $('#emptyHi').prop('checked', true);
                 pericia = ' +3 Shurikenjutsu';
                 adicionarQualidade($('#kugutsuAmbidestria'));
                 adicionarQualidade($('#kugutsuPericia'));
+                $('#defeitoCoordenacao').prop('disabled', true);
                 break;
             case 'Sōma no Kō':
                 $('#qualidadesSoma').show();

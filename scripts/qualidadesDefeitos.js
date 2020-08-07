@@ -190,6 +190,8 @@ function adicionarBonusDatabook(botão) {
     if (botão.text().includes('Visão Aguçada')) {
         removerDefeito($('#defeitoVisao'));
         $('#defeitoVisao').prop('disabled', true);
+        $('#defeitoCegueira3').prop('disabled', true);
+        $('#defeitoCegueira2').prop('disabled', true);
     }
    
     if (botão.text().includes('Prodígio')) {
@@ -222,6 +224,7 @@ function removerBonusDatabook(botão) {
     if (botão.text().includes('Habilidade em Taijutsu')) {
         if ($('#taijutsu-label span').text() == '+1') {
             $('#taijutsu-label span').hide();
+            $('#defeitoCoordenacao').prop('disabled', false);
             bonusTai--;
             quantBonus--;
         }
@@ -281,6 +284,8 @@ function removerBonusDatabook(botão) {
 
     if (botão.text().includes('Visão Aguçada')) {
         $('#defeitoVisao').prop('disabled', false);
+        $('#defeitoCegueira3').prop('disabled', false);
+        $('#defeitoCegueira2').prop('disabled', false);
     }
 
     if (botão.text().includes('Prodígio')) {
@@ -311,6 +316,7 @@ function adicionarNerfDatabook(botão) {
     if (botão.text().includes('Baixa Coordenação Motora')) {
         removerQualidade(qualidadeTaijutsu);
         qualidadeTaijutsu.hide();
+        $('#qualidadeShuriken').prop('disabled', true);
     }
 
     if (botão.text().includes('Reflexos Retardados')) {
@@ -319,6 +325,11 @@ function adicionarNerfDatabook(botão) {
     }
 
     if (botão.text().includes('Visão Prejudicada')) {
+        removerQualidade($('#qualidadeVisao'));
+        $('#qualidadeVisao').prop('disabled', true);
+    }
+
+    if (botão.text().includes('Cegueira')) {
         removerQualidade($('#qualidadeVisao'));
         $('#qualidadeVisao').prop('disabled', true);
     }
@@ -420,6 +431,13 @@ function adicionarNerfDatabook(botão) {
         removerQualidade($('#qualidadeProdigio'));
         $('#qualidadeProdigio').prop('disabled', true);
     }
+
+    if (botão.text().includes('Velhice')) {
+        $('#defeitoJovem').prop('disabled', true);
+        nerfVel++;
+        nerfForca++;
+        nerfInt++;
+    }
 }
 
 function removerNerfDatabook(botão) {
@@ -433,6 +451,7 @@ function removerNerfDatabook(botão) {
 
     if (botão.text().includes('Baixa Coordenação Motora')) {
             qualidadeTaijutsu.show();
+            $('#qualidadeShuriken').prop('disabled', false);
     }
 
     if (botão.text().includes('Reflexos Retardados')) {    
@@ -443,8 +462,16 @@ function removerNerfDatabook(botão) {
         $('#qualidadeVisao').prop('disabled', false);
     }
 
+    if (botão.text().includes('Cegueira')) {
+        $('#qualidadeVisao').prop('disabled', false);
+    }
+
     if (botão.text().includes('Audição Prejudicada')) {
         $('#qualidadeAudicao').prop('disabled', false);
+    }
+
+    if (botão.text().includes('Olfato Prejudicado')) {
+        $('#qualidadeOlfato').prop('disabled', false);
     }
 
     if (botão.text().includes('Gordo')) {
@@ -521,6 +548,13 @@ function removerNerfDatabook(botão) {
 
     if (botão.text().includes('Dificuldade em Aprender')) {
         $('#qualidadeProdigio').prop('disabled', false);
+    }
+
+    if (botão.text().includes('Velhice')) {
+        $('#defeitoJovem').prop('disabled', false);
+        nerfVel--;
+        nerfForca--;
+        nerfInt--;
     }
 }
 

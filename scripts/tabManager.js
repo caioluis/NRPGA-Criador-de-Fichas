@@ -48,7 +48,7 @@ $(document).ready(function() {
   $('.gotoStep3').on('click', function () {
     if ($('#dados-basicos-ninja').valid()) {
       if ($('#semCla').is(':checked') == false && ($('#emptyCla').is(":checked") && $('#emptyKg').is(":checked") && $('#emptyHi').is(":checked"))) {
-        alert('Escolha um Cl, Kekkei Genkai ou Hab. Inicial OU marque a opção "Sem Clã/Kekkei Genkai"');
+        alert('Escolha um Clã, Kekkei Genkai ou Hab. Inicial OU marque a opção "Sem Clã/Kekkei Genkai"');
       } else {
         $('.form-ficha').hide();
         $('.tipTabs').hide();
