@@ -5,11 +5,9 @@ var maxPontosDatabook = getDatabookMaxPoints();
 
 $('#pontos-label').html('Pontos a distribuir: ' + maxPontosDatabook);
 
-
 function databookAtualizarTexto() {
     $('#pontos-label').html('Pontos a distribuir: ' + getDatabookMaxPoints());
 }
-
 // Manipulação Databook
 
 $('.atributo :input').on('input', function() {

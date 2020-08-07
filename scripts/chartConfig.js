@@ -49,10 +49,10 @@ function atualizarGrafico() {
     nin = parseInt($('#ninjutsu').val()) + bonusNin;
     tai = parseInt($('#taijutsu').val()) + bonusTai;
     gen = parseInt($('#genjutsu').val()) + bonusGen;
-    int = parseInt($('#int').val()) + bonusInt;
-    forca = parseInt($('#forca').val()) + bonusForca;
-    vel = parseInt($('#vel').val()) + bonusVel;
-    sta = parseInt($('#sta').val()) + bonusSta;
+    int = parseInt($('#int').val()) + bonusInt - nerfInt;
+    forca = parseInt($('#forca').val()) + bonusForca - nerfForca;
+    vel = parseInt($('#vel').val()) + bonusVel - nerfVel;
+    sta = parseInt($('#sta').val()) + bonusSta - nerfSta;
     selos = parseInt($('#selos').val());
     
     myRadarChart.data.datasets[0].data.splice(0, 8, nin, tai, gen, int, forca, vel, sta, selos);

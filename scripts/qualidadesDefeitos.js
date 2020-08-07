@@ -434,6 +434,27 @@ function adicionarNerfDatabook(botão) {
 
     if (botão.text().includes('Velhice')) {
         $('#defeitoJovem').prop('disabled', true);
+        $('#vel-label span').show();
+        if ($('#vel-label span').text() == '-1') {
+            $('#vel-label span').text('-2');
+        } else {
+            $('#vel-label span').text('-1');
+        }
+
+        $('#forca-label span').show();
+        if ($('#forca-label span').text() == '-1') {
+            $('#forca-label span').text('-2');
+        } else {
+            $('#forca-label span').text('-1');
+        }
+
+        $('#int-label span').show();
+        if ($('#int-label span').text() == '-1') {
+            $('#int-label span').text('-2');
+        } else {
+            $('#int-label span').text('-1');
+        }
+
         nerfVel++;
         nerfForca++;
         nerfInt++;
@@ -552,6 +573,23 @@ function removerNerfDatabook(botão) {
 
     if (botão.text().includes('Velhice')) {
         $('#defeitoJovem').prop('disabled', false);
+        if ($('#vel-label span').text() == '-2') {
+            $('#vel-label span').text('-1');
+        } else {
+            $('#vel-label span').prop('disabled', false);
+        }
+
+        if ($('#forca-label span').text() == '-2') {
+            $('#forca-label span').text('-1');
+        } else {
+            $('#forca-label span').prop('disabled', false);
+        }
+
+        if ($('#int-label span').text() == '-2') {
+            $('#int-label span').text('-1');
+        } else {
+            $('#int-label span').prop('disabled', false);
+        }
         nerfVel--;
         nerfForca--;
         nerfInt--;
