@@ -73,7 +73,7 @@ $('.removerArma').click(function removerArma(){
     if (quantidadeArma.val() == 0) {
         alert('Tá doidão, nem tem essa arma aqui')
     } else {
-        index = armasEscolhidas.findIndex(a => a.includes(textoArma));
+        index = armasEscolhidas.findIndex(a => a.includes(`+${quantidadeArma.val()} ${textoArma} [${Math.ceil(parseFloat(quantidadeArma.val()) * pesoArma)}]`));
         if (quantidadeArma.val() > 1) {
             quantidadeArma.val(parseFloat(quantidadeArma.val()) - 1);
             armasEscolhidas[index] = `+${quantidadeArma.val()} ${textoArma} [${Math.ceil(parseFloat(quantidadeArma.val()) * pesoArma)}]`;  
