@@ -422,7 +422,6 @@ $('#emptyHi').prop('checked', true);
                 break;
             case 'Kugutsu':
                 $('#qualidadesKugutsu').show();
-                pericia = ' +3 Shurikenjutsu';
                 adicionarQualidade($('#kugutsuAmbidestria'));
                 adicionarQualidade($('#kugutsuPericia'));
                 $('#defeitoCoordenacao').prop('disabled', true);
