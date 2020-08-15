@@ -254,6 +254,11 @@ mark {
   font-family: 'rubik';
   outline: none;
   float: right;
+  cursor: pointer;
+}
+
+.switch:hover {
+  background-color: #111111;
 }
 
 
