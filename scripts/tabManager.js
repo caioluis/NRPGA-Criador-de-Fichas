@@ -173,7 +173,6 @@ for (i = 0; i < sanfona.length; i++) {
       aba.style.maxHeight = null;
     } else {
       aba.style.maxHeight = "none";
-      aba.style.marginLeft = "10px";
     } 
   });
 }
