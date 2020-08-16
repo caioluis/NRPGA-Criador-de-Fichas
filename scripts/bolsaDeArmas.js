@@ -38,26 +38,26 @@ $('.adicionarArma').click(function adicionarArma() {
     quantidadeArma = $(this).parent().prev('.item').find('.quantidade');
 
     if (pesoArma > espacoBolsa) {
-        if(pesoArma * parseFloat(quantidadeArma.val()) < Math.ceil(parseFloat(quantidadeArma.val()) * pesoArma)){
+            alert('Escolha uma arma mais leve OU retire uma arma para ter mais espaço na bolsa.');
+    } else {
+        if(pesoArma < 1){
             quantidadeArma.val(parseFloat(quantidadeArma.val()) + 1);
             index = armasEscolhidas.findIndex(a => a.includes(textoArma));
             if(index == -1) {
                 armasEscolhidas.push(`+${quantidadeArma.val()} ${textoArma} - ${(parseFloat(quantidadeArma.val()) * pesoArma).toFixed(2).replace(/\.00$/, '')} de [${Math.ceil(parseFloat(quantidadeArma.val()) * pesoArma)}]`);
             } else {
                 armasEscolhidas[index] = `+${quantidadeArma.val()} ${textoArma} - ${(parseFloat(quantidadeArma.val()) * pesoArma).toFixed(2).replace(/\.00$/, '')} de [${Math.ceil(parseFloat(quantidadeArma.val()) * pesoArma)}]`;
-            }  
+            }
         } else {
-            alert('Escolha uma arma mais leve OU retire uma arma para ter mais espaço na bolsa.');
-        }
-    } else {
-        quantidadeArma.val(parseFloat(quantidadeArma.val()) + 1);
-        index = armasEscolhidas.findIndex(a => a.includes(`+${quantidadeArma.val()-1} ${textoArma} [${Math.ceil(parseFloat(quantidadeArma.val()-1) * pesoArma)}]`));
-        if(index == -1) {
-            armasEscolhidas.push(`+${quantidadeArma.val()} ${textoArma} [${Math.ceil(parseFloat(quantidadeArma.val()) * pesoArma)}]`);
-        } else {
-            armasEscolhidas[index] = `+${quantidadeArma.val()} ${textoArma} [${Math.ceil(parseFloat(quantidadeArma.val()) * pesoArma)}]`;
-        }
-    }
+                quantidadeArma.val(parseFloat(quantidadeArma.val()) + 1);
+                index = armasEscolhidas.findIndex(a => a.includes(`+${quantidadeArma.val()-1} ${textoArma} [${Math.ceil(parseFloat(quantidadeArma.val()-1) * pesoArma)}]`));
+                if(index == -1) {
+                    armasEscolhidas.push(`+${quantidadeArma.val()} ${textoArma} [${Math.ceil(parseFloat(quantidadeArma.val()) * pesoArma)}]`);
+                } else {
+                    armasEscolhidas[index] = `+${quantidadeArma.val()} ${textoArma} [${Math.ceil(parseFloat(quantidadeArma.val()) * pesoArma)}]`;
+                }
+            }   
+        }   
 
     atualizarBolsa();
     atualizarCarrinhoArmas();
@@ -73,17 +73,28 @@ $('.removerArma').click(function removerArma(){
     if (quantidadeArma.val() == 0) {
         alert('Tá doidão, nem tem essa arma aqui')
     } else {
-        index = armasEscolhidas.findIndex(a => a.includes(`+${quantidadeArma.val()} ${textoArma} [${Math.ceil(parseFloat(quantidadeArma.val()) * pesoArma)}]`));
-        if (quantidadeArma.val() > 1) {
-            quantidadeArma.val(parseFloat(quantidadeArma.val()) - 1);
-            armasEscolhidas[index] = `+${quantidadeArma.val()} ${textoArma} [${Math.ceil(parseFloat(quantidadeArma.val()) * pesoArma)}]`;  
+        if(pesoArma < 1) {
+            index = armasEscolhidas.findIndex(a => a.includes(textoArma));
+            if (quantidadeArma.val() > 1) {
+                quantidadeArma.val(parseFloat(quantidadeArma.val()) - 1);
+                armasEscolhidas[index] = `+${quantidadeArma.val()} ${textoArma} - ${(parseFloat(quantidadeArma.val()) * pesoArma).toFixed(2).replace(/\.00$/, '')} de [${Math.ceil(parseFloat(quantidadeArma.val()) * pesoArma)}]`;
+            } else {
+                armasEscolhidas.splice(index, 1);
+                quantidadeArma.val(parseFloat(quantidadeArma.val()) - 1);
+            } 
         } else {
-            armasEscolhidas.splice(index, 1);
-            quantidadeArma.val(parseFloat(quantidadeArma.val()) - 1);
-        }
+            index = armasEscolhidas.findIndex(a => a.includes(`+${quantidadeArma.val()} ${textoArma} [${Math.ceil(parseFloat(quantidadeArma.val()) * pesoArma)}]`));
+            if (quantidadeArma.val() > 1) {
+                quantidadeArma.val(parseFloat(quantidadeArma.val()) - 1);
+                armasEscolhidas[index] = `+${quantidadeArma.val()} ${textoArma} [${Math.ceil(parseFloat(quantidadeArma.val()) * pesoArma)}]`;  
+            } else {
+                armasEscolhidas.splice(index, 1);
+                quantidadeArma.val(parseFloat(quantidadeArma.val()) - 1);
+            }
         
+        }
     }
-    
+
     atualizarBolsa();
     atualizarCarrinhoArmas();
 });
