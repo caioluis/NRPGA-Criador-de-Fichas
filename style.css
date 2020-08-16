@@ -275,6 +275,7 @@ mark {
   overflow: hidden;
   transition: height 0.2s ease-out;
   max-height: 0;
+  margin-left: 10px;
 }
 
 .qualidades-defeitos {
@@ -288,7 +289,7 @@ mark {
   background-color: grey;
   font-size: 0.9em;
   padding: 9px;
-  border-radius: 5px;
+  border-radius: 3px;
   border-style: none;
   color: #f8f8f8;
   outline: none;
@@ -343,6 +344,33 @@ mark {
 .sanfona-ativa:after {
   content: "\2212";
 }
+
+blockquote {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background: #ffffff;
+  font-size: 12px;
+  overflow: hidden;
+  padding: 20px;
+  font-family: arial;
+  margin: 2px;
+  width: 91%;
+  height: 95%;
+}
+
+#sextaDica .sanfona {
+  margin: 0;
+  width:65%;
+}
+
+#sextaDica .secao {
+  display: flex;
+  justify-content: center;
+  width: 65%;
+  margin-left: 0;
+  background-color: #ccc;
+}
+
 
 /* databook */
 #atributos {
