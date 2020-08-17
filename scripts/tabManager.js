@@ -121,6 +121,8 @@ $(document).ready(function() {
     if (getBolsaMaxSlots() > 0 && firstTime == true) {
       alert('Você pode ter mais armas em sua bolsa. Tem certeza que deseja continuar?')
       firstTime = false;
+    } else if ($('#afinidade-elemental').val() == ''){
+      alert('Escolha uma afinidade elemental');
     } else {
       $('#formContainer').hide();
       $('#infos-importantes').hide();
