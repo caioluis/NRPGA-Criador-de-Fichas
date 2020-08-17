@@ -414,6 +414,8 @@ function adicionarNerfDatabook(botão) {
         $('#ninjutsu-label span').text('0');
         $('#ninjutsu').val(0);
         $('#ninjutsu').prop('disabled', true);
+        $('#afinidade-elemental').prop('disabled', true);
+        $('#afinidade-elemental').val('--').
         removerQualidade($(qualidadeNinjutsu));
         $(qualidadeNinjutsu).hide();
     }
@@ -458,6 +460,13 @@ function adicionarNerfDatabook(botão) {
         nerfVel++;
         nerfForca++;
         nerfInt++;
+    }
+
+    if (botão.text().includes('Inabilidade Elemental')) {
+        $('#afinidade-elemental').prop('disabled', true);
+        $('#afinidade-elemental').val('--').
+        removerQualidade($('#qualidadeElemental'));
+        $('#qualidadeElemental').prop('disabled', true);
     }
 }
 
@@ -555,6 +564,8 @@ function removerNerfDatabook(botão) {
         if ($('#ninjutsu-label span').text() == '0') {
             $('#ninjutsu-label span').hide();
             $('#ninjutsu').prop('disabled', false);
+            $('#afinidade-elemental').prop('disabled', false);
+            $('#afinidade-elemental').val('').
             $(qualidadeNinjutsu).show();
         }
     }
@@ -593,6 +604,11 @@ function removerNerfDatabook(botão) {
         nerfVel--;
         nerfForca--;
         nerfInt--;
+    }
+
+    if (botão.text().includes('Inabilidade Elemental')) {
+        $('#afinidade-elemental').prop('disabled', false);
+        $('#afinidade-elemental').val('');
     }
 }
 
