@@ -201,6 +201,12 @@ mark {
   height: 0;
 }
 
+.vilas-buttons {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 [type=radio] { 
   position: absolute;
   opacity: 0;
@@ -231,17 +237,102 @@ mark {
     box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
 }
 
-.logo-cla {
-  position: flex;
+.logo-cla, .logo-vila {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
 .descricao-imagem {
   color: #fff;
   font-size: 16px;
-  margin-top: -10px;
   padding: 0;
   font-family: 'rubik';
+}
+
+.logo-vila img {
+  width: 25px;
+  height: 25px;
+  background: none!important;
+}
+
+.logo-vila #konoha:checked + img, #konoha:hover + img {
+  background-color:#ffffff;
+  border-width: 1px;
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 168, 73, 0.8);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 168, 73, 0.8);
+    box-shadow: 0px 0px 15px rgba(0, 168, 73, 0.8);
+}
+
+.logo-vila #suna:checked + img, #suna:hover + img {
+  background-color:#ffffff;
+  border-width: 1px;
+  -webkit-box-shadow: 0px 0px 15px rgb(150, 104, 78, 0.8);
+    -moz-box-shadow: 0px 0px 15px rgb(150, 104, 78, 0.8);
+    box-shadow: 0px 0px 15px rgb(150, 104, 78, 0.8);
+}
+
+.logo-vila #iwa:checked + img, #iwa:hover + img {
+  background-color:#ffffff;
+  border-width: 1px;
+  -webkit-box-shadow: 0px 0px 15px rgb(179, 25, 56, 0.8);
+    -moz-box-shadow: 0px 0px 15px rgb(179, 25, 56, 0.8);
+    box-shadow: 0px 0px 15px rgb(179, 25, 56, 0.8);
+}
+
+.logo-vila #kumo:checked + img, #kumo:hover + img {
+  background-color:#ffffff;
+  border-width: 1px;
+  -webkit-box-shadow: 0px 0px 15px rgb(194, 163, 10, 0.8);
+    -moz-box-shadow: 0px 0px 15px rgb(194, 163, 10, 0.8);
+    box-shadow: 0px 0px 15px rgb(194, 163, 10, 0.8);
+}
+
+.logo-vila #uzu:checked + img, #uzu:hover + img {
+  background-color:#ffffff;
+  border-width: 1px;
+  -webkit-box-shadow: 0px 0px 15px rgb(105, 182, 201, 0.8);
+    -moz-box-shadow: 0px 0px 15px rgb(105, 182, 201, 0.8);
+    box-shadow: 0px 0px 15px rgb(105, 182, 201, 0.8);
+}
+
+.logo-vila #ame:checked + img, #ame:hover + img {
+  background-color:#ffffff;
+  border-width: 1px;
+  -webkit-box-shadow: 0px 0px 15px rgb(126, 103, 183, 0.8);
+    -moz-box-shadow: 0px 0px 15px rgb(126, 103, 183, 0.8);
+    box-shadow: 0px 0px 15px rgb(126, 103, 183, 0.8);
+}
+
+.logo-vila #oto:checked + img, #oto:hover + img {
+  background-color:#ffffff;
+  border-width: 1px;
+  -webkit-box-shadow: 0px 0px 15px rgb(142, 96, 138, 0.8);
+    -moz-box-shadow: 0px 0px 15px rgb(142, 96, 138, 0.8);
+    box-shadow: 0px 0px 15px rgb(142, 96, 138, 0.8);
+}
+
+
+
+.logo-vila .descricao-imagem {
+  opacity: 0;
+  visibility: visible;
+  -webkit-transform:translateY(-200%);
+    -moz-transform:translateY(-200%);
+    transform:translateY(-100%);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.logo-vila img:hover + .descricao-imagem {
+  transition: all 0.2s;
+  opacity: 1;
+    -webkit-transform:translateY(0px);
+    -moz-transform:translateY(0px);
+    transform:translateY(0px) -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .switch {
