@@ -6,12 +6,12 @@ var limiteNin = 0 ;
 function guardarInfo() {
 nomePersonagem = $('#nome').val();
 sobrenome = $('#sobrenome').val();
-vila = $('#vilarejo').val();
+vila = $('input[name=vila]:checked', '#dados-basicos-ninja').val();
 genero = $('#genero').val();
 sex = $('#sexualidade').val();
 arquetipo = $('#arquetipo-dropdown').val();
-cla = $('input[name=cla]:checked', '#dados-basicos-ninja').val()
-kg = $('input[name=kg]:checked', '#dados-basicos-ninja').val()
+cla = $('input[name=cla]:checked', '#dados-basicos-ninja').val();
+kg = $('input[name=kg]:checked', '#dados-basicos-ninja').val();
 idade = $('#idade').val();
 aniversario = $('#aniversario-dropdown').val();
 gostos = $('#gostos').val();
