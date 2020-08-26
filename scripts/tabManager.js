@@ -15,8 +15,6 @@ $(document).ready(function() {
     }
   });
   
-  $('#dados-basicos-ninja').validate();
-  
   $('#descricao-psicologica').validate();
 
   $('.gotoStep1').on('click', function () {
@@ -49,6 +47,8 @@ $(document).ready(function() {
     if ($('#dados-basicos-ninja').valid()) {
       if ($('#semCla').is(':checked') == false && ($('#emptyCla').is(":checked") && $('#emptyKg').is(":checked") && $('#emptyHi').is(":checked"))) {
         alert('Escolha um Clã, Kekkei Genkai ou Hab. Inicial OU marque a opção "Sem Clã/Kekkei Genkai"');
+      } else if ($('input[name=vila]:checked', '#dados-basicos-ninja').val() == undefined) {
+        alert('Escolha uma vila');
       } else {
         $('.form-ficha').hide();
         $('.tipTabs').hide();
