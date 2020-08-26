@@ -237,6 +237,10 @@ $('#emptyHi').prop('checked', true);
                 $('#senjuGRC').addClass('qualidade-escolhida');
                 $('#qualidadeGRC').prop('disabled', true);
                 break;
+            case "Shiin":
+                primeiraHabilidade = 'Oto';
+                $('#kg-elemental').val('Ototon');
+                break;
             case "Shimura":
                 $('#qualidadesShimura').show();
                 $('#periciaShimura').addClass('qualidade-escolhida');
@@ -357,7 +361,7 @@ $('#emptyHi').prop('checked', true);
                 $('#qualidadesMeiton').show();
                 adicionarQualidade($('#meitonComedor'));
                 $('#qualidadeComedor').prop('disabled', true);
-                primeiraHabilidade = 'Habilidade Secundária: Chakra Kyuin';
+                primeiraHabilidade = 'Chakra Kyuin';
                 break;
             case 'Ranton':
                 $('#qualidadesRanton').show();
