@@ -488,39 +488,39 @@ $('#emptyHi').prop('checked', true);
         switch ($('input[name=kg]:checked', '#dados-basicos-ninja').val()) {
             case 'Bakuton':
                 adicionarQualidade($('#bakutonPericia'));
-                pericia = ' +3 Jutsus de Bakuton';
+                pericia = ', +3 Jutsus de Bakuton';
                 break;
             case 'Futton':
                 adicionarQualidade($('#futtonPericia'));
-                pericia = ' +3 Jutsus de Futton';
+                pericia = ', +3 Jutsus de Futton';
                 break;
             case 'Jinton':
                 adicionarQualidade($('#jintonPericia'));
-                pericia = ' +3 Jutsus de Jinton';
+                pericia = ', +3 Jutsus de Jinton';
                 break;
             case 'Jiton':
                 adicionarQualidade($('#jitonPericia'));
-                pericia = ' +3 Jutsus de Jiton';
+                pericia = ', +3 Jutsus de Jiton';
                 break;
             case 'Kōton':
                 adicionarQualidade($('#kotonPericia'));
-                pericia = ' +3 Jutsus de Kōton';
+                pericia = ', +3 Jutsus de Kōton';
                 break;
             case 'Ranton':
                 adicionarQualidade($('#rantonPericia'));
-                pericia = ' +3 Jutsus de Ranton';
+                pericia = ', +3 Jutsus de Ranton';
                 break;
             case 'Shakuton':
                 adicionarQualidade($('#shakutonPericia'));
-                pericia = ' +3 Jutsus de Shakuton';
+                pericia = ', +3 Jutsus de Shakuton';
                 break;
             case 'Shōton':
                 adicionarQualidade($('#shotonPericia'));
-                pericia = ' +3 Jutsus de Shōton';
+                pericia = ', +3 Jutsus de Shōton';
                 break;
             case 'Yōton':
                 adicionarQualidade($('#yotonPericia'));
-                pericia = ' +3 Jutsus de Yōton';
+                pericia = ', +3 Jutsus de Yōton';
                 break;
             default:
                 break;
