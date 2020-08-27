@@ -21,32 +21,32 @@ function atualizarLimites() {
     pontosSelos = parseInt($('#selos').val());
     pontosInt = parseInt($('#int').val()) + bonusInt;
 
-    limiteNin = ` +${pontosNin + (bonusNin*2)} Ninjutsus`
-    limiteTai = ` +${pontosTai + (bonusTai*2)} Taijutsus`
-    limiteGen = ` +${pontosGen + (bonusGen*2)} Genjutsus`
+    limiteNin = `, +${pontosNin + (bonusNin*2)} Ninjutsus`
+    limiteTai = `, +${pontosTai + (bonusTai*2)} Taijutsus`
+    limiteGen = `, +${pontosGen + (bonusGen*2)} Genjutsus`
     if (pontosNin == 6) {
-        limiteNin += ' +1 Ninjutsu de todos os ranks'
+        limiteNin += ', +1 Ninjutsu de todos os ranks'
     }
     if (pontosNin == 0) {
         limiteNin = '';
     }
 
     if (pontosTai == 6) {
-        limiteTai += ' +1 Taijutsu de todos os ranks'
+        limiteTai += ', +1 Taijutsu de todos os ranks'
     }
     if (pontosTai == 0) {
         limiteTai = '';
     }
 
     if (pontosGen == 6) {
-        limiteGen += ' +1 Genjutsu de todos os ranks'
+        limiteGen += ', +1 Genjutsu de todos os ranks'
     }
     if (pontosGen == 0) {
         limiteGen = '';
     }
 
     if (contadorJutsusGerais != 0){
-        jutsusGerais = ` +${contadorJutsusGerais} Jutsus Gerais`;
+        jutsusGerais = `, +${contadorJutsusGerais} Jutsus Gerais`;
     }
 
     if (pontosNin > 2) {
@@ -62,7 +62,7 @@ function atualizarLimites() {
     if (pontosNin > 4 && $('#qualidadeElemental').hasClass('qualidade-escolhida')) {
         $('#qualidadeMestre').prop('disabled', false);
     } else {
-        $('#qualidadeElemental').prop('disabled', true);
+        $('#qualidadeMestre').prop('disabled', true);
         removerQualidade($('#qualidadeElemental'));
     }
 
