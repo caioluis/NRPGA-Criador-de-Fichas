@@ -112,67 +112,49 @@ function getDefeitosMinPoints() {
 }
 
 function adicionarBonusDatabook(botão) {
-    if (quantBonus == 2 && botão.hasClass('temBonus')) {
-        alert("Você já atingiu o máximo de pontos adquiríveis através das qualidades. Esta qualidade será adicionada, mas não dará pontos extra.")
-    } else {
-        if (botão.text().includes('Habilidade em Ninjutsu')) {
-            $('#ninjutsu-label span').show();
-            $('#defeitoNin').prop('disabled', true);
-            removerDefeito($('#defeitoNin'));
-            $('#ninjutsu-label span').text('+1');
-            bonusNin++;
-            quantBonus++;
-        }
-
-        if (botão.text().includes('Habilidade em Taijutsu')) {
-            $('#taijutsu-label span').show();
-            $('#taijutsu-label span').text('+1');
-            removerDefeito($('#defeitoCoordenacao'));
-            $('#defeitoCoordenacao').prop('disabled', true);
-            bonusTai++;
-            quantBonus++;
-        }
-
-        if (botão.text().includes('Habilidade em Genjutsu')) {
-            $('#genjutsu-label span').show();
-            $('#genjutsu-label span').text('+1');
-            removerDefeito($('#defeitoGen'));
-            $('#defeitoGen').prop('disabled', true);
-            bonusGen++;
-            quantBonus++;
-        }
-
-        if (botão.text().includes('Força Aguçada')) {
-            $('#forca-label span').show();
-            $('#forca-label span').text('+1')
-            removerDefeito($('#defeitoFraqueza'));
-            $('#defeitoFraqueza').prop('disabled', true);
-            bonusForca++;
-            quantBonus++;
-        }
-
-        if (botão.text().includes('Inteligência Aguçada')) {
-            $('#int-label span').show();
-            $('#int-label span').text('+1')
-            bonusInt++;
-            quantBonus++;
-        }
-
-        if (botão.text().includes('Agilidade Aguçada')) {
-            $('#vel-label span').show();
-            $('#vel-label span').text('+1')
-            removerDefeito($('#defeitoReflexos'));
-            $('#defeitoReflexos').prop('disabled', true);
-            bonusVel++;
-            quantBonus++;
-        }
-
-        if (botão.text().includes('Grande Durabilidade')) {
-            $('#sta-label span').show();
-            $('#sta-label span').text('+1')
-            bonusSta++;
-            quantBonus++;
-        }
+    if (botão.text().includes('Habilidade em Ninjutsu')) {
+        $('#ninjutsu-label').addClass('bonusDisponivel');
+        $('#defeitoNin').prop('disabled', true);
+        removerDefeito($('#defeitoNin'));
+        $('#ninjutsu-label span').text('+1');
+    }
+    
+    if (botão.text().includes('Habilidade em Taijutsu')) {
+        $('#taijutsu-label').addClass('bonusDisponivel');
+        removerDefeito($('#defeitoCoordenacao'));
+        $('#defeitoCoordenacao').prop('disabled', true);
+        $('#taijutsu-label span').text('+1');
+    }
+    
+    if (botão.text().includes('Habilidade em Genjutsu')) {
+        $('#genjutsu-label').addClass('bonusDisponivel');
+        $('#genjutsu-label span').text('+1');
+        removerDefeito($('#defeitoGen'));
+        $('#defeitoGen').prop('disabled', true);
+    }
+    
+    if (botão.text().includes('Força Aguçada')) {
+        $('#forca-label').addClass('bonusDisponivel');
+        $('#forca-label span').text('+1')
+        removerDefeito($('#defeitoFraqueza'));
+        $('#defeitoFraqueza').prop('disabled', true);
+    }
+    
+    if (botão.text().includes('Inteligência Aguçada')) {
+        $('#int-label').addClass('bonusDisponivel');
+        $('#int-label span').text('+1')
+    }
+    
+    if (botão.text().includes('Agilidade Aguçada')) {
+        $('#vel-label').addClass('bonusDisponivel');
+        $('#vel-label span').text('+1')
+        removerDefeito($('#defeitoReflexos'));
+        $('#defeitoReflexos').prop('disabled', true);
+    }
+    
+    if (botão.text().includes('Grande Durabilidade')) {
+        $('#sta-label').addClass('bonusDisponivel');
+        $('#sta-label span').text('+1')
     }
 
     if (botão.text().includes('Olfato Aguçado')) {
@@ -214,6 +196,7 @@ function adicionarBonusDatabook(botão) {
 function removerBonusDatabook(botão) {
     if (botão.text().includes('Habilidade em Ninjutsu')) {
         if ($('#ninjutsu-label span').text() == '+1') {
+            $('#ninjutsu-label').removeClass('bonusDisponivel');
             $('#defeitoNin').prop('disabled', false);
             $('#ninjutsu-label span').hide();
             bonusNin--;
@@ -223,6 +206,7 @@ function removerBonusDatabook(botão) {
 
     if (botão.text().includes('Habilidade em Taijutsu')) {
         if ($('#taijutsu-label span').text() == '+1') {
+            $('#taijutsu-label').removeClass('bonusDisponivel');
             $('#taijutsu-label span').hide();
             $('#defeitoCoordenacao').prop('disabled', false);
             bonusTai--;
@@ -232,6 +216,7 @@ function removerBonusDatabook(botão) {
 
     if (botão.text().includes('Habilidade em Genjutsu')) {
         if ($('#genjutsu-label span').text() == '+1') {
+            $('#genjutsu-label').removeClass('bonusDisponivel');
             $('#defeitoGen').show();
             $('#genjutsu-label span').prop('disabled', false);
             bonusGen--;
@@ -241,6 +226,7 @@ function removerBonusDatabook(botão) {
 
     if (botão.text().includes('Força Aguçada')) {
         if ($('#forca-label span').text() == '+1' || $('#forca-label span').text() == '0') {
+            $('#forca-label').removeClass('bonusDisponivel');
             $('#forca-label span').hide();
             $('#defeitoFraqueza').prop('disabled', false);
             bonusForca--;
@@ -250,6 +236,7 @@ function removerBonusDatabook(botão) {
 
     if (botão.text().includes('Inteligência Aguçada')) {
         if ($('#int-label span').text() == '+1') {
+            $('#int-label').removeClass('bonusDisponivel');
             $('#int-label span').hide();
             bonusInt--;
             quantBonus--;
@@ -258,6 +245,7 @@ function removerBonusDatabook(botão) {
 
     if (botão.text().includes('Agilidade Aguçada')) {
         if ($('#vel-label span').text() == '+1') {
+            $('#vel-label').removeClass('bonusDisponivel');
             $('#vel-label span').hide();
             $('#defeitoReflexos').prop('disabled', false);
             bonusVel--;
@@ -267,6 +255,7 @@ function removerBonusDatabook(botão) {
 
     if (botão.text().includes('Grande Durabilidade')) {
         if ($('#sta-label span').text() == '+1') {
+            $('#sta-label').removeClass('bonusDisponivel');
             $('#sta-label span').hide();
             bonusSta--;
             quantBonus--; 
@@ -611,6 +600,107 @@ function removerNerfDatabook(botão) {
         $('#afinidade-elemental').val('');
     }
 }
+
+$('.atributo label').click(function(){
+    var atributoEscolhido = $(this);
+    if (atributoEscolhido.hasClass('bonusDisponivel')) {
+        if(!atributoEscolhido.hasClass('bonusEscolhido')) {
+            if (quantBonus == 2) {
+                alert('Só é possível ter no máximo 2 pontos vindos de qualidades. Você pode retirar um e escolher esse, se desejar.')
+            } else {
+                atributoEscolhido.addClass('bonusEscolhido')
+
+                if (atributoEscolhido.text().includes('Ninjutsu')) {
+                    bonusNin++;
+                    quantBonus++;
+                    $('#ninjutsu-label span').show();
+                }
+        
+                if (atributoEscolhido.text().includes('Taijutsu')) {
+                    bonusTai++;
+                    quantBonus++;
+                    $('#taijutsu-label span').show();
+                }
+
+                if (atributoEscolhido.text().includes('Genjutsu')) {
+                    bonusGen++;
+                    quantBonus++;
+                    $('#genjutsu-label span').show();
+                }
+        
+                if (atributoEscolhido.text().includes('Força')) {
+                    bonusForca++;
+                    quantBonus++;
+                    $('#forca-label span').show();
+                }
+        
+                if (atributoEscolhido.text().includes('Inteligência')) {
+                    bonusInt++;
+                    quantBonus++;
+                    $('#int-label span').show();
+                }
+        
+                if (atributoEscolhido.text().includes('Velocidade')) {
+                    bonusVel++;
+                    quantBonus++;
+                    $('#vel-label span').show();
+                }
+        
+                if (atributoEscolhido.text().includes('Stamina')) {
+                    bonusSta++;
+                    quantBonus++;
+                    $('#sta-label span').show();
+                }
+            }
+        } else {
+                atributoEscolhido.removeClass('bonusEscolhido')
+                
+                if (atributoEscolhido.text().includes('Ninjutsu')) {
+                    bonusNin--;
+                    quantBonus--;
+                    $('#ninjutsu-label span').hide();
+                }
+        
+                if (atributoEscolhido.text().includes('Taijutsu')) {
+                    bonusTai--;
+                    quantBonus--;
+                    $('#taijutsu-label span').hide();
+                }
+
+                if (atributoEscolhido.text().includes('Genjutsu')) {
+                    bonusGen--;
+                    quantBonus--;
+                    $('#genjutsu-label span').hide();
+                }
+        
+                if (atributoEscolhido.text().includes('Força')) {
+                    bonusForca--;
+                    quantBonus--;
+                    $('#forca-label span').hide();
+                }
+        
+                if (atributoEscolhido.text().includes('Inteligência')) {
+                    bonusInt--;
+                    quantBonus--;
+                    $('#int-label span').hide();
+                }
+        
+                if (atributoEscolhido.text().includes('Velocidade')) {
+                    bonusVel--;
+                    quantBonus--;
+                    $('#vel-label span').hide();
+                }
+        
+                if (atributoEscolhido.text().includes('Stamina')) {
+                    bonusSta--;
+                    quantBonus--;
+                    $('#sta-label span').hide();
+                }
+        }
+    }
+    atualizarLimites();
+    atualizarGrafico();
+});
 
 $('#qualidadeElemental').prop('disabled', true);
 $('#qualidadeMestre').prop('disabled', true);
