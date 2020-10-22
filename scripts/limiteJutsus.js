@@ -9,10 +9,10 @@ $('#segunda-natureza').parent().hide();
 $('#terceira-natureza').parent().hide();
 $('#kg-elemental').parent().hide();
 
-$('#primeira-natureza').val('--');
-$('#segunda-natureza').val('--');
-$('#terceira-natureza').val('--');
-$('#kg-elemental').val('--');
+$('#primeira-natureza').val('');
+$('#segunda-natureza').val('');
+$('#terceira-natureza').val('');
+$('#kg-elemental').val('');
 
 function atualizarLimites() {
     pontosNin = parseInt($('#ninjutsu').val()) + bonusNin;
@@ -21,27 +21,27 @@ function atualizarLimites() {
     pontosSelos = parseInt($('#selos').val());
     pontosInt = parseInt($('#int').val()) + bonusInt;
 
-    limiteNin = `, +${pontosNin + (bonusNin*2)} Ninjutsus`
-    limiteTai = `, +${pontosTai + (bonusTai*2)} Taijutsus`
-    limiteGen = `, +${pontosGen + (bonusGen*2)} Genjutsus`
+    limiteNin = `, +${pontosNin + habilidadeNin} Ninjutsus`
+    limiteTai = `, +${pontosTai + habilidadeTai} Taijutsus`
+    limiteGen = `, +${pontosGen + habilidadeGen} Genjutsus`
     if (pontosNin == 6) {
         limiteNin += ', +1 Ninjutsu de todos os ranks'
     }
-    if (pontosNin == 0) {
+    if (pontosNin == 0 && habilidadeNin == 0) {
         limiteNin = '';
     }
 
     if (pontosTai == 6) {
         limiteTai += ', +1 Taijutsu de todos os ranks'
     }
-    if (pontosTai == 0) {
+    if (pontosTai == 0 && habilidadeTai == 0) {
         limiteTai = '';
-    }
+    }  
 
     if (pontosGen == 6) {
         limiteGen += ', +1 Genjutsu de todos os ranks'
     }
-    if (pontosGen == 0) {
+    if (pontosGen == 0 && habilidadeGen == 0) {
         limiteGen = '';
     }
 
@@ -66,12 +66,6 @@ function atualizarLimites() {
         removerQualidade($('#qualidadeElemental'));
     }
 
-    if (pontosNin == 0) {
-        $('#primeira-natureza').val('--');
-    } else {
-        $('#primeira-natureza').val($('#afinidade-elemental').val());
-    }
-
     if (pontosNin > 2 && pontosSelos > 0 && pontosInt > 2 && $('#qualidadeGCC').hasClass('qualidade-escolhida')){
         $('#qualidadeFuin').prop('disabled', false);
     } else {
@@ -87,21 +81,59 @@ function atualizarLimites() {
     }
 
     $('#limite-jutsus').val('5 Jutsus & +1 Rank S' + jutsusGerais + limiteNin + limiteTai + limiteGen + menteImplacavel + pericia);
+    atualizarElementos();
 };
 
-$('#afinidade-elemental').on('keyup', function() {
-    if(pontosNin == 0) {
-        $('#primeira-natureza').val('--');
-    } else {
-        $('#primeira-natureza').val($('#afinidade-elemental').val());
-        $('#primeira-natureza').val(($('#primeira-natureza').val()).replace(/e Kōton/g, ''));
-    }
-});
+function atualizarElementos(){
+    $('#primeira-natureza').val('');
+    $('#segunda-natureza').val('');
+    $('#terceira-natureza').val('');
+    $('#primeira-natureza').prop('disabled',true);
+    $('#segunda-natureza').prop('disabled',true);
+    $('#terceira-natureza').prop('disabled',true);
 
-$('#afinidade-elemental').on('keypress', function (e) {
-    var e = window.event || e;
-    var key = e.keyCode;
-     if (key == 32) {
-      e.preventDefault();
-     }
+    if ($('#kg-elemental').val() != '') {
+        if ($('#kg-elemental').val() == 'Jinton') {
+            if (pontosNin > 0) {
+                $('#primeira-natureza').prop('disabled', false);
+            }
+            if (pontosNin > 1) {
+                $('#segunda-natureza').prop('disabled', false);
+            }
+            if (pontosNin > 2) {
+                $('#terceira-natureza').prop('disabled', false);
+            }
+        } else if ($('#kg-elemental').val() != 'Shōton' && $('#kg-elemental').val() != 'Kōton') {
+            if (pontosNin > 0) {
+                $('#primeira-natureza').prop('disabled', false);
+            }
+            if (pontosNin > 1) {
+                $('#segunda-natureza').prop('disabled', false);
+            }
+        } else {
+            if ($('#kg-elemental').val() == 'Kōton') {
+                if (pontosNin > 0) {
+                    $('#afinidade-elemental').change(function() {
+                        $('#primeira-natureza').val($('#afinidade-elemental').val())
+                    });  
+                }
+            } else {
+                if (pontosNin > 0) {
+                    $('#primeira-natureza').val('Doton');
+                }
+            }
+        }
+    } else {
+        if (pontosNin > 1) {
+            $('#afinidade-elemental').change(function() {
+                $('#primeira-natureza').val($('#afinidade-elemental').val())
+            });  
+        }
+    }
+}
+
+$("select.naturezaDrop").change(function () {
+    $(`select.naturezaDrop option[value='${$(this).data('index')}']`).prop('disabled', false);
+    $(this).data('index', this.value);
+    $(`select.naturezaDrop option[value='${this.value}']:not([value='0'])`).prop('disabled', true);
 });
