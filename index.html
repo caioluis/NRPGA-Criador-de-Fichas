@@ -79,11 +79,12 @@
               <p class="descricao-imagem">Konoha</p>
             </label>
 
+            <!-- Suna desativada
             <label class="logo-vila">
               <input type="radio" id="suna" name="vila" value="Sunagakure no Sato">
               <img src="https://i.imgur.com/YBVjUCu.png" alt="Suna">
               <p class="descricao-imagem">Suna</p>
-            </label>
+            </label>-->
 
             <label class="logo-vila">
               <input type="radio" id="iwa" name="vila" value="Iwagakure no Sato">
@@ -99,7 +100,7 @@
 
             <label class="logo-vila">
               <input type="radio" id="uzu" name="vila" value="Uzushiogakure no Sato">
-              <img src="https://i.imgur.com/3D6jcoX.png" alt="uzu">
+              <img src="https://i.imgur.com/3D6jcoX.png" alt="Uzu">
               <p class="descricao-imagem">Uzushio</p>
             </label>
 
@@ -108,12 +109,13 @@
               <img src="https://i.imgur.com/EX3u9XD.png" alt="Ame">
               <p class="descricao-imagem">Ame</p>
             </label>
-
+            <!--Oto desativada
             <label class="logo-vila">
               <input type="radio" id="oto" name="vila" value="Otogakure no Sato">
               <img src="https://i.imgur.com/BRODQac.png" alt="Oto">
               <p class="descricao-imagem">Oto</p>
             </label>
+            -->
           </div>
           
           <!--Arquétipo-->
@@ -1657,25 +1659,60 @@
             <!--Afinidade Elemental-->
             <div class="natureza">
               <label for="afinidade-elemental" id="afinidade-label">Afinidade Elemental</label>
-              <input type="text" id="afinidade-elemental" class="placeholder" placeholder="" required>
+              <select id="afinidade-elemental" class="placeholder" placeholder="" required>
+                <option value="Katon">Katon</option>
+                <option value="Suiton">Suiton</option>
+                <option value="Doton">Doton</option>
+                <option value="Fūton">Fūton</option>
+                <option value="Raiton">Raiton</option>
+                <option value="Doton, Raiton e Bakuton" hidden>Doton, Raiton e Bakuton</option>
+                <option value="Katon, Suiton e Futton" hidden>Katon, Suiton e Futton</option>
+                <option value="Doton, Fūton, Katon e Jinton" hidden>Doton, Fūton, Katon e Jinton</option>
+                <option value="Fūton, Doton e Jiton" hidden>Fūton, Doton e Jiton</option>
+                <option value="Raiton, Suiton e Ranton" hidden>Raiton, Suiton e Ranton</option>
+                <option value="Katon, Fūton e Shakuton" hidden>Katon, Fūton e Shakuton</option>
+                <option value="Doton e Shōton" hidden>Doton e Shōton</option>
+                <option value="Katon, Doton e Yōton" hidden>Katon, Doton e Yōton</option>
+              </select>
             </div>
             
             <!--Primeira Natureza-->
             <div class="natureza">
               <label for="primeira-natureza" id="primeira-natureza-label">Primeira Natureza</label>
-              <input type="text" id="primeira-natureza" class="placeholder" placeholder="" disabled required>
+              <select id="primeira-natureza" class="placeholder naturezaDrop" placeholder="" disabled required>
+                <option value=""></option>
+                <option value="Katon">Katon</option>
+                <option value="Suiton">Suiton</option>
+                <option value="Doton">Doton</option>
+                <option value="Fūton">Fūton</option>
+                <option value="Raiton">Raiton</option>
+              </select>
             </div>
             
             <!--Segunda Natureza-->
             <div class="natureza">
               <label for="segunda-natureza" id="segunda-natureza-label">Segunda Natureza</label>
-              <input type="text" id="segunda-natureza" class="placeholder" placeholder="" disabled required>
+              <select id="segunda-natureza" class="placeholder naturezaDrop" placeholder="" disabled required>
+                <option value=""></option>
+                <option value="Katon">Katon</option>
+                <option value="Suiton">Suiton</option>
+                <option value="Doton">Doton</option>
+                <option value="Fūton">Fūton</option>
+                <option value="Raiton">Raiton</option>
+              </select>
             </div>
             
             <!--Terceira Natureza-->
             <div class="natureza">
               <label for="terceira-natureza" id="terceira-natureza-label">Terceira Natureza</label>
-              <input type="text" id="terceira-natureza" class="placeholder" placeholder="" disabled required>
+              <select id="terceira-natureza" class="placeholder naturezaDrop" placeholder="" disabled required>
+                <option value=""></option>
+                <option value="Katon">Katon</option>
+                <option value="Suiton">Suiton</option>
+                <option value="Doton">Doton</option>
+                <option value="Fūton">Fūton</option>
+                <option value="Raiton">Raiton</option>
+              </select>
             </div>
             
             <!--Kekkei Genkai Elemental-->
