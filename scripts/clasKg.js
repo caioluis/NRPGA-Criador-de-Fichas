@@ -150,6 +150,7 @@ $('#emptyHi').prop('checked', true);
             case "Hatake":
                 $('#qualidadesHatake').show();
                 $('#qualidadeVersatil').addClass('qualidade-escolhida');
+                $('#qualidadeVersatil').prop('disabled', true);
                 bonusHatake = 1;
                 break;
             case "Hōki":
@@ -501,7 +502,7 @@ $('#emptyHi').prop('checked', true);
         qualidadeTaijutsu.prop('disabled', false);
         qualidadeGenjutsu.prop('disabled', false);
 
-        if ( ($(this).attr('class') == undefined) || ($(this).attr('class') == '') ) {
+        if (($(this).attr('class') == 'temBonus')) {
             adicionarQualidade(botão);
             $('#hatakeNin').prop('disabled', true);
             $('#hatakeTai').prop('disabled', true);

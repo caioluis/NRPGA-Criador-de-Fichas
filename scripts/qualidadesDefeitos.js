@@ -16,14 +16,14 @@ function atualizarTexto() {
 
 
 function adicionarQualidade(botão) {
-    botão.addClass('qualidade-escolhida'); 
+    $(botão).addClass('qualidade-escolhida'); 
     valorQualidade = parseInt(botão.val());
     pontosQualidades += valorQualidade;
     adicionarBonusDatabook(botão);
 }
 
 function removerQualidade(botão) {
-    if(botão.hasClass('qualidade-escolhida')){
+    if($(botão).hasClass('qualidade-escolhida')){
         botão.removeClass('qualidade-escolhida');
         valorQualidade = parseInt(botão.val());
         pontosQualidades -= valorQualidade;
@@ -33,14 +33,14 @@ function removerQualidade(botão) {
     
 
 function adicionarDefeito(botão) {
-    botão.addClass('defeito-escolhido');
+    $(botão).addClass('defeito-escolhido');
     valorDefeito = parseInt(botão.val());
     pontosDefeitos += valorDefeito;
     adicionarNerfDatabook(botão);
 }
 
 function removerDefeito(botão) {
-    if(botão.hasClass('defeito-escolhido')){
+    if($(botão).hasClass('defeito-escolhido')){
         botão.removeClass('defeito-escolhido');
         valorDefeito = parseInt(botão.val());
         pontosDefeitos -= valorDefeito;
@@ -90,9 +90,9 @@ $('#defeitos .qualidades-defeitos :button').click(function(){
     minPontosDefeitos = getDefeitosMinPoints();
     valorDefeito = parseInt(botão.val());
     if((botão.attr('class') == undefined) || (botão.attr('class') == '')){
-        adicionarDefeito(botão)
+        adicionarDefeito(botão);
     } else {
-        removerDefeito(botão)
+        removerDefeito(botão);
     }
     
     atualizarTexto();
@@ -398,9 +398,9 @@ function adicionarNerfDatabook(botão) {
         $('#ninjutsu').val(0);
         $('#ninjutsu').prop('disabled', true);
         $('#afinidade-elemental').prop('disabled', true);
-        $('#afinidade-elemental').val('--').
-        removerQualidade($(qualidadeNinjutsu));
-        $(qualidadeNinjutsu).hide();
+        $('#afinidade-elemental').val('--');
+        removerQualidade(qualidadeNinjutsu);
+        qualidadeNinjutsu.hide();
     }
 
     if (botão.text().includes('Inabilidade em Genjutsu')) {
@@ -408,8 +408,8 @@ function adicionarNerfDatabook(botão) {
         $('#genjutsu-label span').text('0');
         $('#genjutsu').val(0);
         $('#genjutsu').prop('disabled', true);
-        removerQualidade($(qualidadeGenjutsu));
-        $(qualidadeGenjutsu).hide();
+        removerQualidade(qualidadeGenjutsu);
+        qualidadeGenjutsu.hide();
     }
 
     if (botão.text().includes('Dificuldade em Aprender')) {
