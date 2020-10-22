@@ -41,11 +41,15 @@ vel = $('#vel').val();
 sta = $('#sta').val();
 selos = $('#selos').val();
 
-primeiraNatureza = $('#primeira-natureza').val();
-segundaNatureza = $('#segunda-natureza').val();
-terceiraNatureza = $('#terceira-natureza').val();
+primeiraNatureza = $('#primeira-natureza :selected').val();
+segundaNatureza = $('#segunda-natureza :selected').val();
+terceiraNatureza = $('#terceira-natureza :selected').val();
 kgElemental = $('#kg-elemental').val();
 afinidadeElemental = $('#afinidade-elemental').val();
+
+if (kgElemental == 'Kōton') {
+    afinidadeElemental += ' e Kōton'
+}
 
 limiteJutsus = $('#limite-jutsus').val();
 
