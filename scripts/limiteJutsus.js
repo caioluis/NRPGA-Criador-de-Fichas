@@ -92,7 +92,7 @@ function atualizarElementos(){
     $('#segunda-natureza').prop('disabled',true);
     $('#terceira-natureza').prop('disabled',true);
 
-    if ($('#kg-elemental').val() != '') {
+    if ($('#kg-elemental').val() != '--' && $('#kg-elemental').val() != '') {
         if ($('#kg-elemental').val() == 'Jinton') {
             if (pontosNin > 0) {
                 $('#primeira-natureza').prop('disabled', false);
@@ -113,8 +113,9 @@ function atualizarElementos(){
         } else {
             if ($('#kg-elemental').val() == 'Kōton') {
                 if (pontosNin > 0) {
+                    $('#primeira-natureza').val($('#afinidade-elemental').val());
                     $('#afinidade-elemental').change(function() {
-                        $('#primeira-natureza').val($('#afinidade-elemental').val())
+                        $('#primeira-natureza').val($('#afinidade-elemental').val());
                     });  
                 }
             } else {
@@ -125,8 +126,9 @@ function atualizarElementos(){
         }
     } else {
         if (pontosNin > 1) {
+            $('#primeira-natureza').val($('#afinidade-elemental').val());
             $('#afinidade-elemental').change(function() {
-                $('#primeira-natureza').val($('#afinidade-elemental').val())
+                $('#primeira-natureza').val($('#afinidade-elemental').val());
             });  
         }
     }
