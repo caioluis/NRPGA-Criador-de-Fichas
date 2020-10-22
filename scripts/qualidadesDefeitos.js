@@ -3,6 +3,7 @@ var pontosDefeitos = 0;
 var quantBonus = 0;
 var maxPontosQualidades = getQualidadesMaxPoints();
 var minPontosDefeitos = getDefeitosMinPoints();
+var habilidadeNin = habilidadeTai = habilidadeGen = 0;
 
 $('#qualidades-contador').html('Qualidades - Pontos restantes: ' + (maxPontosQualidades));
 
@@ -10,6 +11,7 @@ $('#qualidades-contador').html('Qualidades - Pontos restantes: ' + (maxPontosQua
 function atualizarTexto() {
     $('#qualidades-contador').html('Qualidades - Pontos restantes: ' + getQualidadesMaxPoints());
     $('#defeitos-contador').html('Defeitos - Pontos necessários: ' + getDefeitosMinPoints());
+    atualizarLimites();
 }
 
 
@@ -117,6 +119,7 @@ function adicionarBonusDatabook(botão) {
         $('#defeitoNin').prop('disabled', true);
         removerDefeito($('#defeitoNin'));
         $('#ninjutsu-label span').text('+1');
+        habilidadeNin = 2;
     }
     
     if (botão.text().includes('Habilidade em Taijutsu')) {
@@ -124,6 +127,7 @@ function adicionarBonusDatabook(botão) {
         removerDefeito($('#defeitoCoordenacao'));
         $('#defeitoCoordenacao').prop('disabled', true);
         $('#taijutsu-label span').text('+1');
+        habilidadeTai = 2;
     }
     
     if (botão.text().includes('Habilidade em Genjutsu')) {
@@ -131,6 +135,7 @@ function adicionarBonusDatabook(botão) {
         $('#genjutsu-label span').text('+1');
         removerDefeito($('#defeitoGen'));
         $('#defeitoGen').prop('disabled', true);
+        habilidadeGen = 2;
     }
     
     if (botão.text().includes('Força Aguçada')) {
@@ -199,8 +204,7 @@ function removerBonusDatabook(botão) {
             $('#ninjutsu-label').removeClass('bonusDisponivel');
             $('#defeitoNin').prop('disabled', false);
             $('#ninjutsu-label span').hide();
-            bonusNin--;
-            quantBonus--;
+            habilidadeNin = 0;
         }
     }
 
@@ -209,8 +213,7 @@ function removerBonusDatabook(botão) {
             $('#taijutsu-label').removeClass('bonusDisponivel');
             $('#taijutsu-label span').hide();
             $('#defeitoCoordenacao').prop('disabled', false);
-            bonusTai--;
-            quantBonus--;
+            habilidadeTai = 0;
         }
     }
 
@@ -219,8 +222,7 @@ function removerBonusDatabook(botão) {
             $('#genjutsu-label').removeClass('bonusDisponivel');
             $('#defeitoGen').show();
             $('#genjutsu-label span').prop('disabled', false);
-            bonusGen--;
-            quantBonus--;
+            habilidadeGen = 0;
         }
     }
 
@@ -229,8 +231,6 @@ function removerBonusDatabook(botão) {
             $('#forca-label').removeClass('bonusDisponivel');
             $('#forca-label span').hide();
             $('#defeitoFraqueza').prop('disabled', false);
-            bonusForca--;
-            quantBonus--;
         }
     }
 
@@ -238,8 +238,6 @@ function removerBonusDatabook(botão) {
         if ($('#int-label span').text() == '+1') {
             $('#int-label').removeClass('bonusDisponivel');
             $('#int-label span').hide();
-            bonusInt--;
-            quantBonus--;
         }   
     }
 
@@ -248,8 +246,6 @@ function removerBonusDatabook(botão) {
             $('#vel-label').removeClass('bonusDisponivel');
             $('#vel-label span').hide();
             $('#defeitoReflexos').prop('disabled', false);
-            bonusVel--;
-            quantBonus--;
         }
     }
 
@@ -257,8 +253,6 @@ function removerBonusDatabook(botão) {
         if ($('#sta-label span').text() == '+1') {
             $('#sta-label').removeClass('bonusDisponivel');
             $('#sta-label span').hide();
-            bonusSta--;
-            quantBonus--; 
         }
     }
 
