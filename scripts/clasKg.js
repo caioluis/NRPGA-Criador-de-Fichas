@@ -487,6 +487,8 @@ $('#emptyHi').prop('checked', true);
                 adicionarQualidade($('#somaVel'));
                 $('#qualidadeVel').prop('disabled', true);
                 break;
+            default:
+                break;
         }
     });
 
