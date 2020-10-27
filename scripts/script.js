@@ -41,6 +41,10 @@ vel = $('#vel').val();
 sta = $('#sta').val();
 selos = $('#selos').val();
 
+if ($('input[name=hi]:checked', '#dados-basiscos-ninja').val() != '--') {
+    kg = $('input[name=hi]:checked', '#dados-basicos-ninja').val();
+}
+
 primeiraNatureza = $('#primeira-natureza :selected').val();
 segundaNatureza = $('#segunda-natureza :selected').val();
 terceiraNatureza = $('#terceira-natureza :selected').val();
