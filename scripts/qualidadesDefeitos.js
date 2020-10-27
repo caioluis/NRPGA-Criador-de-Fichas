@@ -522,8 +522,8 @@ function removerNerfDatabook(botão) {
 
     if (botão.text().includes('Impulsivos')) {
         if($('#int-label span').text() == '-1') {
-            $('#int-label span').prop('disabled', false);
-            nerfVel--;
+            $('#int-label span').hide()
+            nerfInt--;
         }
     }
 
@@ -531,13 +531,13 @@ function removerNerfDatabook(botão) {
         if ($('#vel-label span').text() == '-2') {
             $('#vel-label span').text('-1');
         } else {
-            $('#vel-label span').prop('disabled', false);
+            $('#vel-label span').hide();
         }
 
         if ($('#forca-label span').text() == '-2') {
             $('#forca-label span').text('-1');
         } else {
-            $('#forca-label span').prop('disabled', false);
+            $('#forca-label span').hide();
         }
         nerfVel--;
         nerfForca--;
@@ -555,7 +555,7 @@ function removerNerfDatabook(botão) {
 
     if (botão.text().includes('Inabilidade em Genjutsu')) {
         if ($('#genjutsu-label span').text() == '0') {
-            $('#genjutsu-label span').show();
+            $('#genjutsu-label span').hide();
             $('#genjutsu').prop('disabled', false);
             $(qualidadeGenjutsu).show();
         }
@@ -570,19 +570,19 @@ function removerNerfDatabook(botão) {
         if ($('#vel-label span').text() == '-2') {
             $('#vel-label span').text('-1');
         } else {
-            $('#vel-label span').prop('disabled', false);
+            $('#vel-label span').hide();
         }
 
         if ($('#forca-label span').text() == '-2') {
             $('#forca-label span').text('-1');
         } else {
-            $('#forca-label span').prop('disabled', false);
+            $('#forca-label span').hide();
         }
 
         if ($('#int-label span').text() == '-2') {
             $('#int-label span').text('-1');
         } else {
-            $('#int-label span').prop('disabled', false);
+            $('#int-label span').hide();
         }
         nerfVel--;
         nerfForca--;
