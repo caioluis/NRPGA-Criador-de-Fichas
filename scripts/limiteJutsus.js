@@ -47,6 +47,8 @@ function atualizarLimites() {
 
     if (contadorJutsusGerais != 0){
         jutsusGerais = `, +${contadorJutsusGerais} Jutsus Gerais`;
+    } else {
+        jutsusGerais = '';
     }
 
     if (pontosNin > 2) {
