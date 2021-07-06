@@ -1,5 +1,5 @@
 # Criador de Fichas - NARUTO RPG AKATSUKI 
-Site feito para aprimorar o sistema de criação de fichas
+This project is live at: https://caioluis.github.io/NRPGA-Criador-de-Fichas/
 
 <p align="center">
   <img src="https://i.imgur.com/bc4oCBp.png">
